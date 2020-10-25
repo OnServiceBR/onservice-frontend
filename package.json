@@ -15,8 +15,6 @@
     "react-scripts": "3.4.4"
   },
   "scripts": {
-    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss src/css/mystyles.css",
-    "css-watch": "npm run css-build -- --watch",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
