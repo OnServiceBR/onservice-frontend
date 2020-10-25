@@ -6,11 +6,17 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.20.0",
+    "bootstrap": "^4.5.3",
+    "node-sass": "^4.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.4"
   },
   "scripts": {
+    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss src/css/mystyles.css",
+    "css-watch": "npm run css-build -- --watch",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
