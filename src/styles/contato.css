@@ -1,0 +1,63 @@
+/* Foto */
+#foto-contato {
+    position: relative;
+    align-items: center;
+    height: 88vh;
+}
+
+#foto-contato img {
+    width: 600px;
+}
+
+/* Forms de contato */
+#contact-form {
+    text-align: center;
+}
+#contact-form small {
+    margin-bottom: 15px;
+    margin: auto;
+}
+
+#contact-form input, #contact-form textarea {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    width: 600px;
+}
+
+#contact-form .main-btn {
+    width: 120px;
+    height: 50px;
+}
+
+#contact-form form {
+    display: inline-block;
+}
+
+#procurar-btn2 {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 1px solid #F09252;
+    background-color: #F09252;
+    color: #FFF;
+    text-transform: uppercase;
+    height: 40px;
+    padding: 0 30px;
+    position: relative;
+    transition: .5s;
+}
+
+#procurar-btn2:hover {
+    background-color: #FFF;
+    color: #F09252;
+}
+
+#procurar-btn2:focus {
+    border-color: #F09252;
+    box-shadow: 0 0 8px 0 #F09252;
+    outline: 0;
+}
+
+.container-fluid {
+  margin: 0;
+  width: 100%;
+}
