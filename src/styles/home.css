@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+div {
+  font-family: 'Bebas Neue', cursive;
+  color: #262626;
+}
+.top-side {
+  text-align: center;
+}
+
+.top-side img {
+  width: 400px;
+}
+
+#slogan {
+  letter-spacing: 8px;
+  padding-left: 15px;
+}
+
+.row {
+  margin-top: 50px;
+}
+
+.texto-home {
+  text-align: center;
+  letter-spacing: 8px;
+}
+
+#label-home {
+  margin-top: 120px;
+  margin-bottom: 20px;
+}
+
+#btn-home {
+  margin-right: 15px;
+}
+
+#procurar-lupa {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px solid rgba(38, 38, 38, 0.1);
+    border-right-color: rgba(0, 0, 0, 0);
+    color: #262626;
+    height: 40px;
+    background-color: white;
+    padding-top: 5px;
+    letter-spacing: 2px;
+    font-family: serif;
+}
+
+#lupa {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: 1px solid rgba(38, 38, 38, 0.1);
+  border-left-color: rgba(0, 0, 0, 0);
+  height: 40px;
+  margin-bottom: -10px;
+  padding: 0 5px;
+}
+
+.destaques {
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 3px;
+}
+
+.sobre {
+  font-size: 64px;
+}
+
+.sobre-itens {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 32px;
+}
+
+.caixa {
+  border: 10px solid #ED7D31;
+  margin-top: 12%;
+}
