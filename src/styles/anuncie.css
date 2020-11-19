@@ -1,0 +1,91 @@
+.register-left{
+    text-align: center;
+    color: #fff;
+    padding: 30px;
+    margin-top: 200px;
+}
+.register-left h3 {
+    font-size: 32px;
+}
+.register-left i{
+    font-size: 190px;
+    margin-top: 20px;
+}
+.register-left p {
+    padding: 20px 20px 0;
+    font-size: 20px;
+}
+
+.register-right {
+    border: none;
+    background: #f8f8f8;
+    border-top-left-radius: 10% 10%;
+    border-bottom-left-radius: 10% 10%;
+    border-top-right-radius: 10% 10%;
+    border-bottom-right-radius: 10% 10%;
+    padding: 50px;
+    margin-top: 56px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+.register-right input,
+.register-right select {
+    border-radius: 20px;
+}
+
+.register-right h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 36px;
+}
+
+.register-form {
+    padding: 20px;
+    text-align: center;
+}
+
+.register-form input:focus,
+.register-form input:hover,
+.register-form select:focus,
+.register-form select:hover {
+    border-color: #F09252;
+    box-shadow: 0 0 8px 0 #F09252;
+    outline: 0;
+}
+
+.form-group label {
+    padding:0px;
+    display:block;
+    font-weight: bold;
+    margin-left: 5px;
+    text-align: left;
+}
+
+.form-group small {
+    margin-left: 5px;
+    text-align: left;
+}
+
+.register-right .btn-primary {
+    border-radius: 1.5rem;
+    border: none;
+    width: 150px;
+    height: 50px;
+    background: #ff9800;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.register-right .btn-primary:hover {
+    background: #ff5722;
+}
+
+optgroup {
+  color: #ED7D31;
+}
+
+option {
+  color: #262626;
+}

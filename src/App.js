@@ -10,8 +10,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 import Home from "./pages/home.page";
-// import Contrate from "./components/";
-// import Anuncie from "./components/";
+import Contrate from "./pages/contrate.page";
+import Anuncie from "./pages/anuncie.page";
 import Contato from "./pages/contato.page";
 
 function App() {
@@ -26,6 +26,8 @@ function App() {
       <div className="container-fluid mt-3 px-0">
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/contrate" component={Contrate} />
+          <Route exact path="/anuncie" component={Anuncie} />
           <Route exact path="/contato" component={Contato} />
         </Switch>
       </div>
