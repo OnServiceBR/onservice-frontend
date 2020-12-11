@@ -1,80 +1,139 @@
-.register-left{
-    text-align: center;
-    color: #fff;
-    padding: 30px;
-    margin-top: 200px;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+  font-family: GlacialIndifference;
+  src: url(GlacialIndifference-Regular.otf);
 }
-.register-left h3 {
-    font-size: 32px;
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(175,171,171);
+  opacity: 1; /* Firefox */
 }
-.register-left i{
-    font-size: 190px;
-    margin-top: 20px;
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: rgb(175,171,171);
 }
-.register-left p {
-    padding: 20px 20px 0;
-    font-size: 20px;
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgb(175,171,171);
 }
 
 .register-right {
-    border: none;
-    background: #f8f8f8;
-    border-top-left-radius: 10% 10%;
-    border-bottom-left-radius: 10% 10%;
-    border-top-right-radius: 10% 10%;
-    border-bottom-right-radius: 10% 10%;
-    padding: 50px;
-    margin-top: 56px;
-    margin-bottom: 40px;
-    text-align: left;
+  border: none;
+  box-shadow: 0px 0px 5pt rgba(191, 191, 191, 0.6);
+  border-top-left-radius: 0.65cm;
+  border-bottom-left-radius: 0.65cm;
+  border-top-right-radius: 0.65cm;
+  border-bottom-right-radius: 0.65cm;
+  padding-bottom: 0.5cm;
+  margin-bottom: 0.5cm;
+  width: 11.93cm;
 }
-.register-right input,
-.register-right select {
-    border-radius: 20px;
+
+.form-item {
+  margin-bottom: 0.2cm;
 }
 
 .register-right h2 {
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 36px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 16pt;
+  text-align: center;
+  margin-top: 0.5cm;
+  letter-spacing: 6px;
+  color: rgb(237, 125, 49);
 }
 
-.register-form {
-    padding: 20px;
-    text-align: center;
+.register-right label {
+  margin-left: 0.605cm;
+  font-family: GlacialIndifference;
+  font-size: 12pt;
 }
 
-.register-form input:focus,
-.register-form input:hover,
-.register-form select:focus,
-.register-form select:hover {
-    border-color: #F09252;
-    box-shadow: 0 0 8px 0 #F09252;
-    outline: 0;
+.register-right input,
+.register-right select {
+  border-radius: 0.15cm;
+  border-style: solid;
+  border-color: rgb(118, 113, 113);
+  border-width: 0.5pt;
+  width: 10.72cm;
+  height: 0.9cm;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  font-family: GlacialIndifference;
+  padding-left: 15px;
+  font-size: 10pt;
+  background-color: white;
+  color: rgb(118,113,113);
 }
 
-.form-group label {
-    padding:0px;
-    display:block;
-    font-weight: bold;
-    margin-left: 5px;
-    text-align: left;
+.register-right input:focus{
+  outline: none;
+  border-color: rgb(237, 125, 49);
+  box-shadow: 0px 0px 5pt rgba(237, 125, 49, 0.6);
 }
 
-.form-group small {
-    margin-left: 5px;
-    text-align: left;
+.register-right select:invalid{
+  color: rgb(175,171,171);
+}
+
+.register-right input[type="date"]:invalid{
+  color: rgb(175,171,171);
+}
+
+.register-right input[type=file]::-webkit-file-upload-button {
+  background-color: rgb(175,171,171);
+  border: 1px solid rgb(64, 64, 64);
+  outline: none;
+  cursor: pointer;
+  font-size: 10pt;
+  width: 3.11cm;
+  height: 0.68cm;
+  color: rgb(118,113,113);
+  margin-right: 0.4cm;
+}
+
+.register-right input[type="file"]::file-selector-button{
+  background-color: rgb(175,171,171);
+  border: 1px solid rgb(64, 64, 64);
+  outline: none;
+  cursor: pointer;
+  font-size: 10pt;
+  width: 3.11cm;
+  height: 0.68cm;
+  color: rgb(118,113,113);
+  margin-right: 0.4cm;
+}
+
+.register-right input[type="file"] {
+  padding-left: 5px;
+  padding-top: 4px;
+}
+
+.register-right select option{
+  color: rgb(118,113,113);
+}
+
+.register-right small {
+  font-family: GlacialIndifference;
+  font-size: 8pt;
+  margin-left: 0.605cm;
 }
 
 .register-right .btn-primary {
-    border-radius: 1.5rem;
+    border-radius: 0.65cm;
     border: none;
-    width: 150px;
+    letter-spacing: 6px;
+    font-size: 16pt;
+    width: 75%;
     height: 50px;
     background: #ff9800;
     font-weight: 600;
     color: #fff;
     margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
     padding: 10px;
 }
 
@@ -82,10 +141,7 @@
     background: #ff5722;
 }
 
-optgroup {
-  color: #ED7D31;
-}
-
-option {
-  color: #262626;
+.content {
+  margin-left: 5cm;
+  margin-right: 5cm;
 }

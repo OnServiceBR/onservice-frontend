@@ -25,6 +25,7 @@ export default class Home extends Component {
 
       cities: [],
       services: [],
+      picture: undefined,
 
       beleza: [],
       saude: [],
@@ -61,10 +62,12 @@ export default class Home extends Component {
       this.setState((state) => { cities: state.cities.push(parseInt(event.target.value)) });
     } else if (field === "services") {
       this.setState((state) => { services: state.services.push(parseInt(event.target.value)) });
+    } else if (field === "picture") {
+      this.setState({ picture: event.target.files });
     } else if (field === "description") {
       this.setState({ description: event.target.value });
     }
-    // console.log(this.state)
+    console.log(this.state)
   }
 
   componentDidMount() {
@@ -89,6 +92,16 @@ export default class Home extends Component {
       servicos: this.state.services,
       description: this.state.description
     };
+
+    let currentFile = this.state.picture[0];
+
+    PrestadorDataService.upload(currentFile)
+      .then(res => {
+        console.log("Imagem enviada");
+      })
+      .catch(e => {
+        console.log(e);
+      })
 
     PrestadorDataService.create(data)
       .then(res => {
@@ -137,7 +150,7 @@ export default class Home extends Component {
         this.setState({
           beleza: res.data
         });
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch(e => {
         console.log(e);
@@ -147,7 +160,7 @@ export default class Home extends Component {
         this.setState({
           manutencao: res.data
         });
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch(e => {
         console.log(e);
@@ -157,7 +170,7 @@ export default class Home extends Component {
         this.setState({
           saude: res.data
         });
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch(e => {
         console.log(e);
@@ -167,7 +180,7 @@ export default class Home extends Component {
         this.setState({
           ensino: res.data
         });
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch(e => {
         console.log(e);
@@ -177,7 +190,7 @@ export default class Home extends Component {
         this.setState({
           residencial: res.data
         });
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch(e => {
         console.log(e);
@@ -187,7 +200,7 @@ export default class Home extends Component {
         this.setState({
           freelancer: res.data
         });
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch(e => {
         console.log(e);
@@ -216,175 +229,132 @@ export default class Home extends Component {
   render() {
     const { cidades, beleza, manutencao, saude, ensino, residencial, freelancer } = this.state;
     return(
-      <div class="container-fluid">
+      <div class="content">
         <div class="row">
-          <div class="col-md-12">
-            <div class="row">
-              <div class="col-md-5 register-left">
-                <h3>Anuncie seu trabalho</h3>
-                <p>Presta algum tipo de serviço? Anuncie já conosco e conquiste novos clientes de forma totalmente gratuita!</p>
-              </div>
-              <div class="col-md-7 register-right">
-                <h2>Registre-se aqui</h2>
-                <div class="register-form">
-                  <div class="form-group">
-                    <label for="">Nome</label>
-                    <input id="name" type="text" class='form-control' placeholder="Insira seu nome completo" onChange={this.handleChange.bind(this)}/>
-                  </div>
-                  <div class="form-group">
-                    <label for="">CPF</label>
-                    <input id="cpf" type="text" class='form-control' placeholder="Insira seu nome completo" onChange={this.handleChange.bind(this)}/>
-                  </div>
-                  <div class="form-group">
-                    <label for="">Email</label>
-                    <input id="email" type="email" class='form-control' placeholder="Insira seu melhor email" onChange={this.handleChange.bind(this)}/>
-                  </div>
-                  <div class="form-group">
-                    <label for="">Idade</label>
-                    <input id="age" type="text" class='form-control' placeholder="Insira seu nome completo" onChange={this.handleChange.bind(this)}/>
-                  </div>
-                  <div class="form-group">
-                    <label for="">Gênero</label>
-                    <select id="gender" class='custom-select' required onChange={this.handleChange.bind(this)}>
-                      <option>Selecione seu gênero</option>
-                      <option>Masculino</option>
-                      <option>Feminino</option>
-                      <option>Prefiro não dizer</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="">Whatsapp</label>
-                    <input id="phone" type="text" class='form-control' placeholder="Insira seu Whatsapp" onChange={this.handleChange.bind(this)} />
-                    <small class='form-text text-muted'> É extremamente importante que o número informado tenha Whatsapp, para descomplicar ao máximo a relação contratante/contratado</small>
-                  </div>
-                  <div class="form-group">
-                    <label for="">CEP</label>
-                    <input id="cep" type="text" class='form-control' placeholder="Insira o CEP" onChange={this.handleChange.bind(this)} />
-                    <small class='form-text text-muted'>Insira apenas os números do CEP</small>
-                  </div>
-                  <div class="form-group">
-                    <label for="">Cidade</label>
-                    <input id="city" type="text" class='form-control' placeholder="Insira a cidade de residência" onChange={this.handleChange.bind(this)}/>
-                  </div>
-                  <div class="form-group">
-                    <label for="">Endereço</label>
-                    <input id="address" type="text" class='form-control' placeholder="Insira o endereço" onChange={this.handleChange.bind(this)} />
-                  </div>
-                  <div class="form-group">
-                    <label for="">Complemento</label>
-                    <input id="complement" type="text" class='form-control' placeholder="Ex.: apto 123 ou casa 123" onChange={this.handleChange.bind(this)} />
-                  </div>
-                  <div class="form-group">
-                    <label for="">Trabalho</label>
-                    <select id="cities" class='custom-select' required onChange={this.handleChange.bind(this)}>
-                      <option></option>
-                      {cidades && cidades.map((cidade, index) => (
-                        <option className={
-                          "list-group-item "
-                        }
-                          value={cidade.id}
-                        >
-                          {cidade.name}
-                        </option>
-                      ))}
-                    </select>
-                    <small class='form-text text-muted'>Selecione quantas cidades forem necessárias</small>
-                  </div>
-                  <div class="form-group">
-                    <label for="">Serviço</label>
-                    <select id="services" class='custom-select' required onChange={this.handleChange.bind(this)}>
-                    <option></option>
-                    <optgroup label="Beleza">
-                      {beleza && beleza.map((servico, index) => (
-                        <option className={
-                          "list-group-item "
-                        }
-                          value={servico.id}
-                        >
-                          {servico.name}
-                        </option>
-                      ))}
-                    </optgroup>
-                    <optgroup label="Manutenção">
-                      {manutencao && manutencao.map((servico, index) => (
-                        <option className={
-                          "list-group-item "
-                        }
-                          value={servico.id}
-                        >
-                          {servico.name}
-                        </option>
-                      ))}
-                    </optgroup>
-                    <optgroup label="Saúde">
-                      {saude && saude.map((servico, index) => (
-                        <option className={
-                          "list-group-item "
-                        }
-                          value={servico.id}
-                        >
-                          {servico.name}
-                        </option>
-                      ))}
-                    </optgroup>
-                    <optgroup label="Ensino">
-                      {ensino && ensino.map((servico, index) => (
-                        <option className={
-                          "list-group-item "
-                        }
-                          value={servico.id}
-                        >
-                          {servico.name}
-                        </option>
-                      ))}
-                    </optgroup>
-                    <optgroup label="Residencial">
-                      {residencial && residencial.map((servico, index) => (
-                        <option className={
-                          "list-group-item "
-                        }
-                          value={servico.id}
-                        >
-                          {servico.name}
-                        </option>
-                      ))}
-                    </optgroup>
-                    <optgroup label="Freelancer">
-                      {freelancer && freelancer.map((servico, index) => (
-                        <option className={
-                          "list-group-item "
-                        }
-                          value={servico.id}
-                        >
-                          {servico.name}
-                        </option>
-                      ))}
-                    </optgroup>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="">Foto de Perfil</label>
-                    <input type="file" class="form-control" />
-                    <small class='form-text text-muted'>Insira uma foto com fundo branco.</small>
-                  </div>
-                  <div class="form-group">
-                    <label for="">Hora de trabalho</label>
-                    <input type="text" class='form-control' placeholder="Preço por hora de serviço" />
-                    <small class='form-text text-muted'>Insira um valor médio para sua hora de trabalho</small>
-                  </div>
-                  <div class="form-group">
-                    <label for="">Serviço exclusivo para mulheres?</label>
-                    <select id="w2w" class='custom-select' required>
-                      <option value="">Selecione uma opção</option>
-                      <option>Sim</option>
-                      <option>Não</option>
-                    </select>
-                    <small class='form-text text-muted'> Um dos objetivos da OnService é fornecer segurança tanto para quem contrata quanto para quem irá ser contratado. Por isso, colocaremos os filtros de gêneros para que mulheres se sintam mais confortáveis ao prestarem um serviço.</small>
-                  </div>
-                  <button type='button' onClick={this.savePrestador.bind(this)} class='btn btn-primary'>Registre-se</button>
-                </div>
-              </div>
+          <div class="col">
+            1 de 2
+          </div>
+          <div class="col register-right">
+            <h2>ANUNCIE-SE AQUI</h2>
+            <div class="form-item">
+              <label for="name">Nome:</label>
+              <input id="name" type="text" class='' placeholder="Insira seu nome completo, conforme documento de identificação" onChange={this.handleChange.bind(this)} />
             </div>
+            <div class="form-item">
+              <label for="cpf">CPF:</label>
+              <input id="cpf" type="text" class='' placeholder="Insira seu nome CPF" onChange={this.handleChange.bind(this)}/>
+            </div>
+            <div class="form-item">
+              <label for="email">Email:</label>
+              <input id="email" type="email" class='' placeholder="Insira seu email mais utilizado" onChange={this.handleChange.bind(this)}/>
+            </div>
+            <div class="form-item">
+              <label for="age">Data de Nascimento:</label>
+              <input id="age" type="date" class='' required onChange={this.handleChange.bind(this)}/>
+            </div>
+            <div class="form-item">
+              <label for="gender">Gênero:</label>
+              <select id="gender" class='' required onChange={this.handleChange.bind(this)}>
+                <option value="" selected disabled hidden>Selecione seu gênero</option>
+                <option>Masculino</option>
+                <option>Feminino</option>
+                <option>Prefiro não dizer</option>
+              </select>
+            </div>
+            <div class="form-item">
+              <label for="phone">Celular:</label>
+              <input id="phone" type="text" class='' placeholder="Insira seu número de celular" onChange={this.handleChange.bind(this)} />
+              <small class=''>*É obrigatório que este número tenha Whatsapp</small>
+            </div>
+            <div class="form-item">
+              <label for="state">Estado:</label>
+              <input id="state" type="text" class='' placeholder="Informe seu estado" onChange={this.handleChange.bind(this)}/>
+            </div>
+            <div class="form-item">
+              <label for="city">Cidade:</label>
+              <input id="city" type="text" class='' placeholder="Informe sua cidade" onChange={this.handleChange.bind(this)}/>
+            </div>
+            <div class="form-item">
+              <label for="cep">CEP:</label>
+              <input id="cep" type="text" class='' placeholder="Insira apenas os números do seu CEP" onChange={this.handleChange.bind(this)} />
+            </div>
+            <div class="form-item">
+              <label for="address">Endereço:</label>
+              <input id="address" type="text" class='' placeholder="Insira sua rua/avenida e número" onChange={this.handleChange.bind(this)} />
+            </div>
+            <div class="form-item">
+              <label for="cities">Local de Trabalho:</label>
+              <select id="cities" class='' required onChange={this.handleChange.bind(this)}>
+                <option value="" selected disabled hidden>Selecione todas as cidades onde você oferece seus serviços</option>
+                {cidades && cidades.map((cidade, index) => (
+                  <option className={""} value={cidade.id}>
+                    {cidade.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div class="form-item">
+              <label for="services">Profissão:</label>
+              <select id="services" class='' required onChange={this.handleChange.bind(this)}>
+              <option value="" selected disabled hidden>Selecione a sua profissão</option>
+              <optgroup label="Beleza">
+                {beleza && beleza.map((servico, index) => (
+                  <option className={""} value={servico.id}>
+                    {servico.name}
+                  </option>
+                ))}
+              </optgroup>
+              <optgroup label="Manutenção">
+                {manutencao && manutencao.map((servico, index) => (
+                  <option className={""} value={servico.id}>
+                    {servico.name}
+                  </option>
+                ))}
+              </optgroup>
+              <optgroup label="Saúde">
+                {saude && saude.map((servico, index) => (
+                  <option className={""} value={servico.id}>
+                    {servico.name}
+                  </option>
+                ))}
+              </optgroup>
+              <optgroup label="Ensino">
+                {ensino && ensino.map((servico, index) => (
+                  <option className={""} value={servico.id}>
+                    {servico.name}
+                  </option>
+                ))}
+              </optgroup>
+              <optgroup label="Residencial">
+                {residencial && residencial.map((servico, index) => (
+                  <option className={""} value={servico.id}>
+                    {servico.name}
+                  </option>
+                ))}
+              </optgroup>
+              <optgroup label="Freelancer">
+                {freelancer && freelancer.map((servico, index) => (
+                  <option className={""} value={servico.id}>
+                    {servico.name}
+                  </option>
+                ))}
+              </optgroup>
+              </select>
+            </div>
+            <div class="form-item">
+              <label for="picture">Foto de Perfil:</label>
+              <input id="picture" type="file" name="file" class="" onChange={this.handleChange.bind(this)} />
+              <small class=''>*Insira uma foto que tenha fundo branco e mostre bem o seu rosto. Logotipos não são aceitos.</small>
+            </div>
+            <div class="form-item">
+              <label for="w2w">Serviço exclusivo para mulheres ?</label>
+              <select id="w2w" class='' required>
+                <option value="" selected disabled hidden>Selecione uma opção</option>
+                <option>Sim</option>
+                <option>Não</option>
+              </select>
+            </div>
+            <button type='button' onClick={this.savePrestador.bind(this)} class='btn-primary'>Registre-se</button>
           </div>
         </div>
       </div>
