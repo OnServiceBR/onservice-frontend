@@ -3,6 +3,16 @@ div {
   font-family: 'Bebas Neue', cursive;
   color: #262626;
 }
+
+.content {
+  margin-left: 5cm;
+  margin-right: 5cm;
+}
+
+label {
+  margin-bottom: 0px;
+}
+
 .top-side {
   text-align: center;
 }
