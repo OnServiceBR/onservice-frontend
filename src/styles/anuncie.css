@@ -111,7 +111,7 @@
   }
 }
 
-@media only screen and (min-width: 1281px) (max-width: 1366px) {
+@media only screen and (min-width: 1281px) and (max-width: 1366px) {
   .register-right {
     border: none;
     box-shadow: 0px 0px 5pt rgba(191, 191, 191, 0.6);
