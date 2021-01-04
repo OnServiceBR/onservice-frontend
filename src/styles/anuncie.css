@@ -1,10 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-@font-face {
-  font-family: GlacialIndifference;
-  src: url(GlacialIndifference-Regular.otf);
-}
-
 @media only screen and (max-width: 1280px) {
   .register-right {
     border: none;

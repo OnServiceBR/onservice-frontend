@@ -1,63 +1,67 @@
-/* Foto */
-#foto-contato {
-    position: relative;
-    align-items: center;
-    height: 88vh;
+.form-contact {
+  border: none;
+  box-shadow: 0px 0px 5pt rgba(191, 191, 191, 0.6);
+  border-top-left-radius: 0.65cm;
+  border-bottom-left-radius: 0.65cm;
+  border-top-right-radius: 0.65cm;
+  border-bottom-right-radius: 0.65cm;
+  padding-bottom: 0.5cm;
+  margin-bottom: 0.5cm;
+  margin-left: 3%;
 }
 
-#foto-contato img {
-    width: 600px;
+.form-contact h3 {
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+  margin-top: 0.5cm;
+  letter-spacing: 6px;
+  color: rgb(237, 125, 49);
 }
 
-/* Forms de contato */
-#contact-form {
-    text-align: center;
-}
-#contact-form small {
-    margin-bottom: 15px;
-    margin: auto;
+.description {
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 12pt;
+  font-family: "GlacialIndifference"
 }
 
-#contact-form input, #contact-form textarea {
-    margin-bottom: 20px;
-    border-radius: 10px;
-    width: 600px;
+.label {
+  font-size: 12pt;
+  font-family: "GlacialIndifference";
+  font-weight: normal;
+  margin-left: 7%;
 }
 
-#contact-form .main-btn {
-    width: 120px;
-    height: 50px;
+.textarea-contact {
+  margin-left: auto;
+  margin-right: auto;
+  width: 93%;
 }
 
-#contact-form form {
-    display: inline-block;
+.btn-primary {
+  text-align: center;
+  border-radius: 0.15cm;
+  border-width: 0.5pt;
+  border-style: solid;
+  border-color: rgb(237,125,49);
+  font-size: 12pt;
+  background: rgb(237,125,49);
+  font-family: GlacialIndifference;
+  color: rgb(255,255,255);
+  margin-top: 0.2cm;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5cm;
+  width: 20%;
+  padding: 0.8%;
+  display:block;
+  font-weight: bold;
 }
 
-#procurar-btn2 {
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border: 1px solid #F09252;
-    background-color: #F09252;
-    color: #FFF;
-    text-transform: uppercase;
-    height: 40px;
-    padding: 0 30px;
-    position: relative;
-    transition: .5s;
-}
-
-#procurar-btn2:hover {
-    background-color: #FFF;
-    color: #F09252;
-}
-
-#procurar-btn2:focus {
-    border-color: #F09252;
-    box-shadow: 0 0 8px 0 #F09252;
-    outline: 0;
-}
-
-.container-fluid {
-  margin: 0;
-  width: 100%;
+.btn-primary:hover {
+  background: #ffffff;
+  color: rgb(237, 125, 49);
+  outline: none;
+  border-color: rgb(237, 125, 49);
+  box-shadow: 0px 0px 5pt rgba(237, 125, 49, 0.6);
 }

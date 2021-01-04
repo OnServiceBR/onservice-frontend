@@ -229,133 +229,131 @@ export default class Home extends Component {
   render() {
     const { cidades, beleza, manutencao, saude, ensino, residencial, freelancer } = this.state;
     return(
-      <div class="content">
-        <div class="row">
-          <div class="col">
-            1 de 2
+      <div class="row">
+        <div class="col">
+          1 de 2
+        </div>
+        <div class="col register-right">
+          <h2>ANUNCIE-SE AQUI</h2>
+          <div class="form-item">
+            <label for="name">Nome:</label>
+            <input id="name" type="text" class='' placeholder="Insira seu nome completo, conforme documento de identificação" onChange={this.handleChange.bind(this)} />
           </div>
-          <div class="col register-right">
-            <h2>ANUNCIE-SE AQUI</h2>
-            <div class="form-item">
-              <label for="name">Nome:</label>
-              <input id="name" type="text" class='' placeholder="Insira seu nome completo, conforme documento de identificação" onChange={this.handleChange.bind(this)} />
-            </div>
-            <div class="form-item">
-              <label for="cpf">CPF:</label>
-              <input id="cpf" type="text" class='' placeholder="Insira seu nome CPF" onChange={this.handleChange.bind(this)}/>
-            </div>
-            <div class="form-item">
-              <label for="email">Email:</label>
-              <input id="email" type="email" class='' placeholder="Insira seu email mais utilizado" onChange={this.handleChange.bind(this)}/>
-            </div>
-            <div class="form-item">
-              <label for="age">Data de Nascimento:</label>
-              <input id="age" type="date" class='' required onChange={this.handleChange.bind(this)}/>
-            </div>
-            <div class="form-item">
-              <label for="gender">Gênero:</label>
-              <select id="gender" class='' required onChange={this.handleChange.bind(this)}>
-                <option value="" selected disabled hidden>Selecione seu gênero</option>
-                <option>Masculino</option>
-                <option>Feminino</option>
-                <option>Prefiro não dizer</option>
-              </select>
-            </div>
-            <div class="form-item">
-              <label for="phone">Celular:</label>
-              <input id="phone" type="text" class='' placeholder="Insira seu número de celular" onChange={this.handleChange.bind(this)} />
-              <small class=''>*É obrigatório que este número tenha Whatsapp</small>
-            </div>
-            <div class="form-item">
-              <label for="state">Estado:</label>
-              <input id="state" type="text" class='' placeholder="Informe seu estado" onChange={this.handleChange.bind(this)}/>
-            </div>
-            <div class="form-item">
-              <label for="city">Cidade:</label>
-              <input id="city" type="text" class='' placeholder="Informe sua cidade" onChange={this.handleChange.bind(this)}/>
-            </div>
-            <div class="form-item">
-              <label for="cep">CEP:</label>
-              <input id="cep" type="text" class='' placeholder="Insira apenas os números do seu CEP" onChange={this.handleChange.bind(this)} />
-            </div>
-            <div class="form-item">
-              <label for="address">Endereço:</label>
-              <input id="address" type="text" class='' placeholder="Insira sua rua/avenida e número" onChange={this.handleChange.bind(this)} />
-            </div>
-            <div class="form-item">
-              <label for="cities">Local de Trabalho:</label>
-              <select id="cities" class='' required onChange={this.handleChange.bind(this)}>
-                <option value="" selected disabled hidden>Selecione todas as cidades onde você oferece seus serviços</option>
-                {cidades && cidades.map((cidade, index) => (
-                  <option className={""} value={cidade.id}>
-                    {cidade.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div class="form-item">
-              <label for="services">Profissão:</label>
-              <select id="services" class='' required onChange={this.handleChange.bind(this)}>
-              <option value="" selected disabled hidden>Selecione a sua profissão</option>
-              <optgroup label="Beleza">
-                {beleza && beleza.map((servico, index) => (
-                  <option className={""} value={servico.id}>
-                    {servico.name}
-                  </option>
-                ))}
-              </optgroup>
-              <optgroup label="Manutenção">
-                {manutencao && manutencao.map((servico, index) => (
-                  <option className={""} value={servico.id}>
-                    {servico.name}
-                  </option>
-                ))}
-              </optgroup>
-              <optgroup label="Saúde">
-                {saude && saude.map((servico, index) => (
-                  <option className={""} value={servico.id}>
-                    {servico.name}
-                  </option>
-                ))}
-              </optgroup>
-              <optgroup label="Ensino">
-                {ensino && ensino.map((servico, index) => (
-                  <option className={""} value={servico.id}>
-                    {servico.name}
-                  </option>
-                ))}
-              </optgroup>
-              <optgroup label="Residencial">
-                {residencial && residencial.map((servico, index) => (
-                  <option className={""} value={servico.id}>
-                    {servico.name}
-                  </option>
-                ))}
-              </optgroup>
-              <optgroup label="Freelancer">
-                {freelancer && freelancer.map((servico, index) => (
-                  <option className={""} value={servico.id}>
-                    {servico.name}
-                  </option>
-                ))}
-              </optgroup>
-              </select>
-            </div>
-            <div class="form-item">
-              <label for="picture">Foto de Perfil:</label>
-              <input id="picture" type="file" name="file" class="" onChange={this.handleChange.bind(this)} />
-              <small class=''>*Insira uma foto que tenha fundo branco e mostre bem o seu rosto. Logotipos não são aceitos.</small>
-            </div>
-            <div class="form-item">
-              <label for="w2w">Serviço exclusivo para mulheres ?</label>
-              <select id="w2w" class='' required>
-                <option value="" selected disabled hidden>Selecione uma opção</option>
-                <option>Sim</option>
-                <option>Não</option>
-              </select>
-            </div>
-            <button type='button' onClick={this.savePrestador.bind(this)} class='btn-primary'>Registre-se</button>
+          <div class="form-item">
+            <label for="cpf">CPF:</label>
+            <input id="cpf" type="text" class='' placeholder="Insira seu nome CPF" onChange={this.handleChange.bind(this)}/>
           </div>
+          <div class="form-item">
+            <label for="email">Email:</label>
+            <input id="email" type="email" class='' placeholder="Insira seu email mais utilizado" onChange={this.handleChange.bind(this)}/>
+          </div>
+          <div class="form-item">
+            <label for="age">Data de Nascimento:</label>
+            <input id="age" type="date" class='' required onChange={this.handleChange.bind(this)}/>
+          </div>
+          <div class="form-item">
+            <label for="gender">Gênero:</label>
+            <select id="gender" class='' required onChange={this.handleChange.bind(this)}>
+              <option value="" selected disabled hidden>Selecione seu gênero</option>
+              <option>Masculino</option>
+              <option>Feminino</option>
+              <option>Prefiro não dizer</option>
+            </select>
+          </div>
+          <div class="form-item">
+            <label for="phone">Celular:</label>
+            <input id="phone" type="text" class='' placeholder="Insira seu número de celular" onChange={this.handleChange.bind(this)} />
+            <small class=''>*É obrigatório que este número tenha Whatsapp</small>
+          </div>
+          <div class="form-item">
+            <label for="state">Estado:</label>
+            <input id="state" type="text" class='' placeholder="Informe seu estado" onChange={this.handleChange.bind(this)}/>
+          </div>
+          <div class="form-item">
+            <label for="city">Cidade:</label>
+            <input id="city" type="text" class='' placeholder="Informe sua cidade" onChange={this.handleChange.bind(this)}/>
+          </div>
+          <div class="form-item">
+            <label for="cep">CEP:</label>
+            <input id="cep" type="text" class='' placeholder="Insira apenas os números do seu CEP" onChange={this.handleChange.bind(this)} />
+          </div>
+          <div class="form-item">
+            <label for="address">Endereço:</label>
+            <input id="address" type="text" class='' placeholder="Insira sua rua/avenida e número" onChange={this.handleChange.bind(this)} />
+          </div>
+          <div class="form-item">
+            <label for="cities">Local de Trabalho:</label>
+            <select id="cities" class='' required onChange={this.handleChange.bind(this)}>
+              <option value="" selected disabled hidden>Selecione todas as cidades onde você oferece seus serviços</option>
+              {cidades && cidades.map((cidade, index) => (
+                <option className={""} value={cidade.id}>
+                  {cidade.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div class="form-item">
+            <label for="services">Profissão:</label>
+            <select id="services" class='' required onChange={this.handleChange.bind(this)}>
+            <option value="" selected disabled hidden>Selecione a sua profissão</option>
+            <optgroup label="Beleza">
+              {beleza && beleza.map((servico, index) => (
+                <option className={""} value={servico.id}>
+                  {servico.name}
+                </option>
+              ))}
+            </optgroup>
+            <optgroup label="Manutenção">
+              {manutencao && manutencao.map((servico, index) => (
+                <option className={""} value={servico.id}>
+                  {servico.name}
+                </option>
+              ))}
+            </optgroup>
+            <optgroup label="Saúde">
+              {saude && saude.map((servico, index) => (
+                <option className={""} value={servico.id}>
+                  {servico.name}
+                </option>
+              ))}
+            </optgroup>
+            <optgroup label="Ensino">
+              {ensino && ensino.map((servico, index) => (
+                <option className={""} value={servico.id}>
+                  {servico.name}
+                </option>
+              ))}
+            </optgroup>
+            <optgroup label="Residencial">
+              {residencial && residencial.map((servico, index) => (
+                <option className={""} value={servico.id}>
+                  {servico.name}
+                </option>
+              ))}
+            </optgroup>
+            <optgroup label="Freelancer">
+              {freelancer && freelancer.map((servico, index) => (
+                <option className={""} value={servico.id}>
+                  {servico.name}
+                </option>
+              ))}
+            </optgroup>
+            </select>
+          </div>
+          <div class="form-item">
+            <label for="picture">Foto de Perfil:</label>
+            <input id="picture" type="file" name="file" class="" onChange={this.handleChange.bind(this)} />
+            <small class=''>*Insira uma foto que tenha fundo branco e mostre bem o seu rosto. Logotipos não são aceitos.</small>
+          </div>
+          <div class="form-item">
+            <label for="w2w">Serviço exclusivo para mulheres ?</label>
+            <select id="w2w" class='' required>
+              <option value="" selected disabled hidden>Selecione uma opção</option>
+              <option>Sim</option>
+              <option>Não</option>
+            </select>
+          </div>
+          <button type='button' onClick={this.savePrestador.bind(this)} class='btn-primary'>Registre-se</button>
         </div>
       </div>
     )

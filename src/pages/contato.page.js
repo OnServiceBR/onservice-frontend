@@ -12,6 +12,22 @@ export default class Contato extends Component {
       email: "",
       subject: "",
       message: "",
+      desc: <div>
+              <div class="description">
+                <label>A OnService agradece a mensagem. Dentro de, no máximo, 3 dias, sua mensagem será respondida pela nossa equipe. Continuamos abertos a outras sugestões e/ou reclamações.<br />Muito obrigada por usar nosso site!</label>
+              </div>
+              <form onSubmit={this.sendMessage}>
+                <div>
+                  <label class="label">Mensagem:</label>
+                  <div style={{textAlign: "center"}}>
+                    <textarea class="textarea-contact" rows="6" cols="60"></textarea>
+                  </div>
+                </div>
+                <div>
+                  <button type='submit' class='btn-primary'>Enviar</button>
+                </div>
+              </form>
+            </div>,
     }
   }
 
@@ -30,34 +46,25 @@ export default class Contato extends Component {
         console.log(err);
       })
 
+      this.setState({desc: <div class="description">
+        <label>A OnService agradece a mensagem. Dentro de, no máximo, 3 dias, sua mensagem será respondida pela nossa equipe. Continuamos abertos a outras sugestões e/ou reclamações.<br />Muito obrigada por usar nosso site!</label>
+      </div>});
+
     }else{
       console.log("All the inputs are obrigatory");
     }
-
   }
 
   render() {
+    const {desc} = this.state;
     return(
-      <div class="container-fluid" id="contact-area">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-6" id="foto-contato">
-                <img src={sideForm} alt="Imagem do formulário" />
-            </div>
-            <div class="col-md-6" id='contact-form'>
-              <h2>Teve algum problema? Alguma sugestão?<br />Fale Conosco!</h2>
-              <small class='form-text text-muted'>A OnService tem a missão de garantir satisfação total para todos os usuários.<br />
-              Se teve qualquer tipo de problema com algum serviço contratado<br />ou se tiver quaisquer sugestões, não hesite!<br />Fale conosco.</small>
-              <form onSubmit={this.sendMessage} class="form-contato">
-                <input type="text" class='form-control' id="name" placeholder="Nome Completo" name='name' onChange={this.handleChange.bind(this)} value={this.state.name} />
-                <input type="text" class='form-control' id="city" placeholder="Cidade" name='city' onChange={this.handleChange.bind(this)} value={this.state.city} />
-                <input type="email" class='form-control' id="email" placeholder="E-mail" name='email' onChange={this.handleChange.bind(this)} value={this.state.email} />
-                <input type="text" class='form-control' id="subject" placeholder="Assunto" name='subject' onChange={this.handleChange.bind(this)} value={this.state.subject} />
-                <textarea class='form-control' rows='3' id="message" placeholder="Sua mensagem..." name='message' onChange={this.handleChange.bind(this)} value={this.state.message}></textarea>
-                <input type="submit" id='procurar-btn2' value="Enviar" />
-              </form>
-            </div>
-          </div>
+      <div class="row">
+        <div class="col">
+          1 de 2
+        </div>
+        <div class="col form-contact">
+          <h3>FALE CONOSCO</h3>
+          {desc}
         </div>
       </div>
     );
@@ -77,5 +84,4 @@ export default class Contato extends Component {
       this.setState({ message: event.target.value });
     }
   }
-
 }
