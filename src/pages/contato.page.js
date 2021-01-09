@@ -12,35 +12,20 @@ export default class Contato extends Component {
       email: "",
       subject: "",
       message: "",
-      desc: <div>
-              <div class="description">
-                <label>A OnService agradece a mensagem. Dentro de, no máximo, 3 dias, sua mensagem será respondida pela nossa equipe. Continuamos abertos a outras sugestões e/ou reclamações.<br />Muito obrigada por usar nosso site!</label>
-              </div>
-              <form onSubmit={this.sendMessage}>
-                <div>
-                  <label class="label">Mensagem:</label>
-                  <div style={{textAlign: "center"}}>
-                    <textarea class="textarea-contact" rows="6" cols="60"></textarea>
-                  </div>
-                </div>
-                <div>
-                  <button type='submit' class='btn-primary'>Enviar</button>
-                </div>
-              </form>
-            </div>,
+      desc: "",
     }
   }
 
   sendMessage = (e) => {
     e.preventDefault();
 
-    if(this.state.name !== "" && this.state.city !== "" && this.state.email !== "" && this.state.subject !== "" && this.state.message !== ""){
+    if(this.state.name !== "" && this.state.email !== "" && this.state.message !== ""){
       const data = this.state
 
       axios.post(process.env.REACT_APP_MAIL_URL, data)
       .then(res => {
         console.log(res)
-        this.setState({ name: "", city: "", email: "", subject: "", message: "" });
+        this.setState({ name: "", email: "", message: "" });
         return res.json();
       }).catch(err => {
         console.log(err);
@@ -64,7 +49,35 @@ export default class Contato extends Component {
         </div>
         <div class="col form-contact">
           <h3>FALE CONOSCO</h3>
-          {desc}
+          <div>
+            <div class="description">
+              <label>A OnService agradece a mensagem. Dentro de, no máximo, 3 dias, sua mensagem será respondida pela nossa equipe. Continuamos abertos a outras sugestões e/ou reclamações.<br />Muito obrigada por usar nosso site!</label>
+            </div>
+            <form onSubmit={this.sendMessage}>
+              <div class="form-item">
+                <label class="label">Nome:</label>
+                <div style={{textAlign: "center"}}>
+                  <input id="name" name="name" type="text" placeholder="Insira seu nome completo" onChange={this.handleChange.bind(this)} value={this.state.name} />
+                </div>
+              </div>
+              <div class="form-item">
+                <label class="label">Email:</label>
+                <div style={{textAlign: "center"}}>
+                  <input id="email" name="email" type="text" placeholder="Insira seu email" onChange={this.handleChange.bind(this)} value={this.state.email} />
+                </div>
+              </div>
+              <div class="form-item">
+                <label class="label">Mensagem:</label>
+                <div style={{textAlign: "center"}}>
+                  <textarea id="message" name="message" class="textarea-contact" rows="6" cols="60" placeholder="Escreva sua mensagem" onChange={this.handleChange.bind(this)} value={this.state.message}></textarea>
+                </div>
+              </div>
+              <div>
+                <button type='submit' class='btn-primary'>Enviar</button>
+              </div>
+            </form>
+            {desc}
+          </div>
         </div>
       </div>
     );

@@ -1,320 +1,105 @@
-@media only screen and (max-width: 1280px) {
-  .register-right {
-    border: none;
-    box-shadow: 0px 0px 5pt rgba(191, 191, 191, 0.6);
-    border-top-left-radius: 0.65cm;
-    border-bottom-left-radius: 0.65cm;
-    border-top-right-radius: 0.65cm;
-    border-bottom-right-radius: 0.65cm;
-    padding-bottom: 0.5cm;
-    margin-bottom: 0.5cm;
-    width: 11.93cm;
-  }
-
-  .form-item {
-    margin-bottom: 0.2cm;
-  }
-
-  .register-right h2 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 16pt;
-    text-align: center;
-    margin-top: 0.5cm;
-    letter-spacing: 6px;
-    color: rgb(237, 125, 49);
-  }
-
-  .register-right label {
-    margin-left: 0.605cm;
-    font-family: GlacialIndifference;
-    font-size: 12pt;
-  }
-
-  .register-right input,
-  .register-right select {
-    border-radius: 0.15cm;
-    border-style: solid;
-    border-color: rgb(118, 113, 113);
-    border-width: 0.5pt;
-    width: 10.72cm;
-    height: 0.9cm;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    font-family: GlacialIndifference;
-    padding-left: 15px;
-    font-size: 10pt;
-    background-color: white;
-    color: rgb(118,113,113);
-  }
-
-  .register-right input[type=file]::-webkit-file-upload-button {
-    background-color: rgb(175,171,171);
-    border: 1px solid rgb(64, 64, 64);
-    outline: none;
-    cursor: pointer;
-    font-size: 10pt;
-    width: 3.11cm;
-    height: 0.68cm;
-    color: rgb(118,113,113);
-    margin-right: 0.4cm;
-  }
-
-  .register-right input[type="file"]::file-selector-button{
-    background-color: rgb(175,171,171);
-    border: 1px solid rgb(64, 64, 64);
-    outline: none;
-    cursor: pointer;
-    font-size: 10pt;
-    width: 3.11cm;
-    height: 0.68cm;
-    color: rgb(118,113,113);
-    margin-right: 0.4cm;
-  }
-
-  .register-right input[type="file"] {
-    padding-left: 5px;
-    padding-top: 4px;
-  }
-
-  .register-right small {
-    font-family: GlacialIndifference;
-    font-size: 8pt;
-    margin-left: 0.605cm;
-  }
-
-  .register-right .btn-primary {
-    text-align: center;
-    border-radius: 0.15cm;
-    border-width: 0.5pt;
-    border-style: solid;
-    border-color: rgb(237,125,49);
-    font-size: 12pt;
-    width: 3.5cm;
-    height: 0.9cm;
-    background: rgb(237,125,49);
-    font-family: GlacialIndifference;
-    color: rgb(255,255,255);
-    margin-top: 0.2cm;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0.5cm;
-    display:block;
-    font-weight: bold;
-  }
+.register-right {
+  border: none;
+  box-shadow: 0px 0px 5pt rgba(191, 191, 191, 0.6);
+  border-top-left-radius: 0.65cm;
+  border-bottom-left-radius: 0.65cm;
+  border-top-right-radius: 0.65cm;
+  border-bottom-right-radius: 0.65cm;
+  margin-bottom: 0.5cm;
+  width: 11.93cm;
 }
 
-@media only screen and (min-width: 1281px) and (max-width: 1366px) {
-  .register-right {
-    border: none;
-    box-shadow: 0px 0px 5pt rgba(191, 191, 191, 0.6);
-    border-top-left-radius: 0.65cm;
-    border-bottom-left-radius: 0.65cm;
-    border-top-right-radius: 0.65cm;
-    border-bottom-right-radius: 0.65cm;
-    margin-bottom: 0.5cm;
-    width: 11.93cm;
-  }
-
-  .form-item {
-    margin-bottom: 0.3cm;
-  }
-
-  .register-right h2 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 16pt;
-    text-align: center;
-    margin-top: 1cm;
-    letter-spacing: 6px;
-    color: rgb(237, 125, 49);
-  }
-
-  .register-right label {
-    margin-left: 0.605cm;
-    margin-bottom: 2px;
-    font-family: GlacialIndifference;
-    font-size: 12pt;
-  }
-
-  .register-right input,
-  .register-right select {
-    border-radius: 0.15cm;
-    border-style: solid;
-    border-color: rgb(118, 113, 113);
-    border-width: 0.5pt;
-    width: 11.8cm;
-    height: 0.9cm;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    font-family: GlacialIndifference;
-    padding-left: 15px;
-    font-size: 10pt;
-    background-color: white;
-    color: rgb(118,113,113);
-  }
-
-  .register-right input[type=file]::-webkit-file-upload-button {
-    background-color: rgb(175,171,171);
-    border: 1px solid rgb(64, 64, 64);
-    outline: none;
-    cursor: pointer;
-    font-size: 10pt;
-    width: 3.11cm;
-    height: 0.68cm;
-    color: rgb(118,113,113);
-    margin-right: 0.4cm;
-  }
-
-  .register-right input[type="file"]::file-selector-button{
-    background-color: rgb(175,171,171);
-    border: 1px solid rgb(64, 64, 64);
-    outline: none;
-    cursor: pointer;
-    font-size: 10pt;
-    width: 3.11cm;
-    height: 0.68cm;
-    color: rgb(118,113,113);
-    margin-right: 0.4cm;
-  }
-
-  .register-right input[type="file"] {
-    padding-left: 5px;
-    padding-top: 4px;
-  }
-
-  .register-right small {
-    font-family: GlacialIndifference;
-    font-size: 8pt;
-    margin-left: 0.605cm;
-  }
-
-  .register-right .btn-primary {
-    text-align: center;
-    border-radius: 0.15cm;
-    border-width: 0.5pt;
-    border-style: solid;
-    border-color: rgb(237,125,49);
-    font-size: 12pt;
-    width: 3.5cm;
-    height: 0.9cm;
-    background: rgb(237,125,49);
-    font-family: GlacialIndifference;
-    color: rgb(255,255,255);
-    margin-top: 0.4cm;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0.5cm;
-    display:block;
-    font-weight: bold;
-  }
+.form-item {
+  margin-bottom: 0.3cm;
 }
 
-@media only screen and (min-width: 1367px) and (max-width: 1920px) {
-  .register-right {
-    border: none;
-    box-shadow: 0px 0px 5pt rgba(191, 191, 191, 0.6);
-    border-top-left-radius: 1.3cm;
-    border-bottom-left-radius: 1.3cm;
-    border-top-right-radius: 1.3cm;
-    border-bottom-right-radius: 1.3cm;
-    padding-bottom: 0.5cm;
-    margin-bottom: 0.5cm;
-    width: 11.93cm;
-  }
+.register-right h2 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 16pt;
+  text-align: center;
+  margin-top: 1cm;
+  letter-spacing: 6px;
+  color: rgb(237, 125, 49);
+}
 
-  .form-item {
-    margin-bottom: 0.7cm;
-  }
+.register-right label {
+  margin-left: 0.605cm;
+  margin-bottom: 2px;
+  font-family: GlacialIndifference;
+  font-size: 12pt;
+}
 
-  .register-right h2 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 32pt;
-    font-weight: lighter;
-    text-align: center;
-    margin-top: 1.5cm;
-    letter-spacing: 8px;
-    color: rgb(237, 125, 49);
-  }
+.register-right input,
+.register-right select {
+  border-radius: 0.15cm;
+  border-style: solid;
+  border-color: rgb(118, 113, 113);
+  border-width: 0.5pt;
+  width: 14cm;
+  height: 0.9cm;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  font-family: GlacialIndifference;
+  padding-left: 15px;
+  font-size: 10pt;
+  background-color: white;
+  color: rgb(118,113,113);
+}
 
-  .register-right label {
-    margin-left: 1.1cm;
-    font-family: GlacialIndifference;
-    font-size: 22pt;
-  }
+.register-right input[type=file]::-webkit-file-upload-button {
+  background-color: rgb(175,171,171);
+  border: 1px solid rgb(64, 64, 64);
+  outline: none;
+  cursor: pointer;
+  font-size: 10pt;
+  width: 3.11cm;
+  height: 0.68cm;
+  color: rgb(118,113,113);
+  margin-right: 0.4cm;
+}
 
-  .register-right input,
-  .register-right select {
-    border-radius: 0.3cm;
-    border-style: solid;
-    border-color: rgb(118, 113, 113);
-    border-width: 0.5pt;
-    width: 18.8cm;
-    height: 1.7cm;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    font-family: GlacialIndifference;
-    padding-left: 15px;
-    font-size: 18pt;
-    background-color: white;
-    color: rgb(118,113,113);
-  }
+.register-right input[type="file"]::file-selector-button{
+  background-color: rgb(175,171,171);
+  border: 1px solid rgb(64, 64, 64);
+  outline: none;
+  cursor: pointer;
+  font-size: 10pt;
+  width: 3.11cm;
+  height: 0.68cm;
+  color: rgb(118,113,113);
+  margin-right: 0.4cm;
+}
 
-  .register-right input[type=file]::-webkit-file-upload-button {
-    background-color: rgb(175,171,171);
-    border: 1px solid rgb(64, 64, 64);
-    outline: none;
-    cursor: pointer;
-    font-size: 20pt;
-    width: 5.5cm;
-    height: 1.37cm;
-    color: rgb(118,113,113);
-    margin-right: 0.4cm;
-  }
+.register-right input[type="file"] {
+  padding-left: 5px;
+  padding-top: 4px;
+}
 
-  .register-right input[type="file"]::file-selector-button{
-    background-color: rgb(175,171,171);
-    border: 1px solid rgb(64, 64, 64);
-    outline: none;
-    cursor: pointer;
-    font-size: 20pt;
-    width: 5.5cm;
-    height: 1.37cm;
-    color: rgb(118,113,113);
-    margin-right: 0.4cm;
-  }
+.register-right small {
+  font-family: GlacialIndifference;
+  font-size: 8pt;
+  margin-left: 0.605cm;
+}
 
-  .register-right input[type="file"] {
-    padding-left: 5px;
-    padding-top: 4px;
-  }
-
-  .register-right small {
-    font-family: GlacialIndifference;
-    font-size: 14pt;
-    margin-left: 1.1cm;
-  }
-
-  .register-right .btn-primary {
-    text-align: center;
-    border-radius: 0.3cm;
-    border-width: 0.5pt;
-    border-style: solid;
-    border-color: rgb(237,125,49);
-    font-size: 24pt;
-    width: 7.5cm;
-    height: 1.7cm;
-    background: rgb(237,125,49);
-    font-family: GlacialIndifference;
-    color: rgb(255,255,255);
-    margin-top: 0.4cm;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0.5cm;
-    display:block;
-    font-weight: bold;
-  }
+.register-right .btn-primary {
+  text-align: center;
+  border-radius: 0.15cm;
+  border-width: 0.5pt;
+  border-style: solid;
+  border-color: rgb(237,125,49);
+  font-size: 12pt;
+  width: 3.5cm;
+  height: 0.9cm;
+  background: rgb(237,125,49);
+  font-family: GlacialIndifference;
+  color: rgb(255,255,255);
+  margin-top: 0.4cm;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5cm;
+  display:block;
+  font-weight: bold;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
