@@ -10,20 +10,34 @@ export default class Footer extends Component {
       <div>
         <footer>
           <div class="container-fluid">
-            <img src={logo} alt="Logo OnService" />
-            <p>Nossa missão é ser uma plataforma que simplifique e facilite o contato entre o prestador de serviços e<br />
-              o contratante. Ser uma rede que reúne um grande leque de profissionais, facilitando a conexão<br />
-              daquele que melhor satisfaça as necessidades do usuário.</p>
-            <ul class="social">
-              <li><a href="https://www.facebook.com/OnServiceOficial"><FontAwesomeIcon icon={['fab', 'facebook']} /></a></li>
-              <li><a href="https://www.instagram.com/onserviceoficial/"><FontAwesomeIcon icon={['fab', 'instagram']} /></a></li>
-              <li><a href="https://www.linkedin.com/company/onserviceoficial"><FontAwesomeIcon icon={['fab', 'linkedin']} /></a></li>
-            </ul>
+            <div class="row row-size">
+              <div class="col">
+                <label class="footer-title">Informações</label><br />
+                <label class="footer-content">Como utilizar o site</label><br />
+                <label class="footer-content">Como utilizar o app</label><br />
+                <label class="footer-content">Fale conosco</label>
+              </div>
+              <div class="col">
+                <label class="footer-title">OnService</label><br />
+                <label class="footer-content">Sobre a OnService</label><br />
+                <label class="footer-content">Fale conosco</label><br />
+                <label class="footer-content">Anuncie com a gente</label>
+              </div>
+              <div class="col">
+                <label class="footer-title-2">Confira</label>
+                <ul class="social">
+                  <li><a href="https://www.facebook.com/OnServiceOficial"><FontAwesomeIcon icon={['fab', 'facebook']} size="lg"/></a></li>
+                  <li><a href="https://www.instagram.com/onserviceoficial/"><FontAwesomeIcon icon={['fab', 'instagram']} size="lg"/></a></li>
+                  <li><a href="https://www.linkedin.com/company/onserviceoficial"><FontAwesomeIcon icon={['fab', 'linkedin']} size="lg"/></a></li>
+                </ul>
+              </div>
+            </div>
+            <hr />
+            <div class="socket">
+              <label>O uso deste site está sujeito aos <a href="">Termos de uso</a> e <a href="">Política de privacidade</a>.</label>
+            </div>
           </div>
         </footer>
-        <div class="socket">
-          <a href="https://onservicebr.com">OnService &copy;, todos os direitos reservados</a>
-        </div>
       </div>
     )
   }
