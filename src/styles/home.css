@@ -1,74 +1,93 @@
-.top-side {
+.homephrase{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-family: GlacialIndifference;
+
+}
+.h1-home{
+	font-size: 24pt;
+	color: rgb(64,64,64);
+}
+.h2-home{
+	font-size: 11pt;
+	letter-spacing: 4px;
+	color: rgb(118,113,113);
+}
+#button1-search-home{
+  text-align: left;
+  border-radius: 0.15cm;
+  border-width: 0.5pt;
+  border-style: solid;
+  border-color: rgb(118,113,113);
+  font-size: 12pt;
+  background: rgb(255,255,255);
+  font-family: GlacialIndifference;
+  color: rgb(175,171,171);
+  width: 44%;
+  padding: 0.8%;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 1.5%
+}
+#button2-search-home{
   text-align: center;
+  border-radius: 0.15cm;
+  border-width: 0.5pt;
+  border-style: solid;
+  border-color: rgb(237,125,49);
+  font-size: 12pt;
+  background: rgb(237,125,49);
+  font-family: GlacialIndifference;
+  color: rgb(255,255,255);
+  width: 10%;
+  padding: 0.8%;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 1.5%
 }
 
-.top-side img {
-  width: 400px;
+#text-claudia{
+	margin-left: 105px;
+	margin-top: 72px;
 }
 
-#slogan {
-  letter-spacing: 8px;
-  padding-left: 15px;
+#text-h3-home{
+	font-family: GlacialIndifference;
+	font-size: 18pt;
 }
 
-.row {
-  margin-top: 50px;
+#text-h4-home{
+	font-family: GlacialIndifference;
+	font-size: 12pt;
+	color: rgb(118,113,113);
 }
 
-.texto-home {
+#button3-register-home{
   text-align: center;
-  letter-spacing: 8px;
+  border-radius: 0.15cm;
+  border-width: 0.5pt;
+  border-style: solid;
+  border-color: rgb(237,125,49);
+  font-size: 12pt;
+  background: rgb(237,125,49);
+  font-family: GlacialIndifference;
+  color: rgb(255,255,255);
+  width: 75%;
+  padding: 0.8%;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 5px;
+	position: relative;
 }
 
-#label-home {
-  margin-top: 120px;
-  margin-bottom: 20px;
+#mouse-pointer{
+	position: absolute;
+	right: -4px;
+	bottom: -10px;
 }
 
-#btn-home {
-  margin-right: 15px;
-}
-
-#procurar-lupa {
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border: 1px solid rgba(38, 38, 38, 0.1);
-    border-right-color: rgba(0, 0, 0, 0);
-    color: #262626;
-    height: 40px;
-    background-color: white;
-    padding-top: 5px;
-    letter-spacing: 2px;
-    font-family: serif;
-}
-
-#lupa {
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  border: 1px solid rgba(38, 38, 38, 0.1);
-  border-left-color: rgba(0, 0, 0, 0);
-  height: 40px;
-  margin-bottom: -10px;
-  padding: 0 5px;
-}
-
-.destaques {
-  text-align: center;
-  font-size: 40px;
-  letter-spacing: 3px;
-}
-
-.sobre {
-  font-size: 64px;
-}
-
-.sobre-itens {
-  text-align: center;
-  margin-bottom: 50px;
-  font-size: 32px;
-}
-
-.caixa {
-  border: 10px solid #ED7D31;
-  margin-top: 12%;
+#claudia{
+	margin-left: 60px;
 }

@@ -1,63 +1,63 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "../styles/home.css";
-import logo from '../assets/Logo - Laranja.png';
-import bonecoHome from '../assets/boneco_home.png';
-import bonecoOlhando from '../assets/undraw_guy_looking.png';
+import Claudia from '../assets/Claudia-Fundo-Laranja.png';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class Home extends Component {
   render() {
     return(
-      <>
-        <div class="container-fluid">
-          <div class="top-side">
-            <img src={logo} />
-          </div>
-          <div class="top-side">
-            <label id="slogan">SERVINDO BEM, SERVINDO SEMPRE!</label>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6">
-              <img src={bonecoHome} />
+		<div>
+			<div class="homephrase">
+				<label class="h1-home">Nunca foi tão fácil <span style={{color:"rgb(237,125,49)"}}>contratar</span> alguém!</label>
+			</div>
+			<div class="homephrase">
+				<label class="h2-home">Procure um profissional para sua necessidade</label>
+			</div>
+			<div class="homephrase">
+				<form method="get" action="/contrate">
+				  <button id="button1-search-home" type="submit">
+						<FontAwesomeIcon icon={['fas', 'search']} size="lg" color="rgb(237,125,49)"/>
+						&nbsp; &nbsp; Buscar por um profissional
+				  </button>
+				  <button id="button2-search-home" type="submit">
+						Buscar
+				  </button>
+				</form>
+			</div>
+      <div>
+      <br />
+      <br />
+      </div>
+      <div class="row">
+        <div class="col-5">
+          <div id="text-claudia">
+            <div id="text-h3-home">
+              <p><span style={{color:"rgb(237,125,49)"}}>Cadastra-se</span> já e<br />
+              receba <span style={{color:"rgb(237,125,49)"}}>novos clientes</span>!</p>
             </div>
-            <div class="col-md-6 texto-home">
-              <div id="label-home">
-                <label>Encontre o melhor profissional para sua necessidade!</label>
-              </div>
-              <div id="btn-home">
-                <button id="procurar-lupa">Procure profissionais agora!</button>
-                <FontAwesomeIcon id="lupa" icon={['fa', 'search']} size="2x"/>
-              </div>
+            <div id="text-h4-home">
+              <p>Impulsione o seu negócio.<br />
+              A OnService divulga o seu perfil para<br />
+              milhares de clientes. E o melhor, é <span style={{color:"rgb(237,125,49)"}}>grátis</span>!</p>
             </div>
-          </div>
-
-          <div class="destaques">
-            <label>Destaques</label>
-          </div>
-
-          <div class="sobre">
-            <label>Quem somos nós?</label>
-            <div class="row">
-              <div class="col-md-6 sobre-itens">
-                <img src={bonecoOlhando} alt=""/>
-              </div>
-              <div class="col-md-6 sobre-itens">
-                <div class="caixa">
-                  <label>A OnService é uma plataforma digital com o propósito de facilitar a contratação de profissionais autônomos</label>
-                </div>
-                <div class="caixa">
-                  <label>Divulgue seu serviço</label>
-                </div>
-                <div class="caixa">
-                  <label>Seja contratado por pessoas da sua região</label>
-                </div>
-              </div>
-            </div>
+            <form method="get" action="/anuncie">
+              <button id="button3-register-home">
+                Cadastre-se na OnService Grátis
+                <FontAwesomeIcon id="mouse-pointer" icon={['fas', 'mouse-pointer']} size="lg" color="rgb(64,64,64)"/>
+              </button>
+            </form>
           </div>
         </div>
-      </>
+        <div class="col-7">
+          <img id="claudia" src={Claudia} width="500px"/>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+		</div>
     )
   }
 }
