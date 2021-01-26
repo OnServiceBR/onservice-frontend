@@ -12,5 +12,38 @@
 .h2-home{
 	font-size: 11pt;
 	letter-spacing: 4px;
-	color: rgb(118,113,113);
+	color: rgb(118,113,113);	
+}
+#button1-search-home{
+  text-align: left;
+  border-radius: 0.3cm;
+  border-width: 0.5pt;
+  border-style: solid;
+  border-color: rgb(118,113,113);
+  font-size: 12pt;
+  background: rgb(255,255,255);
+  font-family: GlacialIndifference;
+  color: rgb(175,171,171);
+  width: 44%;
+  padding: 0.8%;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 1.5%
+}
+#button2-search-home{
+  text-align: center;
+  border-radius: 0.3cm;
+  border-width: 0.5pt;
+  border-style: solid;
+  border-color: rgb(237,125,49);
+  font-size: 12pt;
+  background: rgb(237,125,49);
+  font-family: GlacialIndifference;
+  color: rgb(255,255,255);
+  width: 10%;
+  padding: 0.8%;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 1.5%
 }
