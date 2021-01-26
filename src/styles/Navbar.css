@@ -1,7 +1,41 @@
-.navbar{
+.header{
   background-color: #ED7D31;
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
 }
-li a{
-  color: white !important;
-  font-size: 20px;
+
+@media only screen and (min-width: 1200px){
+  .header-container {
+    margin: auto;
+    max-width: 1200px;
+  }
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 992px){
+  .header-container {
+    margin: auto;
+    max-width: 992px;
+  }
+}
+
+.header-container{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.brand-logo{
+  display: inline-block;
+}
+
+.menu-items{
+  display: inline-block;
+  margin-left: 95px;
+}
+
+.header-container a{
+  color: white;
+  padding: 0px 24px;
+  font-size: 12pt;
 }

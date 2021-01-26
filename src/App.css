@@ -48,3 +48,12 @@ div {
     max-width: 960px;
   }
 }
+
+.wave-container{
+  position: sticky;
+  top: 70px;
+  z-index: 1;
+}
+
+.wave-container svg{
+}

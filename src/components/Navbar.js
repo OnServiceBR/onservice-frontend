@@ -1,44 +1,36 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 import logo from "../assets/Logo - Branco.png"
+import { ReactComponent as CloseMenu } from "../assets/heroicons-0.4.2/src/solid/x.svg";
+import { ReactComponent as MenuIcon } from "../assets/heroicons-0.4.2/src/solid/menu.svg";
 
 export default class Navbar extends Component {
+  constructor(){
+    super();
+    this.state = {
+      click: false,
+    }
+  }
+
+  handleClick = () => this.setState({click: !this.state.click});
+  closeMobileMenu = () => this.setState({click: false});
+
   render(){
     return(
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="/">
-          <img src={logo} alt="OnService" width="300" height="100" />
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li className="nav-item">
-              <Link to={"/"} className="nav-link">
-                Home<span class="sr-only">(current)</span>
-              </Link>
-            </li>
-            <li class="nav-item">
-              <Link to={"/contrate"} className="nav-link">
-                Contrate um prestador
-              </Link>
-            </li>
-            <li class="nav-item">
-              <Link to={"/anuncie"} className="nav-link">
-                Anuncie seu trabalho
-              </Link>
-            </li>
-            <li class="nav-item">
-              <Link to={"/contato"} className="nav-link">
-                Contato
-              </Link>
-            </li>
-          </ul>
+      <div class="header">
+        <div class="header-container">
+          <div class="brand-logo">
+            <img src={logo} width="250" />
+          </div>
+          <div class="menu-items">
+            <a href="/">HOME</a>
+            <a href="/contrate">CONTRATE UM PRESTADOR</a>
+            <a href="/anuncie">ANUNCIE SEU TRABALHO</a>
+            <a href="/contato">CONTATO</a>
+          </div>
         </div>
-      </nav>
+      </div>
     )
   }
 }
