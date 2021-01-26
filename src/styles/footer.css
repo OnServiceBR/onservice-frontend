@@ -57,5 +57,5 @@ ul.social li {
 
 .socket a {
   text-decoration: underline;
-  color: white;
+  color: white !important;
 }
