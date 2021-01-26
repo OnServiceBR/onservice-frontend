@@ -2,8 +2,8 @@
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-	font-family: "GlacialIndifference";
-	
+	font-family: GlacialIndifference;
+
 }
 .h1-home{
 	font-size: 24pt;
@@ -12,11 +12,11 @@
 .h2-home{
 	font-size: 11pt;
 	letter-spacing: 4px;
-	color: rgb(118,113,113);	
+	color: rgb(118,113,113);
 }
 #button1-search-home{
   text-align: left;
-  border-radius: 0.3cm;
+  border-radius: 0.15cm;
   border-width: 0.5pt;
   border-style: solid;
   border-color: rgb(118,113,113);
@@ -32,7 +32,7 @@
 }
 #button2-search-home{
   text-align: center;
-  border-radius: 0.3cm;
+  border-radius: 0.15cm;
   border-width: 0.5pt;
   border-style: solid;
   border-color: rgb(237,125,49);
@@ -46,4 +46,48 @@
   margin-bottom: 5px;
   margin-top: 5px;
   margin-left: 1.5%
+}
+
+#text-claudia{
+	margin-left: 105px;
+	margin-top: 72px;
+}
+
+#text-h3-home{
+	font-family: GlacialIndifference;
+	font-size: 18pt;
+}
+
+#text-h4-home{
+	font-family: GlacialIndifference;
+	font-size: 12pt;
+	color: rgb(118,113,113);
+}
+
+#button3-register-home{
+  text-align: center;
+  border-radius: 0.15cm;
+  border-width: 0.5pt;
+  border-style: solid;
+  border-color: rgb(237,125,49);
+  font-size: 12pt;
+  background: rgb(237,125,49);
+  font-family: GlacialIndifference;
+  color: rgb(255,255,255);
+  width: 75%;
+  padding: 0.8%;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 5px;
+	position: relative;
+}
+
+#mouse-pointer{
+	position: absolute;
+	right: -4px;
+	bottom: -10px;
+}
+
+#claudia{
+	margin-left: 60px;
 }
