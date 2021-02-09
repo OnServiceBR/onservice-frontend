@@ -37,7 +37,9 @@ div {
 
 @media only screen and (min-width: 1200px){
   .container-fluid {
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
     max-width: 1140px;
   }
 }
@@ -46,6 +48,7 @@ div {
   .container-fluid {
     margin: auto;
     max-width: 960px;
+    margin-bottom: 50px;
   }
 }
 
