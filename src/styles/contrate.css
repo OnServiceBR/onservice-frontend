@@ -1,0 +1,127 @@
+.search-box{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-family: GlacialIndifference;
+}
+
+#search-button-contrate{
+  text-align: center;
+  border-radius: 0.15cm;
+  border-width: 0.5pt;
+  border-style: solid;
+  border-color: rgb(237,125,49);
+  font-size: 12pt;
+  background: rgb(237,125,49);
+  font-family: GlacialIndifference;
+  color: rgb(255,255,255);
+  width: 10%;
+  padding: 0.8%;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 1.5%
+}
+
+#search-input-contrate{
+  border-style: none;
+  width: 93%;
+  font-family: GlacialIndifference;
+  margin-left: 3%
+}
+
+#search-input-contrate:focus{
+  outline-style: none;
+}
+
+#search-contrate{
+  display: inline-block;
+  border-color: rgb(118,113,113);
+  border-radius: 0.15cm 0.15cm 0.15cm 0.15cm;
+  border-style: solid solid solid solid;
+  border-width: 0.5pt;
+  width: 50%;
+  padding: 0.8%;
+}
+
+.search-tabs{
+  font-family: GlacialIndifference;
+  text-align: center;
+  margin-top: 30px;
+	font-size: 12pt;
+	color: rgb(64,64,64);
+}
+
+.search-tabs label{
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 10px;
+  border-bottom: solid rgb(175,171,171);
+}
+
+#contrate-category-label{
+  border-color: rgb(237,125,49);
+}
+#contrate-service-label{
+  border-color: rgb(175,171,171);
+}
+#contrate-job-label{
+  border-color: rgb(175,171,171);
+}
+
+.category-buttons{
+	width: 85%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.category-button{
+	width: 100%;
+	height: 112px;
+	margin-top: 7%;
+	border-style: none;
+	position: relative;
+	background-size: cover;
+	color: rgb(175, 171, 171);
+	font-family: GlacialIndifference;
+	font-size: 24pt;
+}
+
+.category-button:focus{
+	outline: none;
+	box-shadow: 0px 0px 5pt rgba(118, 113, 113, 0.6);
+}
+
+.category-button:hover{
+	color: rgb(233, 125, 49);
+}
+
+.category-button-image{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#tecnology-button{
+	background-image: url('../assets/Imagens Site/Tecnologia.png');
+}
+
+#maintenance-button{
+	background-image: url('../assets/Imagens Site/Manutenção.png');
+}
+
+#beauty-button{
+	background-image: url('../assets/Imagens Site/Beleza.png');
+}
+
+#teaching-button{
+	background-image: url('../assets/Imagens Site/Ensino.png');
+}
+
+#health-button{
+	background-image: url('../assets/Imagens Site/Saúde.png');
+}
+
+#event-button{
+	background-image: url('../assets/Imagens Site/Eventos.png');
+}

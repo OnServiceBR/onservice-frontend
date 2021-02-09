@@ -17,12 +17,12 @@ class ServicoDataService {
     return http.get("/servicos/ensino");
   }
 
-  getResidencial() {
-    return http.get("/servicos/residencial");
+  getTecnologia() {
+    return http.get("/servicos/tecnologia");
   }
 
-  getFreela() {
-    return http.get("/servicos/freelancer");
+  getEventos() {
+    return http.get("/servicos/eventos");
   }
 
   get(id) {
