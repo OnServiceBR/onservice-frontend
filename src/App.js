@@ -13,6 +13,7 @@ import Home from "./pages/home.page";
 import Contrate from "./pages/contrate.page";
 import Anuncie from "./pages/anuncie.page";
 import Contato from "./pages/contato.page";
+import Trabalhos from "./pages/trabalhos.page"
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route exact path="/contrate" component={Contrate} />
           <Route exact path="/anuncie" component={Anuncie} />
           <Route exact path="/contato" component={Contato} />
+          <Route exact path="/contrate/:job" component={Trabalhos} />
         </Switch>
       </div>
       <Footer />
