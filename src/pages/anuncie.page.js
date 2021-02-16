@@ -27,12 +27,13 @@ export default class Home extends Component {
       services: [],
       picture: undefined,
 
+      tecnologia: [],
       beleza: [],
       saude: [],
       manutencao: [],
       ensino: [],
+      eventos: [],
       residencial: [],
-      freelancer: []
     }
   }
 
@@ -145,6 +146,16 @@ export default class Home extends Component {
   }
 
   retrieveServicos() {
+    ServicoDataService.getTecnologia()
+      .then(res => {
+        this.setState({
+          tecnologia: res.data
+        });
+        // console.log(res.data);
+      })
+      .catch(e => {
+        console.log(e);
+      });
     ServicoDataService.getBeleza()
       .then(res => {
         this.setState({
@@ -185,20 +196,10 @@ export default class Home extends Component {
       .catch(e => {
         console.log(e);
       });
-    ServicoDataService.getResidencial()
+    ServicoDataService.getEventos()
       .then(res => {
         this.setState({
-          residencial: res.data
-        });
-        // console.log(res.data);
-      })
-      .catch(e => {
-        console.log(e);
-      });
-    ServicoDataService.getFreela()
-      .then(res => {
-        this.setState({
-          freelancer: res.data
+          eventos: res.data
         });
         // console.log(res.data);
       })
@@ -227,7 +228,7 @@ export default class Home extends Component {
   }
 
   render() {
-    const { cidades, beleza, manutencao, saude, ensino, residencial, freelancer } = this.state;
+    const { cidades, tecnologia, beleza, manutencao, saude, ensino, eventos } = this.state;
     return(
       <div class="row">
         <div class="col">
@@ -324,15 +325,15 @@ export default class Home extends Component {
                 </option>
               ))}
             </optgroup>
-            <optgroup label="Residencial">
-              {residencial && residencial.map((servico, index) => (
+            <optgroup label="Tecnologia">
+              {tecnologia && tecnologia.map((servico, index) => (
                 <option className={""} value={servico.id}>
                   {servico.name}
                 </option>
               ))}
             </optgroup>
-            <optgroup label="Freelancer">
-              {freelancer && freelancer.map((servico, index) => (
+            <optgroup label="Eventos">
+              {eventos && eventos.map((servico, index) => (
                 <option className={""} value={servico.id}>
                   {servico.name}
                 </option>
@@ -347,10 +348,10 @@ export default class Home extends Component {
           </div>
           <div class="form-item">
             <label for="w2w">Serviço exclusivo para mulheres ?</label>
-            <select id="w2w" class='' required>
+            <select id="w2w" class='' required onChange={this.handleChange.bind(this)}>
               <option value="" selected disabled hidden>Selecione uma opção</option>
-              <option>Sim</option>
-              <option>Não</option>
+              <option value="Sim">Sim</option>
+              <option value="Não">Não</option>
             </select>
           </div>
           <button type='button' onClick={this.savePrestador.bind(this)} class='btn-primary'>Registre-se</button>
