@@ -47,6 +47,10 @@
   color: rgb(118,113,113);
 }
 
+.form-item optgroup {
+  color: rgb(237, 125, 49);
+}
+
 .register-right input[type=file]::-webkit-file-upload-button {
   background-color: rgb(175,171,171);
   border: 1px solid rgb(64, 64, 64);
@@ -115,7 +119,8 @@
   color: rgb(175,171,171);
 }
 
-.register-right input:focus{
+.register-right input:focus,
+.register-right select:focus {
   outline: none;
   border-color: rgb(237, 125, 49);
   box-shadow: 0px 0px 5pt rgba(237, 125, 49, 0.6);
