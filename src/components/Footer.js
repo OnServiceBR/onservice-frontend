@@ -9,7 +9,7 @@ export default class Footer extends Component {
     return(
       <div>
         <footer>
-          <div class="container-fluid">
+          <div class="footer-container">
             <div class="row row-size">
               <div class="col">
                 <label class="footer-title">Informações</label><br />
