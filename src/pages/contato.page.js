@@ -59,16 +59,19 @@ function Contato() {
     }).then(res => res.json()).then(res => {
       
       if (res.success) {
-        if(name !== "" && email !== ""){
+        if(name !== "" && email !== "" && message !== ""){
           const data = {
             name: name,
-            email: email
+            email: email,
+            message: message
           }
     
           axios.post(process.env.REACT_APP_MAIL_URL, data)
           .then(res => {
-            console.log(res)
-            this.setState({ name: "", email: "", message: "" });
+            console.log(res);
+            setName("");
+            setEmail("");
+            setMessage("");
             return res.json();
           }).catch(err => {
             console.log(err);
