@@ -46,7 +46,7 @@ function Contato() {
 
   const submitData = token => {
     // call a backend API to verify reCAPTCHA response
-    fetch('http://localhost:8080/api/verify', {
+    fetch(process.env.REACT_APP_RECAPTCHA, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json"
