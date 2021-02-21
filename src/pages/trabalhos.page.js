@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "../styles/trabalhos.css";
-import Tecnologia from "../assets/Imagens Site/Tecnologia.png";
 import ServicoDataService from "../services/servico.service";
 
 export default class Home extends Component {
@@ -22,7 +21,7 @@ export default class Home extends Component {
   }
 
   retrieveServicos() {
-    if(this.props.match.params.job=="tecnologia"){
+    if(this.props.match.params.job==="tecnologia"){
       ServicoDataService.getTecnologia()
         .then(res => {
           this.setState({
@@ -34,7 +33,7 @@ export default class Home extends Component {
           console.log(e);
         });
     }
-    else if(this.props.match.params.job=="manutencao"){
+    else if(this.props.match.params.job==="manutencao"){
       ServicoDataService.getManutencao()
         .then(res => {
           this.setState({
@@ -46,7 +45,7 @@ export default class Home extends Component {
           console.log(e);
         });
     }
-    else if(this.props.match.params.job=="saude"){
+    else if(this.props.match.params.job==="saude"){
       ServicoDataService.getSaude()
         .then(res => {
           this.setState({
@@ -58,7 +57,7 @@ export default class Home extends Component {
           console.log(e);
         });
     }
-    else if(this.props.match.params.job=="ensino"){
+    else if(this.props.match.params.job==="ensino"){
       ServicoDataService.getEnsino()
         .then(res => {
           this.setState({
@@ -70,7 +69,7 @@ export default class Home extends Component {
           console.log(e);
         });
     }
-    else if(this.props.match.params.job=="beleza"){
+    else if(this.props.match.params.job==="beleza"){
       ServicoDataService.getBeleza()
         .then(res => {
           this.setState({
@@ -82,7 +81,7 @@ export default class Home extends Component {
           console.log(e);
         });
     }
-    else if(this.props.match.params.job=="eventos"){
+    else if(this.props.match.params.job==="eventos"){
       ServicoDataService.getEventos()
         .then(res => {
           this.setState({

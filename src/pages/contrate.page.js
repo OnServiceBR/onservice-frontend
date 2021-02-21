@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "../styles/contrate.css";
-import Tecnologia from "../assets/Imagens Site/Tecnologia.png";
 
 export default class Home extends Component {
   constructor(props){

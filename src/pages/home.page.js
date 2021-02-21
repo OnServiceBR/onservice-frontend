@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import "../styles/home.css";
 import Claudia from '../assets/Claudia-Fundo-Laranja.png';
 
@@ -51,7 +50,7 @@ export default class Home extends Component {
           </div>
         </div>
         <div class="col-7">
-          <img id="claudia" src={Claudia} width="500px"/>
+          <img id="claudia" src={Claudia} width="500px" alt="Home"/>
         </div>
       </div>
       <br />
