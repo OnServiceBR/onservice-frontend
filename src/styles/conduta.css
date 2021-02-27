@@ -1,0 +1,28 @@
+.title-conduta {
+    color: rgb(237, 125, 49);
+    margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-family: GlacialIndifference;
+}
+.title-conduta h2 {
+    font-size: 24pt;
+}
+
+.subtitle-conduta {
+    margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-family: GlacialIndifference;
+    font-size: 14pt;
+}
+.paragrafos-conduta {
+    margin-left: auto;
+	margin-right: auto;
+    font-family: GlacialIndifference;
+    font-size: 12pt;
+}
+.sub-clausulas-conduta {
+    font-family: GlacialIndifference;
+    padding-left: 90px;
+}

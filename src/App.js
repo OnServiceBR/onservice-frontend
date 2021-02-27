@@ -14,6 +14,7 @@ import Contrate from "./pages/contrate.page";
 import Anuncie from "./pages/anuncie.page";
 import Contato from "./pages/contato.page";
 import Trabalhos from "./pages/trabalhos.page"
+import Conduta from "./pages/conduta.page"
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route exact path="/anuncie" component={Anuncie} />
           <Route exact path="/contato" component={Contato} />
           <Route exact path="/contrate/:job" component={Trabalhos} />
+          <Route exact path="/codigo-de-conduta/" component={Conduta} />
         </Switch>
       </div>
       <Footer />
