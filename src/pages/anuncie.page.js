@@ -12,7 +12,7 @@ export default class Home extends Component {
       name: "",
       cpf: "",
       email: "",
-      age: "",
+      birthday: "",
       gender: "",
       phone: "",
       cep: "",
@@ -22,10 +22,12 @@ export default class Home extends Component {
       description: "",
       cidades: [],
       servicos: [],
+      picture: "",
+      w2w: "",
 
       cities: [],
       services: [],
-      picture: undefined,
+      file: undefined,
 
       tecnologia: [],
       beleza: [],
@@ -45,8 +47,8 @@ export default class Home extends Component {
       this.setState({ cpf: event.target.value });
     } else if (field === "email") {
       this.setState({ email: event.target.value });
-    } else if (field === "age") {
-      this.setState({ age: event.target.value });
+    } else if (field === "birthday") {
+      this.setState({ birthday: event.target.value });
     } else if (field === "gender") {
       this.setState({ gender: event.target.value });
     } else if (field === "phone") {
@@ -63,12 +65,14 @@ export default class Home extends Component {
       this.setState((state) => { cities: state.cities.push(parseInt(event.target.value)) });
     } else if (field === "services") {
       this.setState((state) => { services: state.services.push(parseInt(event.target.value)) });
-    } else if (field === "picture") {
-      this.setState({ picture: event.target.files });
+    } else if (field === "file") {
+      this.setState({ file: event.target.files });
     } else if (field === "description") {
       this.setState({ description: event.target.value });
+    } else if (field === "w2w") {
+      this.setState({ w2w: event.target.value });
     }
-    console.log(this.state)
+    // console.log(this.state)
   }
 
   componentDidMount() {
@@ -78,58 +82,59 @@ export default class Home extends Component {
 
   savePrestador = () => {
     // console.log(this.state.name)
-    var data = {
-      name: this.state.name,
-      cpf: this.state.cpf,
-      email: this.state.email,
-      age: this.state.age,
-      gender: this.state.gender,
-      phone: this.state.phone,
-      cep: this.state.cep,
-      city: this.state.city,
-      address: this.state.address,
-      complement: this.state.complement,
-      cidades: this.state.cities,
-      servicos: this.state.services,
-      description: this.state.description
-    };
+    const formData = new FormData()
+    formData.append("cpf", this.state.cpf)
+    formData.append('file', this.state.file[0])
 
-    let currentFile = this.state.picture[0];
-
-    PrestadorDataService.upload(currentFile)
+    PrestadorDataService.upload(formData)
       .then(res => {
-        console.log("Imagem enviada");
-      })
-      .catch(e => {
-        console.log(e);
-      })
+        console.log("Image Uploaded")
+        console.log(res.data)
+        var data = {
+          name: this.state.name,
+          cpf: this.state.cpf,
+          email: this.state.email,
+          birthday: this.state.birthday,
+          gender: this.state.gender,
+          phone: this.state.phone,
+          cep: this.state.cep,
+          city: this.state.city,
+          address: this.state.address,
+          complement: this.state.complement,
+          cidades: this.state.cities,
+          servicos: this.state.services,
+          description: this.state.description,
+          picture: res.data.filename,
+          w2w: this.state.w2w
+        };
+        console.log(data)
+        PrestadorDataService.create(data)
+          .then(res => {
+            this.setState({
+              id: res.data.id,
+              name: res.data.name,
+              cpf: res.data.cpf,
+              email: res.data.email,
+              birthday: res.data.birthday,
+              gender: res.data.gender,
+              phone: res.data.phone,
+              cep: res.data.cep,
+              city: res.data.city,
+              address: res.data.address,
+              complement: res.data.complement,
+              cities: res.data.cities,
+              services: res.data.services,
+              published: res.data.published,
 
-    PrestadorDataService.create(data)
-      .then(res => {
-        this.setState({
-          id: res.data.id,
-          name: res.data.name,
-          cpf: res.data.cpf,
-          email: res.data.email,
-          age: res.data.age,
-          gender: res.data.gender,
-          phone: res.data.phone,
-          cep: res.data.cep,
-          city: res.data.city,
-          address: res.data.address,
-          complement: res.data.complement,
-          cities: res.data.cities,
-          services: res.data.services,
-          published: res.data.published,
-
-          submitted: true
-        });
-        console.log(res.data);
-        this.newPrestador();
+              submitted: true
+            });
+            console.log(res.data);
+            this.newPrestador();
+          })
+          .catch(e => {
+            console.log(e);
+          });
       })
-      .catch(e => {
-        console.log(e);
-      });
   }
 
   retrieveCidades() {
@@ -214,7 +219,7 @@ export default class Home extends Component {
       name: "",
       cpf: "",
       email: "",
-      age: "",
+      birthday: "",
       gender: "",
       phone: "",
       cep: "",
@@ -249,8 +254,8 @@ export default class Home extends Component {
             <input id="email" type="email" class='' placeholder="Insira seu email mais utilizado" onChange={this.handleChange.bind(this)}/>
           </div>
           <div class="form-item">
-            <label for="age">Data de Nascimento:</label>
-            <input id="age" type="date" class='' required onChange={this.handleChange.bind(this)}/>
+            <label for="birthday">Data de Nascimento:</label>
+            <input id="birthday" type="date" class='' required onChange={this.handleChange.bind(this)}/>
           </div>
           <div class="form-item">
             <label for="gender">Gênero:</label>
@@ -342,16 +347,16 @@ export default class Home extends Component {
             </select>
           </div>
           <div class="form-item">
-            <label for="picture">Foto de Perfil:</label>
-            <input id="picture" type="file" name="file" class="" onChange={this.handleChange.bind(this)} />
+            <label for="file">Foto de Perfil:</label>
+            <input id="file" type="file" name="file" class="" onChange={this.handleChange.bind(this)} />
             <small class=''>*Insira uma foto que tenha fundo branco e mostre bem o seu rosto. Logotipos não são aceitos.</small>
           </div>
           <div class="form-item">
             <label for="w2w">Serviço exclusivo para mulheres ?</label>
             <select id="w2w" class='' required onChange={this.handleChange.bind(this)}>
               <option value="" selected disabled hidden>Selecione uma opção</option>
-              <option value="Sim">Sim</option>
-              <option value="Não">Não</option>
+              <option value={true}>Sim</option>
+              <option value={false}>Não</option>
             </select>
           </div>
           <button type='button' onClick={this.savePrestador.bind(this)} class='btn-primary'>Registre-se</button>
