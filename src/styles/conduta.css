@@ -16,6 +16,15 @@
 	font-family: GlacialIndifference;
     font-size: 14pt;
 }
+.itens-conduta {
+    padding-left: 47px;
+}
+.item-conduta {
+    width: 4.4%;
+}
+.text-item-conduta{
+    width: 95.6%;
+}
 .paragrafos-conduta {
     margin-left: auto;
 	margin-right: auto;
