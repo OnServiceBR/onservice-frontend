@@ -26,6 +26,14 @@ export default class Navbar extends Component {
             <a href="/anuncie">ANUNCIE SEU TRABALHO</a>
             <a href="/contato">CONTATO</a>
           </div>
+          <div class="right-buttons-navbar">
+            <div class="buttons-navbar">
+              <a id="help-navbar">?</a>
+            </div>
+            <div class="buttons-navbar">
+              <a id="entrar-navbar">Entrar</a>
+            </div>
+          </div>
         </div>
       </div>
     )

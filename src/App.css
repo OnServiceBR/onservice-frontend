@@ -30,11 +30,6 @@
   src: url(./styles/GlacialIndifference-Regular.otf);
 }
 
-div {
-  font-family: 'Bebas Neue', cursive;
-  color: #262626;
-}
-
 @media only screen and (min-width: 1200px){
   .container-fluid {
     margin-left: auto;
@@ -54,7 +49,7 @@ div {
 
 .wave-container{
   position: sticky;
-  top: 70px;
+  top: 68px;
   z-index: 1;
 }
 
