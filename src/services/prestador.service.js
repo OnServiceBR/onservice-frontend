@@ -13,20 +13,8 @@ class PrestadorDataService {
     return http.post("/prestadores", data);
   }
 
-  imgCreate(data) {
-    return http.post("/upload", data);
-  }
-  upload(file, onUploadProgress) {
-    let formData = new FormData();
-
-    formData.append("file", file);
-
-    return http.post("/upload", formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-      onUploadProgress,
-    });
+  upload(formData) {
+    return http.post("/upload", formData);
   }
 
   update(id, data) {
