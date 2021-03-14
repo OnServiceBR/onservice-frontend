@@ -27,15 +27,48 @@
 
 .brand-logo{
   display: inline-block;
+  width: 20%;
 }
 
 .menu-items{
   display: inline-block;
-  margin-left: 95px;
+  font-family: 'Bebas Neue', cursive;
+  width: 60%;
+  text-align: center;
 }
 
 .header-container a{
   color: white;
   padding: 0px 24px;
   font-size: 12pt;
+}
+
+.right-buttons-navbar{
+  display:inline-block;
+  width: 20%;
+  text-align: center;
+}
+
+.buttons-navbar{
+  display: inherit;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#help-navbar{
+  border-radius: 50%;
+  border-style: none;
+  background-color: white;
+  color: rgb(237, 125, 49);
+  font-size: 14pt;
+}
+
+#entrar-navbar{
+  border-radius: 0.15cm;
+  border-style: none;
+  background-color: white;
+  color: rgb(237, 125, 49);
+  font-size: 14pt;
+  font-family: GlacialIndifference;
+  letter-spacing: 1pt;
 }
