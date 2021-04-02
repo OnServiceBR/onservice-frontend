@@ -47,6 +47,10 @@
   color: rgb(118,113,113);
 }
 
+.register-right textarea {
+  width: 95%;
+}
+
 .form-item optgroup {
   color: rgb(237, 125, 49);
 }
@@ -85,8 +89,8 @@
   margin-right: 0.4cm;
 }
 
-.register-right input[type="file"]::file-selector-button{
-  background: #ffffff;
+.register-right input[type="file"]::file-selector-button:hover{
+  background:#ffffff;
   color: rgb(237, 125, 49);
   outline: none;
   border-color: rgb(237, 125, 49);

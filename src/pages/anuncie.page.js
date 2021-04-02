@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PrestadorDataService from "../services/prestador.service";
 import CidadeDataService from "../services/cidade.service";
 import ServicoDataService from "../services/servico.service";
+import Anuncieimagem from "../assets/Slide3.PNG";
 
 import "../styles/anuncie.css";
 
@@ -24,6 +25,8 @@ export default class Home extends Component {
       servicos: [],
       picture: "",
       w2w: "",
+     
+  
 
       cities: [],
       services: [],
@@ -237,7 +240,7 @@ export default class Home extends Component {
     return(
       <div class="row">
         <div class="col">
-          1 de 2
+          <img src={Anuncieimagem}width="500px"/>
         </div>
         <div class="col register-right">
           <h2>ANUNCIE-SE AQUI</h2>
@@ -250,8 +253,8 @@ export default class Home extends Component {
             <input id="cpf" type="text" class='' placeholder="Insira seu nome CPF" onChange={this.handleChange.bind(this)}/>
           </div>
           <div class="form-item">
-            <label for="email">Email:</label>
-            <input id="email" type="email" class='' placeholder="Insira seu email mais utilizado" onChange={this.handleChange.bind(this)}/>
+            <label for="email">E-mail:</label>
+            <input id="email" type="email" class='' placeholder="Insira seu e-mail mais utilizado" onChange={this.handleChange.bind(this)}/>
           </div>
           <div class="form-item">
             <label for="birthday">Data de Nascimento:</label>
@@ -268,7 +271,7 @@ export default class Home extends Component {
           </div>
           <div class="form-item">
             <label for="phone">Celular:</label>
-            <input id="phone" type="text" class='' placeholder="Insira seu número de celular" onChange={this.handleChange.bind(this)} />
+            <input id="phone" type="text" class='' placeholder="Insira somente os números do seu celular, com ddd" onChange={this.handleChange.bind(this)} />
             <small class=''>*É obrigatório que este número tenha Whatsapp</small>
           </div>
           <div class="form-item">
@@ -286,6 +289,10 @@ export default class Home extends Component {
           <div class="form-item">
             <label for="address">Endereço:</label>
             <input id="address" type="text" class='' placeholder="Insira sua rua/avenida e número" onChange={this.handleChange.bind(this)} />
+          </div>
+          <div class="form-item">
+            <label for="complement">Complemento:</label>
+            <input id="complement" type="text" class='' placeholder="Insira o complemento. Caso não tenha, preencha com 'nenhum'" onChange={this.handleChange.bind(this)} />
           </div>
           <div class="form-item">
             <label for="cities">Local de Trabalho:</label>
@@ -352,7 +359,13 @@ export default class Home extends Component {
             <small class=''>*Insira uma foto que tenha fundo branco e mostre bem o seu rosto. Logotipos não são aceitos.</small>
           </div>
           <div class="form-item">
-            <label for="w2w">Serviço exclusivo para mulheres ?</label>
+              <label class="label">Descrição do Serviço:</label>
+              <div style={{textAlign: "center"}}>
+                <textarea id="description" name="description" class="textarea-contact" rows="6" placeholder="Escreva uma descrição dos seus serviços, com o máximo de detalhes possível" onChange={this.handleChange.bind(this)}></textarea>
+              </div>
+            </div>
+          <div class="form-item">
+            <label for="w2w">Serviço exclusivo para mulheres?</label>
             <select id="w2w" class='' required onChange={this.handleChange.bind(this)}>
               <option value="" selected disabled hidden>Selecione uma opção</option>
               <option value={true}>Sim</option>

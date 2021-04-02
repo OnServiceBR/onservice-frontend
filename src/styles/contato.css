@@ -60,6 +60,8 @@
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 5px;
+  color: rgb(118,113,113);
+  font-size: 10pt;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -88,7 +90,7 @@
   border-width: 0.5pt;
   border-style: solid;
   border-color: rgb(237,125,49);
-  font-size: 12pt;
+  font-size: 10pt;
   background: rgb(237,125,49);
   font-family: GlacialIndifference;
   color: rgb(255,255,255);

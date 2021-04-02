@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/contato.css";
 import axios from "axios";
+import Contatoimagem from "../assets/Slide2.PNG"
 const SITE_KEY = "6Ldo9loaAAAAADMRNqgi69nefNZrZfluNekE9YJQ";
 
 function Contato() {
@@ -89,13 +90,13 @@ function Contato() {
   return (
     <div class="row">
       <div class="col">
-        1 de 2
+      <img src={Contatoimagem}width="500px"/>
       </div>
       <div class="col form-contact">
         <h3>FALE CONOSCO</h3>
         <div>
           <div class="description">
-            <label>A OnService agradece a mensagem. Dentro de, no máximo, 3 dias, sua mensagem será respondida pela nossa equipe. Continuamos abertos a outras sugestões e/ou reclamações.<br />Muito obrigada por usar nosso site!</label>
+            <label>Teve algum problema? Tem alguma sugestão? Este é um canal aberto da OnService com seus clientes, para garantir satisfação total para todos os usuários. Sempre utilize-o quando julgar necessário e não hesite em entrar em contato com a OnService.</label>
           </div>
           <form>
             <div class="form-item">
@@ -105,9 +106,9 @@ function Contato() {
               </div>
             </div>
             <div class="form-item">
-              <label class="label">Email:</label>
+              <label class="label">E-mail:</label>
               <div style={{textAlign: "center"}}>
-                <input id="email" name="email" type="text" placeholder="Insira seu email" onChange={e => setEmail(e.target.value)} value={email} />
+                <input id="email" name="email" type="text" placeholder="Insira seu e-mail" onChange={e => setEmail(e.target.value)} value={email} />
               </div>
             </div>
             <div class="form-item">
