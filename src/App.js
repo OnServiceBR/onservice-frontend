@@ -13,8 +13,10 @@ import Home from "./pages/home.page";
 import Contrate from "./pages/contrate.page";
 import Anuncie from "./pages/anuncie.page";
 import Contato from "./pages/contato.page";
-import Trabalhos from "./pages/trabalhos.page"
-import Conduta from "./pages/conduta.page"
+import Trabalhos from "./pages/trabalhos.page";
+import Conduta from "./pages/conduta.page";
+import Termos from "./pages/termos.page";
+import Privacidade from "./pages/privacidade.page";
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
           <Route exact path="/contato" component={Contato} />
           <Route exact path="/contrate/:job" component={Trabalhos} />
           <Route exact path="/codigo-de-conduta/" component={Conduta} />
+          <Route exact path="/termos-de-uso/" component={Termos} />
+          <Route exact path="/politica-de-privacidade/" component={Privacidade} />
         </Switch>
       </div>
       <Footer />
