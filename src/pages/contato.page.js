@@ -8,6 +8,7 @@ function Contato() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [subject, setSubject] = useState("");
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState(false);
   
@@ -109,6 +110,12 @@ function Contato() {
               <label class="label">E-mail:</label>
               <div style={{textAlign: "center"}}>
                 <input id="email" name="email" type="text" placeholder="Insira seu e-mail" onChange={e => setEmail(e.target.value)} value={email} />
+              </div>
+            </div>
+            <div class="form-item">
+              <label class="label">Assunto:</label>
+              <div style={{textAlign: "center"}}>
+                <input id="subject" name="subject" type="text" placeholder="Descreva o assunto" onChange={e => setEmail(e.target.value)} value={subject} />
               </div>
             </div>
             <div class="form-item">
