@@ -359,6 +359,16 @@ export default class Home extends Component {
               <option value={false}>Não</option>
             </select>
           </div>
+          <div class="form-item">
+            <div>
+            <label class="container">
+            <input type="checkbox"/>
+            <span class="checkmark"></span>
+          </label>
+            <label for="checkbox" style={{marginLeft:"10%"}}>Li e aceito o <a href="/codigo-de-conduta">Código de Conduta</a> e a <a href="/politica-de-privacidade">Política de Privacidade</a></label>
+            </div>
+            <p style={{fontSize:"8pt",marginLeft:"5.5%", marginRight:"3%"}}>Ao clicar no botão <span style={{fontWeight:"bold"}}>“Registrar-se”</span> você concorda e expressa sua vontade livre, consciente e informada de cumprir com e ser regido por nosso <a href="/codigo-de-conduta">Código de Conduta</a> e <a href="/politica-de-privacidade">Política de Privacidade</a></p>
+          </div>  
           <button type='button' onClick={this.savePrestador.bind(this)} class='btn-primary'>Registre-se</button>
         </div>
       </div>
