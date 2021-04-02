@@ -10,11 +10,11 @@ function Termos() {
             <div class="subtitle-termos"> 
                 Por favor, leia com atenção os Termos de Uso.
                 <br />Ao se cadastrar como Usuário na <span style={{color:"rgb(237,125,49)"}}>onservicebr.com</span>, você <span style={{color:"rgb(237,125,49)"}}>ESTÁ DE ACORDO COM OS TERMOS DE USO</span>.
-                <br />A recusa destes Termos de Uso do Website impedirá que você seja divulgado ou contrate Serviços pelo nosso Website. 
+                <br />A recusa destes Termos de Uso impedirá que você seja divulgado ou contrate Serviços pelo nosso Website. 
                 <br /> <br />
             </div>
             <div class="paragrafos-termos">
-                &emsp;&emsp;Ao assinar eletronicamente o presente documento ou clicar em “Eu aceito” durante o cadastro como Profissional Parceiro, o(a) Usuário(a) atesta que:
+                &emsp;&emsp;Ao assinar eletronicamente o presente documento ou clicar em “Eu aceito” durante o cadastro como Usuário, o(a) Usuário(a) atesta que:
                 <div class="row itens-termos">
                     <div class="column item-termos">
                         i.
@@ -41,7 +41,7 @@ function Termos() {
                 </div>
                 <p></p>
                 <p>&emsp;&emsp;As diretrizes abaixo apresentam condutas e circunstâncias que podem ocasionar sanções, incluindo a perda de acesso à plataforma da OnService. Recomendamos uma leitura completa deste documento. Sempre haverá eventos imprevistos que também poderão levar à aplicação de sanções, de modo que tais diretrizes serão atualizadas frequentemente.</p>
-                <p>&emsp;&emsp;No presente documento, o termo “<span style={{color:"rgb(237,125,49)"}}>Profissional Parceiro</span>” refere-se a pessoa que divulga seu contato e seu trabalho, denominado como “<span style={{color:"rgb(237,125,49)"}}>Serviço</span>”, na plataforma da OnService. “<span style={{color:"rgb(237,125,49)"}}>Contratante</span>” é uma pessoa cadastrada na plataforma que possui intuito de contratar um Serviços. “<span style={{color:"rgb(237,125,49)"}}>Usuário</span>” é o termo utilizado para referir-se à uma pessoa que usa a plataforma, seja para anunciar ou contratar um Serviços. O Código de Conduta é subdividido em “<span style={{color:"rgb(237,125,49)"}}>Cláusulas</span>”.</p>
+                <p>&emsp;&emsp;No presente documento, o termo “<span style={{color:"rgb(237,125,49)"}}>Profissional Parceiro</span>” refere-se a pessoa que divulga seu contato e seu trabalho, denominado como “<span style={{color:"rgb(237,125,49)"}}>Serviço</span>”, na plataforma da OnService. “<span style={{color:"rgb(237,125,49)"}}>Contratante</span>” é uma pessoa cadastrada na plataforma que possui intuito de contratar um Serviços. “<span style={{color:"rgb(237,125,49)"}}>Usuário</span>” é o termo utilizado para referir-se à uma pessoa que usa a plataforma, seja para anunciar ou contratar um Serviços. Os Termos de uso são subdivididos em “<span style={{color:"rgb(237,125,49)"}}>Cláusulas</span>”.</p>
                 <p><br /><span style={{color:"rgb(237,125,49)",fontWeight:"bold"}}>1. INTRODUÇÃO E DISPOSIÇÕES GERAIS</span></p>
                 <p>1.1. Bem-vindo à OnService! Estes são os Termos de Uso, os quais regem o acesso e uso, dentro do Brasil, dos Serviços prestados através de aplicação tecnológica, sítios da Internet e conteúdos relacionados aos Usuários que decidam anunciar ou contratar os Serviços da OnService, disponibilizados pela OnService Ltda. (“OnService”), inscrita no CNPJ/MF sob o nº 18.033.552/0001-61, com sede na Rua Sansão Alves dos Santos, nº 400, Bairro Cidade Monções, CEP 04571-090, Cidade e Estado de São Paulo, ou por qualquer de suas afiliadas. A OnService é proprietária da plataforma OnService e de todo o conteúdo hospedado sob o domínio  <span style={{color:"rgb(237,125,49)"}}>onservicebr.com.</span> Todos os direitos reservados.</p>
                 <div class="sub-clausulas-termos">
