@@ -5,6 +5,8 @@ import ServicoDataService from "../services/servico.service";
 import Anuncieimagem from "../assets/Slide3.PNG";
 
 import "../styles/anuncie.css";
+import { Multiselect } from 'multiselect-react-dropdown';
+import { faBorderNone } from "@fortawesome/free-solid-svg-icons";
 
 export default class Home extends Component {
   constructor(props){
@@ -39,9 +41,38 @@ export default class Home extends Component {
       ensino: [],
       eventos: [],
       residencial: [],
+
+      options: [{name: 'Confeiteira', id: 1, category:"Masculino"},{name: 'Assistente Técnico', id: 2, category:"Masculino"},{name: 'Passeadora de Cães', id: 3, category:"Feminino"},{name: 'Mestre em Geleias', id: 4},{name: 'Serviço de Impressão', id: 5},{name: 'Fred', id: 6},{name: 'Alek', id: 7},{name: 'Everson', id: 8},{name: 'Sam', id: 2},{name: 'Sam', id: 2},{name: 'Sam', id: 2},{name: 'Sam', id: 2},{name: 'Sam', id: 2},{name: 'Sam', id: 2},{name: 'Sam', id: 2},{name: 'Sam', id: 2},{name: 'Sam', id: 2},{name: 'Sam', id: 2},{name: 'Sam', id: 2},{name: 'Sam', id: 2},{name: 'Sam', id: 2},{name: 'Sam', id: 2},{name: 'Sam', id: 2},{name: 'Sam', id: 2},{name: 'Zoio', id: 10},{name: '@mélia', id: 11},{name: 'Enzo', id: 12},{name: 'Enzo', id: 13},{name: 'Enzo', id: 14},{name: 'Enzo', id: 3},{name: 'Enzo', id: 3}],
+    };
+    this.style = {
+      chips: {
+        background: "rgb(237, 125, 49)"
+      },
+      searchBox: {
+        "border": "0.5pt none rgb(118,113,113)",
+        "border-radius": "0.15cm",
+        padding: 0,
+      },
+      inputField: {
+        margin: 0,
+        "padding-left":"19px",
+        width: "100%",
+      },
+      multiselectContainer: {
+        color: "rgb(175,171,171)",
+        width: "95%",
+        "margin-right": "auto",
+        "margin-left": "auto"
+      },
+      groupHeading: {
+        color: "rgb(237, 125, 49)",
+      },
+      option: { // To change css for dropdown options
+        color: "rgb(118,113,113)",
+      },
     }
   }
-
+  
   handleChange(event) {
     const field = event.target.id;
     if (field === "name") {
@@ -235,6 +266,14 @@ export default class Home extends Component {
     });
   }
 
+  onSelect(selectedList, selectedItem) {
+  
+  }
+
+  onRemove(selectedList, removedItem) {
+    
+  }
+
   render() {
     const { cidades, tecnologia, beleza, manutencao, saude, ensino, eventos } = this.state;
     return(
@@ -383,6 +422,23 @@ export default class Home extends Component {
             <p style={{fontSize:"8pt",marginLeft:"5.5%", marginRight:"3%"}}>Ao clicar no botão <span style={{fontWeight:"bold"}}>“Registrar-se”</span> você concorda e expressa sua vontade livre, consciente e informada de cumprir com e ser regido por nosso <a href="/codigo-de-conduta">Código de Conduta</a> e <a href="/politica-de-privacidade">Política de Privacidade</a></p>
           </div>  
           <button type='button' onClick={this.savePrestador.bind(this)} class='btn-primary'>Registre-se</button>
+
+          <div class="form-item">
+            <Multiselect
+            options={this.state.options} // Options to display in the dropdown
+            selectedValues={this.state.selectedValue} // Preselected value to persist in dropdown
+            onSelect={this.onSelect} // Function will trigger on select event
+            onRemove={this.onRemove} // Function will trigger on remove event
+            displayValue="name" // Property name to display in the dropdown options
+            groupBy="category"
+            closeOnSelect={false}
+            showArrow={true}
+            id="MultipleDropdown"
+            style={this.style}
+            selectionLimit={4}
+            placeholder="Selecione de 1 a 4 profissões"
+            />
+          </div>
         </div>
       </div>
     )
