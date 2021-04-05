@@ -81,6 +81,11 @@
   margin-right: 2px;
 }
 
+.path:hover {
+  color: rgb(237,125,49);
+  text-decoration: none;
+}
+
 .path:first-letter {
   text-transform: uppercase;
 }
