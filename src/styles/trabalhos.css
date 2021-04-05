@@ -79,10 +79,16 @@
   font-size: 10pt;
   margin-left: 2px;
   margin-right: 2px;
+  text-decoration: none;
 }
 
 .path:first-letter {
   text-transform: uppercase;
+}
+
+.path:hover {
+  color: rgb(237,125,49);
+  text-decoration: none;
 }
 
 .job-hr {

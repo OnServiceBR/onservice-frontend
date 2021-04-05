@@ -120,7 +120,7 @@ export default class Home extends Component {
     const {trabalho} = this.state;
     return(
       <div>
-        <a class="path" href="/">Home</a><h2 class="path"> > </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> > </h2><h2 class="path">{this.state.trabalho}</h2>
+        <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><h2 class="path">{this.state.trabalho}</h2>
         <div class="search-box">
           <form method="get" action="/contrate">
             <div id="search-contrate">
