@@ -69,6 +69,22 @@
   border-color: rgb(175,171,171);
 }
 
+.path {
+  font-family: GlacialIndifference;
+  color: rgb(118,113,113);
+  margin-top: 0px;
+  margin-bottom: 35px;
+  display: inline-block;
+  text-transform: lowercase;
+  font-size: 10pt;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.path:first-letter {
+  text-transform: uppercase;
+}
+
 .job-hr {
   margin-left: auto;
   margin-right: auto;
@@ -126,6 +142,11 @@
   margin-top: 10px;
 }
 
+.job-name:hover {
+  color: rgb(237,125,49);
+  text-decoration: none;
+}
+
 .workers-count {
   font-family: GlacialIndifference;
   font-size: 10pt;
@@ -140,4 +161,16 @@
 
 .textcontainer{
   width: 50%;
+}
+
+/* smooth scroll link anchor*/
+html {
+	scroll-behavior: smooth;
+}
+
+/* smooth scroll link anchor - reduced motion*/
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
 }

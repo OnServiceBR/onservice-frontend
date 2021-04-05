@@ -100,6 +100,7 @@ export default class Home extends Component {
   render() {
     return(
       <div>
+        <a class="path" href="/">Home</a><h2 class="path"> > </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> > </h2><h2 class="path">{this.props.match.params.job}</h2>
         <div class="search-box">
           <form method="get" action="/contrate">
             <div id="search-contrate">
@@ -116,7 +117,6 @@ export default class Home extends Component {
           <label id="trabalhos-service-label">Serviços</label>
           <label id="trabalhos-job-label">Profissionais</label>
         </div>
-        <h2 class="search-box">{this.props.match.params.job}</h2>
         <div class="dictionary">
           |
           <a href="#names-A"> A </a>|
@@ -161,7 +161,9 @@ export default class Home extends Component {
               <img class="job-icon" src={privada}/>
             </div>
             <div class="column textcontainer">
-              <p class="job-name">Desentupidor(a)</p>
+              <a class="job-name" href="/contrate/manutencao/desentupidor">
+                <p class="job-name">Desentupidor(a)</p>
+              </a>
               <p class="workers-count">12 profissionais</p>
             </div>
           </div>
@@ -173,7 +175,9 @@ export default class Home extends Component {
               <img class="job-icon" src={privada}/>
             </div>
             <div class="column textcontainer">
+            <a class="job-name" href="/contrate/manutencao/eletricista">
               <p class="job-name">Eletricista</p>
+            </a>
               <p class="workers-count">11 profissionais</p>
             </div>
           </div>
@@ -183,7 +187,9 @@ export default class Home extends Component {
               <img class="job-icon" src={privada}/>
             </div>
             <div class="column textcontainer">
-              <p class="job-name">Encanador(a)</p>
+              <a class="job-name" href="/contrate/manutencao/eletricista">
+                <p class="job-name">Encanador(a)</p>
+              </a>
               <p class="workers-count">14 profissionais</p>
             </div>
           </div>
@@ -201,7 +207,9 @@ export default class Home extends Component {
               <img class="job-icon" src={privada}/>
             </div>
             <div class="column textcontainer">
-              <p class="job-name">Instalador(a) de eletrodomésticos</p>
+              <a class="job-name" href="/contrate/manutencao/instaladordeeletrodomesticos">
+                <p class="job-name">Instalador(a) de eletrodomésticos</p>
+              </a>
               <p class="workers-count">8 profissionais</p>
             </div>
           </div>
