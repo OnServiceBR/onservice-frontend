@@ -69,59 +69,113 @@
   border-color: rgb(175,171,171);
 }
 
-.category-buttons{
-	width: 85%;
-	margin-left: auto;
+.path {
+  font-family: GlacialIndifference;
+  color: rgb(118,113,113);
+  margin-top: 0px;
+  margin-bottom: 35px;
+  display: inline-block;
+  text-transform: lowercase;
+  font-size: 10pt;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.path:hover {
+  color: rgb(237,125,49);
+  text-decoration: none;
+}
+
+.path:first-letter {
+  text-transform: uppercase;
+}
+
+.job-hr {
+  margin-left: auto;
+  margin-right: auto;
+  width: 72%;
+  border-top-color: rgb(231,230,230);
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.dictionary {
+  width: 72%;
+  margin-left: auto;
 	margin-right: auto;
+	text-align: center;
+  color: rgb(175,171,171);
+  font-size: 12pt;
 }
 
-.category-button{
-	width: 100%;
-	height: 112px;
-	margin-top: 7%;
-	border-style: none;
-	position: relative;
-	background-size: cover;
-	color: rgb(175, 171, 171);
+.dictionary-letter {
+  font-family: GlacialIndifference;
+  width: 72%;
+  margin-left: 20%;
+  font-size: 18pt;
+  color:rgb(175,171,171);
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.dictionary a {
+  text-decoration: none;
+  width: 72%;
+  margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 	font-family: GlacialIndifference;
-	font-size: 24pt;
+  color: rgb(118,113,113);
+  font-size: 12pt;
 }
 
-.category-button:focus{
-	outline: none;
-	box-shadow: 0px 0px 5pt rgba(118, 113, 113, 0.6);
+.dictionary a:hover {
+  color: rgb(237,125,49);
 }
 
-.category-button:hover{
-	color: rgb(233, 125, 49);
+.job-icon {
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
-.category-button-image{
-	position: absolute;
-	top: 0;
-	left: 0;
+.job-name {
+  font-family: GlacialIndifference;
+  font-size: 12pt;
+  color: rgb(64,64,64);
+  margin-bottom: 6px;
+  margin-top: 10px;
 }
 
-#tecnology-button{
-	background-image: url('../assets/Imagens Site/Tecnologia.png');
+.job-name:hover {
+  color: rgb(237,125,49);
+  text-decoration: none;
 }
 
-#maintenance-button{
-	background-image: url('../assets/Imagens Site/Manutenção.png');
+.workers-count {
+  font-family: GlacialIndifference;
+  font-size: 10pt;
+  color: rgb(118,113,113);
+  margin-bottom: 10px;
 }
 
-#beauty-button{
-	background-image: url('../assets/Imagens Site/Beleza.png');
+.imagecontainer {
+  width: 7%;
+  margin-left: 23%;
 }
 
-#teaching-button{
-	background-image: url('../assets/Imagens Site/Ensino.png');
+.textcontainer{
+  width: 50%;
 }
 
-#health-button{
-	background-image: url('../assets/Imagens Site/Saúde.png');
+/* smooth scroll link anchor*/
+html {
+	scroll-behavior: smooth;
 }
 
-#event-button{
-	background-image: url('../assets/Imagens Site/Eventos.png');
+/* smooth scroll link anchor - reduced motion*/
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
 }
