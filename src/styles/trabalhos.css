@@ -143,21 +143,24 @@
 .job-name {
   font-family: GlacialIndifference;
   font-size: 12pt;
-  color: rgb(64,64,64);
   margin-bottom: 6px;
   margin-top: 10px;
 }
 
-.job-name:hover {
-  color: rgb(237,125,49);
+.job-link a{
   text-decoration: none;
+  color: rgb(118,113,113);
+}
+
+.job-link a:hover{
+  color: rgb(237,125,49);
 }
 
 .workers-count {
   font-family: GlacialIndifference;
   font-size: 10pt;
-  color: rgb(118,113,113);
   margin-bottom: 10px;
+  color: rgb(175,171,171);
 }
 
 .imagecontainer {
@@ -165,7 +168,7 @@
   margin-left: 23%;
 }
 
-.textcontainer{
+.textcontainer {
   width: 50%;
 }
 
@@ -179,4 +182,23 @@ html {
 	html {
 		scroll-behavior: auto;
 	}
+}
+
+.icon-button-class {
+  width: 70px;
+	height: 70px;
+	border-style: none;
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: white;
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+#icon-button-id {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+#icon-button-id:hover {
+  background-image: url('../assets/Ícones/privadalaranja.png');
 }

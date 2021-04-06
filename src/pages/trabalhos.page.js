@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "../styles/trabalhos.css";
 import ServicoDataService from "../services/servico.service";
-import privada from "../assets/Image2.png";
+import privada from "../assets/Ícones/privada.png";
 
 export default class Home extends Component {
   constructor(props){
@@ -176,42 +176,34 @@ export default class Home extends Component {
         <hr class="job-hr"/>
           <h1 class="dictionary-letter">D<a name="names-D"></a></h1>
         <hr class="job-hr"/>
-          <div class="row">
-            <div class="column imagecontainer">
-              <img class="job-icon" src={privada}/>
-            </div>
-            <div class="column textcontainer">
-              <a class="job-name" href="/contrate/manutencao/desentupidor">
-                <p class="job-name">Desentupidor(a)</p>
-              </a>
-              <p class="workers-count">12 profissionais</p>
-            </div>
+          <div class="job-link">
+            <a href="/contrate/manutencao/desentupidor">
+              <div class="row">
+                <div class="column imagecontainer">
+                  <img class="job-icon" src={privada}/>
+                </div>
+                <div class="column textcontainer">
+                  <p class="job-name">Desentupidor(a)</p>
+                  <p class="workers-count">12 profissionais</p>
+                </div>
+              </div>
+            </a>
           </div>
         <hr class="job-hr"/>
           <h1 class="dictionary-letter">E<a name="names-E"></a></h1>
         <hr class="job-hr"/>
-          <div class="row">
-            <div class="column imagecontainer">
-              <img class="job-icon" src={privada}/>
-            </div>
-            <div class="column textcontainer">
-            <a class="job-name" href="/contrate/manutencao/eletricista">
-              <p class="job-name">Eletricista</p>
+          <div class="job-link">
+            <a href="/contrate/manutencao/desentupidor">
+              <div class="row">
+                <div class="column imagecontainer">
+                  <button id="icon-button-id" class="icon-button-class"> </button>
+                </div>
+                <div class="column textcontainer">
+                  <p class="job-name">Encanador(a)</p>
+                  <p class="workers-count">11 profissionais</p>
+                </div>
+              </div>
             </a>
-              <p class="workers-count">11 profissionais</p>
-            </div>
-          </div>
-        <hr class="job-hr"/>
-          <div class="row">
-            <div class="column imagecontainer">
-              <img class="job-icon" src={privada}/>
-            </div>
-            <div class="column textcontainer">
-              <a class="job-name" href="/contrate/manutencao/eletricista">
-                <p class="job-name">Encanador(a)</p>
-              </a>
-              <p class="workers-count">14 profissionais</p>
-            </div>
           </div>
         <hr class="job-hr"/>
           <h1 class="dictionary-letter">F<a name="names-F"></a></h1>
@@ -221,18 +213,6 @@ export default class Home extends Component {
           <h1 class="dictionary-letter">H<a name="names-H"></a></h1>
         <hr class="job-hr"/>
           <h1 class="dictionary-letter">I<a name="names-I"></a></h1>
-        <hr class="job-hr"/>
-          <div class="row">
-            <div class="column imagecontainer">
-              <img class="job-icon" src={privada}/>
-            </div>
-            <div class="column textcontainer">
-              <a class="job-name" href="/contrate/manutencao/instaladordeeletrodomesticos">
-                <p class="job-name">Instalador(a) de eletrodomésticos</p>
-              </a>
-              <p class="workers-count">8 profissionais</p>
-            </div>
-          </div>
         <hr class="job-hr"/>
           <h1 class="dictionary-letter">J<a name="names-J"></a></h1>
         <hr class="job-hr"/>
