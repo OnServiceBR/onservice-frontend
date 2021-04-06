@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PrestadorDataService from "../services/prestador.service";
 import CidadeDataService from "../services/cidade.service";
 import ServicoDataService from "../services/servico.service";
-import Anuncieimagem from "../assets/Slide3.PNG";
+import Anuncieimagem from "../assets/Slide5.PNG";
 
 import "../styles/anuncie.css";
 import { Multiselect } from 'multiselect-react-dropdown';
