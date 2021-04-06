@@ -13,7 +13,8 @@ export default class Home extends Component {
       saude: [],
       manutencao: [],
       ensino: [],
-      eventos: []
+      eventos: [],
+      trabalho:""
     }
   }
 
@@ -33,6 +34,9 @@ export default class Home extends Component {
         .catch(e => {
           console.log(e);
         });
+        this.setState({
+          trabalho:"Tecnologia"
+        });
     }
     else if(this.props.match.params.job==="manutencao"){
       ServicoDataService.getManutencao()
@@ -44,6 +48,9 @@ export default class Home extends Component {
         })
         .catch(e => {
           console.log(e);
+        });
+        this.setState({
+          trabalho:"Manutenção"
         });
     }
     else if(this.props.match.params.job==="saude"){
@@ -57,6 +64,9 @@ export default class Home extends Component {
         .catch(e => {
           console.log(e);
         });
+        this.setState({
+          trabalho:"Saúde"
+        });
     }
     else if(this.props.match.params.job==="ensino"){
       ServicoDataService.getEnsino()
@@ -68,6 +78,9 @@ export default class Home extends Component {
         })
         .catch(e => {
           console.log(e);
+        });
+        this.setState({
+          trabalho:"Ensino"
         });
     }
     else if(this.props.match.params.job==="beleza"){
@@ -81,6 +94,9 @@ export default class Home extends Component {
         .catch(e => {
           console.log(e);
         });
+        this.setState({
+          trabalho:"Beleza"
+        });
     }
     else if(this.props.match.params.job==="eventos"){
       ServicoDataService.getEventos()
@@ -93,14 +109,18 @@ export default class Home extends Component {
         .catch(e => {
           console.log(e);
         });
+        this.setState({
+          trabalho:"Eventos"
+        });
     }
 
   }
 
   render() {
+    const {trabalho} = this.state;
     return(
       <div>
-        <a class="path" href="/">Home</a><h2 class="path"> > </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> > </h2><h2 class="path">{this.props.match.params.job}</h2>
+        <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><h2 class="path">{this.state.trabalho}</h2>
         <div class="search-box">
           <form method="get" action="/contrate">
             <div id="search-contrate">
