@@ -85,15 +85,18 @@
 	color: rgb(175, 171, 171);
 	font-family: GlacialIndifference;
 	font-size: 24pt;
+  box-shadow: 0px 0px 5pt rgba(118, 113, 113, 0.6);
+  background-color: white;
+  transition: 0.5s;
 }
 
 .category-button:focus{
 	outline: none;
-	box-shadow: 0px 0px 5pt rgba(118, 113, 113, 0.6);
 }
 
 .category-button:hover{
 	color: rgb(233, 125, 49);
+  transition: 0.5s;
 }
 
 .category-button-image{
@@ -124,4 +127,44 @@
 
 #event-button{
 	background-image: url('../assets/Imagens Site/Eventos.png');
+}
+
+#residencial-button{
+	background-image: url('../assets/Imagens Site/Residencial.png');
+}
+
+#others-button{
+	background-image: url('../assets/Imagens Site/Manutenção.png');
+}
+
+#tecnology-button:hover{
+	background-image: url('../assets/Imagens Site/TecnologiaLaranja.png');
+}
+
+#maintenance-button:hover{
+	background-image: url('../assets/Imagens Site/ManutençãoLaranja.png');
+}
+
+#beauty-button:hover{
+	background-image: url('../assets/Imagens Site/BelezaLaranja.png');
+}
+
+#teaching-button:hover{
+	background-image: url('../assets/Imagens Site/EnsinoLaranja.png');
+}
+
+#health-button:hover{
+	background-image: url('../assets/Imagens Site/SaúdeLaranja.png');
+}
+
+#event-button:hover{
+	background-image: url('../assets/Imagens Site/EventosLaranja.png');
+}
+
+#residencial-button:hover{
+	background-image: url('../assets/Imagens Site/ResidencialLaranja.png');
+}
+
+#others-button:hover{
+	background-image: url('../assets/Imagens Site/ManutençãoLaranja.png');
 }
