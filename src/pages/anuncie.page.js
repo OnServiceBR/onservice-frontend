@@ -19,6 +19,7 @@ export default class Home extends Component {
       gender: "",
       phone: "",
       cep: "",
+      state: "",
       city: "",
       address: "",
       complement: "",
@@ -26,10 +27,9 @@ export default class Home extends Component {
       cidades: [],
       servicos: [],
       picture: "",
-      w2w: "",
-     
-  
-
+      w2w: false,
+      terms: false,
+      
       cities: [],
       services: [],
       file: undefined,
@@ -42,75 +42,16 @@ export default class Home extends Component {
       eventos: [],
       residencial: [],
 
-      DropdownProfissões: [
-        /* Beleza */
-        {name: 'Artesã(o)', id: "Beleza1", category:"Beleza"},
-        {name: 'Barbeiro(a)', id: "Beleza2", category:"Beleza"},
-        {name: 'Cabelereiro(a)', id: "Beleza3", category:"Beleza"},
-        {name: 'Maquiador(a)', id: "Beleza4", category:"Beleza"},
-        {name: 'Micropigmentador(a)', id: "Beleza5", category:"Beleza"},
-      
-        /* Ensino */
-        {name: 'Professor(a) de Programação', id: "Ensino1", category:"Ensino"},
-        {name: 'Professor(a) de Inglês', id: "Ensino2", category:"Ensino"},
-        {name: 'Professor(a) de Francês', id: "Ensino3", category:"Ensino"},
-        {name: 'Tradutor(a)', id: "Ensino4", category:"Ensino"},
-
-        /* Eventos */
-        {name: 'Bartender', id: "Eventos1", category:"Eventos"},
-        {name: 'DJ', id: "Eventos2", category:"Eventos"},
-        {name: 'Garçom', id: "Eventos3", category:"Eventos"},
-        {name: 'Segurança', id: "Eventos4", category:"Eventos"},
-
-        /* Manutenção */
-        {name: 'Eletricista', id: "Manutenção1", category:"Manutenção"},
-        {name: 'Encanador', id: "Manutenção2", category:"Manutenção"},
-        {name: 'Marido de Aluguel', id: "Manutenção3", category:"Manutenção"},
-        {name: 'Pintor', id: "Manutenção4", category:"Manutenção"},
-
-        /* Residencial */
-        {name: 'Babá', id: "Residencial1", category:"Residencial"},
-        {name: 'Cozinheiro(a)', id: "Residencial2", category:"Residencial"},
-        {name: 'Faxineiro(a)', id: "Residencial3", category:"Residencial"},
-        {name: 'Passeador(a) de Cães', id: "Residencial4", category:"Residencial"},
-
-        /* Saúde */
-        {name: 'Fisioterapeuta', id: "Saúde1", category:"Saúde"},
-        {name: 'Personal Treiner', id: "Saúde2", category:"Saúde"},
-        {name: 'Psicólogo(a)', id: "Saúde3", category:"Saúde"},
-        {name: 'Quiroprata', id: "Saúde4", category:"Saúde"},
-        {name: 'Terapeuta Ocupacional', id: "Saúde5", category:"Saúde"},
-
-        /* Tecnologia */
-        {name: 'Analista de Sistemas', id: "tecnologia1", category:"Tecnologia"},
-        {name: 'Assistente Técnico', id: "tecnologia2", category:"Tecnologia"},
-        {name: 'Marketing Digital', id: "tecnologia3", category:"Tecnologia"},
-        {name: 'Técnico(a) em Comunicações', id: "tecnologia4", category:"Tecnologia"},
-      
-        /* Outros */
-        {name: 'Montador(a) de Móveis', id: "Outros1", category:"Outros"},
-        {name: 'Mudanças', id: "Outros2", category:"Outros"},
-        {name: 'Motoboy', id: "Outros3", category:"Outros"},
-        {name: 'Motorista', id: "Outros4", category:"Outros"},
-      ],
-
       DropdownW2W: [
         /* W2W */
-        {name: 'Sim', id: "w2w_true"},
-        {name: 'Não', id: "w2w_false"},
-      ],
-
-      DropdownLocaldeTrabalho: [
-      /* Local de Trabalho */
-      {name: 'Ibaté', id: "city1", category:"SP"},
-      {name: 'Itirapina', id: "city2", category:"SP"},
-      {name: 'São Carlos', id: "city3", category:"SP"},
-      {name: 'São Paulo', id: "city4", category:"SP"},
+        {name: 'Sim', id: "w2w_true", value: true},
+        {name: 'Não', id: "w2w_false", value: false},
       ],
     };
     this.style = {
       chips: {
-        background: "rgb(237, 125, 49)"
+        background: "rgb(237, 125, 49)",
+        color: "rgb(255,255,255)"
       },
       searchBox: {
         "border": "0.5pt none rgb(118,113,113)",
@@ -134,7 +75,12 @@ export default class Home extends Component {
       option: { // To change css for dropdown options
         color: "rgb(118,113,113)",
       },
-    }
+    };
+    this.onSelectCity = this.onSelectCity.bind(this);
+    this.onRemoveCity = this.onRemoveCity.bind(this);
+    this.onSelectService = this.onSelectService.bind(this);
+    this.onRemoveService = this.onRemoveService.bind(this);
+    this.onSelectW2W = this.onSelectW2W.bind(this);
   }
   
   handleChange(event) {
@@ -153,22 +99,20 @@ export default class Home extends Component {
       this.setState({ phone: event.target.value });
     } else if (field === "cep") {
       this.setState({ cep: event.target.value });
+    } else if (field === "state") {
+      this.setState({ state: event.target.value });
     } else if (field === "city") {
       this.setState({ city: event.target.value });
     } else if (field === "address") {
       this.setState({ address: event.target.value });
     } else if (field === "complement") {
       this.setState({ complement: event.target.value });
-    } else if (field === "cities") {
-      this.setState((state) => { cities: state.cities.push(parseInt(event.target.value)) });
-    } else if (field === "services") {
-      this.setState((state) => { services: state.services.push(parseInt(event.target.value)) });
     } else if (field === "file") {
       this.setState({ file: event.target.files });
     } else if (field === "description") {
       this.setState({ description: event.target.value });
-    } else if (field === "w2w") {
-      this.setState({ w2w: event.target.value });
+    } else if (field === "terms") {
+      this.setState({ terms: event.target.value });
     }
     // console.log(this.state)
   }
@@ -196,6 +140,7 @@ export default class Home extends Component {
           gender: this.state.gender,
           phone: this.state.phone,
           cep: this.state.cep,
+          state: this.state.state,
           city: this.state.city,
           address: this.state.address,
           complement: this.state.complement,
@@ -217,11 +162,14 @@ export default class Home extends Component {
               gender: res.data.gender,
               phone: res.data.phone,
               cep: res.data.cep,
+              state: res.data.state,
               city: res.data.city,
               address: res.data.address,
               complement: res.data.complement,
               cities: res.data.cities,
               services: res.data.services,
+              w2w: res.data.w2w,
+              
               published: res.data.published,
 
               submitted: true
@@ -249,60 +197,10 @@ export default class Home extends Component {
   }
 
   retrieveServicos() {
-    ServicoDataService.getTecnologia()
+    ServicoDataService.getAll()
       .then(res => {
         this.setState({
-          tecnologia: res.data
-        });
-        // console.log(res.data);
-      })
-      .catch(e => {
-        console.log(e);
-      });
-    ServicoDataService.getBeleza()
-      .then(res => {
-        this.setState({
-          beleza: res.data
-        });
-        // console.log(res.data);
-      })
-      .catch(e => {
-        console.log(e);
-      });
-    ServicoDataService.getManutencao()
-      .then(res => {
-        this.setState({
-          manutencao: res.data
-        });
-        // console.log(res.data);
-      })
-      .catch(e => {
-        console.log(e);
-      });
-    ServicoDataService.getSaude()
-      .then(res => {
-        this.setState({
-          saude: res.data
-        });
-        // console.log(res.data);
-      })
-      .catch(e => {
-        console.log(e);
-      });
-    ServicoDataService.getEnsino()
-      .then(res => {
-        this.setState({
-          ensino: res.data
-        });
-        // console.log(res.data);
-      })
-      .catch(e => {
-        console.log(e);
-      });
-    ServicoDataService.getEventos()
-      .then(res => {
-        this.setState({
-          eventos: res.data
+          servicos: res.data
         });
         // console.log(res.data);
       })
@@ -330,20 +228,40 @@ export default class Home extends Component {
     });
   }
 
-  onSelect(selectedList, selectedItem) {
-  
+  onSelectCity(selectedList, selectedItem) {
+    let {cities} = this.state
+    this.setState({ cities: cities.concat(selectedItem.id) }, () => console.log(this.state.cities));
   }
 
-  onRemove(selectedList, removedItem) {
-    
+  onRemoveCity(selectedList, removedItem) {
+    let {cities} = this.state
+    let index = cities.indexOf(removedItem.id)
+    cities.splice(index, 1)
+    this.setState({ cities: cities }, () => console.log(this.state.cities));
+  }
+
+  onSelectService(selectedList, selectedItem) {
+    let {services} = this.state
+    this.setState({ services: services.concat(selectedItem.id) }, () => console.log(this.state.services));
+  }
+
+  onRemoveService(selectedList, removedItem) {
+    let {services} = this.state
+    let index = services.indexOf(removedItem.id)
+    services.splice(index, 1)
+    this.setState({ services: services }, () => console.log(this.state.services));
+  }
+
+  onSelectW2W(selectedList, selectedItem) {
+    this.setState({ w2w: selectedItem.value }, () => console.log(this.state.w2w));
   }
 
   render() {
-    const { cidades, tecnologia, beleza, manutencao, saude, ensino, eventos } = this.state;
+    const { cidades, servicos } = this.state;
     return(
       <div class="row">
         <div class="col">
-          <img src={Anuncieimagem}width="500px"/>
+          <img src={Anuncieimagem} width="500px" alt="Imagem Página Anuncie"/>
         </div>
         <div class="col register-right">
           <h2>ANUNCIE-SE AQUI</h2>
@@ -401,92 +319,37 @@ export default class Home extends Component {
             <label for="cities">Local de Trabalho:</label>
               <div class="form-item">
                 <Multiselect
-                options={this.state.DropdownLocaldeTrabalho} // Options to display in the dropdown
-                selectedValues={this.state.selectedValue} // Preselected value to persist in dropdown
-                onSelect={this.onSelect} // Function will trigger on select event
-                onRemove={this.onRemove} // Function will trigger on remove event
+                options={cidades} // Options to display in the dropdown
+                onSelect={this.onSelectCity} // Function will trigger on select event
+                onRemove={this.onRemoveCity} // Function will trigger on remove event
                 displayValue="name" // Property name to display in the dropdown options
-                groupBy="category"
+                groupBy="state"
                 closeOnSelect={false}
                 showArrow={true}
-                id="MultipleDropdown"
+                id="CitiesDropdown"
                 style={this.style}
                 selectionLimit={4}
                 placeholder="Selecione todas as cidades onde você oferece seus serviços"
                 />
               </div>
-            {/* <select id="cities" class='' required onChange={this.handleChange.bind(this)}>
-              <option value="" selected disabled hidden>Selecione todas as cidades onde você oferece seus serviços</option>
-              {cidades && cidades.map((cidade, index) => (
-                <option className={""} value={cidade.id}>
-                  {cidade.name}
-                </option>
-              ))}
-            </select> */}
           </div>
           <div class="form-item">
             <label for="services">Profissão:</label>
               <div class="form-item">
                 <Multiselect
-                options={this.state.DropdownProfissões} // Options to display in the dropdown
-                selectedValues={this.state.selectedValue} // Preselected value to persist in dropdown
-                onSelect={this.onSelect} // Function will trigger on select event
-                onRemove={this.onRemove} // Function will trigger on remove event
+                options={servicos} // Options to display in the dropdown
+                onSelect={this.onSelectService} // Function will trigger on select event
+                onRemove={this.onRemoveService} // Function will trigger on remove event
                 displayValue="name" // Property name to display in the dropdown options
                 groupBy="category"
                 closeOnSelect={false}
                 showArrow={true}
-                id="MultipleDropdown"
+                id="ServicesDropdown"
                 style={this.style}
                 selectionLimit={4}
                 placeholder="Selecione de 1 a 4 profissões"
                 />
               </div>
-            {/* <select id="services" class='' required onChange={this.handleChange.bind(this)}>
-            <option value="" selected disabled hidden>Selecione a sua profissão</option>
-            <optgroup label="Beleza">
-              {beleza && beleza.map((servico, index) => (
-                <option className={""} value={servico.id}>
-                  {servico.name}
-                </option>
-              ))}
-            </optgroup>           
-            <optgroup label="Manutenção">
-              {manutencao && manutencao.map((servico, index) => (
-                <option className={""} value={servico.id}>
-                  {servico.name}
-                </option>
-              ))}
-            </optgroup>
-            <optgroup label="Saúde">
-              {saude && saude.map((servico, index) => (
-                <option className={""} value={servico.id}>
-                  {servico.name}
-                </option>
-              ))}
-            </optgroup>
-            <optgroup label="Ensino">
-              {ensino && ensino.map((servico, index) => (
-                <option className={""} value={servico.id}>
-                  {servico.name}
-                </option>
-              ))}
-            </optgroup>
-            <optgroup label="Tecnologia">
-              {tecnologia && tecnologia.map((servico, index) => (
-                <option className={""} value={servico.id}>
-                  {servico.name}
-                </option>
-              ))}
-            </optgroup>
-            <optgroup label="Eventos">
-              {eventos && eventos.map((servico, index) => (
-                <option className={""} value={servico.id}>
-                  {servico.name}
-                </option>
-              ))}
-            </optgroup>
-            </select> */}
           </div>
           <div class="form-item">
             <label for="file">Foto de Perfil:</label>
@@ -504,31 +367,25 @@ export default class Home extends Component {
               <div class="form-item">
                 <Multiselect
                 options={this.state.DropdownW2W} // Options to display in the dropdown
-                selectedValues={this.state.selectedValue} // Preselected value to persist in dropdown
-                onSelect={this.onSelect} // Function will trigger on select event
-                onRemove={this.onRemove} // Function will trigger on remove event
+                onSelect={this.onSelectW2W} // Function will trigger on select event
                 displayValue="name" // Property name to display in the dropdown options
                 closeOnSelect={true}
                 showArrow={true}
-                id="MultipleDropdown"
+                id="W2WDropdown"
                 style={this.style}
-                selectionLimit={1}
+                singleSelect={true}
+                avoidHighlightFirstOption={true}
                 placeholder="Selecione uma opção"
                 />
               </div>
-            {/* <select id="w2w" class='' required onChange={this.handleChange.bind(this)}>
-              <option value="" selected disabled hidden>Selecione uma opção</option>
-              <option value={true}>Sim</option>
-              <option value={false}>Não</option>
-            </select> */}
           </div>
           <div class="form-item">
             <div>
-            <label class="container">
-            <input type="checkbox"/>
-            <span class="checkmark"></span>
-          </label>
-            <label for="checkbox" style={{marginLeft:"10%"}}>Li e aceito o <a href="/codigo-de-conduta">Código de Conduta</a> e a <a href="/politica-de-privacidade">Política de Privacidade</a></label>
+              <label class="container">
+                <input id="terms" name="terms" type="checkbox" onChange={this.handleChange.bind(this)} />
+                <span class="checkmark"></span>
+              </label>
+              <label for="checkbox" style={{marginLeft:"10%"}}>Li e aceito o <a href="/codigo-de-conduta">Código de Conduta</a> e a <a href="/politica-de-privacidade">Política de Privacidade</a></label>
             </div>
             <p style={{fontSize:"8pt",marginLeft:"5.5%", marginRight:"3%"}}>Ao clicar no botão <span style={{fontWeight:"bold"}}>“Registrar-se”</span> você concorda e expressa sua vontade livre, consciente e informada de cumprir com e ser regido por nosso <a href="/codigo-de-conduta">Código de Conduta</a> e <a href="/politica-de-privacidade">Política de Privacidade</a></p>
           </div>  
