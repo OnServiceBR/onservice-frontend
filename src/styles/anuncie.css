@@ -1,3 +1,5 @@
+/* CSS do formulário */
+/* Bloco do formulário */
 .register-right {
   border: none;
   box-shadow: 0px 0px 5pt rgba(191, 191, 191, 0.6);
@@ -9,12 +11,14 @@
   width: 11.93cm;
 }
 
+/* Cada campo do formulário é um bloco que tem em comum este estilo */
 .form-item {
   margin-bottom: 0.3cm;
   font-family: GlacialIndifference;
   color: rgb(118,113,113);
 }
 
+/* Titulo do formulário */
 .register-right h2 {
   font-family: 'Bebas Neue', cursive;
   font-size: 16pt;
@@ -24,6 +28,7 @@
   color: rgb(237, 125, 49);
 }
 
+/* Nome dos campos do formulário */
 .register-right label {
   margin-left: 0.605cm;
   margin-bottom: 2px;
@@ -31,6 +36,7 @@
   font-size: 12pt;
 }
 
+/* Estilo das caixas de input e select */
 .register-right input,
 .register-right select {
   border-radius: 0.15cm;
@@ -49,14 +55,17 @@
   color: rgb(118,113,113);
 }
 
+/* Define tamanho do textarea */
 .register-right textarea {
   width: 95%;
 }
 
+/* Define cor dos optgroup contido nos select */
 .form-item optgroup {
   color: rgb(237, 125, 49);
 }
 
+/* Estilo do botão para upload de arquivo */
 .register-right input[type=file]::-webkit-file-upload-button {
   background-color: rgb(237,125,49);
   border: 1px solid rgb(237,125,49);
@@ -99,22 +108,26 @@
   box-shadow: 0px 0px 5pt rgba(237, 125, 49, 0.6);
 }
 
+/* Estilo do campo input file */
 .register-right input[type="file"] {
   padding-left: 5px;
   padding-top: 4px;
 }
 
+/* Estilo das letras pequenas embaixo dos campos */
 .register-right small {
   font-family: GlacialIndifference;
   font-size: 8pt;
   margin-left: 0.605cm;
 }
 
+/* Estilo dos links */
 .form-item a{
   color: rgb(237, 125, 49);
   font-family: GlacialIndifference;
 }
 
+/* Estilo do botão "enviar" */
 .register-right .btn-primary {
   text-align: center;
   border-radius: 0.15cm;
@@ -135,6 +148,7 @@
   font-weight: bold;
 }
 
+/* Define cor do placeholder para todos os navegadores */
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: rgb(175,171,171);
   opacity: 1; /* Firefox */
@@ -148,6 +162,7 @@
   color: rgb(175,171,171);
 }
 
+/* Estilo dos campos input quando foram clicados para digitação */
 .register-right input:focus,
 .register-right select:focus {
   outline: none;
@@ -157,18 +172,22 @@
   box-shadow: 0px 0px 5pt rgba(237, 125, 49, 0.6);
 }
 
+/* Estilo opção invalida select */
 .register-right select:invalid{
   color: rgb(175,171,171);
 }
 
+/* Estilo opção inválida de data */
 .register-right input[type="date"]:invalid{
   color: rgb(175,171,171);
 }
 
+/* Estilo de opção no select */
 .register-right select option{
   color: rgb(118,113,113);
 }
 
+/* Estilo quando passa o mouse por cima do botão enviar */
 .register-right .btn-primary:hover {
   background: #ffffff;
   color: rgb(237, 125, 49);
@@ -250,6 +269,7 @@
   transform: rotate(45deg);
 }
 
+/* Estilo MultipleDropdown */
 #MultipleDropdown input{
   border: 0.5pt solid rgb(118, 113, 113);
 }
