@@ -1,10 +1,23 @@
+/* Estilo bloco de pesquisa */
 .search-box{
-	margin-left: auto;
+  margin-left: auto;
 	margin-right: auto;
 	text-align: center;
 	font-family: GlacialIndifference;
 }
 
+/* Estilo bloco de pesquisa dentro do form */
+#search-contrate{
+  display: inline-block;
+  border-color: rgb(118,113,113);
+  border-radius: 0.15cm 0.15cm 0.15cm 0.15cm;
+  border-style: solid solid solid solid;
+  border-width: 0.5pt;
+  width: 50%;
+  padding: 0.8%;
+}
+
+/* Estilo botão de pesquisa */
 #search-button-contrate{
   text-align: center;
   border-radius: 0.15cm;
@@ -23,6 +36,7 @@
   margin-left: 1.5%
 }
 
+/* Estilo caixa de pesquisa */
 #search-input-contrate{
   border-style: none;
   width: 93%;
@@ -34,16 +48,7 @@
   outline-style: none;
 }
 
-#search-contrate{
-  display: inline-block;
-  border-color: rgb(118,113,113);
-  border-radius: 0.15cm 0.15cm 0.15cm 0.15cm;
-  border-style: solid solid solid solid;
-  border-width: 0.5pt;
-  width: 50%;
-  padding: 0.8%;
-}
-
+/* Estilo bloco com nome das páginas */
 .search-tabs{
   font-family: GlacialIndifference;
   text-align: center;
@@ -52,6 +57,7 @@
 	color: rgb(64,64,64);
 }
 
+/* Estilo do texto com nome das páginas */
 .search-tabs label{
   padding-left: 100px;
   padding-right: 100px;
@@ -59,6 +65,7 @@
   border-bottom: solid rgb(175,171,171);
 }
 
+/* Estilo da borda de baixo do nome das páginas */
 #contrate-category-label{
   border-color: rgb(237,125,49);
 }
@@ -69,12 +76,14 @@
   border-color: rgb(175,171,171);
 }
 
+/* Estilo do bloco das categorias */
 .category-buttons{
 	width: 85%;
 	margin-left: auto;
 	margin-right: auto;
 }
 
+/* Estilo do botão de categoria */
 .category-button{
 	width: 100%;
 	height: 112px;
@@ -94,11 +103,13 @@
 	outline: none;
 }
 
+/* Estilo do botão de categoria quando o mouse passa por cima */
 .category-button:hover{
 	color: rgb(233, 125, 49);
   transition: 0.5s;
 }
 
+/* Estilo da imagem dentro do botão da categoria */
 .category-button-image{
 	position: absolute;
 	top: 0;
