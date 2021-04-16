@@ -28,8 +28,7 @@ ul.social {
   list-style-type: none;
   display: flex;
   max-width: 16rem;
-  /* margin: 0 auto;
-  padding: 0; */
+  padding-inline-start: unset;
 }
 
 ul.social li {
@@ -58,7 +57,7 @@ ul.social li {
   margin-top: 20px;
 }
 
-.footer-content {
+.footer-content, .footer-content a{
   color: white;
   font-family: GlacialIndifference;
   font-size: 10pt;
@@ -69,6 +68,10 @@ ul.social li {
   color: white;
   font-size: 8pt;
   font-family: GlacialIndifference;
+}
+
+.socket label {
+  display: block;
 }
 
 .socket a {
