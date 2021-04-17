@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import PrestadorDataService from "../services/prestador.service";
 import CidadeDataService from "../services/cidade.service";
 import ServicoDataService from "../services/servico.service";
-import Anuncieimagem from "../assets/Slide3.PNG";
+import Anuncieimagem from "../assets/Slide5.PNG";
 
 import "../styles/anuncie.css";
+import { Multiselect } from 'multiselect-react-dropdown';
+import { faBorderNone } from "@fortawesome/free-solid-svg-icons";
 
 export default class Home extends Component {
   constructor(props){
@@ -39,9 +41,102 @@ export default class Home extends Component {
       ensino: [],
       eventos: [],
       residencial: [],
+
+      DropdownProfissões: [
+        /* Beleza */
+        {name: 'Artesã(o)', id: "Beleza1", category:"Beleza"},
+        {name: 'Barbeiro(a)', id: "Beleza2", category:"Beleza"},
+        {name: 'Cabelereiro(a)', id: "Beleza3", category:"Beleza"},
+        {name: 'Maquiador(a)', id: "Beleza4", category:"Beleza"},
+        {name: 'Micropigmentador(a)', id: "Beleza5", category:"Beleza"},
+      
+        /* Ensino */
+        {name: 'Professor(a) de Programação', id: "Ensino1", category:"Ensino"},
+        {name: 'Professor(a) de Inglês', id: "Ensino2", category:"Ensino"},
+        {name: 'Professor(a) de Francês', id: "Ensino3", category:"Ensino"},
+        {name: 'Tradutor(a)', id: "Ensino4", category:"Ensino"},
+
+        /* Eventos */
+        {name: 'Bartender', id: "Eventos1", category:"Eventos"},
+        {name: 'DJ', id: "Eventos2", category:"Eventos"},
+        {name: 'Garçom', id: "Eventos3", category:"Eventos"},
+        {name: 'Segurança', id: "Eventos4", category:"Eventos"},
+
+        /* Manutenção */
+        {name: 'Eletricista', id: "Manutenção1", category:"Manutenção"},
+        {name: 'Encanador', id: "Manutenção2", category:"Manutenção"},
+        {name: 'Marido de Aluguel', id: "Manutenção3", category:"Manutenção"},
+        {name: 'Pintor', id: "Manutenção4", category:"Manutenção"},
+
+        /* Residencial */
+        {name: 'Babá', id: "Residencial1", category:"Residencial"},
+        {name: 'Cozinheiro(a)', id: "Residencial2", category:"Residencial"},
+        {name: 'Faxineiro(a)', id: "Residencial3", category:"Residencial"},
+        {name: 'Passeador(a) de Cães', id: "Residencial4", category:"Residencial"},
+
+        /* Saúde */
+        {name: 'Fisioterapeuta', id: "Saúde1", category:"Saúde"},
+        {name: 'Personal Treiner', id: "Saúde2", category:"Saúde"},
+        {name: 'Psicólogo(a)', id: "Saúde3", category:"Saúde"},
+        {name: 'Quiroprata', id: "Saúde4", category:"Saúde"},
+        {name: 'Terapeuta Ocupacional', id: "Saúde5", category:"Saúde"},
+
+        /* Tecnologia */
+        {name: 'Analista de Sistemas', id: "tecnologia1", category:"Tecnologia"},
+        {name: 'Assistente Técnico', id: "tecnologia2", category:"Tecnologia"},
+        {name: 'Marketing Digital', id: "tecnologia3", category:"Tecnologia"},
+        {name: 'Técnico(a) em Comunicações', id: "tecnologia4", category:"Tecnologia"},
+      
+        /* Outros */
+        {name: 'Montador(a) de Móveis', id: "Outros1", category:"Outros"},
+        {name: 'Mudanças', id: "Outros2", category:"Outros"},
+        {name: 'Motoboy', id: "Outros3", category:"Outros"},
+        {name: 'Motorista', id: "Outros4", category:"Outros"},
+      ],
+
+      DropdownW2W: [
+        /* W2W */
+        {name: 'Sim', id: "w2w_true"},
+        {name: 'Não', id: "w2w_false"},
+      ],
+
+      DropdownLocaldeTrabalho: [
+      /* Local de Trabalho */
+      {name: 'Ibaté', id: "city1", category:"SP"},
+      {name: 'Itirapina', id: "city2", category:"SP"},
+      {name: 'São Carlos', id: "city3", category:"SP"},
+      {name: 'São Paulo', id: "city4", category:"SP"},
+      ],
+    };
+    this.style = {
+      chips: {
+        background: "rgb(237, 125, 49)"
+      },
+      searchBox: {
+        "border": "0.5pt none rgb(118,113,113)",
+        "border-radius": "0.15cm",
+        padding: 0,
+      },
+      inputField: {
+        margin: 0,
+        "padding-left":"19px",
+        width: "100%",
+      },
+      multiselectContainer: {
+        color: "rgb(175,171,171)",
+        width: "95%",
+        "margin-right": "auto",
+        "margin-left": "auto"
+      },
+      groupHeading: {
+        color: "rgb(237, 125, 49)",
+      },
+      option: { // To change css for dropdown options
+        color: "rgb(118,113,113)",
+      },
     }
   }
-
+  
   handleChange(event) {
     const field = event.target.id;
     if (field === "name") {
@@ -235,6 +330,14 @@ export default class Home extends Component {
     });
   }
 
+  onSelect(selectedList, selectedItem) {
+  
+  }
+
+  onRemove(selectedList, removedItem) {
+    
+  }
+
   render() {
     const { cidades, tecnologia, beleza, manutencao, saude, ensino, eventos } = this.state;
     return(
@@ -296,18 +399,50 @@ export default class Home extends Component {
           </div>
           <div class="form-item">
             <label for="cities">Local de Trabalho:</label>
-            <select id="cities" class='' required onChange={this.handleChange.bind(this)}>
+              <div class="form-item">
+                <Multiselect
+                options={this.state.DropdownLocaldeTrabalho} // Options to display in the dropdown
+                selectedValues={this.state.selectedValue} // Preselected value to persist in dropdown
+                onSelect={this.onSelect} // Function will trigger on select event
+                onRemove={this.onRemove} // Function will trigger on remove event
+                displayValue="name" // Property name to display in the dropdown options
+                groupBy="category"
+                closeOnSelect={false}
+                showArrow={true}
+                id="MultipleDropdown"
+                style={this.style}
+                selectionLimit={4}
+                placeholder="Selecione todas as cidades onde você oferece seus serviços"
+                />
+              </div>
+            {/* <select id="cities" class='' required onChange={this.handleChange.bind(this)}>
               <option value="" selected disabled hidden>Selecione todas as cidades onde você oferece seus serviços</option>
               {cidades && cidades.map((cidade, index) => (
                 <option className={""} value={cidade.id}>
                   {cidade.name}
                 </option>
               ))}
-            </select>
+            </select> */}
           </div>
           <div class="form-item">
             <label for="services">Profissão:</label>
-            <select id="services" class='' required onChange={this.handleChange.bind(this)}>
+              <div class="form-item">
+                <Multiselect
+                options={this.state.DropdownProfissões} // Options to display in the dropdown
+                selectedValues={this.state.selectedValue} // Preselected value to persist in dropdown
+                onSelect={this.onSelect} // Function will trigger on select event
+                onRemove={this.onRemove} // Function will trigger on remove event
+                displayValue="name" // Property name to display in the dropdown options
+                groupBy="category"
+                closeOnSelect={false}
+                showArrow={true}
+                id="MultipleDropdown"
+                style={this.style}
+                selectionLimit={4}
+                placeholder="Selecione de 1 a 4 profissões"
+                />
+              </div>
+            {/* <select id="services" class='' required onChange={this.handleChange.bind(this)}>
             <option value="" selected disabled hidden>Selecione a sua profissão</option>
             <optgroup label="Beleza">
               {beleza && beleza.map((servico, index) => (
@@ -315,7 +450,7 @@ export default class Home extends Component {
                   {servico.name}
                 </option>
               ))}
-            </optgroup>
+            </optgroup>           
             <optgroup label="Manutenção">
               {manutencao && manutencao.map((servico, index) => (
                 <option className={""} value={servico.id}>
@@ -351,7 +486,7 @@ export default class Home extends Component {
                 </option>
               ))}
             </optgroup>
-            </select>
+            </select> */}
           </div>
           <div class="form-item">
             <label for="file">Foto de Perfil:</label>
@@ -366,12 +501,37 @@ export default class Home extends Component {
             </div>
           <div class="form-item">
             <label for="w2w">Serviço exclusivo para mulheres?</label>
-            <select id="w2w" class='' required onChange={this.handleChange.bind(this)}>
+              <div class="form-item">
+                <Multiselect
+                options={this.state.DropdownW2W} // Options to display in the dropdown
+                selectedValues={this.state.selectedValue} // Preselected value to persist in dropdown
+                onSelect={this.onSelect} // Function will trigger on select event
+                onRemove={this.onRemove} // Function will trigger on remove event
+                displayValue="name" // Property name to display in the dropdown options
+                closeOnSelect={true}
+                showArrow={true}
+                id="MultipleDropdown"
+                style={this.style}
+                selectionLimit={1}
+                placeholder="Selecione uma opção"
+                />
+              </div>
+            {/* <select id="w2w" class='' required onChange={this.handleChange.bind(this)}>
               <option value="" selected disabled hidden>Selecione uma opção</option>
               <option value={true}>Sim</option>
               <option value={false}>Não</option>
-            </select>
+            </select> */}
           </div>
+          <div class="form-item">
+            <div>
+            <label class="container">
+            <input type="checkbox"/>
+            <span class="checkmark"></span>
+          </label>
+            <label for="checkbox" style={{marginLeft:"10%"}}>Li e aceito o <a href="/codigo-de-conduta">Código de Conduta</a> e a <a href="/politica-de-privacidade">Política de Privacidade</a></label>
+            </div>
+            <p style={{fontSize:"8pt",marginLeft:"5.5%", marginRight:"3%"}}>Ao clicar no botão <span style={{fontWeight:"bold"}}>“Registrar-se”</span> você concorda e expressa sua vontade livre, consciente e informada de cumprir com e ser regido por nosso <a href="/codigo-de-conduta">Código de Conduta</a> e <a href="/politica-de-privacidade">Política de Privacidade</a></p>
+          </div>  
           <button type='button' onClick={this.savePrestador.bind(this)} class='btn-primary'>Registre-se</button>
         </div>
       </div>
