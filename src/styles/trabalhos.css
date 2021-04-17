@@ -1,3 +1,4 @@
+/* Estilo bloco de pesquisa */
 .search-box{
 	margin-left: auto;
 	margin-right: auto;
@@ -5,6 +6,7 @@
 	font-family: GlacialIndifference;
 }
 
+/* Estilo botão de pesquisa */
 #search-button-contrate{
   text-align: center;
   border-radius: 0.15cm;
@@ -23,6 +25,7 @@
   margin-left: 1.5%
 }
 
+/* Estilo caixa de pesquisa */
 #search-input-contrate{
   border-style: none;
   width: 93%;
@@ -34,6 +37,7 @@
   outline-style: none;
 }
 
+/* Estilo bloco de pesquisa dentro do form */
 #search-contrate{
   display: inline-block;
   border-color: rgb(118,113,113);
@@ -44,6 +48,7 @@
   padding: 0.8%;
 }
 
+/* Estilo bloco com nome das páginas */
 .search-tabs{
   font-family: GlacialIndifference;
   text-align: center;
@@ -52,6 +57,7 @@
 	color: rgb(64,64,64);
 }
 
+/* Estilo do texto com nome das páginas */
 .search-tabs label{
   padding-left: 100px;
   padding-right: 100px;
@@ -59,6 +65,7 @@
   border-bottom: solid rgb(175,171,171);
 }
 
+/* Estilo da borda de baixo do nome das páginas */
 #trabalhos-category-label{
   border-color: rgb(175,171,171);
 }
@@ -69,6 +76,7 @@
   border-color: rgb(175,171,171);
 }
 
+/* Caminho das páginas */
 .path {
   font-family: GlacialIndifference;
   color: rgb(118,113,113);
@@ -82,18 +90,15 @@
   text-decoration: none;
 }
 
+/* Muda a cor do caminho das páginas */
 .path:hover {
   color: rgb(237,125,49);
   text-decoration: none;
 }
 
+/* Deixa maiústula a primeira letra de cada palavra no caminho */
 .path:first-letter {
   text-transform: uppercase;
-}
-
-.path:hover {
-  color: rgb(237,125,49);
-  text-decoration: none;
 }
 
 /* Linha que divide os trabalhos */
