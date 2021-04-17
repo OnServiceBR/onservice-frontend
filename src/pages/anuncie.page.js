@@ -6,7 +6,6 @@ import Anuncieimagem from "../assets/Slide5.PNG";
 
 import "../styles/anuncie.css";
 import { Multiselect } from 'multiselect-react-dropdown';
-import { faBorderNone } from "@fortawesome/free-solid-svg-icons";
 
 export default class Home extends Component {
   constructor(props){
