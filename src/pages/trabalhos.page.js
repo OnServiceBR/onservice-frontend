@@ -176,29 +176,17 @@ export default class Home extends Component {
         <hr class="job-hr"/>
           <h1 class="dictionary-letter">D<a name="names-D"></a></h1>
         <hr class="job-hr"/>
-          <div class="job-link">
-            <a href="/contrate/manutencao/desentupidor">
-              <div class="row">
-                <div class="column imagecontainer">
-                  <img class="job-icon" src={privada}/>
-                </div>
-                <div class="column textcontainer">
-                  <p class="job-name">Desentupidor(a)</p>
-                  <p class="workers-count">12 profissionais</p>
-                </div>
-              </div>
-            </a>
-          </div>
-        <hr class="job-hr"/>
           <h1 class="dictionary-letter">E<a name="names-E"></a></h1>
         <hr class="job-hr"/>
           <div class="job-link">
-            <a href="/contrate/manutencao/desentupidor">
+          {/* Final do link está manual */}
+            <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column imagecontainer">
-                  <button id="icon-button-id" class="icon-button-class"> </button>
+                  <button class="icon-button-class"> </button>
                 </div>
                 <div class="column textcontainer">
+                  {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
                   <p class="job-name">Encanador(a)</p>
                   <p class="workers-count">11 profissionais</p>
                 </div>

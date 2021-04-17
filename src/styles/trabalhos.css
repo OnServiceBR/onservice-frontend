@@ -91,6 +91,7 @@
   text-decoration: none;
 }
 
+/* Linha que divide os trabalhos */
 .job-hr {
   margin-left: auto;
   margin-right: auto;
@@ -100,6 +101,7 @@
   margin-bottom: 0px;
 }
 
+/* Alinha o espaço onde fica o dicionário */
 .dictionary {
   width: 72%;
   margin-left: auto;
@@ -109,6 +111,7 @@
   font-size: 12pt;
 }
 
+/* Alinha e formata cada letra e barra do dicionário */
 .dictionary-letter {
   font-family: GlacialIndifference;
   width: 72%;
@@ -119,6 +122,7 @@
   margin-bottom: 0px;
 }
 
+/* Padroniza as letras dos dicionários como links */
 .dictionary a {
   text-decoration: none;
   width: 72%;
@@ -130,32 +134,12 @@
   font-size: 12pt;
 }
 
+/* Troca a cor da letra do dicionário quando passa o mouse em cima */
 .dictionary a:hover {
   color: rgb(237,125,49);
 }
 
-.job-icon {
-  margin-right: auto;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-.job-name {
-  font-family: GlacialIndifference;
-  font-size: 12pt;
-  margin-bottom: 6px;
-  margin-top: 10px;
-}
-
-.job-link a{
-  text-decoration: none;
-  color: rgb(118,113,113);
-}
-
-.job-link a:hover{
-  color: rgb(237,125,49);
-}
-
+/* Contagem de profissionais em determinado serviço */
 .workers-count {
   font-family: GlacialIndifference;
   font-size: 10pt;
@@ -163,27 +147,63 @@
   color: rgb(175,171,171);
 }
 
+/* Espaço para o ícone de cada serviço */
 .imagecontainer {
   width: 7%;
   margin-left: 23%;
 }
 
+/* Espaço para o texto com título e descrição do serviço */
 .textcontainer {
   width: 50%;
 }
 
-/* smooth scroll link anchor*/
+/* Ícone para o serviço */
+.job-icon {
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/* Nome do serviço */
+.job-name {
+  font-family: GlacialIndifference;
+  font-size: 12pt;
+  margin-bottom: 6px;
+  margin-top: 10px;
+}
+
+/* Desce a barra suavemente quando clica numa letra do dicionário*/
 html {
 	scroll-behavior: smooth;
 }
 
-/* smooth scroll link anchor - reduced motion*/
+/* Aumenta a suavidade que a barra desce quando clica na letra do dicionário*/
 @media screen and (prefers-reduced-motion: reduce) {
 	html {
 		scroll-behavior: auto;
 	}
 }
 
+/* Define a cor do serviço para cinza antes de passar o mouse */
+.job-link a{
+  text-decoration: none;
+  color: rgb(118,113,113);
+}
+
+/* Sublinha título do serviço*/
+.job-link a:hover{
+  color: rgb(237,125,49);
+}
+
+/* Troca o ícone pelo ícone laranja */
+.job-link a:hover .icon-button-class{
+  color: rgb(237,125,49);
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+/* Lugar onde fica o ícone */
 .icon-button-class {
   width: 70px;
 	height: 70px;
@@ -193,12 +213,4 @@ html {
   margin-bottom: 0px;
   background-color: white;
   background-image: url('../assets/Ícones/privada.png');
-}
-
-#icon-button-id {
-  background-image: url('../assets/Ícones/privada.png');
-}
-
-#icon-button-id:hover {
-  background-image: url('../assets/Ícones/privadalaranja.png');
 }
