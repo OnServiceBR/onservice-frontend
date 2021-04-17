@@ -1,0 +1,99 @@
+/* Estilo da borda de baixo do nome das páginas */
+#profissionais-category-label{
+  border-color: rgb(175,171,171);
+}
+#profissionais-service-label{
+  border-color: rgb(175,171,171);
+}
+#profissionais-job-label{
+  border-color: rgb(237,125,49);
+}
+
+/* Link na barra de escolha das categorias e serviços */
+.link-bar-label {
+  color: rgb(64,64,64);
+  text-decoration: none;
+}
+
+/* Muda a cor dos links da barra de escolha das categorias e serviços */
+.link-bar-label:hover {
+  cursor: pointer;
+  color: rgb(237,125,49);
+  text-decoration: none;
+}
+
+/* Linha que divide os trabalhos */
+.workers-hr {
+  margin-left: 30%;
+  margin-right: auto;
+  width: 72%;
+  border-top-color: rgb(231,230,230);
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/* Espaço para as configurações de filtro de profissionais */
+.settingsrow-profissionais {
+  width: 30%;
+}
+
+/* Espaço para as configurações de filtro de profissionais */
+.containerrow-profissionais {
+  width: 70%;
+}
+
+/* Espaço para as configurações de filtro de profissionais */
+.settingscontainer-profissionais {
+  width: 10%;
+}
+
+/* Espaço para a foto do profissional */
+.imagecontainer-profissionais {
+  width: 7%;
+  margin-left: 23%;
+}
+
+/* Espaço para o texto com nome e descrição do profissional */
+.textcontainer-profissionais {
+  width: 80%;
+}
+
+/* Nome de cada um dos profissionais */
+.workers-names-profissões {
+  font-family: GlacialIndifference;
+  font-size: 12pt;
+  margin-bottom: 6px;
+  margin-top: 30px;
+}
+
+/* Descrição de cada um dos profissionais */
+.workers-description-profissões {
+  font-family: GlacialIndifference;
+  font-size: 10pt;
+  margin-bottom: 30px;
+  color: rgb(175,171,171);
+}
+
+/* Define a cor do serviço para cinza antes de passar o mouse */
+.job-link a{
+  text-decoration: none;
+  color: rgb(118,113,113);
+}
+
+/* Sublinha título do serviço*/
+.job-link a:hover{
+  color: rgb(237,125,49);
+}
+
+/* Lugar onde fica o ícone */
+.worker-profissionais-button-class {
+  outline: none;
+  width: 70px;
+	height: 70px;
+	border-style: none;
+  margin-right: opx;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: white;
+  background-image: url('../assets/Profissionais/manga.png');
+}
