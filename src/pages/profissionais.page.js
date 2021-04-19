@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "../styles/trabalhos.css";
 import "../styles/profissionais.css";
 import ServicoDataService from "../services/servico.service";
-import worker1 from "../assets/Profissionais/manga.png";
+import Profissional1 from "../assets/Profissionais/prof1.png";
 
 export default class Home extends Component {
   constructor(props){
@@ -150,26 +150,83 @@ export default class Home extends Component {
           <label id="profissionais-job-label">Profissionais</label>
         </div>
         <br/>
-        <div class="job-link">
-          {/* Final do link está manual */}
-          <div class="row settingsrow-profissionais">
-            <div class="column settingscontainer-profissionais">
-              <h2>aa</h2>
+        <div class="row workers-row-all">
+          <div class="column workers-column-settings">
+            <div class="workers-settings-title">
+              Avaliações
             </div>
-            <hr class="workers-hr"/>
-            <a href="/contrate/manutencao/encanador">
-              <div class="row containerrow-profissionais">
-                <div class="column imagecontainer-profissionais">
-                  <button class="worker-profissionais-button-class"> </button>
+            <div class="workers-settings-text">
+              Opção 2
+            </div>
+            <div class="workers-settings-text">
+              Opção 3
+            </div>
+          </div>
+          <div id="workers-change-color-on-hover" class="column workers-column-profile">
+            <a href="/prof1" class="row workers-row-profile">
+              <div class="column workers-image">
+                <img src={Profissional1} class="workers-picture-profissões"/>
+              </div>
+              <div class="column workers-profile">
+                <div id="workers-name-change" class="workers-name">
+                  Pablo Picasso
                 </div>
-                <div class="column textcontainer-profissionais">
-                  {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
-                  <p class="workers-names-profissões">Manuel</p>
-                  <p class="workers-description-profissões">Um cara muito bacana</p>
+                <div class="workers-description">
+                  <p>
+                    Por conseguinte, o surgimento do comércio virtual aponta para a melhoria das condições financeiras e administrativas exigidas. O incentivo ao avanço tecnológico, assim como a complexidade dos estudos efetuados deve passar por modificações independentemente do sistema de formação de quadros que corresponde às necessidades. A prática cotidiana prova que a revolução dos costumes exige a precisão e aaaaaaaaaaaaaaaaaaaaaa
+                  </p>
                 </div>
               </div>
+              <hr class="workers-hr"/>
             </a>
-            <hr class="workers-hr"/>
+            <a href="/prof2" class="row workers-row-profile">
+              <div class="column workers-image">
+                <img src={Profissional1} class="workers-picture-profissões"/>
+              </div>
+              <div class="column workers-profile">
+                <div id="workers-name-change" class="workers-name">
+                  Vincent van Gogh
+                </div>
+                <div class="workers-description">
+                  <p>
+                    Nunca é demais lembrar o peso e o significado destes problemas, uma vez que a valorização de fatores subjetivos agrega valor ao estabelecimento das regras de conduta normativas. Não obstante, o julgamento imparcial das eventualidades pode nos levar a considerar a reestruturação de alternativas às soluções ortodoxas. Do mesmo modo, a constante divulgação das informações representa uma abertura para a melhoria do remanejamento dos quadros
+                  </p>
+                </div>
+              </div>
+              <hr class="workers-hr"/>
+            </a>
+            <a href="/prof3" class="row workers-row-profile">
+              <div class="column workers-image">
+                <img src={Profissional1} class="workers-picture-profissões"/>
+              </div>
+              <div class="column workers-profile">
+                <div id="workers-name-change" class="workers-name">
+                  Michelangelo
+                </div>
+                <div class="workers-description">
+                  <p>
+                    Percebemos, cada vez mais, que a execução dos pontos do programa nos obriga à análise dos procedimentos normalmente adotados
+                  </p>
+                </div>
+              </div>
+              <hr class="workers-hr"/>
+            </a>
+            <a href="/prof4" class="row workers-row-profile">
+              <div class="column workers-image">
+                <img src={Profissional1} class="workers-picture-profissões"/>
+              </div>
+              <div class="column workers-profile">
+                <div id="workers-name-change" class="workers-name">
+                  Salvador Dalí
+                </div>
+                <div class="workers-description">
+                  <p>
+                    Todavia, a crescente influência da mídia possibilita uma melhor visão global das direções preferenciais no sentido do progresso. Por outro lado, o aumento do diálogo entre os diferentes setores produtivos assume importantes posições no estabelecimento do fluxo de informações. O cuidado em identificar pontos críticos no comprometimento entre as equipes auxilia a preparação e a composição das diretrizes de desenvolvimento para o futuro
+                  </p>
+                </div>
+              </div>
+              <hr class="workers-hr"/>
+            </a>
           </div>
         </div>
       </div>
