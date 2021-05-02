@@ -12,7 +12,7 @@ export default class Home extends Component {
   render() {
     return(
       <div>
-        <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> </h2>
+        <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a>
         <div class="search-box">
           <form method="get" action="/contrate">
             <div id="search-contrate">
