@@ -112,7 +112,7 @@
 }
 
 /* Alinha o espaço onde fica o dicionário */
-.dictionary {
+.job-dictionary {
   width: 72%;
   margin-left: auto;
 	margin-right: auto;
@@ -122,7 +122,7 @@
 }
 
 /* Alinha e formata cada letra e barra do dicionário */
-.dictionary-letter {
+.job-dictionary-letter {
   font-family: GlacialIndifference;
   width: 72%;
   margin-left: 20%;
@@ -133,7 +133,7 @@
 }
 
 /* Padroniza as letras dos dicionários como links */
-.dictionary a {
+.job-dictionary a {
   text-decoration: none;
   width: 72%;
   margin-left: auto;
@@ -145,12 +145,12 @@
 }
 
 /* Troca a cor da letra do dicionário quando passa o mouse em cima */
-.dictionary a:hover {
+.job-dictionary a:hover {
   color: rgb(237,125,49);
 }
 
 /* Contagem de profissionais em determinado serviço */
-.workers-count {
+.job-workers-count {
   font-family: GlacialIndifference;
   font-size: 10pt;
   margin-bottom: 10px;
@@ -158,21 +158,14 @@
 }
 
 /* Espaço para o ícone de cada serviço */
-.imagecontainer {
+.job-imagecontainer {
   width: 7%;
   margin-left: 23%;
 }
 
 /* Espaço para o texto com título e descrição do serviço */
-.textcontainer {
+.job-textcontainer {
   width: 50%;
-}
-
-/* Ícone para o serviço */
-.job-icon {
-  margin-right: auto;
-  margin-top: 0px;
-  margin-bottom: 0px;
 }
 
 /* Nome do serviço */
@@ -207,14 +200,14 @@ html {
 }
 
 /* Troca o ícone pelo ícone laranja */
-.job-link a:hover .icon-button-class{
+.job-link a:hover .job-icon-button-class{
   color: rgb(237,125,49);
   background-image: url('../assets/Ícones/privadalaranja.png');
   outline: none;
 }
 
 /* Lugar onde fica o ícone */
-.icon-button-class {
+.job-icon-button-class {
   width: 70px;
 	height: 70px;
 	border-style: none;
