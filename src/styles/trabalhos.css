@@ -76,6 +76,19 @@
   border-color: rgb(175,171,171);
 }
 
+/* Link na barra de escolha das categorias e serviços */
+.link-bar-label {
+  color: rgb(64,64,64);
+  text-decoration: none;
+}
+
+/* Muda a cor dos links da barra de escolha das categorias e serviços */
+.link-bar-label:hover {
+  cursor: pointer;
+  color: rgb(237,125,49);
+  text-decoration: none;
+}
+
 /* Caminho das páginas */
 .path {
   font-family: GlacialIndifference;

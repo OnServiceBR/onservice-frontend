@@ -134,7 +134,9 @@ export default class Home extends Component {
           </form>
         </div>
         <div class="search-tabs">
-          <label id="trabalhos-category-label">Categorias</label>
+          <a href="javascript:history.back()">
+            <label id="trabalhos-category-label"  class="link-bar-label">Categorias</label>
+          </a>
           <label id="trabalhos-service-label">Serviços</label>
           <label id="trabalhos-job-label">Profissionais</label>
         </div>
