@@ -7,6 +7,8 @@ import Anuncieimagem from "../assets/Slide5.PNG";
 import "../styles/anuncie.css";
 import { Multiselect } from 'multiselect-react-dropdown';
 
+import NumberFormat from 'react-number-format';
+
 export default class Home extends Component {
   constructor(props){
     super(props)
@@ -53,7 +55,7 @@ export default class Home extends Component {
         {name: 'Goiânia', id: 'GO', value: 'GO'},
         {name: 'Maranhão', id: 'MA', value: 'MA'},
         {name: 'Mato Grosso', id: 'MT', value: 'MT'},
-        {name: 'MAto Grosso do Sul', id: 'MS', value: 'MS'},
+        {name: 'Mato Grosso do Sul', id: 'MS', value: 'MS'},
         {name: 'Minas Gerais', id: 'MG', value: 'MG'},
         {name: 'Pará', id: 'PA', value: 'PA'},
         {name: 'Paraíba', id: 'PB', value: 'PB'},
@@ -109,7 +111,12 @@ export default class Home extends Component {
     this.onRemoveCity = this.onRemoveCity.bind(this);
     this.onSelectService = this.onSelectService.bind(this);
     this.onRemoveService = this.onRemoveService.bind(this);
+    this.onSelectState = this.onSelectState.bind(this);
     this.onSelectW2W = this.onSelectW2W.bind(this);
+    this.onSelectPhone = this.onSelectPhone.bind(this);
+    this.onSelectCEP = this.onSelectCEP.bind(this);
+    this.onSelectBirthday = this.onSelectBirthday.bind(this);
+    this.onSelectCPF = this.onSelectCPF.bind(this);
   }
   
   handleChange(event) {
@@ -291,6 +298,22 @@ export default class Home extends Component {
     this.setState({ w2w: selectedItem.value }, () => console.log(this.state.w2w));
   }
 
+  onSelectPhone(values) {
+    this.setState({ phone: values }, () => console.log(this.state.phone));
+  }
+  
+  onSelectCEP(values) {
+    this.setState({ cep: values }, () => console.log(this.state.cep));
+  }
+  
+  onSelectBirthday(values) {
+    this.setState({ birthday: values }, () => console.log(this.state.birthday));
+  }
+  
+  onSelectCPF(values) {
+    this.setState({ cpf: values }, () => console.log(this.state.cpf));
+  }
+
   render() {
     const { cidades, servicos } = this.state;
     return(
@@ -306,7 +329,7 @@ export default class Home extends Component {
           </div>
           <div class="form-item">
             <label for="cpf"><span title="Campo obrigatório" style={{color: "red"}}>*</span>CPF:</label>
-            <input id="cpf" type="text" class='' required placeholder="Insira seu nome CPF" onChange={this.handleChange.bind(this)}/>
+            <NumberFormat id="cpf" placeholder="Insira seu nome CPF" onValueChange={this.onSelectCPF} format="###.###.###-##" mask="_" />
           </div>
           <div class="form-item">
             <label for="email"><span title="Campo obrigatório" style={{color: "red"}}>*</span>E-mail:</label>
@@ -314,7 +337,7 @@ export default class Home extends Component {
           </div>
           <div class="form-item">
             <label for="birthday"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Data de Nascimento:</label>
-            <input id="birthday" type="date" class='' required onChange={this.handleChange.bind(this)}/>
+            <NumberFormat id="birthday" placeholder="DD/MM/AAAA" onValueChange={this.onSelectBirthday} format="##/##/####" mask="_" />
           </div>
           <div class="form-item">
             <label for="gender"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Gênero:</label>
@@ -327,12 +350,12 @@ export default class Home extends Component {
           </div>
           <div class="form-item">
             <label for="phone"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Celular:</label>
-            <input id="phone" type="text" class='' required placeholder="Insira somente os números do seu celular, com ddd" onChange={this.handleChange.bind(this)} />
+            <NumberFormat id="phone" placeholder="Insira somente os números do seu celular, com ddd" onValueChange={this.onSelectPhone} format="(##) #####-####" mask="_" />
             <small class=''>*É obrigatório que este número tenha Whatsapp</small>
           </div>
           <div class="form-item">
             <label for="cep"><span title="Campo obrigatório" style={{color: "red"}}>*</span>CEP:</label>
-            <input id="cep" type="text" class='' required placeholder="Insira apenas os números do seu CEP" onChange={this.handleChange.bind(this)} />
+            <NumberFormat id="cep" placeholder="Insira apenas os números do seu CEP" onValueChange={this.onSelectCEP} format="#####-###" mask="_" />
           </div>
           <div class="form-item">
             <label for="state"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Estado:</label>
@@ -437,6 +460,7 @@ export default class Home extends Component {
           </div>  
           <button type='button' onClick={this.savePrestador.bind(this)} class='btn-primary'>Registre-se</button>
         </div>
+        
       </div>
     )
   }
