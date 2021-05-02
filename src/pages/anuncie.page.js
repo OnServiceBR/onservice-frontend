@@ -72,6 +72,13 @@ export default class Home extends Component {
         {name: 'Sergipe', id: 'SE', value: 'SE'},
         {name: 'Tocantins', id: 'TO', value: 'TO'},
       ],
+      
+      DropdownGender: [
+        /* W2W */
+        {name: 'Masculino', id: "M", value: "masculino"},
+        {name: 'Feminino', id: "F", value: "feminino"},
+        {name: 'Prefiro não dizer', id: "X", value: "outro"},
+      ],
 
       DropdownW2W: [
         /* W2W */
