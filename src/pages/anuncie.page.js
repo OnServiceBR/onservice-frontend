@@ -41,6 +41,36 @@ export default class Home extends Component {
       eventos: [],
       residencial: [],
 
+      DropdownStates: [
+        {name: 'Acre', id: 'AC', value: 'AC'},
+        {name: 'Alagoas', id: 'AL', value: 'AL'},
+        {name: 'Amapá', id: 'AP', value: 'AP'},
+        {name: 'Amazonas', id: 'AM', value: 'AM'},
+        {name: 'Bahia', id: 'BA', value: 'BA'},
+        {name: 'Ceará', id: 'CE', value: 'CE'},
+        {name: 'Distrito Federal', id: 'DF', value: 'DF'},
+        {name: 'Espírito Santo', id: 'ES', value: 'ES'},
+        {name: 'Goiânia', id: 'GO', value: 'GO'},
+        {name: 'Maranhão', id: 'MA', value: 'MA'},
+        {name: 'Mato Grosso', id: 'MT', value: 'MT'},
+        {name: 'MAto Grosso do Sul', id: 'MS', value: 'MS'},
+        {name: 'Minas Gerais', id: 'MG', value: 'MG'},
+        {name: 'Pará', id: 'PA', value: 'PA'},
+        {name: 'Paraíba', id: 'PB', value: 'PB'},
+        {name: 'Paraná', id: 'PR', value: 'PR'},
+        {name: 'Pernambuco', id: 'PE', value: 'PE'},
+        {name: 'Piauí', id: 'PI', value: 'PI'},
+        {name: 'Rio de Janeiro', id: 'RJ', value: 'RJ'},
+        {name: 'Rio Grande do Norte', id: 'RN', value: 'RN'},
+        {name: 'Rio Grande do Sul', id: 'RS', value: 'RS'},
+        {name: 'Rondônia', id: 'RO', value: 'RO'},
+        {name: 'Roraima', id: 'RR', value: 'RR'},
+        {name: 'Santa Catarina', id: 'SC', value: 'SC'},
+        {name: 'São Paulo', id: 'SP', value: 'SP'},
+        {name: 'Sergipe', id: 'SE', value: 'SE'},
+        {name: 'Tocantins', id: 'TO', value: 'TO'},
+      ],
+
       DropdownW2W: [
         /* W2W */
         {name: 'Sim', id: "w2w_true", value: true},
@@ -147,7 +177,8 @@ export default class Home extends Component {
           servicos: this.state.services,
           description: this.state.description,
           picture: res.data.filename,
-          w2w: this.state.w2w
+          w2w: this.state.w2w,
+          terms: this.state.terms
         };
         console.log(data)
         PrestadorDataService.create(data)
@@ -168,6 +199,7 @@ export default class Home extends Component {
               cities: res.data.cities,
               services: res.data.services,
               w2w: res.data.w2w,
+              terms: res.data.terms,
               
               published: res.data.published,
 
@@ -251,6 +283,10 @@ export default class Home extends Component {
     this.setState({ services: services }, () => console.log(this.state.services));
   }
 
+  onSelectState(selectedList, selectedItem) {
+    this.setState({ state: selectedItem.value }, () => console.log(this.state.state));
+  }
+
   onSelectW2W(selectedList, selectedItem) {
     this.setState({ w2w: selectedItem.value }, () => console.log(this.state.w2w));
   }
@@ -265,23 +301,23 @@ export default class Home extends Component {
         <div class="col register-right">
           <h2>ANUNCIE-SE AQUI</h2>
           <div class="form-item">
-            <label for="name">Nome:</label>
-            <input id="name" type="text" class='' placeholder="Insira seu nome completo, conforme documento de identificação" onChange={this.handleChange.bind(this)} />
+            <label for="name"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Nome:</label>
+            <input id="name" type="text" class='' required placeholder="Insira seu nome completo, conforme documento de identificação" onChange={this.handleChange.bind(this)} />
           </div>
           <div class="form-item">
-            <label for="cpf">CPF:</label>
-            <input id="cpf" type="text" class='' placeholder="Insira seu nome CPF" onChange={this.handleChange.bind(this)}/>
+            <label for="cpf"><span title="Campo obrigatório" style={{color: "red"}}>*</span>CPF:</label>
+            <input id="cpf" type="text" class='' required placeholder="Insira seu nome CPF" onChange={this.handleChange.bind(this)}/>
           </div>
           <div class="form-item">
-            <label for="email">E-mail:</label>
-            <input id="email" type="email" class='' placeholder="Insira seu e-mail mais utilizado" onChange={this.handleChange.bind(this)}/>
+            <label for="email"><span title="Campo obrigatório" style={{color: "red"}}>*</span>E-mail:</label>
+            <input id="email" type="email" class='' required placeholder="Insira seu e-mail mais utilizado" onChange={this.handleChange.bind(this)}/>
           </div>
           <div class="form-item">
-            <label for="birthday">Data de Nascimento:</label>
+            <label for="birthday"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Data de Nascimento:</label>
             <input id="birthday" type="date" class='' required onChange={this.handleChange.bind(this)}/>
           </div>
           <div class="form-item">
-            <label for="gender">Gênero:</label>
+            <label for="gender"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Gênero:</label>
             <select id="gender" class='' required onChange={this.handleChange.bind(this)}>
               <option value="" selected disabled hidden>Selecione seu gênero</option>
               <option>Masculino</option>
@@ -290,32 +326,43 @@ export default class Home extends Component {
             </select>
           </div>
           <div class="form-item">
-            <label for="phone">Celular:</label>
-            <input id="phone" type="text" class='' placeholder="Insira somente os números do seu celular, com ddd" onChange={this.handleChange.bind(this)} />
+            <label for="phone"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Celular:</label>
+            <input id="phone" type="text" class='' required placeholder="Insira somente os números do seu celular, com ddd" onChange={this.handleChange.bind(this)} />
             <small class=''>*É obrigatório que este número tenha Whatsapp</small>
           </div>
           <div class="form-item">
-            <label for="state">Estado:</label>
-            <input id="state" type="text" class='' placeholder="Informe seu estado" onChange={this.handleChange.bind(this)}/>
+            <label for="cep"><span title="Campo obrigatório" style={{color: "red"}}>*</span>CEP:</label>
+            <input id="cep" type="text" class='' required placeholder="Insira apenas os números do seu CEP" onChange={this.handleChange.bind(this)} />
           </div>
           <div class="form-item">
-            <label for="city">Cidade:</label>
-            <input id="city" type="text" class='' placeholder="Informe sua cidade" onChange={this.handleChange.bind(this)}/>
+            <label for="state"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Estado:</label>
+            <Multiselect
+                options={this.state.DropdownStates} // Options to display in the dropdown
+                onSelect={this.onSelectState} // Function will trigger on select event
+                displayValue="name" // Property name to display in the dropdown options
+                closeOnSelect={true}
+                showArrow={true}
+                id="StatesDropdown"
+                style={this.style}
+                singleSelect={true}
+                avoidHighlightFirstOption={true}
+                placeholder="Selecione seu estado de residência"
+                />
           </div>
           <div class="form-item">
-            <label for="cep">CEP:</label>
-            <input id="cep" type="text" class='' placeholder="Insira apenas os números do seu CEP" onChange={this.handleChange.bind(this)} />
+            <label for="city"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Cidade:</label>
+            <input id="city" type="text" class='' required placeholder="Informe sua cidade" onChange={this.handleChange.bind(this)}/>
           </div>
           <div class="form-item">
-            <label for="address">Endereço:</label>
-            <input id="address" type="text" class='' placeholder="Insira sua rua/avenida e número" onChange={this.handleChange.bind(this)} />
+            <label for="address"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Endereço:</label>
+            <input id="address" type="text" class='' required placeholder="Insira sua rua/avenida e número" onChange={this.handleChange.bind(this)} />
           </div>
           <div class="form-item">
             <label for="complement">Complemento:</label>
-            <input id="complement" type="text" class='' placeholder="Insira o complemento. Caso não tenha, preencha com 'nenhum'" onChange={this.handleChange.bind(this)} />
+            <input id="complement" type="text" class='' placeholder="Insira o complemento'" onChange={this.handleChange.bind(this)} />
           </div>
           <div class="form-item">
-            <label for="cities">Local de Trabalho:</label>
+            <label for="cities"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Local de Trabalho:</label>
               <div class="form-item">
                 <Multiselect
                 options={cidades} // Options to display in the dropdown
@@ -333,7 +380,7 @@ export default class Home extends Component {
               </div>
           </div>
           <div class="form-item">
-            <label for="services">Profissão:</label>
+            <label for="services"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Profissão:</label>
               <div class="form-item">
                 <Multiselect
                 options={servicos} // Options to display in the dropdown
@@ -351,18 +398,18 @@ export default class Home extends Component {
               </div>
           </div>
           <div class="form-item">
-            <label for="file">Foto de Perfil:</label>
-            <input id="file" type="file" name="file" class="" onChange={this.handleChange.bind(this)} />
+            <label for="file"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Foto de Perfil:</label>
+            <input id="file" type="file" name="file" class="" required onChange={this.handleChange.bind(this)} />
             <small class=''>*Insira uma foto que tenha fundo branco e mostre bem o seu rosto. Logotipos não são aceitos.</small>
           </div>
           <div class="form-item">
-              <label class="label">Descrição do Serviço:</label>
+              <label class="label"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Descrição do Serviço:</label>
               <div style={{textAlign: "center"}}>
-                <textarea id="description" name="description" class="textarea-contact" rows="6" placeholder="Escreva uma descrição dos seus serviços, com o máximo de detalhes possível" onChange={this.handleChange.bind(this)}></textarea>
+                <textarea id="description" name="description" required class="textarea-contact" rows="6" placeholder="Escreva uma descrição dos seus serviços, com o máximo de detalhes possível" onChange={this.handleChange.bind(this)}></textarea>
               </div>
             </div>
           <div class="form-item">
-            <label for="w2w">Serviço exclusivo para mulheres?</label>
+            <label for="w2w"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Serviço exclusivo para mulheres?</label>
               <div class="form-item">
                 <Multiselect
                 options={this.state.DropdownW2W} // Options to display in the dropdown

@@ -258,6 +258,14 @@
   border-color: rgb(237, 125, 49);
 }
 
+#StatesDropdown input{
+  border: 0.5pt solid rgb(118, 113, 113);
+}
+
+#StatesDropdown input:focus{
+  border-color: rgb(237, 125, 49);
+}
+
 #W2WDropdown input{
   border: 0.5pt solid rgb(118, 113, 113);
 }
