@@ -17,6 +17,7 @@ import Trabalhos from "./pages/trabalhos.page";
 import Conduta from "./pages/conduta.page";
 import Termos from "./pages/termos.page";
 import Privacidade from "./pages/privacidade.page";
+import Perfil from "./pages/perfil.page";
 import Profissionais from "./pages/profissionais.page";
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           <Route exact path="/contrate/:job" component={Trabalhos} />
           <Route exact path="/contrate/:job/:workers" component={Profissionais} />
           <Route exact path="/codigo-de-conduta/" component={Conduta} />
+          <Route exact path="/perfil/" component={Perfil} />
           <Route exact path="/termos-de-uso/" component={Termos} />
           <Route exact path="/politica-de-privacidade/" component={Privacidade} />
         </Switch>

@@ -1,0 +1,146 @@
+/* Bloco da caixa que fica no fundo */
+.information-center {
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 5pt rgba(191, 191, 191, 0.6);
+    border-top-left-radius: 0.65cm;
+    border-bottom-left-radius: 0.65cm;
+    border-top-right-radius: 0.65cm;
+    border-bottom-right-radius: 0.65cm;
+    width: 22.39cm;
+  }
+
+/* Nome do prestador */
+.perfil-h1 {
+    font-family: GlacialIndifference;
+    font-size: 16pt;
+    text-align: left;
+    margin-bottom: -3%;
+    color: rgb(64, 64, 64);
+    margin-left: 0%;
+    margin-top: 0%;
+  }
+
+/* Estilo do texto que fala a 1a profissão */
+  .perfil-right {
+    font-family: GlacialIndifference;
+    font-size: 12pt;
+    text-align: left;
+    color: rgb(64, 64, 64);
+    margin-top: 20px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+  }
+/* Estilo do texto que fala a 2a profissão */
+  .perfil-right-abaixo {
+    font-family: GlacialIndifference;
+    font-size: 12 pt;
+    text-align: left;
+    margin-left: 10px;
+    
+  }
+
+/* Estilo da caixa de descrição */
+  .perfil-description {
+    border: solid 1px rgba(191, 191, 191);
+    width: 94%;
+    height: 3.3cm;
+    margin-bottom: 5%;
+  }
+  .perfil-description-text {
+    font-size: 8pt;
+    font-family: GlacialIndifference;
+    color: rgb(175, 171, 171);
+    text-align: left;
+    margin: 5px;
+  }
+
+
+/* Estilo do texto que contém o número de avaliações 1a linha*/
+.perfil-left {
+  font-family: GlacialIndifference;
+  font-size: 10pt;
+  text-align: left;
+  color: rgb(237, 125, 49);
+  margin-top: 23px;
+  margin-bottom: 20px;
+}
+
+/* Estilo do texto que contém o número de avaliações 2a linha em diante */
+.perfil-left-abaixo {
+  font-family: GlacialIndifference;
+  font-size: 10pt;
+  text-align: left;
+  color: rgb(237, 125, 49);
+}
+
+  /* Estilo do botão "entrar em contato" */
+  #button-entraremcontato{
+    text-align: left;
+    margin-top: -15%;
+    width: 4.50cm;
+    height: 0.8cm;
+    border-width: 0.5pt;
+    border-style: solid;
+    border-color: rgb(237,125,49);
+    font-size: 12pt;
+    background: rgb(237,125,49);
+    font-family: GlacialIndifference;
+    color: rgb(255,255,255);
+    padding-left: 2%;
+      margin-bottom: 3%;
+  }
+
+.perfilphrase{
+	margin-top: 5%;
+	margin-left: 5%;
+  margin-bottom: 0%;
+}
+
+
+.perfilimage{
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+/*Imagem dentro do botão*/
+#buttonimage{
+	margin-top: -2%;
+	margin-left: 5%;
+}
+
+/* Linha cinza*/
+.perfil-hr {
+  margin-left: 0%;
+  margin-right: 0%;
+  width: 90%;
+  border-top-color: rgb(231,230,230);
+  margin-bottom: 3%;
+}
+
+#clasifyimage{
+  margin-left: auto;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+#clasifyimage2{
+  margin-left: auto;
+}
+
+  /* Zera o padding da coluna */
+#colpaddingnone{
+  padding-right: 15px;
+  padding-left: 0cm;
+}
+
+#paddingimage{
+  padding-top: 15px;
+  padding-right: 0px;
+}
+
+/*Alinha a foto circular da pessoa */
+#colpaddingtop{
+  padding-top: 20px;
+  padding-right: 0px;
+}
