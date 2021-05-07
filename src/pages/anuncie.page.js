@@ -124,6 +124,7 @@ export default class Home extends Component {
     this.onSelectCEP = this.onSelectCEP.bind(this);
     this.onSelectBirthday = this.onSelectBirthday.bind(this);
     this.onSelectCPF = this.onSelectCPF.bind(this);
+    this.onSelectGender = this.onSelectGender.bind(this);
   }
   
   handleChange(event) {
@@ -132,33 +133,9 @@ export default class Home extends Component {
     {
       this.setState({ name: event.target.value });
     }
-    else if (field === "cpf")
-    {
-      this.setState({ cpf: event.target.value });
-    }
     else if (field === "email")
     {
       this.setState({ email: event.target.value });
-    }
-    else if (field === "birthday")
-    {
-      this.setState({ birthday: event.target.value });
-    }
-    else if (field === "gender")
-    {
-      this.setState({ gender: event.target.value });
-    }
-    else if (field === "phone")
-    {
-      this.setState({ phone: event.target.value });
-    }
-    else if (field === "cep")
-    {
-      this.setState({ cep: event.target.value });
-    }
-    else if (field === "state")
-    {
-      this.setState({ state: event.target.value });
     }
     else if (field === "city")
     {
@@ -345,7 +322,11 @@ export default class Home extends Component {
   }
   
   onSelectCPF(values) {
-    this.setState({ cpf: values }, () => console.log(this.state.cpf));
+    this.setState({ cpf: values }, () => console.log(this.state.gender));
+  }
+
+  onSelectGender(values) {
+    this.setState({ gender: values }, () => console.log(this.state.cpf));
   }
 
   render() {
@@ -375,12 +356,20 @@ export default class Home extends Component {
           </div>
           <div class="form-item">
             <label for="gender"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Gênero:</label>
-            <select id="gender" class='' required onChange={this.handleChange.bind(this)}>
-              <option value="" selected disabled hidden>Selecione seu gênero</option>
-              <option>Masculino</option>
-              <option>Feminino</option>
-              <option>Prefiro não dizer</option>
-            </select>
+            <div class="form-item">
+                <Multiselect
+                options={this.state.DropdownGender} // Options to display in the dropdown
+                onSelect={this.onSelectGender} // Function will trigger on select event
+                displayValue="name" // Property name to display in the dropdown options
+                closeOnSelect={true}
+                showArrow={true}
+                id="GenderDropdown"
+                style={this.style}
+                singleSelect={true}
+                avoidHighlightFirstOption={true}
+                placeholder="Selecione uma opção"
+                />
+              </div>
           </div>
           <div class="form-item">
             <label for="phone"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Celular:</label>

@@ -274,6 +274,14 @@
   border-color: rgb(237, 125, 49);
 }
 
+#GenderDropdown input{
+  border: 0.5pt solid rgb(118, 113, 113);
+}
+
+#GenderDropdown input:focus{
+  border-color: rgb(237, 125, 49);
+}
+
 #ServicesDropdown input{
   border: 0.5pt solid rgb(118, 113, 113);
 }
