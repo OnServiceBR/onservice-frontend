@@ -274,7 +274,7 @@ export default class Home extends Component {
               <hr class="workers-hr"/>
             </a>
             {/* -------------------------------------------------------------------- */}
-            <a href="/profissional2" class="row workers-row-profile">
+            <a href="/perfil" class="row workers-row-profile">
               <div class="column workers-image">
                 <img src={Profissional1} class="workers-picture-profissões"/>
               </div>
@@ -291,7 +291,7 @@ export default class Home extends Component {
               <hr class="workers-hr"/>
             </a>
             {/* -------------------------------------------------------------------- */}
-            <a href="/profissional3" class="row workers-row-profile">
+            <a href="/perfil" class="row workers-row-profile">
               <div class="column workers-image">
                 <img src={Profissional1} class="workers-picture-profissões"/>
               </div>
@@ -308,7 +308,7 @@ export default class Home extends Component {
               <hr class="workers-hr"/>
             </a>
             {/* -------------------------------------------------------------------- */}
-            <a href="/prof4" class="row workers-row-profile">
+            <a href="/perfil" class="row workers-row-profile">
               <div class="column workers-image">
                 <img src={Profissional1} class="workers-picture-profissões"/>
               </div>
