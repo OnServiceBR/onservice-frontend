@@ -128,33 +128,60 @@ export default class Home extends Component {
   
   handleChange(event) {
     const field = event.target.id;
-    if (field === "name") {
+    if (field === "name")
+    {
       this.setState({ name: event.target.value });
-    } else if (field === "cpf") {
+    }
+    else if (field === "cpf")
+    {
       this.setState({ cpf: event.target.value });
-    } else if (field === "email") {
+    }
+    else if (field === "email")
+    {
       this.setState({ email: event.target.value });
-    } else if (field === "birthday") {
+    }
+    else if (field === "birthday")
+    {
       this.setState({ birthday: event.target.value });
-    } else if (field === "gender") {
+    }
+    else if (field === "gender")
+    {
       this.setState({ gender: event.target.value });
-    } else if (field === "phone") {
+    }
+    else if (field === "phone")
+    {
       this.setState({ phone: event.target.value });
-    } else if (field === "cep") {
+    }
+    else if (field === "cep")
+    {
       this.setState({ cep: event.target.value });
-    } else if (field === "state") {
+    }
+    else if (field === "state")
+    {
       this.setState({ state: event.target.value });
-    } else if (field === "city") {
+    }
+    else if (field === "city")
+    {
       this.setState({ city: event.target.value });
-    } else if (field === "address") {
+    }
+    else if (field === "address")
+    {
       this.setState({ address: event.target.value });
-    } else if (field === "complement") {
+    }
+    else if (field === "complement")
+    {
       this.setState({ complement: event.target.value });
-    } else if (field === "file") {
+    }
+    else if (field === "file")
+    {
       this.setState({ file: event.target.files });
-    } else if (field === "description") {
+    }
+    else if (field === "description")
+    {
       this.setState({ description: event.target.value });
-    } else if (field === "terms") {
+    }
+    else if (field === "terms")
+    {
       this.setState({ terms: event.target.value });
     }
     // console.log(this.state)
