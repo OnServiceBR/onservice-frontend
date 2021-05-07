@@ -278,6 +278,38 @@
   border-color: rgb(237, 125, 49);
 }
 
+#StatesDropdown input{
+  border: 0.5pt solid rgb(118, 113, 113);
+}
+
+#StatesDropdown input:focus{
+  border-color: rgb(237, 125, 49);
+}
+
+#W2WDropdown input{
+  border: 0.5pt solid rgb(118, 113, 113);
+}
+
+#W2WDropdown input:focus{
+  border-color: rgb(237, 125, 49);
+}
+
+#ServicesDropdown input{
+  border: 0.5pt solid rgb(118, 113, 113);
+}
+
+#ServicesDropdown input:focus{
+  border-color: rgb(237, 125, 49);
+}
+
+#CitiesDropdown input{
+  border: 0.5pt solid rgb(118, 113, 113);
+}
+
+#CitiesDropdown input:focus{
+  border-color: rgb(237, 125, 49);
+}
+
 ._1cgu0CqbPSvU9G_sHmk1wv {
   bottom: 5px !important;
   transform: unset !important;
