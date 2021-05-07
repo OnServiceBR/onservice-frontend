@@ -1,3 +1,22 @@
+/* Caminho atual sem mudar de cor */
+.path-actual {
+  font-family: GlacialIndifference;
+  color: rgb(118,113,113);
+  margin-top: 0px;
+  margin-bottom: 35px;
+  display: inline-block;
+  text-transform: lowercase;
+  font-size: 10pt;
+  margin-left: 2px;
+  margin-right: 2px;
+  text-decoration: none;
+}
+
+/* Deixa maiústula a primeira letra de cada palavra no caminho atual */
+.path-actual:first-letter {
+  text-transform: uppercase;
+}
+
 /* Estilo bloco de pesquisa */
 .search-box{
   margin-left: auto;
