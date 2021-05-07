@@ -1,3 +1,66 @@
+/* Texto ao lado do dropdown de ordenar os profissionais */
+.order-workers {
+  font-family: GlacialIndifference;
+  color: rgb(118,113,113);
+}
+
+/* Dropdown de ordenar os profissionais */
+.order-workers-dropdown {
+  font-family: GlacialIndifference;
+  color: rgb(118,113,113);
+}
+
+/* Estilo MultipleDropdown */
+#MultipleDropdownWorkers input{
+  border: 0.5pt solid rgb(118, 113, 113);
+  border-radius: 0.15cm;
+}
+
+#MultipleDropdownWorkers input:focus{
+  border-color: rgb(237, 125, 49);
+}
+
+._1cgu0CqbPSvU9G_sHmk1wv {
+  bottom: 5px !important;
+  transform: unset !important;
+  top:unset !important;
+}
+
+/* Espaço com settings+workers */
+.workers-row-order {
+  width: 20%;
+  margin-left: auto;
+  margin-right: 14%;
+}
+
+/* Espaço para as configações de filtro dos profissionais */
+.workers-column-order-title{
+  width: 40%;
+}
+
+/* Espaço para os perfis dos profissionais */
+.workers-column-order-dropdown{
+  width: 60%;
+}
+
+.path-actual {
+  font-family: GlacialIndifference;
+  color: rgb(118,113,113);
+  margin-top: 0px;
+  margin-bottom: 35px;
+  display: inline-block;
+  text-transform: lowercase;
+  font-size: 10pt;
+  margin-left: 2px;
+  margin-right: 2px;
+  text-decoration: none;
+}
+
+/* Deixa maiústula a primeira letra de cada palavra no caminho */
+.path-actual:first-letter {
+  text-transform: uppercase;
+}
+
 /* Estilo da borda de baixo do nome das páginas */
 #profissionais-category-label{
   border-color: rgb(175,171,171);
@@ -128,6 +191,7 @@
   font-family: GlacialIndifference;
   font-size: 10pt;
   color: rgb(118,113,113);
+  margin-bottom: none;
 }
 
 .workers-picture-profissões {
