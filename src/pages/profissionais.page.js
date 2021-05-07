@@ -75,7 +75,10 @@ export default class Home extends Component {
           trabalho:"Tecnologia"
         });
     }
-    // vvvvvvvvvvvvvvvvvvvv SÓ ALTEREI AQUIIIIIIIIII TEM QUE MUDAR E AUTOMATIZAR OS OUTROSSSSSSSSSSSSSSSSSSSSSSSS
+
+
+    
+    // vvvvvvvvvvvvvvvvvvvv SÓ ALTEREI AQUIIIIIIIIII TEM QUE MUDAR E AUTOMATIZAR OS OUTROS. SÓ FUNCIONA PRA MANUTENÇÃO & ENCANADOR!!!!!!!!!!
     else if(this.props.match.params.job==="manutencao"){
       ServicoDataService.getManutencao()
         .then(res => {
@@ -94,7 +97,10 @@ export default class Home extends Component {
           profissão:"Encanador(a)"
         });
     }
-    // ^^^^^^^^^^^ SÓ ALTEREI AQUIIIIIIIIII TEM QUE MUDAR E AUTOMATIZAR OS OUTROSSSSSSSSSSSSSSSSSSSSSSSS
+    // ^^^^^^^^^^^ SÓ ALTEREI AQUIIIIIIIIII TEM QUE MUDAR E AUTOMATIZAR OS OUTROS. SÓ FUNCIONA PRA MANUTENÇÃO & ENCANADOR!!!!!!!!!!
+
+
+
     else if(this.props.match.params.job==="saude"){
       ServicoDataService.getSaude()
         .then(res => {
@@ -197,6 +203,9 @@ export default class Home extends Component {
                 options={this.state.DropdownOrder} // Options to display in the dropdown
                 selectedValues={this.state.selectedValue} // Preselected value to persist in dropdown
                 onSelect={this.onSelect} // Function will trigger on select event
+                // ------------------------------------------------------------------------------------------------
+                // VER AQUI COMO DESABILITAR A CAIXINHA DO DROPDOWN QUANDO SELECIONA PELO THIS.ONSELECT
+                // ------------------------------------------------------------------------------------------------
                 onRemove={this.onRemove} // Function will trigger on remove event
                 displayValue="name" // Property name to display in the dropdown options
                 closeOnSelect={true}
@@ -205,6 +214,7 @@ export default class Home extends Component {
                 style={this.style}
                 selectionLimit={1}
                 placeholder="Selecione"
+                hidePlaceholder={true}
               />
             </div>
           </div>
@@ -247,7 +257,7 @@ export default class Home extends Component {
           </div>
           <div id="workers-change-color-on-hover" class="column workers-column-profile">
             {/* -------------------------------------------------------------------- */}
-            <a href="/prof1" class="row workers-row-profile">
+            <a href="/profissional1" class="row workers-row-profile">
               <div class="column workers-image">
                 <img src={Profissional1} class="workers-picture-profissões"/>
               </div>
@@ -264,7 +274,7 @@ export default class Home extends Component {
               <hr class="workers-hr"/>
             </a>
             {/* -------------------------------------------------------------------- */}
-            <a href="/prof2" class="row workers-row-profile">
+            <a href="/profissional2" class="row workers-row-profile">
               <div class="column workers-image">
                 <img src={Profissional1} class="workers-picture-profissões"/>
               </div>
@@ -281,7 +291,7 @@ export default class Home extends Component {
               <hr class="workers-hr"/>
             </a>
             {/* -------------------------------------------------------------------- */}
-            <a href="/prof3" class="row workers-row-profile">
+            <a href="/profissional3" class="row workers-row-profile">
               <div class="column workers-image">
                 <img src={Profissional1} class="workers-picture-profissões"/>
               </div>
