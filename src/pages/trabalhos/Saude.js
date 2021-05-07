@@ -1,127 +1,15 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import "../styles/trabalhos.css";
-import ServicoDataService from "../services/servico.service";
-import privada from "../assets/Ícones/privada.png";
+import "../../styles/trabalhos.css";
+import privada from "../../assets/Ícones/privada.png";
 
 export default class Home extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      tecnologia: [],
-      beleza: [],
-      saude: [],
-      manutencao: [],
-      ensino: [],
-      eventos: [],
-      trabalho:""
-    }
-  }
-
-  componentDidMount() {
-    this.retrieveServicos();
-  }
-
-  retrieveServicos() {
-    if(this.props.match.params.job==="tecnologia"){
-      ServicoDataService.getTecnologia()
-        .then(res => {
-          this.setState({
-            tecnologia: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Tecnologia"
-        });
-    }
-    else if(this.props.match.params.job==="manutencao"){
-      ServicoDataService.getManutencao()
-        .then(res => {
-          this.setState({
-            manutencao: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Manutenção"
-        });
-    }
-    else if(this.props.match.params.job==="saude"){
-      ServicoDataService.getSaude()
-        .then(res => {
-          this.setState({
-            saude: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Saúde"
-        });
-    }
-    else if(this.props.match.params.job==="ensino"){
-      ServicoDataService.getEnsino()
-        .then(res => {
-          this.setState({
-            ensino: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Ensino"
-        });
-    }
-    else if(this.props.match.params.job==="beleza"){
-      ServicoDataService.getBeleza()
-        .then(res => {
-          this.setState({
-            beleza: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Beleza"
-        });
-    }
-    else if(this.props.match.params.job==="eventos"){
-      ServicoDataService.getEventos()
-        .then(res => {
-          this.setState({
-            eventos: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Eventos"
-        });
-    }
-
-  }
 
   render() {
-    const {trabalho} = this.state;
     return(
       <div>
         {/* O caminho aqui está só para Manutenção, tem que automatizar pra cada uma das categorias de serviços que estão nos botões */}
-        <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><h2 class="path-actual">{this.state.trabalho}</h2>
+        <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><h2 class="path-actual">Saude</h2>
         <div class="search-box">
           <form method="get" action="/contrate">
             <div id="search-contrate">
