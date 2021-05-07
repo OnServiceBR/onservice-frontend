@@ -257,7 +257,7 @@ export default class Home extends Component {
           </div>
           <div id="workers-change-color-on-hover" class="column workers-column-profile">
             {/* -------------------------------------------------------------------- */}
-            <a href="/profissional1" class="row workers-row-profile">
+            <a href="/perfil" class="row workers-row-profile">
               <div class="column workers-image">
                 <img src={Profissional1} class="workers-picture-profissões"/>
               </div>
