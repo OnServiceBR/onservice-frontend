@@ -78,7 +78,6 @@ export default class Home extends Component {
               </div>
             </a>
           </div>
-          <h1 class="job-dictionary-letter">C<a name="names-C"></a></h1>
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
@@ -95,7 +94,6 @@ export default class Home extends Component {
               </div>
             </a>
           </div>
-          <h1 class="job-dictionary-letter">D<a name="names-D"></a></h1>
         <hr class="job-hr"/>
           <h1 class="job-dictionary-letter">E<a name="names-E"></a></h1>
         <hr class="job-hr"/>
