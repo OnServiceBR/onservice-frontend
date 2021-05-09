@@ -25,3 +25,14 @@
 	font-family: GlacialIndifference;
     font-size: 16pt;
 }
+
+
+/* Linha que divide as colunas */
+.howtouse-hr {
+	display: block;
+    height: 95%;
+	border-right-color: rgb(231,230,230);
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-top: 2%;
+}

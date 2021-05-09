@@ -11,6 +11,7 @@ function ComoUtilizaroSite() {
                 <div class="col-6">
                     <h2 class="title-utilizarsite">Tutoriais para o Cliente</h2>
                 </div>
+                <hr class="howtouse-hr" />
                 <div class="col-6">
                     <h2 class="title-utilizarsite">Tutoriais para o Profissional</h2>
                 </div>
