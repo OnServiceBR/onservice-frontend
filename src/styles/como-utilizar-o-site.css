@@ -26,13 +26,36 @@
     font-size: 16pt;
 }
 
-
-/* Linha que divide as colunas */
-.howtouse-hr {
-	display: block;
-    height: 95%;
-	border-right-color: rgb(231,230,230);
-	margin-top: 0px;
-	margin-bottom: 0px;
-	margin-top: 2%;
+.row-all-howtouse {
+	width: 100%;
+	text-align: center;
 }
+
+.column-each-howtouse {
+	display: inline-block;
+	width: 49.5%;
+	text-align: center;
+	border-width: 10px;
+	border-right-color: black;
+}
+
+
+
+.row-title-howtouse {
+	margin-top: 5%;
+	margin-bottom: 5%;
+	display: block;
+}
+
+.row-subtitle-howtouse {
+	margin-top: 5%;
+	margin-bottom: 5%;
+	display: block;
+}
+
+.row-video-howtouse {
+	margin-top: 5%;
+	margin-bottom: 5%;
+	display: block;
+}
+
