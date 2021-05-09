@@ -17,6 +17,8 @@ import Trabalhos from "./pages/trabalhos.page";
 import Conduta from "./pages/conduta.page";
 import Termos from "./pages/termos.page";
 import Privacidade from "./pages/privacidade.page";
+import ComoUtilizaroSite from "./pages/como-utilizar-o-site.page";
+
 
 function App() {
   return (
@@ -37,6 +39,7 @@ function App() {
           <Route exact path="/codigo-de-conduta/" component={Conduta} />
           <Route exact path="/termos-de-uso/" component={Termos} />
           <Route exact path="/politica-de-privacidade/" component={Privacidade} />
+          <Route exact path="/como-utilizar-o-site/" component={ComoUtilizaroSite} />
         </Switch>
       </div>
       <Footer />
