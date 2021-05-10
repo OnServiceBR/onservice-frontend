@@ -16,7 +16,7 @@ function ComoUtilizaroSite() {
                         <h2 class="topic-big-howtouse">1. <span class="topic-small-howtouse">Como criar uma conta no site</span></h2>
                     </div>
                     <div class="row row-video-howtouse">
-                        <iframe id="player" type="text/html" width="480" height="270"
+                        <iframe id="player" type="text/html" width="400" height="225"
                             src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
                             frameborder="0">
                         </iframe>
@@ -25,7 +25,7 @@ function ComoUtilizaroSite() {
                         <h2 class="topic-big-howtouse">2. <span class="topic-small-howtouse">O que tem na página inicial</span></h2>
                     </div>
                     <div class="row row-video-howtouse">
-                        <iframe id="player" type="text/html" width="480" height="270"
+                        <iframe id="player" type="text/html" width="400" height="225"
                             src="https://www.youtube.com/embed/DBiNucJ64F8"
                             frameborder="0">
                         </iframe>
@@ -34,7 +34,7 @@ function ComoUtilizaroSite() {
                         <h2 class="topic-big-howtouse">3. <span class="topic-small-howtouse">Como alterar dados da conta (e-mail, senha)</span></h2>
                     </div>
                     <div class="row row-video-howtouse">
-                        <iframe id="player" type="text/html" width="480" height="270"
+                        <iframe id="player" type="text/html" width="400" height="225"
                             src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
                             frameborder="0">
                         </iframe>
@@ -43,7 +43,7 @@ function ComoUtilizaroSite() {
                         <h2 class="topic-big-howtouse">4. <span class="topic-small-howtouse">Como contratar um serviço de um profissional</span></h2>
                     </div>
                     <div class="row row-video-howtouse">
-                        <iframe id="player" type="text/html" width="480" height="270"
+                        <iframe id="player" type="text/html" width="400" height="225"
                             src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
                             frameborder="0">
                         </iframe>
@@ -52,7 +52,7 @@ function ComoUtilizaroSite() {
                         <h2 class="topic-big-howtouse">5. <span class="topic-small-howtouse">Como ver as avaliações de um profissional</span></h2>
                     </div>
                     <div class="row row-video-howtouse">
-                        <iframe id="player" type="text/html" width="480" height="270"
+                        <iframe id="player" type="text/html" width="400" height="225"
                             src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
                             frameborder="0">
                         </iframe>
@@ -61,7 +61,7 @@ function ComoUtilizaroSite() {
                         <h2 class="topic-big-howtouse">6. <span class="topic-small-howtouse">Como avaliar um profissional</span></h2>
                     </div>
                     <div class="row row-video-howtouse">
-                        <iframe id="player" type="text/html" width="480" height="270"
+                        <iframe id="player" type="text/html" width="400" height="225"
                             src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
                             frameborder="0">
                         </iframe>
@@ -70,7 +70,7 @@ function ComoUtilizaroSite() {
                         <h2 class="topic-big-howtouse">7. <span class="topic-small-howtouse">Onde ler os termos e condições de uso do site</span></h2>
                     </div>
                     <div class="row row-video-howtouse">
-                        <iframe id="player" type="text/html" width="480" height="270"
+                        <iframe id="player" type="text/html" width="400" height="225"
                             src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
                             frameborder="0">
                         </iframe>
@@ -79,7 +79,7 @@ function ComoUtilizaroSite() {
                         <h2 class="topic-big-howtouse">8. <span class="topic-small-howtouse">Como entrar em contato e realizar denúncias</span></h2>
                     </div>
                     <div class="row row-video-howtouse">
-                        <iframe id="player" type="text/html" width="480" height="270"
+                        <iframe id="player" type="text/html" width="400" height="225"
                             src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
                             frameborder="0">
                         </iframe>
@@ -94,7 +94,7 @@ function ComoUtilizaroSite() {
                         <h2 class="topic-big-howtouse">1. <span class="topic-small-howtouse">Como criar uma conta no site</span></h2>
                     </div>
                     <div class="row row-video-howtouse">
-                        <iframe id="player" type="text/html" width="480" height="270"
+                        <iframe id="player" type="text/html" width="400" height="225"
                             src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
                             frameborder="0">
                         </iframe>
@@ -103,7 +103,7 @@ function ComoUtilizaroSite() {
                         <h2 class="topic-big-howtouse">2. <span class="topic-small-howtouse">O que tem na página inicial</span></h2>
                     </div>
                     <div class="row row-video-howtouse">
-                        <iframe id="player" type="text/html" width="480" height="270"
+                        <iframe id="player" type="text/html" width="400" height="225"
                             src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
                             frameborder="0">
                         </iframe>
@@ -112,7 +112,7 @@ function ComoUtilizaroSite() {
                         <h2 class="topic-big-howtouse">3. <span class="topic-small-howtouse">Como alterar dados da conta (e-mail, senha)</span></h2>
                     </div>
                     <div class="row row-video-howtouse">
-                        <iframe id="player" type="text/html" width="480" height="270"
+                        <iframe id="player" type="text/html" width="400" height="225"
                             src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
                             frameborder="0">
                         </iframe>
@@ -121,7 +121,7 @@ function ComoUtilizaroSite() {
                         <h2 class="topic-big-howtouse">4. <span class="topic-small-howtouse">Como editar o perfil visível aos clientes</span></h2>
                     </div>
                     <div class="row row-video-howtouse">
-                        <iframe id="player" type="text/html" width="480" height="270"
+                        <iframe id="player" type="text/html" width="400" height="225"
                             src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
                             frameborder="0">
                         </iframe>
@@ -130,7 +130,7 @@ function ComoUtilizaroSite() {
                         <h2 class="topic-big-howtouse">5. <span class="topic-small-howtouse">Como ver as suas avaliações</span></h2>
                     </div>
                     <div class="row row-video-howtouse">
-                        <iframe id="player" type="text/html" width="480" height="270"
+                        <iframe id="player" type="text/html" width="400" height="225"
                             src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
                             frameborder="0">
                         </iframe>
@@ -139,7 +139,7 @@ function ComoUtilizaroSite() {
                         <h2 class="topic-big-howtouse">6. <span class="topic-small-howtouse">Como assinar o Plano Premium</span></h2>
                     </div>
                     <div class="row row-video-howtouse">
-                        <iframe id="player" type="text/html" width="480" height="270"
+                        <iframe id="player" type="text/html" width="400" height="225"
                             src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
                             frameborder="0">
                         </iframe>
@@ -148,7 +148,7 @@ function ComoUtilizaroSite() {
                         <h2 class="topic-big-howtouse">7. <span class="topic-small-howtouse">Onde ler os termos e condições de uso do site</span></h2>
                     </div>
                     <div class="row row-video-howtouse">
-                        <iframe id="player" type="text/html" width="480" height="270"
+                        <iframe id="player" type="text/html" width="400" height="225"
                             src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
                             frameborder="0">
                         </iframe>
@@ -157,7 +157,7 @@ function ComoUtilizaroSite() {
                         <h2 class="topic-big-howtouse">8. <span class="topic-small-howtouse">Como entrar em contato e realizar denúncias</span></h2>
                     </div>
                     <div class="row row-video-howtouse">
-                        <iframe id="player" type="text/html" width="480" height="270"
+                        <iframe id="player" type="text/html" width="400" height="225"
                             src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
                             frameborder="0">
                         </iframe>
