@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import swal from 'sweetalert';
+
+import swal from '@sweetalert/with-react'
 import PrestadorDataService from "../services/prestador.service";
 import CidadeDataService from "../services/cidade.service";
 import ServicoDataService from "../services/servico.service";
@@ -162,10 +163,27 @@ export default class Home extends Component {
     this.retrieveServicos();
   }
 
+  sendErrorAlert = (msg) => {
+    swal({
+      icon: "error",
+      button:{
+        className: "button-alert",
+      },
+      content: (
+        <div>
+          <h3>Ops, algo deu errado...</h3>
+          <p>
+            {msg}
+          </p>
+        </div>
+      )
+    })
+  }
+
   savePrestador = () => {
 
     if (this.state.name === ""){
-      swal("Ops, algo deu errado...", "O seu nome não pode estar em branco!", "error");
+      this.sendErrorAlert("Seu nome não pode estar em branco!")
       return;
     }
     if (this.state.cpf.value !== "" && this.state.cpf !== ""){
@@ -181,7 +199,7 @@ export default class Home extends Component {
         cpf === "77777777777" || 
         cpf === "88888888888" || 
         cpf === "99999999999"){
-          swal("Ops, algo deu errado...", "Seu número de CPF está errado!", "error");
+          this.sendErrorAlert("Seu número de CPF está errado!")
           return;
       }
       // Verifica primeiro dígito
@@ -193,7 +211,7 @@ export default class Home extends Component {
       if (rev === 10 || rev === 11)		
         rev = 0;	
       if (rev !== parseInt(cpf.charAt(9))){
-        swal("Ops, algo deu errado...", "Seu número de CPF está errado!", "error");
+        this.sendErrorAlert("Seu número de CPF está errado!")
         return;
       }
       // Verifica segundo dígito
@@ -205,27 +223,27 @@ export default class Home extends Component {
       if (rev === 10 || rev === 11)	
         rev = 0;	
       if (rev !== parseInt(cpf.charAt(10))){
-        swal("Ops, algo deu errado...", "Seu número de CPF está errado!", "error");
+        this.sendErrorAlert("Seu número de CPF está errado!")
         return;
       }
     }else{
-      swal("Ops, algo deu errado...", "Seu número de CPF não pode estar em branco!", "error");
+      this.sendErrorAlert("Seu número de CPF não pode estar em branco!")
       return;
     }
 
     if (this.state.email === "") {
-      swal("Ops, algo deu errado...", "Seu endereço de email não pode estar em branco!", "error");
+      this.sendErrorAlert("Seu endereço de email não pode estar em branco!")
       return;
     }else{
       var re = /\S+@\S+\.\S+/;
       if(re.test(this.state.email)===false){
-        swal("Ops, algo deu errado...", "Seu endereço de email não é válido!", "error");
+        this.sendErrorAlert("Seu endereço de email não é válido!")
         return;
       }
     }
 
     if (this.state.birthday.value === "" || this.state.birthday === ""){
-      swal("Ops, algo deu errado...", "Sua data de nascimento não pode estar em branco!", "error");
+      this.sendErrorAlert("Sua data de nascimento não pode estar em branco!")
       return;
     }else{
       var data = this.state.birthday.formattedValue
@@ -240,59 +258,59 @@ export default class Home extends Component {
       if (m < 0 || (m === 0 && today.getDate() < birthday.getDate())) age--;
   
       if(age < 18){
-        swal("Ops, algo deu errado...", "Você não pode se cadastrar sendo menor de 18 anos!", "error");
+        this.sendErrorAlert("Você não pode se cadastrar sendo menor de 18 anos!")
         return;
      }
     }
 
     if (this.state.gender === "") {
-      swal("Ops, algo deu errado...", "Seu gênero não pode estar em branco!", "error");
+      this.sendErrorAlert("Seu gênero não pode estar em branco!")
       return;
     }
 
     if (this.state.phone.value === "" || this.state.phone === ""){
-      swal("Ops, algo deu errado...", "Seu número de celular não pode estar em branco!", "error");
+      this.sendErrorAlert("Seu número de celular não pode estar em branco!")
       return;
     }else{
       re = /\(?\d{2}\)?\d{8,9}/;
       if (re.test(this.state.phone.value) === false){
-        swal("Ops, algo deu errado...", "Seu número de celular está errado!", "error");
+        this.sendErrorAlert("Seu número de celular está errado!")
         return;
       }
     }
   
     if (this.state.cep === "" || this.state.cep.value === "") {
-      swal("Ops, algo deu errado...", "Seu cep não pode estar em branco!", "error");
+      this.sendErrorAlert("Seu cep não pode estar em branco!")
       return;
     }
 
     if (this.state.state === "") {
-      swal("Ops, algo deu errado...", "Seu estado não pode estar em branco!", "error");
+      this.sendErrorAlert("Seu estado não pode estar em branco!")
       return;
     }
   
     if (this.state.city === "") {
-      swal("Ops, algo deu errado...", "Sua cidade não pode estar em branco!", "error");
+      this.sendErrorAlert("Sua cidade não pode estar em branco!")
       return;
     }
   
     if (this.state.address === "") {
-      swal("Ops, algo deu errado...", "Seu endereço não pode estar em branco!", "error");
+      this.sendErrorAlert("Seu endereço não pode estar em branco!")
       return;
     }
   
     if (this.state.description === "") {
-      swal("Ops, algo deu errado...", "Sua descrição não pode estar em branco!", "error");
+      this.sendErrorAlert("Sua descrição não pode estar em branco!")
       return;
     }
   
     if (this.state.w2w !== false || this.state.w2w !== true) {
-      swal("Ops, algo deu errado...", "Você deve selecionar se seu serviço é exclusivo para mulheres!", "error");
+      this.sendErrorAlert("Você deve selecionar se seu serviço é exclusivo para mulheres!")
       return;
     }
   
     if (this.state.terms === false){
-      swal("Ops, algo deu errado...", "Você deve concordar com nossos termos!", "error");
+      this.sendErrorAlert("Você deve concordar com nossos termos!")
       return;
     }
 
