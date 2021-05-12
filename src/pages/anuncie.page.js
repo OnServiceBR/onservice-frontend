@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import swal from 'sweetalert';
 import PrestadorDataService from "../services/prestador.service";
 import CidadeDataService from "../services/cidade.service";
 import ServicoDataService from "../services/servico.service";
@@ -24,24 +25,16 @@ export default class Home extends Component {
       city: "",
       address: "",
       complement: "",
-      description: "",
       cidades: [],
       servicos: [],
       picture: "",
+      file: undefined,
+      description: "",
       w2w: false,
       terms: false,
       
       cities: [],
       services: [],
-      file: undefined,
-
-      tecnologia: [],
-      beleza: [],
-      saude: [],
-      manutencao: [],
-      ensino: [],
-      eventos: [],
-      residencial: [],
 
       DropdownStates: [
         {name: 'Acre', id: 'AC', value: 'AC'},
@@ -170,7 +163,139 @@ export default class Home extends Component {
   }
 
   savePrestador = () => {
-    // console.log(this.state.name)
+
+    if (this.state.name === ""){
+      swal("Ops, algo deu errado...", "O seu nome não pode estar em branco!", "error");
+      return;
+    }
+    if (this.state.cpf.value !== "" && this.state.cpf !== ""){
+      var cpf = this.state.cpf.value;
+      if (cpf.length !== 11 || 
+        cpf === "00000000000" || 
+        cpf === "11111111111" || 
+        cpf === "22222222222" || 
+        cpf === "33333333333" || 
+        cpf === "44444444444" || 
+        cpf === "55555555555" || 
+        cpf === "66666666666" || 
+        cpf === "77777777777" || 
+        cpf === "88888888888" || 
+        cpf === "99999999999"){
+          swal("Ops, algo deu errado...", "Seu número de CPF está errado!", "error");
+          return;
+      }
+      // Verifica primeiro dígito
+      var add = 0;
+      for (let i=0; i < 9; i ++){
+        add += parseInt(cpf.charAt(i)) * (10 - i);	
+      }
+      let rev = 11 - (add % 11);	
+      if (rev === 10 || rev === 11)		
+        rev = 0;	
+      if (rev !== parseInt(cpf.charAt(9))){
+        swal("Ops, algo deu errado...", "Seu número de CPF está errado!", "error");
+        return;
+      }
+      // Verifica segundo dígito
+      add = 0;	
+      for (let i = 0; i < 10; i ++){
+        add += parseInt(cpf.charAt(i)) * (11 - i);	
+      }
+      rev = 11 - (add % 11);	
+      if (rev === 10 || rev === 11)	
+        rev = 0;	
+      if (rev !== parseInt(cpf.charAt(10))){
+        swal("Ops, algo deu errado...", "Seu número de CPF está errado!", "error");
+        return;
+      }
+    }else{
+      swal("Ops, algo deu errado...", "Seu número de CPF não pode estar em branco!", "error");
+      return;
+    }
+
+    if (this.state.email === "") {
+      swal("Ops, algo deu errado...", "Seu endereço de email não pode estar em branco!", "error");
+      return;
+    }else{
+      var re = /\S+@\S+\.\S+/;
+      if(re.test(this.state.email)===false){
+        swal("Ops, algo deu errado...", "Seu endereço de email não é válido!", "error");
+        return;
+      }
+    }
+
+    if (this.state.birthday.value === "" || this.state.birthday === ""){
+      swal("Ops, algo deu errado...", "Sua data de nascimento não pode estar em branco!", "error");
+      return;
+    }else{
+      var data = this.state.birthday.formattedValue
+      var data_array = data.split("/");                           // quebra a data em array
+      if(data_array[0].length !== 4){
+        data = data_array[2]+"-"+data_array[1]+"-"+data_array[0]; // remonto a data no formato yyyy/MM/dd
+      }
+      var today = new Date();
+      var birthday = new Date(data)
+      var age = today.getFullYear() - birthday.getFullYear()
+      var m = today.getMonth() - birthday.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthday.getDate())) age--;
+  
+      if(age < 18){
+        swal("Ops, algo deu errado...", "Você não pode se cadastrar sendo menor de 18 anos!", "error");
+        return;
+     }
+    }
+
+    if (this.state.gender === "") {
+      swal("Ops, algo deu errado...", "Seu gênero não pode estar em branco!", "error");
+      return;
+    }
+
+    if (this.state.phone.value === "" || this.state.phone === ""){
+      swal("Ops, algo deu errado...", "Seu número de celular não pode estar em branco!", "error");
+      return;
+    }else{
+      re = /\(?\d{2}\)?\d{8,9}/;
+      if (re.test(this.state.phone.value) === false){
+        swal("Ops, algo deu errado...", "Seu número de celular está errado!", "error");
+        return;
+      }
+    }
+  
+    if (this.state.cep === "" || this.state.cep.value === "") {
+      swal("Ops, algo deu errado...", "Seu cep não pode estar em branco!", "error");
+      return;
+    }
+
+    if (this.state.state === "") {
+      swal("Ops, algo deu errado...", "Seu estado não pode estar em branco!", "error");
+      return;
+    }
+  
+    if (this.state.city === "") {
+      swal("Ops, algo deu errado...", "Sua cidade não pode estar em branco!", "error");
+      return;
+    }
+  
+    if (this.state.address === "") {
+      swal("Ops, algo deu errado...", "Seu endereço não pode estar em branco!", "error");
+      return;
+    }
+  
+    if (this.state.description === "") {
+      swal("Ops, algo deu errado...", "Sua descrição não pode estar em branco!", "error");
+      return;
+    }
+  
+    if (this.state.w2w !== false || this.state.w2w !== true) {
+      swal("Ops, algo deu errado...", "Você deve selecionar se seu serviço é exclusivo para mulheres!", "error");
+      return;
+    }
+  
+    if (this.state.terms === false){
+      swal("Ops, algo deu errado...", "Você deve concordar com nossos termos!", "error");
+      return;
+    }
+
     const formData = new FormData()
     formData.append("cpf", this.state.cpf)
     formData.append('file', this.state.file[0])
@@ -178,7 +303,7 @@ export default class Home extends Component {
     PrestadorDataService.upload(formData)
       .then(res => {
         console.log("Image Uploaded")
-        console.log(res.data)
+        // console.log(res.data)
         var data = {
           name: this.state.name,
           cpf: this.state.cpf,
@@ -223,10 +348,11 @@ export default class Home extends Component {
 
               submitted: true
             });
-            console.log(res.data);
+            swal("Concluído", "Sua inscrição foi enviada, você deve ser aprovado em breve!", "success");
             this.newPrestador();
           })
           .catch(e => {
+            swal("Ops, algo deu errado...", "Talvez nosso sistema esteja fora do ar, tente novamente mais tarde!", "error");
             console.log(e);
           });
       })
@@ -268,65 +394,72 @@ export default class Home extends Component {
       gender: "",
       phone: "",
       cep: "",
+      state: "",
       city: "",
       address: "",
       complement: "",
+      cidades: [],
+      servicos: [],
+      picture: "",
+      file: undefined,
       description: "",
-
+      w2w: false,
+      terms: false,
+      
       submitted: false
     });
+  }
+  
+  onSelectCPF(values) {
+    this.setState({ cpf: values });
+  }
+
+  onSelectBirthday(values) {
+    this.setState({ birthday: values });
+  }
+  
+  onSelectGender(values) {
+    this.setState({ gender: values });
+  }
+
+  onSelectPhone(values) {
+    this.setState({ phone: values });
+  }
+
+  onSelectCEP(values) {
+    this.setState({ cep: values });
+  }
+
+  onSelectState(selectedList, selectedItem) {
+    this.setState({ state: selectedItem.value });
   }
 
   onSelectCity(selectedList, selectedItem) {
     let {cities} = this.state
-    this.setState({ cities: cities.concat(selectedItem.id) }, () => console.log(this.state.cities));
+    this.setState({ cities: cities.concat(selectedItem.id) });
   }
 
   onRemoveCity(selectedList, removedItem) {
     let {cities} = this.state
     let index = cities.indexOf(removedItem.id)
     cities.splice(index, 1)
-    this.setState({ cities: cities }, () => console.log(this.state.cities));
+    this.setState({ cities: cities });
   }
 
   onSelectService(selectedList, selectedItem) {
     let {services} = this.state
-    this.setState({ services: services.concat(selectedItem.id) }, () => console.log(this.state.services));
+    this.setState({ services: services.concat(selectedItem.id) });
   }
 
   onRemoveService(selectedList, removedItem) {
     let {services} = this.state
     let index = services.indexOf(removedItem.id)
     services.splice(index, 1)
-    this.setState({ services: services }, () => console.log(this.state.services));
-  }
-
-  onSelectState(selectedList, selectedItem) {
-    this.setState({ state: selectedItem.value }, () => console.log(this.state.state));
+    this.setState({ services: services });
   }
 
   onSelectW2W(selectedList, selectedItem) {
-    this.setState({ w2w: selectedItem.value }, () => console.log(this.state.w2w));
-  }
-
-  onSelectPhone(values) {
-    this.setState({ phone: values }, () => console.log(this.state.phone));
-  }
-  
-  onSelectCEP(values) {
-    this.setState({ cep: values }, () => console.log(this.state.cep));
-  }
-  
-  onSelectBirthday(values) {
-    this.setState({ birthday: values }, () => console.log(this.state.birthday));
-  }
-  
-  onSelectCPF(values) {
-    this.setState({ cpf: values }, () => console.log(this.state.gender));
-  }
-
-  onSelectGender(values) {
-    this.setState({ gender: values }, () => console.log(this.state.cpf));
+    this.setState({ w2w: selectedItem.value });
   }
 
   render() {
