@@ -66,7 +66,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="job-icon-button-class"> </button>
+                  <button class="artesao-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
@@ -88,7 +88,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="job-icon-button-class"> </button>
+                  <button class="desenhista-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
@@ -108,7 +108,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="job-icon-button-class"> </button>
+                  <button class="frete-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
@@ -130,7 +130,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="job-icon-button-class"> </button>
+                  <button class="impressao-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
@@ -154,7 +154,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="job-icon-button-class"> </button>
+                  <button class="motorista-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
@@ -176,7 +176,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="job-icon-button-class"> </button>
+                  <button class="passeador-de-caes-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}

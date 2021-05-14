@@ -74,7 +74,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="job-icon-button-class"> </button>
+                  <button class="eletricista-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
@@ -90,7 +90,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="job-icon-button-class"> </button>
+                  <button class="encanador-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
@@ -108,7 +108,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="job-icon-button-class"> </button>
+                  <button class="faz-tudo-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
@@ -137,7 +137,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="job-icon-button-class"> </button>
+                  <button class="manutencao-de-pabx-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
@@ -153,7 +153,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="job-icon-button-class"> </button>
+                  <button class="marceneiro-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
@@ -169,7 +169,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="job-icon-button-class"> </button>
+                  <button class="montador-de-moveis-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
@@ -189,7 +189,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="job-icon-button-class"> </button>
+                  <button class="pintor-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
@@ -206,21 +206,6 @@ export default class Home extends Component {
         <hr class="job-hr"/>
           <h1 class="job-dictionary-letter">T<a name="names-T"></a></h1>
         <hr class="job-hr"/>
-        <div class="job-link">
-          {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
-              <div class="row">
-                <div class="column job-imagecontainer">
-                  <button class="job-icon-button-class"> </button>
-                </div>
-                <div class="column job-textcontainer">
-                  {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
-                  <p class="job-name">Técnico em informática</p>
-                  <p class="job-workers-count">2 profissionais</p>
-                </div>
-              </div>
-            </a>
-          </div>
         <hr class="job-hr"/>
           <h1 class="job-dictionary-letter">U<a name="names-U"></a></h1>
         <hr class="job-hr"/>

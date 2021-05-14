@@ -249,3 +249,372 @@ html {
   background-color: white;
   background-image: url('../assets/Ícones/privada.png');
 }
+
+.analista-de-sistemas-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.analista-de-sistemas-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.designer-grafico-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.designer-grafico-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.editor-de-video-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.editor-de-video-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.programador-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.programador-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.tecnico-em-informatica-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.tecnico-em-informatica-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.eletricista-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.eletricista-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.encanador-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.encanador-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.faz-tudo-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.faz-tudo-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.manutencao-de-pabx-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.manutencao-de-pabx-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.marceneiro-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.marceneiro-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.montador-de-moveis-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.montador-de-moveis-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.pintor-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.pintor-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.tecnico-em-informatica-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.tecnico-em-informatica-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.barbeiro-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.barbeiro-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.cabeleireiro-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.cabeleireiro-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.maquiador-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.maquiador-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.micropigmentador-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.micropigmentador-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.coach-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.coach-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.consultor-de-marketing-digital-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.consultor-de-marketing-digital-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.professor-de-programação-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.professor-de-programação-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.professor-de-ingles-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.professor-de-ingles-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.professor-de-frances-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.professor-de-frances-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.tradutor-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.tradutor-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.fisioterapeuta-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.fisioterapeuta-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.personal-trainer-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.personal-trainer-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.psicologo-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.psicologo-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.terapeuta-ocupacional-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.terapeuta-ocupacional-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.animador-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.animador-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.bartender-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.bartender-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.fotografo-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.fotografo-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.garcom-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.garcom-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.promotor-de-eventos-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.promotor-de-eventos-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.recepcionista-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.recepcionista-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.diarista-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.diarista-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.jardineiro-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.jardineiro-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.artesao-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.artesao-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.desenhista-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.desenhista-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.frete-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.frete-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.impressao-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.impressao-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.motorista-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.motorista-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+.passeador-de-caes-icon-button-class {
+  background-image: url('../assets/Ícones/privada.png');
+}
+
+.passeador-de-caes-icon-button-class:hover{
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}

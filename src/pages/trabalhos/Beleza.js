@@ -68,7 +68,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="job-icon-button-class"> </button>
+                  <button class="barbeiro-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
@@ -84,7 +84,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="job-icon-button-class"> </button>
+                  <button class="cabelereiro-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
@@ -118,7 +118,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="job-icon-button-class"> </button>
+                  <button class="maquiador-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
@@ -134,7 +134,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="job-icon-button-class"> </button>
+                  <button class="micropigmentador-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
