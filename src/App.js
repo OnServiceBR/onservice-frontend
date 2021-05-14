@@ -17,6 +17,7 @@ import Trabalhos from "./pages/trabalhos.page";
 import Conduta from "./pages/conduta.page";
 import Termos from "./pages/termos.page";
 import Privacidade from "./pages/privacidade.page";
+import Sobrenos from "./pages/sobrenos.page";
 import Perfil from "./pages/perfil.page";
 import Profissionais from "./pages/profissionais.page";
 import Seguranca from "./pages/seguranca.page";
@@ -42,6 +43,7 @@ function App() {
           <Route exact path="/perfil/" component={Perfil} />
           <Route exact path="/termos-de-uso/" component={Termos} />
           <Route exact path="/politica-de-privacidade/" component={Privacidade} />
+          <Route exact path="/sobre-nos/" component={Sobrenos} />
           <Route exact path="/seguranca" component={Seguranca} />
         </Switch>
       </div>
