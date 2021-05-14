@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "../styles/home.css";
 import Claudia from '../assets/Claudia-Fundo-Laranja.png';
+import WhiteLeft from '../assets/BrancoEsquerda.png';
+import WhiteRight from '../assets/BrancoDireita.png';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -29,10 +31,12 @@ export default class Home extends Component {
       <br />
       <br />
       </div>
+      <img src={WhiteLeft} id="white-left"/>
+      <img src={WhiteRight} id="white-right"/>
       <div class="row row-all-cards" id= "center-cards">
         <div class="column column-each-card">
           <div class="row row-card-work">
-            Organizador 1
+            Organizador de festas infantis
           </div>
           <hr class="each-card-hr"/>
           <div class="row row-card-picture">

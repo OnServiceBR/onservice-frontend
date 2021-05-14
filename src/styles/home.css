@@ -47,6 +47,18 @@
   margin-left: 1.5%
 }
 
+#white-left{
+	position: absolute;
+	right: -4px;
+	bottom: -10px;
+}
+
+#white-right{
+	position: absolute;
+	right: 4px;
+	bottom: 10px;
+}
+
 .row-all-cards {
   margin-left: auto;
   margin-right: auto;
@@ -64,19 +76,18 @@
 	border-bottom-left-radius: 0.3cm;
 	border-top-right-radius: 0.3cm;
 	border-bottom-right-radius: 0.3cm;
-	width: 4cm;
+	width: 150px;
 }
 
 .row-card-work {
   display: block;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  height: 50px;
 }
 
 .row-card-picture {
   display: block;
-  margin-top: 35px;
-  margin-bottom: 35px;
+  margin-top: 55px;
+  margin-bottom: 55px;
 }
 
 .row-card-name {
