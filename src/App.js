@@ -16,6 +16,7 @@ import Contato from "./pages/contato.page";
 import Conduta from "./pages/conduta.page";
 import Termos from "./pages/termos.page";
 import Privacidade from "./pages/privacidade.page";
+import Sobrenos from "./pages/sobrenos.page";
 import Perfil from "./pages/perfil.page";
 import Profissionais from "./pages/profissionais.page";
 import Manutencao from "./pages/trabalhos/Manutencao";
@@ -26,6 +27,7 @@ import Outros from "./pages/trabalhos/Outros";
 import Residencial from "./pages/trabalhos/Residencial";
 import Saude from "./pages/trabalhos/Saude";
 import Tecnologia from "./pages/trabalhos/Tecnologia";
+import Seguranca from "./pages/seguranca.page";
 
 function App() {
   return (
@@ -55,6 +57,8 @@ function App() {
           <Route exact path="/contrate/residencial" component={Residencial} />
           <Route exact path="/contrate/saude" component={Saude} />
           <Route exact path="/contrate/tecnologia" component={Tecnologia} />
+          <Route exact path="/sobre-nos/" component={Sobrenos} />
+          <Route exact path="/seguranca" component={Seguranca} />
         </Switch>
       </div>
       <Footer />

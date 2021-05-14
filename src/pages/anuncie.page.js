@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+
+import swal from '@sweetalert/with-react'
 import PrestadorDataService from "../services/prestador.service";
 import CidadeDataService from "../services/cidade.service";
 import ServicoDataService from "../services/servico.service";
@@ -6,6 +8,8 @@ import Anuncieimagem from "../assets/Slide5.PNG";
 
 import "../styles/anuncie.css";
 import { Multiselect } from 'multiselect-react-dropdown';
+
+import NumberFormat from 'react-number-format';
 
 export default class Home extends Component {
   constructor(props){
@@ -22,24 +26,16 @@ export default class Home extends Component {
       city: "",
       address: "",
       complement: "",
-      description: "",
       cidades: [],
       servicos: [],
       picture: "",
+      file: undefined,
+      description: "",
       w2w: false,
       terms: false,
       
       cities: [],
       services: [],
-      file: undefined,
-
-      tecnologia: [],
-      beleza: [],
-      saude: [],
-      manutencao: [],
-      ensino: [],
-      eventos: [],
-      residencial: [],
 
       DropdownStates: [
         {name: 'Acre', id: 'AC', value: 'AC'},
@@ -53,7 +49,7 @@ export default class Home extends Component {
         {name: 'Goiânia', id: 'GO', value: 'GO'},
         {name: 'Maranhão', id: 'MA', value: 'MA'},
         {name: 'Mato Grosso', id: 'MT', value: 'MT'},
-        {name: 'MAto Grosso do Sul', id: 'MS', value: 'MS'},
+        {name: 'Mato Grosso do Sul', id: 'MS', value: 'MS'},
         {name: 'Minas Gerais', id: 'MG', value: 'MG'},
         {name: 'Pará', id: 'PA', value: 'PA'},
         {name: 'Paraíba', id: 'PB', value: 'PB'},
@@ -69,6 +65,13 @@ export default class Home extends Component {
         {name: 'São Paulo', id: 'SP', value: 'SP'},
         {name: 'Sergipe', id: 'SE', value: 'SE'},
         {name: 'Tocantins', id: 'TO', value: 'TO'},
+      ],
+      
+      DropdownGender: [
+        /* W2W */
+        {name: 'Masculino', id: "M", value: "masculino"},
+        {name: 'Feminino', id: "F", value: "feminino"},
+        {name: 'Prefiro não dizer', id: "X", value: "outro"},
       ],
 
       DropdownW2W: [
@@ -109,38 +112,47 @@ export default class Home extends Component {
     this.onRemoveCity = this.onRemoveCity.bind(this);
     this.onSelectService = this.onSelectService.bind(this);
     this.onRemoveService = this.onRemoveService.bind(this);
+    this.onSelectState = this.onSelectState.bind(this);
     this.onSelectW2W = this.onSelectW2W.bind(this);
+    this.onSelectPhone = this.onSelectPhone.bind(this);
+    this.onSelectCEP = this.onSelectCEP.bind(this);
+    this.onSelectBirthday = this.onSelectBirthday.bind(this);
+    this.onSelectCPF = this.onSelectCPF.bind(this);
+    this.onSelectGender = this.onSelectGender.bind(this);
   }
   
   handleChange(event) {
     const field = event.target.id;
-    if (field === "name") {
+    if (field === "name")
+    {
       this.setState({ name: event.target.value });
-    } else if (field === "cpf") {
-      this.setState({ cpf: event.target.value });
-    } else if (field === "email") {
+    }
+    else if (field === "email")
+    {
       this.setState({ email: event.target.value });
-    } else if (field === "birthday") {
-      this.setState({ birthday: event.target.value });
-    } else if (field === "gender") {
-      this.setState({ gender: event.target.value });
-    } else if (field === "phone") {
-      this.setState({ phone: event.target.value });
-    } else if (field === "cep") {
-      this.setState({ cep: event.target.value });
-    } else if (field === "state") {
-      this.setState({ state: event.target.value });
-    } else if (field === "city") {
+    }
+    else if (field === "city")
+    {
       this.setState({ city: event.target.value });
-    } else if (field === "address") {
+    }
+    else if (field === "address")
+    {
       this.setState({ address: event.target.value });
-    } else if (field === "complement") {
+    }
+    else if (field === "complement")
+    {
       this.setState({ complement: event.target.value });
-    } else if (field === "file") {
+    }
+    else if (field === "file")
+    {
       this.setState({ file: event.target.files });
-    } else if (field === "description") {
+    }
+    else if (field === "description")
+    {
       this.setState({ description: event.target.value });
-    } else if (field === "terms") {
+    }
+    else if (field === "terms")
+    {
       this.setState({ terms: event.target.value });
     }
     // console.log(this.state)
@@ -151,8 +163,157 @@ export default class Home extends Component {
     this.retrieveServicos();
   }
 
+  sendErrorAlert = (msg) => {
+    swal({
+      icon: "error",
+      button:{
+        className: "button-alert",
+      },
+      content: (
+        <div>
+          <h3>Ops, algo deu errado...</h3>
+          <p>
+            {msg}
+          </p>
+        </div>
+      )
+    })
+  }
+
   savePrestador = () => {
-    // console.log(this.state.name)
+
+    if (this.state.name === ""){
+      this.sendErrorAlert("Seu nome não pode estar em branco!")
+      return;
+    }
+    if (this.state.cpf.value !== "" && this.state.cpf !== ""){
+      var cpf = this.state.cpf.value;
+      if (cpf.length !== 11 || 
+        cpf === "00000000000" || 
+        cpf === "11111111111" || 
+        cpf === "22222222222" || 
+        cpf === "33333333333" || 
+        cpf === "44444444444" || 
+        cpf === "55555555555" || 
+        cpf === "66666666666" || 
+        cpf === "77777777777" || 
+        cpf === "88888888888" || 
+        cpf === "99999999999"){
+          this.sendErrorAlert("Seu número de CPF está errado!")
+          return;
+      }
+      // Verifica primeiro dígito
+      var add = 0;
+      for (let i=0; i < 9; i ++){
+        add += parseInt(cpf.charAt(i)) * (10 - i);	
+      }
+      let rev = 11 - (add % 11);	
+      if (rev === 10 || rev === 11)		
+        rev = 0;	
+      if (rev !== parseInt(cpf.charAt(9))){
+        this.sendErrorAlert("Seu número de CPF está errado!")
+        return;
+      }
+      // Verifica segundo dígito
+      add = 0;	
+      for (let i = 0; i < 10; i ++){
+        add += parseInt(cpf.charAt(i)) * (11 - i);	
+      }
+      rev = 11 - (add % 11);	
+      if (rev === 10 || rev === 11)	
+        rev = 0;	
+      if (rev !== parseInt(cpf.charAt(10))){
+        this.sendErrorAlert("Seu número de CPF está errado!")
+        return;
+      }
+    }else{
+      this.sendErrorAlert("Seu número de CPF não pode estar em branco!")
+      return;
+    }
+
+    if (this.state.email === "") {
+      this.sendErrorAlert("Seu endereço de email não pode estar em branco!")
+      return;
+    }else{
+      var re = /\S+@\S+\.\S+/;
+      if(re.test(this.state.email)===false){
+        this.sendErrorAlert("Seu endereço de email não é válido!")
+        return;
+      }
+    }
+
+    if (this.state.birthday.value === "" || this.state.birthday === ""){
+      this.sendErrorAlert("Sua data de nascimento não pode estar em branco!")
+      return;
+    }else{
+      var data = this.state.birthday.formattedValue
+      var data_array = data.split("/");                           // quebra a data em array
+      if(data_array[0].length !== 4){
+        data = data_array[2]+"-"+data_array[1]+"-"+data_array[0]; // remonto a data no formato yyyy/MM/dd
+      }
+      var today = new Date();
+      var birthday = new Date(data)
+      var age = today.getFullYear() - birthday.getFullYear()
+      var m = today.getMonth() - birthday.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthday.getDate())) age--;
+  
+      if(age < 18){
+        this.sendErrorAlert("Você não pode se cadastrar sendo menor de 18 anos!")
+        return;
+     }
+    }
+
+    if (this.state.gender === "") {
+      this.sendErrorAlert("Seu gênero não pode estar em branco!")
+      return;
+    }
+
+    if (this.state.phone.value === "" || this.state.phone === ""){
+      this.sendErrorAlert("Seu número de celular não pode estar em branco!")
+      return;
+    }else{
+      re = /\(?\d{2}\)?\d{8,9}/;
+      if (re.test(this.state.phone.value) === false){
+        this.sendErrorAlert("Seu número de celular está errado!")
+        return;
+      }
+    }
+  
+    if (this.state.cep === "" || this.state.cep.value === "") {
+      this.sendErrorAlert("Seu cep não pode estar em branco!")
+      return;
+    }
+
+    if (this.state.state === "") {
+      this.sendErrorAlert("Seu estado não pode estar em branco!")
+      return;
+    }
+  
+    if (this.state.city === "") {
+      this.sendErrorAlert("Sua cidade não pode estar em branco!")
+      return;
+    }
+  
+    if (this.state.address === "") {
+      this.sendErrorAlert("Seu endereço não pode estar em branco!")
+      return;
+    }
+  
+    if (this.state.description === "") {
+      this.sendErrorAlert("Sua descrição não pode estar em branco!")
+      return;
+    }
+  
+    if (this.state.w2w !== false || this.state.w2w !== true) {
+      this.sendErrorAlert("Você deve selecionar se seu serviço é exclusivo para mulheres!")
+      return;
+    }
+  
+    if (this.state.terms === false){
+      this.sendErrorAlert("Você deve concordar com nossos termos!")
+      return;
+    }
+
     const formData = new FormData()
     formData.append("cpf", this.state.cpf)
     formData.append('file', this.state.file[0])
@@ -160,7 +321,7 @@ export default class Home extends Component {
     PrestadorDataService.upload(formData)
       .then(res => {
         console.log("Image Uploaded")
-        console.log(res.data)
+        // console.log(res.data)
         var data = {
           name: this.state.name,
           cpf: this.state.cpf,
@@ -205,10 +366,11 @@ export default class Home extends Component {
 
               submitted: true
             });
-            console.log(res.data);
+            swal("Concluído", "Sua inscrição foi enviada, você deve ser aprovado em breve!", "success");
             this.newPrestador();
           })
           .catch(e => {
+            swal("Ops, algo deu errado...", "Talvez nosso sistema esteja fora do ar, tente novamente mais tarde!", "error");
             console.log(e);
           });
       })
@@ -250,45 +412,72 @@ export default class Home extends Component {
       gender: "",
       phone: "",
       cep: "",
+      state: "",
       city: "",
       address: "",
       complement: "",
+      cidades: [],
+      servicos: [],
+      picture: "",
+      file: undefined,
       description: "",
-
+      w2w: false,
+      terms: false,
+      
       submitted: false
     });
+  }
+  
+  onSelectCPF(values) {
+    this.setState({ cpf: values });
+  }
+
+  onSelectBirthday(values) {
+    this.setState({ birthday: values });
+  }
+  
+  onSelectGender(values) {
+    this.setState({ gender: values });
+  }
+
+  onSelectPhone(values) {
+    this.setState({ phone: values });
+  }
+
+  onSelectCEP(values) {
+    this.setState({ cep: values });
+  }
+
+  onSelectState(selectedList, selectedItem) {
+    this.setState({ state: selectedItem.value });
   }
 
   onSelectCity(selectedList, selectedItem) {
     let {cities} = this.state
-    this.setState({ cities: cities.concat(selectedItem.id) }, () => console.log(this.state.cities));
+    this.setState({ cities: cities.concat(selectedItem.id) });
   }
 
   onRemoveCity(selectedList, removedItem) {
     let {cities} = this.state
     let index = cities.indexOf(removedItem.id)
     cities.splice(index, 1)
-    this.setState({ cities: cities }, () => console.log(this.state.cities));
+    this.setState({ cities: cities });
   }
 
   onSelectService(selectedList, selectedItem) {
     let {services} = this.state
-    this.setState({ services: services.concat(selectedItem.id) }, () => console.log(this.state.services));
+    this.setState({ services: services.concat(selectedItem.id) });
   }
 
   onRemoveService(selectedList, removedItem) {
     let {services} = this.state
     let index = services.indexOf(removedItem.id)
     services.splice(index, 1)
-    this.setState({ services: services }, () => console.log(this.state.services));
-  }
-
-  onSelectState(selectedList, selectedItem) {
-    this.setState({ state: selectedItem.value }, () => console.log(this.state.state));
+    this.setState({ services: services });
   }
 
   onSelectW2W(selectedList, selectedItem) {
-    this.setState({ w2w: selectedItem.value }, () => console.log(this.state.w2w));
+    this.setState({ w2w: selectedItem.value });
   }
 
   render() {
@@ -306,7 +495,7 @@ export default class Home extends Component {
           </div>
           <div class="form-item">
             <label for="cpf"><span title="Campo obrigatório" style={{color: "red"}}>*</span>CPF:</label>
-            <input id="cpf" type="text" class='' required placeholder="Insira seu nome CPF" onChange={this.handleChange.bind(this)}/>
+            <NumberFormat id="cpf" placeholder="Insira seu nome CPF" onValueChange={this.onSelectCPF} format="###.###.###-##" mask="_" />
           </div>
           <div class="form-item">
             <label for="email"><span title="Campo obrigatório" style={{color: "red"}}>*</span>E-mail:</label>
@@ -314,25 +503,33 @@ export default class Home extends Component {
           </div>
           <div class="form-item">
             <label for="birthday"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Data de Nascimento:</label>
-            <input id="birthday" type="date" class='' required onChange={this.handleChange.bind(this)}/>
+            <NumberFormat id="birthday" placeholder="DD/MM/AAAA" onValueChange={this.onSelectBirthday} format="##/##/####" mask="_" />
           </div>
           <div class="form-item">
             <label for="gender"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Gênero:</label>
-            <select id="gender" class='' required onChange={this.handleChange.bind(this)}>
-              <option value="" selected disabled hidden>Selecione seu gênero</option>
-              <option>Masculino</option>
-              <option>Feminino</option>
-              <option>Prefiro não dizer</option>
-            </select>
+            <div class="form-item">
+                <Multiselect
+                options={this.state.DropdownGender} // Options to display in the dropdown
+                onSelect={this.onSelectGender} // Function will trigger on select event
+                displayValue="name" // Property name to display in the dropdown options
+                closeOnSelect={true}
+                showArrow={true}
+                id="GenderDropdown"
+                style={this.style}
+                singleSelect={true}
+                avoidHighlightFirstOption={true}
+                placeholder="Selecione uma opção"
+                />
+              </div>
           </div>
           <div class="form-item">
             <label for="phone"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Celular:</label>
-            <input id="phone" type="text" class='' required placeholder="Insira somente os números do seu celular, com ddd" onChange={this.handleChange.bind(this)} />
+            <NumberFormat id="phone" placeholder="Insira somente os números do seu celular, com ddd" onValueChange={this.onSelectPhone} format="(##) #####-####" mask="_" />
             <small class=''>*É obrigatório que este número tenha Whatsapp</small>
           </div>
           <div class="form-item">
             <label for="cep"><span title="Campo obrigatório" style={{color: "red"}}>*</span>CEP:</label>
-            <input id="cep" type="text" class='' required placeholder="Insira apenas os números do seu CEP" onChange={this.handleChange.bind(this)} />
+            <NumberFormat id="cep" placeholder="Insira apenas os números do seu CEP" onValueChange={this.onSelectCEP} format="#####-###" mask="_" />
           </div>
           <div class="form-item">
             <label for="state"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Estado:</label>
@@ -437,6 +634,7 @@ export default class Home extends Component {
           </div>  
           <button type='button' onClick={this.savePrestador.bind(this)} class='btn-primary'>Registre-se</button>
         </div>
+        
       </div>
     )
   }
