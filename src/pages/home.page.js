@@ -3,6 +3,7 @@ import "../styles/home.css";
 import Claudia from '../assets/Claudia-Fundo-Laranja.png';
 import WhiteLeft from '../assets/BrancoEsquerda.png';
 import WhiteRight from '../assets/BrancoDireita.png';
+import Pessoa from '../assets/PessoaX.png'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -31,22 +32,22 @@ export default class Home extends Component {
       <br />
       <br />
       </div>
-      <img src={WhiteLeft} id="white-left"/>
-      <img src={WhiteRight} id="white-right"/>
+      {/* <img src={WhiteLeft} id="white-left"/>
+      <img src={WhiteRight} id="white-right"/> */}
       <div class="row row-all-cards" id= "center-cards">
         <div class="column column-each-card">
           <div class="row row-card-work">
-            Organizador de festas infantis
+            <p>Organizador de festas infantis</p>
           </div>
           <hr class="each-card-hr"/>
           <div class="row row-card-picture">
-            Foto 1
+            <img src={Pessoa}/>
           </div>
           <div class="row row-card-name">
-            Ronaldo 1
+            <p>Paulonilson</p>
           </div>
         </div>
-        <div class="column column-each-card">
+        {/* <div class="column column-each-card">
           <div class="row row-card-work">
             Organizador 2
           </div>
@@ -93,7 +94,7 @@ export default class Home extends Component {
           <div class="row row-card-name">
             Ronaldo 5
           </div>
-        </div>
+        </div> */}
       </div>
       <div class="row">
         <div class="col-5">

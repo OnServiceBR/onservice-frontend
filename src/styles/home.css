@@ -47,25 +47,48 @@
   margin-left: 1.5%
 }
 
-#white-left{
+/* #white-left{
 	position: absolute;
-	right: -4px;
+	right: 500px;
 	bottom: -10px;
-}
+} */
 
-#white-right{
+/* #white-right{
 	position: absolute;
 	right: 4px;
 	bottom: 10px;
-}
+} */
 
+/* Espaço onde ficam todos os cards de destaque */
 .row-all-cards {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   display: block;
+  font-family: GlacialIndifference;
 }
 
+/* Centraliza todos textos dentro dos cartões */
+.row-all-cards p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+}
+
+/* Centraliza todas imagens dentro dos cards */
+.row-all-cards img {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 120px;
+}
+
+/* Espaço de cada card de destaque */
 .column-each-card {
 	display: inline-block;
   border: none;
@@ -76,26 +99,36 @@
 	border-bottom-left-radius: 0.3cm;
 	border-top-right-radius: 0.3cm;
 	border-bottom-right-radius: 0.3cm;
-	width: 150px;
+	width: 160px;
+  text-decoration: none;
 }
 
+/* Espaço onde fica a profissão no card */
 .row-card-work {
   display: block;
-  height: 50px;
+  height: 52px;
+  position: relative;
+  font-size: 12pt;
+  color: rgb(237,125,49);
 }
 
+/* Espaço onde fica a foto no card */
 .row-card-picture {
   display: block;
-  margin-top: 55px;
-  margin-bottom: 55px;
+  height: 140px;
+  position: relative;
 }
 
+/* Espaço onde fica o nome no card */
 .row-card-name {
   display: block;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  height: 40px;
+  position: relative;
+  font-size: 11pt;
+  color: rgb(64,64,64);
 }
 
+/* Espaço de cada card */
 .each-card-hr {
 	text-align: center;
 	border-top-color: rgb(231,230,230);
