@@ -34,9 +34,9 @@ function Seguranca() {
             Através dessas <span style={{color:"rgb(237,125,49)"}}>DICAS DE SEGURANÇA</span>, esperamos que qualquer situação adversa seja resolvida da melhor forma possível. <span style={{color:"rgb(237,125,49)"}}>Sua segurança é prioridade na OnService</span> e fazemos o possível para que haja a garantia do seu conforto e proteção.
                 <br /> <br />
             </div>
+            <p></p>
         </div>
     );
-
 
 
 }
