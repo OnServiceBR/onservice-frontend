@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "../styles/home.css";
 import Claudia from '../assets/Claudia-Fundo-Laranja.png';
+// import WhiteLeft from '../assets/BrancoEsquerda.png';
+// import WhiteRight from '../assets/BrancoDireita.png';
+import Pessoa from '../assets/PessoaX.png'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -28,6 +31,70 @@ export default class Home extends Component {
       <div>
       <br />
       <br />
+      </div>
+      {/* <img src={WhiteLeft} id="white-left"/>
+      <img src={WhiteRight} id="white-right"/> */}
+      <div class="row row-all-cards" id= "center-cards">
+        <div class="column column-each-card">
+          <div class="row row-card-work">
+            <p>Organizador de festas infantis</p>
+          </div>
+          <hr class="each-card-hr"/>
+          <div class="row row-card-picture">
+            <img src={Pessoa}/>
+          </div>
+          <div class="row row-card-name">
+            <p>Paulonilson</p>
+          </div>
+        </div>
+        {/* <div class="column column-each-card">
+          <div class="row row-card-work">
+            Organizador 2
+          </div>
+          <hr class="each-card-hr"/>
+          <div class="row row-card-picture">
+            Foto 2
+          </div>
+          <div class="row row-card-name">
+            Ronaldo 2
+          </div>
+        </div>
+        <div class="column column-each-card">
+          <div class="row row-card-work">
+            Organizador 3
+          </div>
+          <hr class="each-card-hr"/>
+          <div class="row row-card-picture">
+            Foto 3
+          </div>
+          <div class="row row-card-name">
+            Ronaldo 3
+          </div>
+        </div>
+        <div class="column column-each-card">
+          <div class="row row-card-work">
+            Organizador 4
+          </div>
+          <hr class="each-card-hr"/>
+          <div class="row row-card-picture">
+            Foto 4
+          </div>
+          <div class="row row-card-name">
+            Ronaldo 4
+          </div>
+        </div>
+        <div class="column column-each-card">
+          <div class="row row-card-work">
+            Organizador 5
+          </div>
+          <hr class="each-card-hr"/>
+          <div class="row row-card-picture">
+            Foto 5
+          </div>
+          <div class="row row-card-name">
+            Ronaldo 5
+          </div>
+        </div> */}
       </div>
       <div class="row">
         <div class="col-5">
