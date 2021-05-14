@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "../styles/home.css";
 import Claudia from '../assets/Claudia-Fundo-Laranja.png';
-import WhiteLeft from '../assets/BrancoEsquerda.png';
-import WhiteRight from '../assets/BrancoDireita.png';
+// import WhiteLeft from '../assets/BrancoEsquerda.png';
+// import WhiteRight from '../assets/BrancoDireita.png';
 import Pessoa from '../assets/PessoaX.png'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
