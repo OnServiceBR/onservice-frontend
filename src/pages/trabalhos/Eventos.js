@@ -1,127 +1,15 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import "../styles/trabalhos.css";
-import ServicoDataService from "../services/servico.service";
-import privada from "../assets/Ícones/privada.png";
+import "../../styles/trabalhos.css";
+import privada from "../../assets/Ícones/privada.png";
 
 export default class Home extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      tecnologia: [],
-      beleza: [],
-      saude: [],
-      manutencao: [],
-      ensino: [],
-      eventos: [],
-      trabalho:""
-    }
-  }
-
-  componentDidMount() {
-    this.retrieveServicos();
-  }
-
-  retrieveServicos() {
-    if(this.props.match.params.job==="tecnologia"){
-      ServicoDataService.getTecnologia()
-        .then(res => {
-          this.setState({
-            tecnologia: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Tecnologia"
-        });
-    }
-    else if(this.props.match.params.job==="manutencao"){
-      ServicoDataService.getManutencao()
-        .then(res => {
-          this.setState({
-            manutencao: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Manutenção"
-        });
-    }
-    else if(this.props.match.params.job==="saude"){
-      ServicoDataService.getSaude()
-        .then(res => {
-          this.setState({
-            saude: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Saúde"
-        });
-    }
-    else if(this.props.match.params.job==="ensino"){
-      ServicoDataService.getEnsino()
-        .then(res => {
-          this.setState({
-            ensino: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Ensino"
-        });
-    }
-    else if(this.props.match.params.job==="beleza"){
-      ServicoDataService.getBeleza()
-        .then(res => {
-          this.setState({
-            beleza: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Beleza"
-        });
-    }
-    else if(this.props.match.params.job==="eventos"){
-      ServicoDataService.getEventos()
-        .then(res => {
-          this.setState({
-            eventos: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Eventos"
-        });
-    }
-
-  }
 
   render() {
-    const {trabalho} = this.state;
     return(
       <div>
         {/* O caminho aqui está só para Manutenção, tem que automatizar pra cada uma das categorias de serviços que estão nos botões */}
-        <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><h2 class="path-actual">{this.state.trabalho}</h2>
+        <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><h2 class="path-actual">Eventos</h2>
         <div class="search-box">
           <form method="get" action="/contrate">
             <div id="search-contrate">
@@ -173,35 +61,75 @@ export default class Home extends Component {
         <hr class="job-hr"/>
          <h1 class="job-dictionary-letter">A<a name="names-A"></a></h1>
         <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">B<a name="names-B"></a></h1>
+        <div class="job-link">
+          {/* Final do link está manual */}
+            <a href="/contrate/manutencao/encanador">
+              <div class="row">
+                <div class="column job-imagecontainer">
+                  <button class="animador-icon-button-class"> </button>
+                </div>
+                <div class="column job-textcontainer">
+                  {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
+                  <p class="job-name">Animador(a)</p>
+                  <p class="job-workers-count">1 profissionais</p>
+                </div>
+              </div>
+            </a>
+          </div>
         <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">C<a name="names-C"></a></h1>
+        <div class="job-link">
+          {/* Final do link está manual */}
+            <a href="/contrate/manutencao/encanador">
+              <div class="row">
+                <div class="column job-imagecontainer">
+                  <button class="bartender-icon-button-class"> </button>
+                </div>
+                <div class="column job-textcontainer">
+                  {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
+                  <p class="job-name">Bartender</p>
+                  <p class="job-workers-count">1 profissionais</p>
+                </div>
+              </div>
+            </a>
+          </div>
         <hr class="job-hr"/>
           <h1 class="job-dictionary-letter">D<a name="names-D"></a></h1>
         <hr class="job-hr"/>
           <h1 class="job-dictionary-letter">E<a name="names-E"></a></h1>
         <hr class="job-hr"/>
-          <div class="job-link">
+          <h1 class="job-dictionary-letter">F<a name="names-F"></a></h1>
+        <hr class="job-hr"/>
+        <div class="job-link">
           {/* Final do link está manual */}
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="job-icon-button-class"> </button>
+                  <button class="fotografo-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
-                  <p class="job-name">Encanador(a)</p>
+                  <p class="job-name">Fotógrafo(a)</p>
                   <p class="job-workers-count">11 profissionais</p>
                 </div>
               </div>
             </a>
           </div>
         <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">F<a name="names-F"></a></h1>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">G<a name="names-G"></a></h1>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">H<a name="names-H"></a></h1>
+        <div class="job-link">
+          {/* Final do link está manual */}
+            <a href="/contrate/manutencao/encanador">
+              <div class="row">
+                <div class="column job-imagecontainer">
+                  <button class="garcom-icon-button-class"> </button>
+                </div>
+                <div class="column job-textcontainer">
+                  {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
+                  <p class="job-name">Garçom/Garçonete</p>
+                  <p class="job-workers-count">2 profissionais</p>
+                </div>
+              </div>
+            </a>
+          </div>
         <hr class="job-hr"/>
           <h1 class="job-dictionary-letter">I<a name="names-I"></a></h1>
         <hr class="job-hr"/>
@@ -219,11 +147,39 @@ export default class Home extends Component {
         <hr class="job-hr"/>
           <h1 class="job-dictionary-letter">P<a name="names-P"></a></h1>
         <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">Q<a name="names-Q"></a></h1>
+        <div class="job-link">
+          {/* Final do link está manual */}
+            <a href="/contrate/manutencao/encanador">
+              <div class="row">
+                <div class="column job-imagecontainer">
+                  <button class="promotor-de-eventos-icon-button-class"> </button>
+                </div>
+                <div class="column job-textcontainer">
+                  {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
+                  <p class="job-name">Promotor(a) de eventos</p>
+                  <p class="job-workers-count">2 profissionais</p>
+                </div>
+              </div>
+            </a>
+          </div>
         <hr class="job-hr"/>
           <h1 class="job-dictionary-letter">R<a name="names-R"></a></h1>
         <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">S<a name="names-S"></a></h1>
+        <div class="job-link">
+          {/* Final do link está manual */}
+            <a href="/contrate/manutencao/encanador">
+              <div class="row">
+                <div class="column job-imagecontainer">
+                  <button class="recepcionista-icon-button-class"> </button>
+                </div>
+                <div class="column job-textcontainer">
+                  {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
+                  <p class="job-name">Recepcionista</p>
+                  <p class="job-workers-count">1 profissionais</p>
+                </div>
+              </div>
+            </a>
+          </div>
         <hr class="job-hr"/>
           <h1 class="job-dictionary-letter">T<a name="names-T"></a></h1>
         <hr class="job-hr"/>
