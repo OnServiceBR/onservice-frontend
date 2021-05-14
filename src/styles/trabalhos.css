@@ -1,3 +1,23 @@
+/* Caminho atual sem mudar de cor */
+.path-actual {
+  font-family: GlacialIndifference;
+  color: rgb(118,113,113);
+  margin-top: 0px;
+  margin-bottom: 35px;
+  display: inline-block;
+  text-transform: lowercase;
+  font-size: 10pt;
+  margin-left: 2px;
+  margin-right: 2px;
+  text-decoration: none;
+}
+
+/* Deixa maiústula a primeira letra de cada palavra no caminho atual */
+.path-actual:first-letter {
+  text-transform: uppercase;
+}
+
+/* Estilo bloco de pesquisa */
 .search-box{
 	margin-left: auto;
 	margin-right: auto;
@@ -5,6 +25,7 @@
 	font-family: GlacialIndifference;
 }
 
+/* Estilo botão de pesquisa */
 #search-button-contrate{
   text-align: center;
   border-radius: 0.15cm;
@@ -23,6 +44,7 @@
   margin-left: 1.5%
 }
 
+/* Estilo caixa de pesquisa */
 #search-input-contrate{
   border-style: none;
   width: 93%;
@@ -34,6 +56,7 @@
   outline-style: none;
 }
 
+/* Estilo bloco de pesquisa dentro do form */
 #search-contrate{
   display: inline-block;
   border-color: rgb(118,113,113);
@@ -44,6 +67,7 @@
   padding: 0.8%;
 }
 
+/* Estilo bloco com nome das páginas */
 .search-tabs{
   font-family: GlacialIndifference;
   text-align: center;
@@ -52,6 +76,7 @@
 	color: rgb(64,64,64);
 }
 
+/* Estilo do texto com nome das páginas */
 .search-tabs label{
   padding-left: 100px;
   padding-right: 100px;
@@ -59,6 +84,7 @@
   border-bottom: solid rgb(175,171,171);
 }
 
+/* Estilo da borda de baixo do nome das páginas */
 #trabalhos-category-label{
   border-color: rgb(175,171,171);
 }
@@ -69,6 +95,20 @@
   border-color: rgb(175,171,171);
 }
 
+/* Link na barra de escolha das categorias e serviços */
+.link-bar-label {
+  color: rgb(64,64,64);
+  text-decoration: none;
+}
+
+/* Muda a cor dos links da barra de escolha das categorias e serviços */
+.link-bar-label:hover {
+  cursor: pointer;
+  color: rgb(237,125,49);
+  text-decoration: none;
+}
+
+/* Caminho das páginas */
 .path {
   font-family: GlacialIndifference;
   color: rgb(118,113,113);
@@ -82,20 +122,18 @@
   text-decoration: none;
 }
 
+/* Muda a cor do caminho das páginas */
 .path:hover {
   color: rgb(237,125,49);
   text-decoration: none;
 }
 
+/* Deixa maiústula a primeira letra de cada palavra no caminho */
 .path:first-letter {
   text-transform: uppercase;
 }
 
-.path:hover {
-  color: rgb(237,125,49);
-  text-decoration: none;
-}
-
+/* Linha que divide os trabalhos */
 .job-hr {
   margin-left: auto;
   margin-right: auto;
@@ -105,7 +143,8 @@
   margin-bottom: 0px;
 }
 
-.dictionary {
+/* Alinha o espaço onde fica o dicionário */
+.job-dictionary {
   width: 72%;
   margin-left: auto;
 	margin-right: auto;
@@ -114,7 +153,8 @@
   font-size: 12pt;
 }
 
-.dictionary-letter {
+/* Alinha e formata cada letra e barra do dicionário */
+.job-dictionary-letter {
   font-family: GlacialIndifference;
   width: 72%;
   margin-left: 20%;
@@ -124,7 +164,8 @@
   margin-bottom: 0px;
 }
 
-.dictionary a {
+/* Padroniza as letras dos dicionários como links */
+.job-dictionary a {
   text-decoration: none;
   width: 72%;
   margin-left: auto;
@@ -135,53 +176,76 @@
   font-size: 12pt;
 }
 
-.dictionary a:hover {
+/* Troca a cor da letra do dicionário quando passa o mouse em cima */
+.job-dictionary a:hover {
   color: rgb(237,125,49);
 }
 
-.job-icon {
-  margin-right: auto;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-.job-name {
-  font-family: GlacialIndifference;
-  font-size: 12pt;
-  color: rgb(64,64,64);
-  margin-bottom: 6px;
-  margin-top: 10px;
-}
-
-.job-name:hover {
-  color: rgb(237,125,49);
-  text-decoration: none;
-}
-
-.workers-count {
+/* Contagem de profissionais em determinado serviço */
+.job-workers-count {
   font-family: GlacialIndifference;
   font-size: 10pt;
-  color: rgb(118,113,113);
   margin-bottom: 10px;
+  color: rgb(175,171,171);
 }
 
-.imagecontainer {
+/* Espaço para o ícone de cada serviço */
+.job-imagecontainer {
   width: 7%;
   margin-left: 23%;
 }
 
-.textcontainer{
+/* Espaço para o texto com título e descrição do serviço */
+.job-textcontainer {
   width: 50%;
 }
 
-/* smooth scroll link anchor*/
+/* Nome do serviço */
+.job-name {
+  font-family: GlacialIndifference;
+  font-size: 12pt;
+  margin-bottom: 6px;
+  margin-top: 10px;
+}
+
+/* Desce a barra suavemente quando clica numa letra do dicionário*/
 html {
 	scroll-behavior: smooth;
 }
 
-/* smooth scroll link anchor - reduced motion*/
+/* Aumenta a suavidade que a barra desce quando clica na letra do dicionário*/
 @media screen and (prefers-reduced-motion: reduce) {
 	html {
 		scroll-behavior: auto;
 	}
+}
+
+/* Define a cor do serviço para cinza antes de passar o mouse */
+.job-link a{
+  text-decoration: none;
+  color: rgb(118,113,113);
+}
+
+/* Sublinha título do serviço*/
+.job-link a:hover{
+  color: rgb(237,125,49);
+}
+
+/* Troca o ícone pelo ícone laranja */
+.job-link a:hover .job-icon-button-class{
+  color: rgb(237,125,49);
+  background-image: url('../assets/Ícones/privadalaranja.png');
+  outline: none;
+}
+
+/* Lugar onde fica o ícone */
+.job-icon-button-class {
+  width: 70px;
+	height: 70px;
+	border-style: none;
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: white;
+  background-image: url('../assets/Ícones/privada.png');
 }

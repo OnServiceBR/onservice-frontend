@@ -1,0 +1,35 @@
+.title-sobrenos {
+    font-size: 16pt;
+    color: rgb(237, 125, 49);
+    margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+    font-weight: bold;
+	font-family: GlacialIndifference;
+}
+.paragrafo-sobrenos {
+    margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	font-family: GlacialIndifference;
+    font-size: 10pt;
+    color: rgb(64, 64, 64);
+}
+.subtitle-sobrenos {
+    margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	font-family: GlacialIndifference;
+    font-size: 10pt;
+    color: rgb(64, 64, 64);
+    text-decoration-line: underline; 
+}
+.subs-sobrenos {
+    margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	font-family: GlacialIndifference;
+    font-size: 12pt;
+    font-weight: bold;
+    color: rgb(64, 64, 64);
+}

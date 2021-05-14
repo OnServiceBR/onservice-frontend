@@ -11,6 +11,25 @@
   width: 11.93cm;
 }
 
+.button-alert {
+  border-width: 0.5pt;
+  border-style: solid;
+  border-color: rgb(237,125,49);
+  background-color: rgb(237, 125, 49);
+  color: rgb(255, 255, 255);
+}
+
+.button-alert:hover {
+  /* border-radius: 0.15cm; */
+  border-width: 0.5pt;
+  border-style: solid;
+  border-color: rgb(237,125,49);
+  background-color: rgb(255, 255, 255) !important;
+  color: rgb(237, 125, 49);
+  outline: none;
+  box-shadow: 0px 0px 5pt rgba(237, 125, 49, 0.6);
+}
+
 /* Cada campo do formulário é um bloco que tem em comum este estilo */
 .form-item {
   margin-bottom: 0.3cm;
@@ -275,6 +294,46 @@
 }
 
 #MultipleDropdown input:focus{
+  border-color: rgb(237, 125, 49);
+}
+
+#StatesDropdown input{
+  border: 0.5pt solid rgb(118, 113, 113);
+}
+
+#StatesDropdown input:focus{
+  border-color: rgb(237, 125, 49);
+}
+
+#W2WDropdown input{
+  border: 0.5pt solid rgb(118, 113, 113);
+}
+
+#W2WDropdown input:focus{
+  border-color: rgb(237, 125, 49);
+}
+
+#GenderDropdown input{
+  border: 0.5pt solid rgb(118, 113, 113);
+}
+
+#GenderDropdown input:focus{
+  border-color: rgb(237, 125, 49);
+}
+
+#ServicesDropdown input{
+  border: 0.5pt solid rgb(118, 113, 113);
+}
+
+#ServicesDropdown input:focus{
+  border-color: rgb(237, 125, 49);
+}
+
+#CitiesDropdown input{
+  border: 0.5pt solid rgb(118, 113, 113);
+}
+
+#CitiesDropdown input:focus{
   border-color: rgb(237, 125, 49);
 }
 
