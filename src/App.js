@@ -19,6 +19,7 @@ import Termos from "./pages/termos.page";
 import Privacidade from "./pages/privacidade.page";
 import Perfil from "./pages/perfil.page";
 import Profissionais from "./pages/profissionais.page";
+import Seguranca from "./pages/seguranca.page";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route exact path="/perfil/" component={Perfil} />
           <Route exact path="/termos-de-uso/" component={Termos} />
           <Route exact path="/politica-de-privacidade/" component={Privacidade} />
+          <Route exact path="/seguranca" component={Seguranca} />
         </Switch>
       </div>
       <Footer />
