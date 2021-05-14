@@ -13,13 +13,20 @@ import Home from "./pages/home.page";
 import Contrate from "./pages/contrate.page";
 import Anuncie from "./pages/anuncie.page";
 import Contato from "./pages/contato.page";
-import Trabalhos from "./pages/trabalhos.page";
 import Conduta from "./pages/conduta.page";
 import Termos from "./pages/termos.page";
 import Privacidade from "./pages/privacidade.page";
 import Sobrenos from "./pages/sobrenos.page";
 import Perfil from "./pages/perfil.page";
 import Profissionais from "./pages/profissionais.page";
+import Manutencao from "./pages/trabalhos/Manutencao";
+import Beleza from "./pages/trabalhos/Beleza";
+import Ensino from "./pages/trabalhos/Ensino";
+import Eventos from "./pages/trabalhos/Eventos";
+import Outros from "./pages/trabalhos/Outros";
+import Residencial from "./pages/trabalhos/Residencial";
+import Saude from "./pages/trabalhos/Saude";
+import Tecnologia from "./pages/trabalhos/Tecnologia";
 import Seguranca from "./pages/seguranca.page";
 
 function App() {
@@ -37,12 +44,19 @@ function App() {
           <Route exact path="/contrate" component={Contrate} />
           <Route exact path="/anuncie" component={Anuncie} />
           <Route exact path="/contato" component={Contato} />
-          <Route exact path="/contrate/:job" component={Trabalhos} />
           <Route exact path="/contrate/:job/:workers" component={Profissionais} />
           <Route exact path="/codigo-de-conduta/" component={Conduta} />
           <Route exact path="/perfil/" component={Perfil} />
           <Route exact path="/termos-de-uso/" component={Termos} />
           <Route exact path="/politica-de-privacidade/" component={Privacidade} />
+          <Route exact path="/contrate/beleza" component={Beleza} />
+          <Route exact path="/contrate/ensino" component={Ensino} />
+          <Route exact path="/contrate/eventos" component={Eventos} />
+          <Route exact path="/contrate/manutencao" component={Manutencao} />
+          <Route exact path="/contrate/outros" component={Outros} />
+          <Route exact path="/contrate/residencial" component={Residencial} />
+          <Route exact path="/contrate/saude" component={Saude} />
+          <Route exact path="/contrate/tecnologia" component={Tecnologia} />
           <Route exact path="/sobre-nos/" component={Sobrenos} />
           <Route exact path="/seguranca" component={Seguranca} />
         </Switch>
