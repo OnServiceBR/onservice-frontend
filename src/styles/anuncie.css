@@ -1,3 +1,5 @@
+/* CSS do formulário */
+/* Bloco do formulário */
 .register-right {
   border: none;
   box-shadow: 0px 0px 5pt rgba(191, 191, 191, 0.6);
@@ -9,10 +11,33 @@
   width: 11.93cm;
 }
 
-.form-item {
-  margin-bottom: 0.3cm;
+.button-alert {
+  border-width: 0.5pt;
+  border-style: solid;
+  border-color: rgb(237,125,49);
+  background-color: rgb(237, 125, 49);
+  color: rgb(255, 255, 255);
 }
 
+.button-alert:hover {
+  /* border-radius: 0.15cm; */
+  border-width: 0.5pt;
+  border-style: solid;
+  border-color: rgb(237,125,49);
+  background-color: rgb(255, 255, 255) !important;
+  color: rgb(237, 125, 49);
+  outline: none;
+  box-shadow: 0px 0px 5pt rgba(237, 125, 49, 0.6);
+}
+
+/* Cada campo do formulário é um bloco que tem em comum este estilo */
+.form-item {
+  margin-bottom: 0.3cm;
+  font-family: GlacialIndifference;
+  color: rgb(118,113,113);
+}
+
+/* Titulo do formulário */
 .register-right h2 {
   font-family: 'Bebas Neue', cursive;
   font-size: 16pt;
@@ -22,6 +47,7 @@
   color: rgb(237, 125, 49);
 }
 
+/* Nome dos campos do formulário */
 .register-right label {
   margin-left: 0.605cm;
   margin-bottom: 2px;
@@ -29,6 +55,7 @@
   font-size: 12pt;
 }
 
+/* Estilo das caixas de input e select */
 .register-right input,
 .register-right select {
   border-radius: 0.15cm;
@@ -47,14 +74,17 @@
   color: rgb(118,113,113);
 }
 
+/* Define tamanho do textarea */
 .register-right textarea {
   width: 95%;
 }
 
+/* Define cor dos optgroup contido nos select */
 .form-item optgroup {
   color: rgb(237, 125, 49);
 }
 
+/* Estilo do botão para upload de arquivo */
 .register-right input[type=file]::-webkit-file-upload-button {
   background-color: rgb(237,125,49);
   border: 1px solid rgb(237,125,49);
@@ -97,17 +127,26 @@
   box-shadow: 0px 0px 5pt rgba(237, 125, 49, 0.6);
 }
 
+/* Estilo do campo input file */
 .register-right input[type="file"] {
   padding-left: 5px;
   padding-top: 4px;
 }
 
+/* Estilo das letras pequenas embaixo dos campos */
 .register-right small {
   font-family: GlacialIndifference;
   font-size: 8pt;
   margin-left: 0.605cm;
 }
 
+/* Estilo dos links */
+.form-item a{
+  color: rgb(237, 125, 49);
+  font-family: GlacialIndifference;
+}
+
+/* Estilo do botão "enviar" */
 .register-right .btn-primary {
   text-align: center;
   border-radius: 0.15cm;
@@ -128,6 +167,7 @@
   font-weight: bold;
 }
 
+/* Define cor do placeholder para todos os navegadores */
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: rgb(175,171,171);
   opacity: 1; /* Firefox */
@@ -141,29 +181,164 @@
   color: rgb(175,171,171);
 }
 
+/* Estilo dos campos input quando foram clicados para digitação */
 .register-right input:focus,
 .register-right select:focus {
   outline: none;
+  border-style: solid;
+  border-width: 0.5pt;
   border-color: rgb(237, 125, 49);
   box-shadow: 0px 0px 5pt rgba(237, 125, 49, 0.6);
 }
 
+/* Estilo opção invalida select */
 .register-right select:invalid{
   color: rgb(175,171,171);
 }
 
+/* Estilo opção inválida de data */
 .register-right input[type="date"]:invalid{
   color: rgb(175,171,171);
 }
 
+/* Estilo de opção no select */
 .register-right select option{
   color: rgb(118,113,113);
 }
 
+/* Estilo quando passa o mouse por cima do botão enviar */
 .register-right .btn-primary:hover {
   background: #ffffff;
   color: rgb(237, 125, 49);
   outline: none;
   border-color: rgb(237, 125, 49);
   box-shadow: 0px 0px 5pt rgba(237, 125, 49, 0.6);
+}
+
+/* Container da checkbox */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Troca o cursor do mouse quando passa na checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Customização da checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  margin-top: 0.4%;
+  margin-bottom: 0%;
+  border-width: 0.5pt;
+  border-style: solid;
+  border-radius: 0.1cm;
+  margin-left: 1.5%;
+  background-color: #eee;
+}
+
+/* Fica cinza quando passa o mouse em cima */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* Quando aparecer o checkmark, troca a cor do fundo */
+.container input:checked ~ .checkmark {
+  background-color: #ed7d31;
+}
+
+/* Cria o ícone do checkmark, que é transparente antes de dar check */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Mostra o checkmark quando clica */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Customização do checkmark */
+.container .checkmark:after {
+  left: 4.5px;
+  width: 7px;
+  height: 13px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* Estilo MultipleDropdown */
+#MultipleDropdown input{
+  border: 0.5pt solid rgb(118, 113, 113);
+}
+
+#MultipleDropdown input:focus{
+  border-color: rgb(237, 125, 49);
+}
+
+#StatesDropdown input{
+  border: 0.5pt solid rgb(118, 113, 113);
+}
+
+#StatesDropdown input:focus{
+  border-color: rgb(237, 125, 49);
+}
+
+#W2WDropdown input{
+  border: 0.5pt solid rgb(118, 113, 113);
+}
+
+#W2WDropdown input:focus{
+  border-color: rgb(237, 125, 49);
+}
+
+#GenderDropdown input{
+  border: 0.5pt solid rgb(118, 113, 113);
+}
+
+#GenderDropdown input:focus{
+  border-color: rgb(237, 125, 49);
+}
+
+#ServicesDropdown input{
+  border: 0.5pt solid rgb(118, 113, 113);
+}
+
+#ServicesDropdown input:focus{
+  border-color: rgb(237, 125, 49);
+}
+
+#CitiesDropdown input{
+  border: 0.5pt solid rgb(118, 113, 113);
+}
+
+#CitiesDropdown input:focus{
+  border-color: rgb(237, 125, 49);
+}
+
+._1cgu0CqbPSvU9G_sHmk1wv {
+  bottom: 5px !important;
+  transform: unset !important;
+  top:unset !important;
 }

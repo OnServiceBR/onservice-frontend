@@ -1,6 +1,10 @@
 import http from "../http-common";
 
 class ServicoDataService {
+  getAll() {
+    return http.get("/servicos");
+  }
+
   getBeleza() {
     return http.get("/servicos/beleza");
   }

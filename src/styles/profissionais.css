@@ -1,0 +1,206 @@
+/* Texto ao lado do dropdown de ordenar os profissionais */
+.order-workers {
+  font-family: GlacialIndifference;
+  color: rgb(118,113,113);
+}
+
+/* Dropdown de ordenar os profissionais */
+.order-workers-dropdown {
+  font-family: GlacialIndifference;
+  color: rgb(118,113,113);
+}
+
+/* Estilo MultipleDropdown */
+#MultipleDropdownWorkers input{
+  border: 0.5pt solid rgb(118, 113, 113);
+  border-radius: 0.15cm;
+}
+
+#MultipleDropdownWorkers input:focus{
+  border-color: rgb(237, 125, 49);
+}
+
+._1cgu0CqbPSvU9G_sHmk1wv {
+  bottom: 5px !important;
+  transform: unset !important;
+  top:unset !important;
+}
+
+/* Espaço com settings+workers */
+.workers-row-order {
+  width: 20%;
+  margin-left: auto;
+  margin-right: 14%;
+}
+
+/* Espaço para as configações de filtro dos profissionais */
+.workers-column-order-title{
+  width: 40%;
+}
+
+/* Espaço para os perfis dos profissionais */
+.workers-column-order-dropdown{
+  width: 60%;
+}
+
+.path-actual {
+  font-family: GlacialIndifference;
+  color: rgb(118,113,113);
+  margin-top: 0px;
+  margin-bottom: 35px;
+  display: inline-block;
+  text-transform: lowercase;
+  font-size: 10pt;
+  margin-left: 2px;
+  margin-right: 2px;
+  text-decoration: none;
+}
+
+/* Deixa maiústula a primeira letra de cada palavra no caminho */
+.path-actual:first-letter {
+  text-transform: uppercase;
+}
+
+/* Estilo da borda de baixo do nome das páginas */
+#profissionais-category-label{
+  border-color: rgb(175,171,171);
+}
+#profissionais-service-label{
+  border-color: rgb(175,171,171);
+}
+#profissionais-job-label{
+  border-color: rgb(237,125,49);
+}
+
+/* Link na barra de escolha das categorias e serviços */
+.link-bar-label {
+  color: rgb(64,64,64);
+  text-decoration: none;
+}
+
+/* Muda a cor dos links da barra de escolha das categorias e serviços */
+.link-bar-label:hover {
+  cursor: pointer;
+  color: rgb(237,125,49);
+  text-decoration: none;
+}
+
+/* Linha que divide os trabalhos */
+.workers-hr {
+  width: 95%;
+  border-top-color: rgb(231,230,230);
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 13%;
+}
+
+/* Espaço com settings+workers */
+.workers-row-all {
+  width: 89%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Espaço para as configações de filtro dos profissionais */
+.workers-column-settings{
+  width: 20%;
+}
+
+/* Espaço para os perfis dos profissionais */
+.workers-column-profile{
+  width: 80%;
+}
+
+/* Garante que o espaço do workers é 100% preenchido */
+.workers-row-profile {
+  width: 100%;
+  border: solid;
+  border-left-color: rgb(231,230,230);
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+  border-width: 1px;
+}
+
+/* Espaço para a imagem do profissional */
+.workers-image{
+  width: 130px;
+  height: 130px;
+  margin-left: 5%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+/* Espaço para o nome, nota e descrição do profissional */
+.workers-profile{
+  width: 70%;
+  margin-left: 3%;
+  margin-bottom: 1%;
+}
+
+/* Nome de cada um dos profissionais */
+.workers-name {
+  font-family: GlacialIndifference;
+  font-size: 14pt;
+  margin-bottom: 1%;
+  margin-top: 3%;
+}
+
+#workers-change-color-on-hover {
+  text-decoration: none;
+  color: rgb(64,64,64);
+}
+
+#workers-change-color-on-hover a {
+  text-decoration: none;
+  color: rgb(64,64,64);
+}
+
+#workers-change-color-on-hover a:hover {
+  color: rgb(237,125,49);
+  box-shadow: 0px 0px 5pt rgba(237, 125, 49, 0.6);
+}
+
+/* Descrição de cada um dos profissionais */
+.workers-description {
+  font-family: GlacialIndifference;
+  font-size: 10pt;
+  color: rgb(175,171,171);
+  border: solid;
+  border-width: 1px;
+  height: 105px;
+  width: 100%;
+  padding-left: 1.5%;
+  padding-top: 0.5%;
+  padding-right: 1.5%;
+  padding-bottom: 0.5%;
+  text-align: justify;
+  margin-bottom: 1%;
+}
+
+.workers-settings-title {
+  font-family: GlacialIndifference;
+  font-size: 12pt;
+  margin-bottom: 6px;
+  margin-top: 30px;
+  color: rgb(64,64,64);
+}
+
+/* Descrição em texto de determinada configuração de filtro de profissionais */
+.workers-settings-text {
+  font-family: GlacialIndifference;
+  font-size: 10pt;
+  color: rgb(118,113,113);
+  margin-bottom: none;
+}
+
+.workers-picture-profissões {
+  outline: none;
+  width: 100%;
+	height: 100%;
+	border-style: none;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  object-fit: fill;
+}

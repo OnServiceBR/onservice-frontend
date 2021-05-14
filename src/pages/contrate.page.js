@@ -12,6 +12,7 @@ export default class Home extends Component {
   render() {
     return(
       <div>
+        <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><h2 class="path-actual">Contrate um serviço</h2>
         <div class="search-box">
           <form method="get" action="/contrate">
             <div id="search-contrate">
@@ -45,6 +46,11 @@ export default class Home extends Component {
                 Saúde
               </button>
             </a>
+            <a href="/contrate/residencial">
+              <button id="residencial-button" class="category-button">
+                Residencial
+              </button>
+            </a>
           </div>
           <div class="col">
             <a href="/contrate/manutencao">
@@ -60,6 +66,11 @@ export default class Home extends Component {
             <a href="/contrate/eventos">
               <button id="event-button" class="category-button">
                 Eventos
+              </button>
+            </a>
+            <a href="/contrate/outros">
+              <button id="others-button" class="category-button">
+                Outros
               </button>
             </a>
           </div>
