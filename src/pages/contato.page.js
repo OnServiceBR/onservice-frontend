@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import "../styles/contato.css";
 import axios from "axios";
 import Contatoimagem from "../assets/Slide2.PNG"
+
+import swal from '@sweetalert/with-react'
+import { Multiselect } from 'multiselect-react-dropdown';
+
 const SITE_KEY = "6Ldo9loaAAAAADMRNqgi69nefNZrZfluNekE9YJQ";
 
 function Contato() {
@@ -11,6 +15,42 @@ function Contato() {
   const [subject, setSubject] = useState("");
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState(false);
+
+  const DropdownSubject = [
+    {name: "Problemas com a conta"},
+    {name: "Problemas com algum serviço realizado"},
+    {name: "Dúvidas sobre a OnService"},
+    {name: "Reclamações ou Sugestões"},
+  ];
+
+  const style = {
+    chips: {
+      background: "rgb(237, 125, 49)",
+      color: "rgb(255,255,255)"
+    },
+    searchBox: {
+      "border": "0.5pt none rgb(118,113,113)",
+      "border-radius": "0.15cm",
+      padding: 0,
+    },
+    inputField: {
+      margin: 0,
+      "padding-left":"19px",
+      width: "100%",
+    },
+    multiselectContainer: {
+      color: "rgb(175,171,171)",
+      width: "93%",
+      "margin-right": "auto",
+      "margin-left": "auto"
+    },
+    groupHeading: {
+      color: "rgb(237, 125, 49)",
+    },
+    option: { // To change css for dropdown options
+      color: "rgb(118,113,113)",
+    },
+  };
   
   useEffect(() => {
     const loadScriptByURL = (id, url, callback) => {
@@ -46,7 +86,44 @@ function Contato() {
     });
   }
 
+  const sendAlert = (header, msg, icon) => {
+    swal({
+      icon: icon,
+      button:{
+        className: "button-alert",
+      },
+      content: (
+        <div>
+          <h3>{header}</h3>
+          <p>
+            {msg}
+          </p>
+        </div>
+      )
+    })
+  }
+
   const submitData = token => {
+    if (name === ""){
+      sendAlert("Ops, algo deu errado...","O campo do nome não pode estar vazio!", "error")
+      setLoading(false);
+      return
+    }
+    if (email === ""){
+      sendAlert("Ops, algo deu errado...","O campo do email não pode estar vazio!", "error")
+      setLoading(false);
+      return
+    }
+    if (subject === ""){
+      sendAlert("Ops, algo deu errado...","O campo do assunto não pode estar vazio!", "error")
+      setLoading(false);
+      return
+    }
+    if (message === ""){
+      sendAlert("Ops, algo deu errado...","O campo da mensagem não pode estar vazio!", "error")
+      setLoading(false);
+      return
+    }
     // call a backend API to verify reCAPTCHA response
     fetch(process.env.REACT_APP_RECAPTCHA, {
       method: 'POST',
@@ -54,28 +131,28 @@ function Contato() {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        "name": name,
-        "email": email,
         "g-recaptcha-response": token
       })
     }).then(res => res.json()).then(res => {
       
       if (res.success) {
-        if(name !== "" && email !== "" && message !== ""){
+        if(name !== "" && email !== "" && message !== "" && subject !== ""){
           const data = {
             name: name,
             email: email,
-            message: message
+            message: message,
+            subject: subject
           }
     
           axios.post(process.env.REACT_APP_MAIL_URL, data)
           .then(res => {
-            console.log(res);
             setName("");
             setEmail("");
+            setSubject("");
             setMessage("");
-            return res.json();
+            sendAlert("Concluído","Sua mensagem foi enviada, em breve entraremos em contato com você!", "success")
           }).catch(err => {
+            sendAlert("Ops, algo deu errado...","Nosso sistema pode estar fora do ar, tente novamente mais tarde!", "error")
             console.log(err);
           })
         }else{
@@ -88,10 +165,14 @@ function Contato() {
     });
   }
 
+  const onSelectSubject = (selectedList, selectedItem) => {
+    setSubject(selectedItem.name)
+  }
+
   return (
     <div class="row">
       <div class="col">
-      <img src={Contatoimagem}width="500px"/>
+      <img src={Contatoimagem}width="500px" alt="Imagem página contato"/>
       </div>
       <div class="col form-contact">
         <h3>FALE CONOSCO</h3>
@@ -115,7 +196,19 @@ function Contato() {
             <div class="form-item">
               <label class="label">Assunto:</label>
               <div style={{textAlign: "center"}}>
-                <input id="subject" name="subject" type="text" placeholder="Descreva o assunto" onChange={e => setEmail(e.target.value)} value={subject} />
+                {/* <input id="subject" name="subject" type="text" placeholder="Descreva o assunto" onChange={e => setSubject(e.target.value)} value={subject} /> */}
+                <Multiselect
+                  options={DropdownSubject} // Options to display in the dropdown
+                  onSelect={onSelectSubject} // Function will trigger on select event
+                  displayValue="name" // Property name to display in the dropdown options
+                  closeOnSelect={true}
+                  showArrow={true}
+                  id="SubjectDropdown"
+                  style={style}
+                  singleSelect={true}
+                  avoidHighlightFirstOption={true}
+                  placeholder="Selecione uma opção"
+                />
               </div>
             </div>
             <div class="form-item">
