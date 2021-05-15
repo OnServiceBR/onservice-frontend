@@ -8,15 +8,16 @@
   border-bottom-right-radius: 0.65cm;
   padding-bottom: 0.5cm;
   margin-bottom: 0.5cm;
-  margin-left: 3%;
+  margin-left: 0%;
 }
 
 /* Titulo contato */
 .form-contact h3 {
   font-family: 'Bebas Neue', cursive;
   text-align: center;
-  margin-top: 0.5cm;
+  margin-top: 1cm;
   letter-spacing: 6px;
+  font-size: 16pt;
   color: rgb(237, 125, 49);
 }
 
