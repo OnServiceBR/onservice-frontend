@@ -12,15 +12,15 @@ export default class Footer extends Component {
             <div class="row row-size">
               <div class="col">
                 <label class="footer-title">Informações</label><br />
-                <label class="footer-content">Como utilizar o site</label><br />
-                <label class="footer-content">Como utilizar o app</label><br />
-                <label class="footer-content">Fale conosco</label>
+                <label class="footer-content"><a>Como utilizar o site</a></label><br />
+                <label class="footer-content"><a>Como utilizar o app</a></label><br />
+                <label class="footer-content"><a>Dicas de segurança</a></label><br />
               </div>
               <div class="col">
                 <label class="footer-title">OnService</label><br />
-                <label class="footer-content">Sobre a OnService</label><br />
-                <label class="footer-content">Fale conosco</label><br />
-                <label class="footer-content">Anuncie com a gente</label>
+                <label class="footer-content"><a>Sobre a OnService</a></label><br />
+                <label class="footer-content"><a href="/contato">Fale conosco</a></label><br />
+                <label class="footer-content"><a href= "anuncie">Anuncie com a gente</a></label><br />
               </div>
               <div class="col">
                 <label class="footer-title-2">Confira</label>
@@ -33,7 +33,9 @@ export default class Footer extends Component {
             </div>
             <hr />
             <div class="socket">
-              <label>O uso deste site está sujeito aos <a href="">Termos de uso</a> e <a href="">Política de privacidade</a>.</label>
+              O uso deste site está sujeito aos <a href="/termos-de-uso">Termos de uso</a> e <a href="/politica-de-privacidade">Política de privacidade</a>.<br></br>
+              ®OnService - Todos os direitos reservados.<br></br>
+              <span style={{textDecoration: "underline white"}}>onservicesac@gmail.com</span>
             </div>
           </div>
         </footer>

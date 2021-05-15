@@ -1,10 +1,42 @@
+/* Caminho atual sem mudar de cor */
+.path-actual {
+  font-family: GlacialIndifference;
+  color: rgb(118,113,113);
+  margin-top: 0px;
+  margin-bottom: 35px;
+  display: inline-block;
+  text-transform: lowercase;
+  font-size: 10pt;
+  margin-left: 2px;
+  margin-right: 2px;
+  text-decoration: none;
+}
+
+/* Deixa maiústula a primeira letra de cada palavra no caminho atual */
+.path-actual:first-letter {
+  text-transform: uppercase;
+}
+
+/* Estilo bloco de pesquisa */
 .search-box{
-	margin-left: auto;
+  margin-left: auto;
 	margin-right: auto;
 	text-align: center;
 	font-family: GlacialIndifference;
 }
 
+/* Estilo bloco de pesquisa dentro do form */
+#search-contrate{
+  display: inline-block;
+  border-color: rgb(118,113,113);
+  border-radius: 0.15cm 0.15cm 0.15cm 0.15cm;
+  border-style: solid solid solid solid;
+  border-width: 0.5pt;
+  width: 50%;
+  padding: 0.8%;
+}
+
+/* Estilo botão de pesquisa */
 #search-button-contrate{
   text-align: center;
   border-radius: 0.15cm;
@@ -23,6 +55,7 @@
   margin-left: 1.5%
 }
 
+/* Estilo caixa de pesquisa */
 #search-input-contrate{
   border-style: none;
   width: 93%;
@@ -34,16 +67,7 @@
   outline-style: none;
 }
 
-#search-contrate{
-  display: inline-block;
-  border-color: rgb(118,113,113);
-  border-radius: 0.15cm 0.15cm 0.15cm 0.15cm;
-  border-style: solid solid solid solid;
-  border-width: 0.5pt;
-  width: 50%;
-  padding: 0.8%;
-}
-
+/* Estilo bloco com nome das páginas */
 .search-tabs{
   font-family: GlacialIndifference;
   text-align: center;
@@ -52,6 +76,7 @@
 	color: rgb(64,64,64);
 }
 
+/* Estilo do texto com nome das páginas */
 .search-tabs label{
   padding-left: 100px;
   padding-right: 100px;
@@ -59,6 +84,7 @@
   border-bottom: solid rgb(175,171,171);
 }
 
+/* Estilo da borda de baixo do nome das páginas */
 #contrate-category-label{
   border-color: rgb(237,125,49);
 }
@@ -69,12 +95,14 @@
   border-color: rgb(175,171,171);
 }
 
+/* Estilo do bloco das categorias */
 .category-buttons{
 	width: 85%;
 	margin-left: auto;
 	margin-right: auto;
 }
 
+/* Estilo do botão de categoria */
 .category-button{
 	width: 100%;
 	height: 112px;
@@ -85,17 +113,22 @@
 	color: rgb(175, 171, 171);
 	font-family: GlacialIndifference;
 	font-size: 24pt;
+  box-shadow: 0px 0px 5pt rgba(118, 113, 113, 0.6);
+  background-color: white;
+  transition: 0.5s;
 }
 
 .category-button:focus{
 	outline: none;
-	box-shadow: 0px 0px 5pt rgba(118, 113, 113, 0.6);
 }
 
+/* Estilo do botão de categoria quando o mouse passa por cima */
 .category-button:hover{
 	color: rgb(233, 125, 49);
+  transition: 0.5s;
 }
 
+/* Estilo da imagem dentro do botão da categoria */
 .category-button-image{
 	position: absolute;
 	top: 0;
@@ -124,4 +157,44 @@
 
 #event-button{
 	background-image: url('../assets/Imagens Site/Eventos.png');
+}
+
+#residencial-button{
+	background-image: url('../assets/Imagens Site/Residencial.png');
+}
+
+#others-button{
+	background-image: url('../assets/Imagens Site/Manutenção.png');
+}
+
+#tecnology-button:hover{
+	background-image: url('../assets/Imagens Site/TecnologiaLaranja.png');
+}
+
+#maintenance-button:hover{
+	background-image: url('../assets/Imagens Site/ManutençãoLaranja.png');
+}
+
+#beauty-button:hover{
+	background-image: url('../assets/Imagens Site/BelezaLaranja.png');
+}
+
+#teaching-button:hover{
+	background-image: url('../assets/Imagens Site/EnsinoLaranja.png');
+}
+
+#health-button:hover{
+	background-image: url('../assets/Imagens Site/SaúdeLaranja.png');
+}
+
+#event-button:hover{
+	background-image: url('../assets/Imagens Site/EventosLaranja.png');
+}
+
+#residencial-button:hover{
+	background-image: url('../assets/Imagens Site/ResidencialLaranja.png');
+}
+
+#others-button:hover{
+	background-image: url('../assets/Imagens Site/ManutençãoLaranja.png');
 }

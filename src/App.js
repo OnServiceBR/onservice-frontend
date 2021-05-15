@@ -18,7 +18,10 @@ import Conduta from "./pages/conduta.page";
 import Termos from "./pages/termos.page";
 import Privacidade from "./pages/privacidade.page";
 import ComoUtilizaroSite from "./pages/como-utilizar-o-site.page";
-
+import Sobrenos from "./pages/sobrenos.page";
+import Perfil from "./pages/perfil.page";
+import Profissionais from "./pages/profissionais.page";
+import Seguranca from "./pages/seguranca.page";
 
 function App() {
   return (
@@ -36,10 +39,14 @@ function App() {
           <Route exact path="/anuncie" component={Anuncie} />
           <Route exact path="/contato" component={Contato} />
           <Route exact path="/contrate/:job" component={Trabalhos} />
+          <Route exact path="/contrate/:job/:workers" component={Profissionais} />
           <Route exact path="/codigo-de-conduta/" component={Conduta} />
+          <Route exact path="/perfil/" component={Perfil} />
           <Route exact path="/termos-de-uso/" component={Termos} />
           <Route exact path="/politica-de-privacidade/" component={Privacidade} />
           <Route exact path="/como-utilizar-o-site/" component={ComoUtilizaroSite} />
+          <Route exact path="/sobre-nos/" component={Sobrenos} />
+          <Route exact path="/seguranca" component={Seguranca} />
         </Switch>
       </div>
       <Footer />
