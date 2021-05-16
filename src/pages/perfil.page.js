@@ -1,12 +1,41 @@
 import React, { Component } from "react";
 import "../styles/perfil.css";
+import swal from '@sweetalert/with-react';
 
-import Anuncieimagem from "../assets/IMG-20190914-WA0056.jpg";
+
+import Prestadorimage from "../assets/IMG-20190914-WA0056.jpg";
 import Whatsappimage from "../assets/whatsappicon.png";
 import Fotoperfil from "../assets/edinaldocirculo.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+
 export default class Perfil extends Component {
+
+  sendErrorAlertPerfil = (msg) => {
+    swal({
+      icon: "info",
+      button: {
+        className: "perfil-button-alert",
+        text: "Entrar em contato",
+      },
+      content: (
+        <div>
+          <p class="perfil-button-alert-title">Você está a um passo de contratar um profissional!</p>
+          <p>
+            {''}
+          </p>
+          <p class="perfil-button-alert-text">Ao clicar em “Entrar em Contato”, você está de acordo com nosso Termos de Uso e Política de Privacidade. Para fazer qualquer tipo de reclamação ou denúncia, envie-nos uma mensagem na aba CONTATO!</p>
+        </div>
+      )
+    })
+  }
+
+
+  messageContrate = () => {
+    this.sendErrorAlertPerfil("")
+  }
+
+
   render() {
     return (
       <div class="row">
@@ -14,7 +43,7 @@ export default class Perfil extends Component {
           <div class="row">
             < div class="col-5">
               <div class="perfilimage">
-                <img src={Anuncieimagem} width="300px" alt="Perfil" />
+                <img src={Prestadorimage} width="300px" alt="Perfil" />
               </div>
             </div>
 
@@ -29,7 +58,10 @@ export default class Perfil extends Component {
                     <p class="perfil-h1">Ednaldo Pereira</p>
                   </div>
                   <hr class="perfil-hr" />
-                  <button id="button-entraremcontato">
+                  <button type='button'
+                    onClick={
+                      this.messageContrate.bind(this)
+                    } class="button-entraremcontato">
                     Entrar em contato
                         <img id="buttonimage" src={Whatsappimage} width="22px" alt="Perfil" />
                   </button>
@@ -64,7 +96,7 @@ export default class Perfil extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </div >
     )
   }
 }
