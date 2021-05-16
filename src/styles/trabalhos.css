@@ -234,7 +234,6 @@ html {
 /* Troca o ícone pelo ícone laranja */
 .job-link a:hover .job-icon-button-class{
   color: rgb(237,125,49);
-  background-image: url('../assets/Ícones/privadalaranja.png');
   outline: none;
 }
 
@@ -247,7 +246,6 @@ html {
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: white;
-  background-image: url('../assets/Ícones/privada.png');
 }
 
 .analista-de-sistemas-icon-button-class {
@@ -269,56 +267,56 @@ html {
 }
 
 .editor-de-video-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/EditordevideoC.PNG');
 }
 
 .editor-de-video-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/EditordevideoL.PNG');
   outline: none;
 }
 
 .programador-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/ProgramadorC.PNG');
 }
 
 .programador-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/ProgramadorL.PNG');
   outline: none;
 }
 
 .tecnico-em-informatica-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/AssistenteTecnicoC.PNG');
 }
 
 .tecnico-em-informatica-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/AssistenteTecnicoL.PNG');
   outline: none;
 }
 
 .eletricista-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/EletricistaC.PNG');
 }
 
 .eletricista-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/EletricistaL.PNG');
   outline: none;
 }
 
 .encanador-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/EncanadorC.PNG');
 }
 
 .encanador-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/EncanadorL.PNG');
   outline: none;
 }
 
 .faz-tudo-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/FazTudoC.PNG');
 }
 
 .faz-tudo-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/FazTudoL.PNG');
   outline: none;
 }
 
@@ -332,83 +330,74 @@ html {
 }
 
 .marceneiro-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/MarceneiroC.PNG');
 }
 
 .marceneiro-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/MarceneiroL.PNG');
   outline: none;
 }
 
 .montador-de-moveis-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/MontadordeMoveisC.PNG');
 }
 
 .montador-de-moveis-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/MontadordeMoveisL.PNG');
   outline: none;
 }
 
 .pintor-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/PintorC.PNG');
 }
 
 .pintor-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
-  outline: none;
-}
-
-.tecnico-em-informatica-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
-}
-
-.tecnico-em-informatica-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/PintorL.PNG');
   outline: none;
 }
 
 .barbeiro-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/BarbeiroC.PNG');
 }
 
 .barbeiro-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/BarbeiroL.PNG');
   outline: none;
 }
 
 .cabeleireiro-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/CabeleireiroC.PNG');
 }
 
 .cabeleireiro-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/CabeleireiroL.PNG');
   outline: none;
 }
 
 .maquiador-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/MaquiadorC.PNG');
 }
 
 .maquiador-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/MaquiadorL.PNG');
   outline: none;
 }
 
 .micropigmentador-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/MicropigmentacaoC.PNG');
 }
 
 .micropigmentador-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/MicropigmentacaoL.PNG');
   outline: none;
 }
 
 .coach-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/CoachC.PNG');
 }
 
 .coach-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/CoachL.PNG');
   outline: none;
 }
 
@@ -422,74 +411,74 @@ html {
 }
 
 .professor-de-programação-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/ProfessorC.PNG');
 }
 
 .professor-de-programação-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/ProfessorL.PNG');
   outline: none;
 }
 
 .professor-de-ingles-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/ProfessorC.PNG');
 }
 
 .professor-de-ingles-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/ProfessorL.PNG');
   outline: none;
 }
 
 .professor-de-frances-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/ProfessorC.PNG');
 }
 
 .professor-de-frances-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/ProfessorL.PNG');
   outline: none;
 }
 
 .tradutor-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/TradutorC.PNG');
 }
 
 .tradutor-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/TradutorL.PNG');
   outline: none;
 }
 
 .fisioterapeuta-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/FisioterapeutaC.PNG');
 }
 
 .fisioterapeuta-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/FisioterapeutaL.PNG');
   outline: none;
 }
 
 .personal-trainer-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/PersonalTrainerC.PNG');
 }
 
 .personal-trainer-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/PersonalTrainerL.PNG');
   outline: none;
 }
 
 .psicologo-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/PsicologoC.PNG');
 }
 
 .psicologo-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/PsicologoL.PNG');
   outline: none;
 }
 
 .terapeuta-ocupacional-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/TerapeutaOcupacionalC.PNG');
 }
 
 .terapeuta-ocupacional-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/TerapeutaOcupacionalL.PNG');
   outline: none;
 }
 
@@ -503,29 +492,29 @@ html {
 }
 
 .bartender-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/BartenderC.PNG');
 }
 
 .bartender-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/BartenderL.PNG');
   outline: none;
 }
 
 .fotografo-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/FotografoC.PNG');
 }
 
 .fotografo-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/FotografoL.PNG');
   outline: none;
 }
 
 .garcom-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/GarcomC.PNG');
 }
 
 .garcom-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/GarcomL.PNG');
   outline: none;
 }
 
@@ -539,82 +528,82 @@ html {
 }
 
 .recepcionista-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/RecepcionistaC.PNG');
 }
 
 .recepcionista-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/RecepcionistaL.PNG');
   outline: none;
 }
 
 .diarista-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/DiaristaC.PNG');
 }
 
 .diarista-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/DiaristaL.PNG');
   outline: none;
 }
 
 .jardineiro-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/JardineiroC.PNG');
 }
 
 .jardineiro-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/JardineiroL.PNG');
   outline: none;
 }
 
 .artesao-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/ArtesaoC.PNG');
 }
 
 .artesao-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/ArtesaoL.PNG');
   outline: none;
 }
 
 .desenhista-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/DesenhistaC.PNG');
 }
 
 .desenhista-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/DesenhistaL.PNG');
   outline: none;
 }
 
 .frete-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/Fretes\ e\ MudançasC.PNG');
 }
 
 .frete-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/Fretes\ e\ MudançasL.PNG');
   outline: none;
 }
 
 .impressao-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/ServiçodeImpressaoC.PNG');
 }
 
 .impressao-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/ServiçodeImpressaoL.PNG');
   outline: none;
 }
 
 .motorista-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/MotoristaParticularC.PNG');
 }
 
 .motorista-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/MotoristaParticularL.PNG');
   outline: none;
 }
 
 .passeador-de-caes-icon-button-class {
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/Ícones/PasseadordecaesC.PNG');
 }
 
 .passeador-de-caes-icon-button-class:hover{
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/Ícones/PasseadordecaesL.PNG');
   outline: none;
 }
