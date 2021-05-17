@@ -17,9 +17,9 @@ export default class Navbar extends Component {
     return(
       <div class="header">
         <div class="header-container">
-          <div class="brand-logo">
+          <a href="/" class="brand-logo">
             <img src={logo} width="250" alt="logo"/>
-          </div>
+          </a>
           <div class="menu-items">
             <a href="/">HOME</a>
             <a href="/contrate">CONTRATE UM PRESTADOR</a>

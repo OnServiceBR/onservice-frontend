@@ -16,6 +16,7 @@ import Contato from "./pages/contato.page";
 import Conduta from "./pages/conduta.page";
 import Termos from "./pages/termos.page";
 import Privacidade from "./pages/privacidade.page";
+import ComoUtilizaroSite from "./pages/como-utilizar-o-site.page";
 import Sobrenos from "./pages/sobrenos.page";
 import Perfil from "./pages/perfil.page";
 import Profissionais from "./pages/profissionais.page";
@@ -49,6 +50,7 @@ function App() {
           <Route exact path="/perfil/" component={Perfil} />
           <Route exact path="/termos-de-uso/" component={Termos} />
           <Route exact path="/politica-de-privacidade/" component={Privacidade} />
+          <Route exact path="/como-utilizar-o-site/" component={ComoUtilizaroSite} />
           <Route exact path="/contrate/beleza" component={Beleza} />
           <Route exact path="/contrate/ensino" component={Ensino} />
           <Route exact path="/contrate/eventos" component={Eventos} />

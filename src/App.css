@@ -50,6 +50,6 @@
 .wave-container{
   position: sticky;
   top: 68px;
-  z-index: 1;
+  z-index: 100;
 }
 
