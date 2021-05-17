@@ -11,6 +11,8 @@ import { Multiselect } from 'multiselect-react-dropdown';
 
 import NumberFormat from 'react-number-format';
 
+const SITE_KEY = "6Ldo9loaAAAAADMRNqgi69nefNZrZfluNekE9YJQ";
+
 export default class Home extends Component {
   constructor(props){
     super(props)
@@ -161,6 +163,25 @@ export default class Home extends Component {
   componentDidMount() {
     this.retrieveCidades();
     this.retrieveServicos();
+    const loadScriptByURL = (id, url, callback) => {
+      const isScriptExist = document.getElementById(id);
+ 
+      if (!isScriptExist) {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = url;
+        script.id = id;
+        script.onload = function () {
+          if (callback) callback();
+        };
+        document.body.appendChild(script);
+      }
+ 
+      if (isScriptExist && callback) callback();
+    }
+    loadScriptByURL("recaptcha-key", `https://www.google.com/recaptcha/api.js?render=${SITE_KEY}`, function () {
+      console.log("Script loaded!");
+    });
   }
 
   sendErrorAlert = (msg) => {
@@ -180,7 +201,16 @@ export default class Home extends Component {
     })
   }
 
-  savePrestador = () => {
+  handleOnClick = e => {
+    e.preventDefault();
+    window.grecaptcha.ready(() => {
+      window.grecaptcha.execute(SITE_KEY, { action: 'submit' }).then(token => {
+        this.savePrestador(token);
+      });
+    });
+  }
+
+  savePrestador = (token) => {
 
     if (this.state.name === ""){
       this.sendErrorAlert("Seu nome não pode estar em branco!")
@@ -304,7 +334,7 @@ export default class Home extends Component {
       return;
     }
   
-    if (this.state.w2w !== false || this.state.w2w !== true) {
+    if (this.state.w2w !== false && this.state.w2w !== true) {
       this.sendErrorAlert("Você deve selecionar se seu serviço é exclusivo para mulheres!")
       return;
     }
@@ -314,66 +344,79 @@ export default class Home extends Component {
       return;
     }
 
-    const formData = new FormData()
-    formData.append("cpf", this.state.cpf)
-    formData.append('file', this.state.file[0])
-
-    PrestadorDataService.upload(formData)
-      .then(res => {
-        console.log("Image Uploaded")
-        // console.log(res.data)
-        var data = {
-          name: this.state.name,
-          cpf: this.state.cpf,
-          email: this.state.email,
-          birthday: this.state.birthday,
-          gender: this.state.gender,
-          phone: this.state.phone,
-          cep: this.state.cep,
-          state: this.state.state,
-          city: this.state.city,
-          address: this.state.address,
-          complement: this.state.complement,
-          cidades: this.state.cities,
-          servicos: this.state.services,
-          description: this.state.description,
-          picture: res.data.filename,
-          w2w: this.state.w2w,
-          terms: this.state.terms
-        };
-        console.log(data)
-        PrestadorDataService.create(data)
-          .then(res => {
-            this.setState({
-              id: res.data.id,
-              name: res.data.name,
-              cpf: res.data.cpf,
-              email: res.data.email,
-              birthday: res.data.birthday,
-              gender: res.data.gender,
-              phone: res.data.phone,
-              cep: res.data.cep,
-              state: res.data.state,
-              city: res.data.city,
-              address: res.data.address,
-              complement: res.data.complement,
-              cities: res.data.cities,
-              services: res.data.services,
-              w2w: res.data.w2w,
-              terms: res.data.terms,
-              
-              published: res.data.published,
-
-              submitted: true
-            });
-            swal("Concluído", "Sua inscrição foi enviada, você deve ser aprovado em breve!", "success");
-            this.newPrestador();
-          })
-          .catch(e => {
-            swal("Ops, algo deu errado...", "Talvez nosso sistema esteja fora do ar, tente novamente mais tarde!", "error");
-            console.log(e);
-          });
+    // call a backend API to verify reCAPTCHA response
+    fetch(process.env.REACT_APP_RECAPTCHA, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        "g-recaptcha-response": token
       })
+    }).then(res => res.json()).then(res => {
+
+      const formData = new FormData()
+      formData.append("cpf", this.state.cpf.value)
+      formData.append('file', this.state.file[0])
+  
+      PrestadorDataService.upload(formData)
+        .then(res => {
+          console.log("Image Uploaded")
+          // console.log(res.data)
+          var data = {
+            name: this.state.name,
+            cpf: this.state.cpf.value,
+            email: this.state.email,
+            birthday: this.state.birthday.formattedValue,
+            gender: this.state.gender,
+            phone: this.state.phone.value,
+            cep: this.state.cep.value,
+            state: this.state.state,
+            city: this.state.city,
+            address: this.state.address,
+            complement: this.state.complement,
+            cidades: this.state.cities,
+            servicos: this.state.services,
+            description: this.state.description,
+            picture: res.data.filename,
+            w2w: this.state.w2w,
+            terms: this.state.terms
+          };
+          console.log(data)
+          PrestadorDataService.create(data)
+            .then(res => {
+              this.setState({
+                id: res.data.id,
+                name: res.data.name,
+                cpf: res.data.cpf,
+                email: res.data.email,
+                birthday: res.data.birthday,
+                gender: res.data.gender,
+                phone: res.data.phone,
+                cep: res.data.cep,
+                state: res.data.state,
+                city: res.data.city,
+                address: res.data.address,
+                complement: res.data.complement,
+                cities: res.data.cities,
+                services: res.data.services,
+                w2w: res.data.w2w,
+                terms: res.data.terms,
+                
+                published: res.data.published,
+  
+                submitted: true
+              });
+              swal("Concluído", "Sua inscrição foi enviada, você deve ser aprovado em breve!", "success");
+              this.newPrestador();
+            })
+            .catch(e => {
+              swal("Ops, algo deu errado...", "Talvez nosso sistema esteja fora do ar, tente novamente mais tarde!", "error");
+              console.log(e);
+            });
+        })
+    })
+
   }
 
   retrieveCidades() {
@@ -435,10 +478,6 @@ export default class Home extends Component {
   onSelectBirthday(values) {
     this.setState({ birthday: values });
   }
-  
-  onSelectGender(values) {
-    this.setState({ gender: values });
-  }
 
   onSelectPhone(values) {
     this.setState({ phone: values });
@@ -474,6 +513,10 @@ export default class Home extends Component {
     let index = services.indexOf(removedItem.id)
     services.splice(index, 1)
     this.setState({ services: services });
+  }
+
+  onSelectGender(selectedList, selectedItem) {
+    this.setState({ gender: selectedItem.value });
   }
 
   onSelectW2W(selectedList, selectedItem) {
@@ -632,7 +675,7 @@ export default class Home extends Component {
             </div>
             <p style={{fontSize:"8pt",marginLeft:"5.5%", marginRight:"3%"}}>Ao clicar no botão <span style={{fontWeight:"bold"}}>“Registrar-se”</span> você concorda e expressa sua vontade livre, consciente e informada de cumprir com e ser regido por nosso <a href="/codigo-de-conduta">Código de Conduta</a> e <a href="/politica-de-privacidade">Política de Privacidade</a></p>
           </div>  
-          <button type='button' onClick={this.savePrestador.bind(this)} class='btn-primary'>Registre-se</button>
+          <button type='button' onClick={this.handleOnClick.bind(this)} class='btn-primary'>Registre-se</button>
         </div>
         
       </div>
