@@ -38,5 +38,6 @@ function Seguranca() {
     );
 
 
+
 }
 export default Seguranca;
