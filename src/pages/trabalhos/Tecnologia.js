@@ -1,7 +1,10 @@
 import React, { Component } from "react";
+import HoverImage from "react-hover-image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "../../styles/trabalhos.css";
-import privada from "../../assets/icones/privada.png";
+
+import EditordevideoC from '../../assets/icones/EditordevideoC.png';
+import EditordevideoL from '../../assets/icones/EditordevideoL.png';
 
 export default class Home extends Component {
 
@@ -106,7 +109,8 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="job-icon-button-class editor-de-video-icon-button-class"> </button>
+                  {/* <button class="job-icon-button-class editor-de-video-icon-button-class"> </button> */}
+                  <HoverImage src={EditordevideoC} hoverSrc={EditordevideoL} className="job-icon-button-class"/>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
