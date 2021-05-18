@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "../../styles/trabalhos.css";
-import privada from "../../assets/Ícones/privada.png";
+import privada from "../../assets/icones/privada.png";
 
 export default class Home extends Component {
 
@@ -66,7 +66,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="analista-de-sistemas-icon-button-class"> </button>
+                  <button class="job-icon-button-class analista-de-sistemas-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
@@ -88,7 +88,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="designer-grafico-icon-button-class"> </button>
+                  <button class="job-icon-button-class designer-grafico-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
@@ -106,7 +106,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="editor-de-video-icon-button-class"> </button>
+                  <button class="job-icon-button-class editor-de-video-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
@@ -144,7 +144,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="programador-icon-button-class"> </button>
+                  <button class="job-icon-button-class programador-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
@@ -168,7 +168,7 @@ export default class Home extends Component {
             <a href="/contrate/manutencao/encanador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="tecnico-em-informatica-icon-button-class"> </button>
+                  <button class="job-icon-button-class tecnico-em-informatica-icon-button-class"> </button>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
