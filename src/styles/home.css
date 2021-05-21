@@ -209,3 +209,14 @@
 #claudia{
 	margin-left: 60px;
 }
+
+.carousel-home {
+  max-width: 1200;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 64px;
+}
+
+.carousel-home img {
+  padding: 8px;
+}

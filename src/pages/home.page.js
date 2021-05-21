@@ -7,6 +7,8 @@ import Pessoa from '../assets/PessoaX.png'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import Carousel from "../components/Carousel.js";
+
 export default class Home extends Component {
   render() {
     return(
@@ -32,9 +34,29 @@ export default class Home extends Component {
       <br />
       <br />
       </div>
+      <div class="carousel-home">
+        <Carousel
+          show={4}
+          infiniteLoop={true}
+        >
+        {/* COLOCA AQUI AS FOTOS! */}
+          <img src="https://via.placeholder.com/300x300" alt="placeholder"/>
+          <img src="https://via.placeholder.com/300x300" alt="placeholder"/>
+          <img src="https://via.placeholder.com/300x300" alt="placeholder"/>
+          <img src="https://via.placeholder.com/300x300" alt="placeholder"/>
+          <img src="https://via.placeholder.com/300x300" alt="placeholder"/>
+          <img src="https://via.placeholder.com/300x300" alt="placeholder"/>
+          <img src="https://via.placeholder.com/300x300" alt="placeholder"/>
+          <img src="https://via.placeholder.com/300x300" alt="placeholder"/>
+          <img src="https://via.placeholder.com/300x300" alt="placeholder"/>
+          <img src="https://via.placeholder.com/300x300" alt="placeholder"/>
+        </Carousel>
+      </div>
+      <br />
+      <br />
       <div class="row row-all-cards" id="cards-change-color-on-hover">
-        <img src={WhiteLeft} id="white-left" height="100%"/>
-        <img src={WhiteRight} id="white-right" height="100%"/>
+        {/* <img src={WhiteLeft} id="white-left" height="100%"/>
+        <img src={WhiteRight} id="white-right" height="100%"/> */}
         <a href="/perfil" class="column column-each-card">
           <div class="row row-card-work">
             <p>Organizador de festas infantis</p>
