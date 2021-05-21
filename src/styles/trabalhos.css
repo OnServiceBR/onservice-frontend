@@ -222,20 +222,20 @@ html {
 }
 
 /* Define a cor do serviço para cinza antes de passar o mouse */
-.job-link a{
+.job-link a {
   text-decoration: none;
   color: rgb(118,113,113);
 }
 
 /* Sublinha título do serviço*/
-.job-link a:hover{
+.job-link a:hover {
   color: rgb(237,125,49);
 }
 
 /* Troca o ícone pelo ícone laranja */
-.job-link a:hover .job-icon-button-class{
+.job-link a:hover .job-icon-button-class {
   color: rgb(237,125,49);
-  background-image: url('../assets/Ícones/privadalaranja.png');
+  background-image: url('../assets/icones/privadalaranja.png');
   outline: none;
 }
 
@@ -248,5 +248,5 @@ html {
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: white;
-  background-image: url('../assets/Ícones/privada.png');
+  background-image: url('../assets/icones/privada.png');
 }

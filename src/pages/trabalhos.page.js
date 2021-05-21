@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "../styles/trabalhos.css";
 import ServicoDataService from "../services/servico.service";
-import privada from "../assets/Ícones/privada.png";
 
 export default class Home extends Component {
   constructor(props){
