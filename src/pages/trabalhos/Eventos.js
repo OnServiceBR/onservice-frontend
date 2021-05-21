@@ -62,7 +62,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/animador">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="animador-icon-button-class"> </button>
@@ -78,7 +78,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/bartender">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="bartender-icon-button-class"> </button>
@@ -100,7 +100,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/fotografo">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="fotografo-icon-button-class"> </button>
@@ -116,7 +116,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/garçom">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="garcom-icon-button-class"> </button>
@@ -148,7 +148,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/promotor-de-eventos">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="promotor-de-eventos-icon-button-class"> </button>
@@ -166,7 +166,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/recepcionista">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="recepcionista-icon-button-class"> </button>
