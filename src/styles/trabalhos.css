@@ -211,7 +211,10 @@
 /* Desce a barra suavemente quando clica numa letra do dicionário*/
 html {
 	scroll-behavior: smooth;
+  scroll-padding:  135px;
 }
+
+
 
 /* Aumenta a suavidade que a barra desce quando clica na letra do dicionário*/
 @media screen and (prefers-reduced-motion: reduce) {
