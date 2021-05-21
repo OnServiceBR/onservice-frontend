@@ -31,7 +31,7 @@ export default class Home extends Component {
         </div>
         <div class="category-buttons row">
           <div class="col">
-            <a href="/contrate/tecnologia">
+            <a href="/contrate/tecnologia" id="contrate-zoom-on-hover">
               <button id="tecnology-button" class="category-button">
                 Tecnologia
               </button>

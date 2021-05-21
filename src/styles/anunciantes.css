@@ -1,0 +1,129 @@
+.title-anunciantes h2 {
+    color: rgb(237, 125, 49);
+    margin-left: auto;
+	margin-right: auto;
+    margin-bottom: 20px;
+	text-align: center;
+	font-family: GlacialIndifference;
+    font-size: 24pt;
+}
+
+.subtitle-anunciantes h2 {
+    margin-left: auto;
+	margin-right: auto;
+    margin-top: 1px;
+    margin-bottom: 1px;
+	text-align: center;
+	font-family: GlacialIndifference;
+    font-size: 16pt;
+    color: rgb(64, 64, 64);
+}
+
+.ad-images {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* Espaço onde ficam todos os cards de destaque */
+.row-all-cards {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+    font-family: GlacialIndifference;
+    position: relative;
+  }
+  
+  /* Centraliza todos textos dentro dos cartões */
+  .row-all-cards p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+  }
+  
+  /* Centraliza todas imagens dentro dos cards */
+  .row-all-cards img {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 120px;
+  }
+  
+  /* Espaço de cada card de destaque */
+  .column-each-card {
+      display: inline-block;
+    border: none;
+      margin-left: 0.7%;
+      margin-right: 0.7%;
+      box-shadow: 0px 0px 5pt rgba(191, 191, 191, 0.6);
+      border-top-left-radius: 0.3cm;
+      border-bottom-left-radius: 0.3cm;
+      border-top-right-radius: 0.3cm;
+      border-bottom-right-radius: 0.3cm;
+      width: 160px;
+    text-decoration: none;
+  }
+  
+  /* Espaço onde fica a profissão no card */
+  .row-card-work {
+    display: block;
+    height: 52px;
+    position: relative;
+    font-size: 12pt;
+    color: rgb(237,125,49);
+  }
+  
+  /* Espaço onde fica a foto no card */
+  .row-card-picture {
+    display: block;
+    height: 140px;
+    position: relative;
+  }
+  
+  /* Espaço onde fica o nome no card */
+  .row-card-name {
+    display: block;
+    height: 40px;
+    position: relative;
+    font-size: 11pt;
+    color: rgb(64,64,64);
+  }
+  
+  /* Espaço de cada card */
+  .each-card-hr {
+      text-align: center;
+      border-top-color: rgb(231,230,230);
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-left: 13%;
+    margin-right: 13%;
+  }
+  
+  /* Define o conjunto que representa um link */
+  #cards-change-color-on-hover {
+    text-decoration: none;
+  }
+  
+  /* Padroniza a cor de todo o conjunto que representa um link */
+  #cards-change-color-on-hover a {
+    text-decoration: none;
+    color: rgb(64,64,64);
+    transition: 0.3s;
+  }
+  
+  /* Muda a cor de todo o conjunto que representa um link */
+  #cards-change-color-on-hover a:hover {
+    color: rgb(237,125,49);
+    box-shadow: 0px 0px 5pt rgba(237, 125, 49, 0.6);
+    transition: 0.3s;
+    transform: scale(1.05);
+  }
