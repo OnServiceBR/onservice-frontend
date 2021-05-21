@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "../../styles/trabalhos.css";
-import privada from "../../assets/Ícones/privada.png";
 
 export default class Home extends Component {
 
@@ -69,7 +68,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/diarista">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="diarista-icon-button-class"> </button>
@@ -97,7 +96,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/jardineiro">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="jardineiro-icon-button-class"> </button>

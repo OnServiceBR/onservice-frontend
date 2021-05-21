@@ -1,0 +1,105 @@
+/* página sem margem superior */
+.nomarginpage {
+    margin-top: -2%;
+}
+
+/* título da página */
+.title-howtouse {
+    color: rgb(237, 125, 49);
+    margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-family: GlacialIndifference;
+    font-size: 18pt;
+}
+
+/* subtítulo da página */
+.subtitle-howtouse {
+    color: rgb(64, 64, 64);
+    margin-left: 0%;
+	margin-right: auto;
+	text-align: center;
+	font-family: GlacialIndifference;
+    font-size: 12pt;
+}
+
+/* título Principal da coluna */
+.titlerow-howtouse {
+    color: rgb(64, 64, 64);
+    margin-left: 0%;
+	margin-right: auto;
+	text-align: center;
+	font-family: GlacialIndifference;
+    font-size: 18pt;
+}
+
+/* título dos tópicos da coluna, a parte da numeração */
+.topic-big-howtouse {
+    color: rgb(64, 64, 64);
+    margin-left: 5%;
+	margin-right: auto;
+	text-align: left;
+	font-family: GlacialIndifference;
+    font-size: 18pt;
+}
+
+/* título dos tópicos da coluna, a parte do escrito, menor */
+.topic-small-howtouse {
+    color: rgb(64, 64, 64);
+    margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	font-family: GlacialIndifference;
+    font-size: 14pt;
+}
+
+/* row de tudo */
+.row-all-howtouse {
+	width: 100%;
+	text-align: center;
+	margin-left: 0%;
+	margin-right: 0%;
+	justify-content:center;
+	display: flex;
+}
+
+/* coluna de cada lado, do prestador e do cliente */
+.column-each-howtouse {
+	display: inline-block;
+	width: 49.5%;
+	text-align: center;
+	margin-left: 0%;
+	margin-right: 0%;
+}
+
+/* row dos títulos */
+.row-title-howtouse {
+	margin-top: 5%;
+	margin-bottom: 2%;
+	display: block;
+}
+
+/* row dos tópicos dentro das colunas */
+.row-subtitle-howtouse {
+	margin-top: 5%;
+	margin-bottom: 5%;
+	display: block;
+}
+
+/* row do vídeo dentro das colunas */
+.row-video-howtouse {
+	margin-top: 5%;
+	margin-bottom: 5%;
+	display: block;
+	
+}
+
+/* row da linha central */
+.row-line-howtouse {
+	width: 0%;
+	border-left: solid 1px rgba(231, 230, 230);
+	width: 0px;
+	margin-bottom: 0%;
+	margin-top: 30px;
+}
+

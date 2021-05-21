@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "../../styles/trabalhos.css";
-import privada from "../../assets/Ícones/privada.png";
 
 export default class Home extends Component {
   
@@ -65,7 +64,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/barbeiro">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="barbeiro-icon-button-class"> </button>
@@ -81,7 +80,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/cabelereiro">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="cabelereiro-icon-button-class"> </button>
@@ -115,7 +114,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/maquiador">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="maquiador-icon-button-class"> </button>
@@ -131,7 +130,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/micropigmentador">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="micropigmentador-icon-button-class"> </button>

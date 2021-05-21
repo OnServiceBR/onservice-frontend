@@ -12,15 +12,15 @@ export default class Footer extends Component {
             <div class="row row-size">
               <div class="col">
                 <label class="footer-title">Informações</label><br />
-                <label class="footer-content"><a>Como utilizar o site</a></label><br />
+                <label class="footer-content"><a href="como-utilizar-o-site">Como utilizar o site</a></label><br />
                 <label class="footer-content"><a>Como utilizar o app</a></label><br />
-                <label class="footer-content"><a>Dicas de segurança</a></label><br />
+                <label class="footer-content"><a href="/seguranca">Dicas de segurança</a></label><br />
               </div>
               <div class="col">
                 <label class="footer-title">OnService</label><br />
-                <label class="footer-content"><a>Sobre a OnService</a></label><br />
+                <label class="footer-content"><a href="/sobre-nos">Sobre a OnService</a></label><br />
                 <label class="footer-content"><a href="/contato">Fale conosco</a></label><br />
-                <label class="footer-content"><a href= "anuncie">Anuncie com a gente</a></label><br />
+                <label class="footer-content"><a href= "/anuncie">Anuncie com a gente</a></label><br />
               </div>
               <div class="col">
                 <label class="footer-title-2">Confira</label>

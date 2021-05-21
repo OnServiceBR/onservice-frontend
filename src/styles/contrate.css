@@ -115,7 +115,7 @@
 	font-size: 24pt;
   box-shadow: 0px 0px 5pt rgba(118, 113, 113, 0.6);
   background-color: white;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .category-button:focus{
@@ -125,7 +125,8 @@
 /* Estilo do botão de categoria quando o mouse passa por cima */
 .category-button:hover{
 	color: rgb(233, 125, 49);
-  transition: 0.5s;
+  transition: 0.3s;
+  transform: scale(1.05);
 }
 
 /* Estilo da imagem dentro do botão da categoria */

@@ -4,15 +4,18 @@
 	text-align: center;
 	font-family: GlacialIndifference;
 }
+
 .h1-home{
 	font-size: 24pt;
 	color: rgb(64,64,64);
 }
+
 .h2-home{
 	font-size: 11pt;
 	letter-spacing: 4px;
 	color: rgb(118,113,113);
 }
+
 #button1-search-home{
   text-align: left;
   border-radius: 0.15cm;
@@ -29,6 +32,7 @@
   margin-top: 5px;
   margin-left: 1.5%
 }
+
 #button2-search-home{
   text-align: center;
   border-radius: 0.15cm;
@@ -47,17 +51,20 @@
   margin-left: 1.5%
 }
 
-/* #white-left{
-	position: absolute;
-	right: 500px;
-	bottom: -10px;
-} */
+#white-left {
+  z-index: 1;
+  left: 70px !important;
+  top: 113.5px !important;
+  height: 130% !important;
+}
 
-/* #white-right{
-	position: absolute;
-	right: 4px;
-	bottom: 10px;
-} */
+#white-right {
+  z-index: 1;
+  left: unset !important;
+  right: -210px !important;
+  top: 113.5px !important;
+  height: 130% !important;
+}
 
 /* Espaço onde ficam todos os cards de destaque */
 .row-all-cards {
@@ -66,6 +73,7 @@
   text-align: center;
   display: block;
   font-family: GlacialIndifference;
+  position: relative;
 }
 
 /* Centraliza todos textos dentro dos cartões */
@@ -136,6 +144,26 @@
 	margin-bottom: 0px;
 	margin-left: 13%;
   margin-right: 13%;
+}
+
+/* Define o conjunto que representa um link */
+#cards-change-color-on-hover {
+  text-decoration: none;
+}
+
+/* Padroniza a cor de todo o conjunto que representa um link */
+#cards-change-color-on-hover a {
+  text-decoration: none;
+  color: rgb(64,64,64);
+  transition: 0.3s;
+}
+
+/* Muda a cor de todo o conjunto que representa um link */
+#cards-change-color-on-hover a:hover {
+  color: rgb(237,125,49);
+  box-shadow: 0px 0px 5pt rgba(237, 125, 49, 0.6);
+  transition: 0.3s;
+  transform: scale(1.05);
 }
 
 #text-claudia{

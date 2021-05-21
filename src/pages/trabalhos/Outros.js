@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "../../styles/trabalhos.css";
-import privada from "../../assets/Ícones/privada.png";
 
 export default class Home extends Component {
  
@@ -63,7 +62,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/artesao">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="artesao-icon-button-class"> </button>
@@ -85,7 +84,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/desenhista">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="desenhista-icon-button-class"> </button>
@@ -105,7 +104,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/frete">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="frete-icon-button-class"> </button>
@@ -127,7 +126,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/impressao">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="impressao-icon-button-class"> </button>
@@ -151,7 +150,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/motorista">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="motorista-icon-button-class"> </button>
@@ -173,7 +172,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/passeador-de-caes">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="passeador-de-caes-icon-button-class"> </button>
