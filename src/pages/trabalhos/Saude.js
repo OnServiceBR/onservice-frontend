@@ -72,7 +72,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/fisioterapeuta">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="fisioterapeuta-icon-button-class"> </button>
@@ -108,7 +108,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/personal-trainer">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="personal-trainer-icon-button-class"> </button>
@@ -124,7 +124,7 @@ export default class Home extends Component {
         <hr class="job-hr"/> 
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/psicologo">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="psicologo-icon-button-class"> </button>
@@ -146,7 +146,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/terapeuta-ocupacional">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="terapeuta-ocupacional-icon-button-class"> </button>
