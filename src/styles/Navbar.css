@@ -22,7 +22,7 @@
 
 .header-container{
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 0px;
 }
 
 .brand-logo{
@@ -44,7 +44,9 @@
 .header-container a{
   color: white;
   padding: 0px 24px;
-  font-size: 12pt;
+  font-size: 13pt;
+  margin-top: 10px;
+  letter-spacing: 1px;
 }
 
 .right-buttons-navbar{
