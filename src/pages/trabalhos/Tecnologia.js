@@ -3,12 +3,21 @@ import HoverImage from "react-hover-image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "../../styles/trabalhos.css";
 
-import EditordevideoC from '../../assets/icones/EditordevideoC.png';
-import EditordevideoL from '../../assets/icones/EditordevideoL.png';
-
 export default class Home extends Component {
+  constructor(props) {
+    super(props )
+    this.images = {
+      EditordevideoC: "/assets/icones/EditordevideoC.png",
+      EditordevideoL: "/assets/icones/EditordevideoL.png",
+      ProgramadorC: "/assets/icones/ProgramadorC.png",
+      ProgramadorL: "/assets/icones/ProgramadorL.png",
+    }
+  }
+  
+  
 
   render() {
+    const images = this.images
     return(
       <div>
         {/* O caminho aqui está só para Manutenção, tem que automatizar pra cada uma das categorias de serviços que estão nos botões */}
@@ -106,11 +115,12 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/editor-de-video">
               <div class="row">
                 <div class="column job-imagecontainer">
                   {/* <button class="job-icon-button-class editor-de-video-icon-button-class"> </button> */}
-                  <HoverImage src={EditordevideoC} hoverSrc={EditordevideoL} className="job-icon-button-class"/>
+                  <HoverImage src={images["EditordevideoC"]} hoverSrc={images["EditordevideoL"]} className="job-icon-button-class"/>
+                  {/* <img src= "/assets/icones/EditordevideoC.png" class="job-icon-button-class"/> */}
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
@@ -145,10 +155,10 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/programador">
               <div class="row">
                 <div class="column job-imagecontainer">
-                  <button class="job-icon-button-class programador-icon-button-class"> </button>
+                <HoverImage src={images["ProgramadorC"]} hoverSrc={images["ProgramadorL"]} className="job-icon-button-class"/>
                 </div>
                 <div class="column job-textcontainer">
                   {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
@@ -169,7 +179,7 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/encanador">
+            <a href="/contrate/manutencao/tecnico-em-informatica">
               <div class="row">
                 <div class="column job-imagecontainer">
                   <button class="job-icon-button-class tecnico-em-informatica-icon-button-class"> </button>
