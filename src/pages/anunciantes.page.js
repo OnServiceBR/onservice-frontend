@@ -13,76 +13,70 @@ function Anunciantes() {
                 <h2>Você vê o nosso site?</h2>
                 <h2>Poderia ver o nome da sua <span style={{color:"rgb(237,125,49)",fontFamily:"'Bebas Neue', cursive", letterSpacing: "2pt"}}>EMPRESA</span></h2>
             </div>
-            
-            <div class="row row-all-cards" id="cards-change-color-on-hover">
-                <a href="/perfil" class="column column-each-card">
-                    <div class="row row-card-work">
-                        <p>Organizador de festas infantis</p>
+            <br/>
+            <br/>
+            <div class="row row-all-ad-images">
+                <div class="column column-each-side-ad" id="side-ad-change-color-on-hover">
+                    <div class="row row-title-side-ad">
+                        <p>VISUALIZAÇÃO</p>
                     </div>
-                    <hr class="each-card-hr"/>
-                    <div class="row row-card-picture">
-                        <img src={Pessoa}/>
+                    <div class="row row-text-side-ad">
+                        <p>
+                            <span style={{color:"rgb(237,125,49)"}}>Mínimo</span> de<br/>
+                            <span style={{color:"rgb(237,125,49)"}}>150 pessoas</span><br/>
+                            vendo o seu<br/>
+                            anúncio<br/>
+                        </p>
                     </div>
-                    <div class="row row-card-name">
-                        <p>Paulonilson</p>
+                </div>
+                <div class="column column-each-side-ad" id="side-ad-change-color-on-hover">
+                    <div class="row row-title-side-ad">
+                        <p>ALCANCE</p>
                     </div>
-                </a>
-                <a href="/perfil" class="column column-each-card">
-                    <div class="row row-card-work">
-                        <p>Organizador de festas infantis</p>
+                    <div class="row row-text-side-ad">
+                        <p>
+                            Possibilidade<br/>
+                            de mais de<br/>
+                            <span style={{color:"rgb(237,125,49)"}}>mil pessoas</span><br/>
+                            por <span style={{color:"rgb(237,125,49)"}}>mês</span><br/>
+                        </p>
                     </div>
-                    <hr class="each-card-hr"/>
-                    <div class="row row-card-picture">
-                        <img src={Pessoa}/>
+                </div>
+                <div class="column column-central-ad">
+                    <img src={Anuncio} width="300px"/>
+                </div>
+                <div class="column column-each-side-ad" id="side-ad-change-color-on-hover">
+                    <div class="row row-title-side-ad">
+                        <p>PÚBLICO ALVO</p>
                     </div>
-                    <div class="row row-card-name">
-                        <p>Paulonilson</p>
+                    <div class="row row-text-side-ad">
+                        <p>
+                            Jovens de<br/>
+                            <span style={{color:"rgb(237,125,49)"}}>18</span> a <span style={{color:"rgb(237,125,49)"}}>24 anos</span><br/>
+                            <br/>
+                            Profissionais de<br/>
+                            <span style={{color:"rgb(237,125,49)"}}>35</span> a <span style={{color:"rgb(237,125,49)"}}>65 anos</span><br/>
+                        </p>
                     </div>
-                </a>
-                <a href="/perfil" class="column column-each-card">
-                    <div class="row row-card-work">
-                        <p>Organizador de festas infantis</p>
+                </div>
+                <div class="column column-each-side-ad" id="side-ad-change-color-on-hover">
+                    <div class="row row-title-side-ad">
+                        <p>EXCLUSIVIDADE</p>
                     </div>
-                    <hr class="each-card-hr"/>
-                    <div class="row row-card-picture">
-                        <img src={Pessoa}/>
+                    <div class="row row-text-side-ad">
+                        <p>
+                            Possibilidade<br/>
+                            de mais de<br/>
+                            <span style={{color:"rgb(237,125,49)"}}>mil pessoas</span><br/>
+                            por <span style={{color:"rgb(237,125,49)"}}>mês</span><br/>
+                        </p>
                     </div>
-                    <div class="row row-card-name">
-                        <p>Paulonilson</p>
-                    </div>
-                </a>
-                <a href="/perfil" class="column column-each-card">
-                    <div class="row row-card-work">
-                        <p>Organizador de festas infantis</p>
-                    </div>
-                    <hr class="each-card-hr"/>
-                    <div class="row row-card-picture">
-                        <img src={Pessoa}/>
-                    </div>
-                    <div class="row row-card-name">
-                        <p>Paulonilson</p>
-                    </div>
-                </a>
-                <a href="/perfil" class="column column-each-card">
-                    <div class="row row-card-work">
-                        <p>Organizador de festas infantis</p>
-                    </div>
-                    <hr class="each-card-hr"/>
-                    <div class="row row-card-picture">
-                        <img src={Pessoa}/>
-                    </div>
-                    <div class="row row-card-name">
-                        <p>Paulonilson</p>
-                    </div>
-                </a>
+                </div>
             </div>
-            
-            
-            <div class="ad-images">
-                <img src={Anuncio} width="330px"/>
-            </div>
-            
-            
+            <br/>
+            <br/>
+            <br/>
+            <br/>
         </div>
     );
 }
