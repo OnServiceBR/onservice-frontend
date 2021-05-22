@@ -211,6 +211,7 @@
 /* Desce a barra suavemente quando clica numa letra do dicionário*/
 html {
 	scroll-behavior: smooth;
+  scroll-padding:  140px;
 }
 
 /* Aumenta a suavidade que a barra desce quando clica na letra do dicionário*/

@@ -29,6 +29,7 @@ import Residencial from "./pages/trabalhos/Residencial";
 import Saude from "./pages/trabalhos/Saude";
 import Tecnologia from "./pages/trabalhos/Tecnologia";
 import Seguranca from "./pages/seguranca.page";
+import Anunciantes from "./pages/anunciantes.page";
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
           <Route exact path="/contrate/tecnologia" component={Tecnologia} />
           <Route exact path="/sobre-nos/" component={Sobrenos} />
           <Route exact path="/seguranca" component={Seguranca} />
+          <Route exact path="/anunciantes/" component={Anunciantes} />
         </Switch>
       </div>
       <Footer />
