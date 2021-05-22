@@ -15,16 +15,15 @@ export default class Perfil extends Component {
     swal({
       icon: "info",
       button: {
-        className: "perfil-button-alert",
         text: "Entrar em contato",
       },
       content: (
         <div>
-          <p class="perfil-button-alert-title">Você está a um passo de contratar um profissional!</p>
+          <p class="swal-title">Você está a um passo de contratar um profissional!</p>
           <p>
             {''}
           </p>
-          <p class="perfil-button-alert-text">Ao clicar em “Entrar em Contato”, você está de acordo com nosso Termos de Uso e Política de Privacidade. Para fazer qualquer tipo de reclamação ou denúncia, envie-nos uma mensagem na aba CONTATO!</p>
+          <p class="swal-text">Ao clicar em <span style={{ fontWeight: "bold" }}>“Entrar em Contato”</span>, você está de acordo com nosso <a href="/termos-de-uso/">Termos de Uso</a> e <a href="/politica-de-privacidade/">Política de Privacidade</a>. Para fazer qualquer tipo de reclamação ou denúncia, envie-nos uma mensagem na aba <a href="/contato/" class="swal-text--newlink">CONTATO</a>!</p>
         </div>
       )
     })

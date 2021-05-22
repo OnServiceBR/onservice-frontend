@@ -11,11 +11,54 @@
   width: 22.39cm;
 }
 
+.swal-footer {
+  text-align: center;
+  overflow: hidden;
+  margin-top: 0px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+/* Formatação título no swal */
+.swal-title {
+  font-size: 18px;
+  font-family: GlacialIndifference;
+  color: rgb(237, 125, 49);
+  padding: 0%;
+}
+
+/* Formatação textos no swal */
+.swal-text {
+  font-family: GlacialIndifference;
+  padding: 0px;
+  display: block;
+  margin-bottom: 5px !important;
+  text-align: center;
+  color: rgb(64, 64, 64);
+  font-size: 12pt;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Formatação Links no swal */
+.swal-text a {
+  font-weight: bold;
+  text-decoration: underline;
+  color: rgb(64, 64, 64);
+}
+
+/* Formataçãp Link para contato dentro do swal */
+.swal-text--newlink {
+  font-family: 'Bebas Neue', cursive !important; 
+  text-decoration: underline; 
+  font-size: 12pt;
+  color: rgb(237, 125, 49) !important;
+}
 
 /* Botao do swal */
-.perfil-button-alert {
-  font-size: 18 pt !important;
-  text-align: center !important;
+.swal-button {
+  font-size: 18 pt ;
+  text-align: center;
   border-width: 0.5pt;
   border-style: solid;
   border-color: rgb(237,125,49);
@@ -23,10 +66,12 @@
   color: rgb(255, 255, 255);
   text-align: center;
   font-family: GlacialIndifference;
+  height: 40px;
+  width:  200px;
 }
 
 /* Hover botao do swal */
-.perfil-button-alert:hover {
+.swal-button:hover {
   /* border-radius: 0.15cm; */
   border-width: 0.5pt;
   border-style: solid;
@@ -35,23 +80,14 @@
   color: rgb(237, 125, 49);
   outline: none;
   box-shadow: 0px 0px 5pt rgba(237, 125, 49, 0.6);
+
 }
 
-/* Título do swal 1 */
-.perfil-button-alert-title {
-  font-family: GlacialIndifference;
-  font-size: 18 pt;
-  text-align: center;
-  color: rgb(237,125,49);
+.swal-button img {
+  font: bold;
 }
 
-/* Texto do swal */
-.perfil-button-alert-text {
-  font-family: GlacialIndifference;
-  font-size: 42 pt;
-  text-align: center;
-  color: rgb(64, 64, 64);
-}
+
 
 /* Nome do prestador */
 .perfil-h1 {
