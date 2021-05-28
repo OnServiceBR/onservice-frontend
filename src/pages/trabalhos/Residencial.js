@@ -68,19 +68,19 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/diarista">
-              <div class="row">
-                <div class="column job-imagecontainer">
-                  <button class="diarista-icon-button-class"> </button>
-                </div>
-                <div class="column job-textcontainer">
-                  {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
-                  <p class="job-name">Diarista</p>
-                  <p class="job-workers-count">0 profissionais</p>
-                </div>
+          <a href="/contrate/manutencao/diarista">
+            <div class="row">
+              <div class="column job-imagecontainer">
+                <button class="diarista-icon-button-class"> </button>
               </div>
-            </a>
-          </div>
+              <div class="column job-textcontainer">
+                {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
+                <p class="job-name">Diarista</p>
+                <p class="job-workers-count">0 profissionais</p>
+              </div>
+            </div>
+          </a>
+        </div>
         <hr class="job-hr"/>
           <h1 class="job-dictionary-letter">E<a name="names-E"></a></h1>
         <hr class="job-hr"/>
@@ -96,19 +96,19 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/jardineiro">
-              <div class="row">
-                <div class="column job-imagecontainer">
-                  <button class="jardineiro-icon-button-class"> </button>
-                </div>
-                <div class="column job-textcontainer">
-                  {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
-                  <p class="job-name">Jardineiro(a)</p>
-                  <p class="job-workers-count">1 profissionais</p>
-                </div>
+          <a href="/contrate/manutencao/jardineiro">
+            <div class="row">
+              <div class="column job-imagecontainer">
+                <button class="jardineiro-icon-button-class"> </button>
               </div>
-            </a>
-          </div>
+              <div class="column job-textcontainer">
+                {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
+                <p class="job-name">Jardineiro(a)</p>
+                <p class="job-workers-count">1 profissionais</p>
+              </div>
+            </div>
+          </a>
+        </div>
           <h1 class="job-dictionary-letter">K<a name="names-K"></a></h1>
         <hr class="job-hr"/>
           <h1 class="job-dictionary-letter">L<a name="names-L"></a></h1>

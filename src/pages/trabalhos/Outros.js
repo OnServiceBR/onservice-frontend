@@ -62,19 +62,19 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/artesao">
-              <div class="row">
-                <div class="column job-imagecontainer">
-                  <button class="artesao-icon-button-class"> </button>
-                </div>
-                <div class="column job-textcontainer">
-                  {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
-                  <p class="job-name">Artesã(o)</p>
-                  <p class="job-workers-count">3 profissionais</p>
-                </div>
+          <a href="/contrate/manutencao/artesao">
+            <div class="row">
+              <div class="column job-imagecontainer">
+                <button class="artesao-icon-button-class"> </button>
               </div>
-            </a>
-          </div>
+              <div class="column job-textcontainer">
+                {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
+                <p class="job-name">Artesã(o)</p>
+                <p class="job-workers-count">3 profissionais</p>
+              </div>
+            </div>
+          </a>
+        </div>
         <hr class="job-hr"/>
           <h1 class="job-dictionary-letter">B<a name="names-B"></a></h1>
         <hr class="job-hr"/>
@@ -84,19 +84,19 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/desenhista">
-              <div class="row">
-                <div class="column job-imagecontainer">
-                  <button class="desenhista-icon-button-class"> </button>
-                </div>
-                <div class="column job-textcontainer">
-                  {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
-                  <p class="job-name">Desenhista</p>
-                  <p class="job-workers-count">1 profissionais</p>
-                </div>
+          <a href="/contrate/manutencao/desenhista">
+            <div class="row">
+              <div class="column job-imagecontainer">
+                <button class="desenhista-icon-button-class"> </button>
               </div>
-            </a>
-          </div>
+              <div class="column job-textcontainer">
+                {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
+                <p class="job-name">Desenhista</p>
+                <p class="job-workers-count">1 profissionais</p>
+              </div>
+            </div>
+          </a>
+        </div>
         <hr class="job-hr"/>
           <h1 class="job-dictionary-letter">E<a name="names-E"></a></h1>
         <hr class="job-hr"/>
@@ -104,19 +104,19 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/frete">
-              <div class="row">
-                <div class="column job-imagecontainer">
-                  <button class="frete-icon-button-class"> </button>
-                </div>
-                <div class="column job-textcontainer">
-                  {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
-                  <p class="job-name">Frete</p>
-                  <p class="job-workers-count">1 profissionais</p>
-                </div>
+          <a href="/contrate/manutencao/frete">
+            <div class="row">
+              <div class="column job-imagecontainer">
+                <button class="frete-icon-button-class"> </button>
               </div>
-            </a>
-          </div>
+              <div class="column job-textcontainer">
+                {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
+                <p class="job-name">Frete</p>
+                <p class="job-workers-count">1 profissionais</p>
+              </div>
+            </div>
+          </a>
+        </div>
         <hr class="job-hr"/>
           <h1 class="job-dictionary-letter">G<a name="names-G"></a></h1>
         <hr class="job-hr"/>
@@ -127,18 +127,18 @@ export default class Home extends Component {
         <div class="job-link">
           {/* Final do link está manual */}
             <a href="/contrate/manutencao/impressao">
-              <div class="row">
-                <div class="column job-imagecontainer">
-                  <button class="impressao-icon-button-class"> </button>
-                </div>
-                <div class="column job-textcontainer">
-                  {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
-                  <p class="job-name">Impressão</p>
-                  <p class="job-workers-count">1 profissionais</p>
-                </div>
+            <div class="row">
+              <div class="column job-imagecontainer">
+                <button class="impressao-icon-button-class"> </button>
               </div>
-            </a>
-          </div>
+              <div class="column job-textcontainer">
+                {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
+                <p class="job-name">Impressão</p>
+                <p class="job-workers-count">1 profissionais</p>
+              </div>
+            </div>
+          </a>
+        </div>
         <hr class="job-hr"/>
           <h1 class="job-dictionary-letter">J<a name="names-J"></a></h1>
         <hr class="job-hr"/>
@@ -150,19 +150,19 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/motorista">
-              <div class="row">
-                <div class="column job-imagecontainer">
-                  <button class="motorista-icon-button-class"> </button>
-                </div>
-                <div class="column job-textcontainer">
-                  {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
-                  <p class="job-name">Motorista</p>
-                  <p class="job-workers-count">2 profissionais</p>
-                </div>
+          <a href="/contrate/manutencao/motorista">
+            <div class="row">
+              <div class="column job-imagecontainer">
+                <button class="motorista-icon-button-class"> </button>
               </div>
-            </a>
-          </div>
+              <div class="column job-textcontainer">
+                {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
+                <p class="job-name">Motorista</p>
+                <p class="job-workers-count">2 profissionais</p>
+              </div>
+            </div>
+          </a>
+        </div>
         <hr class="job-hr"/>
           <h1 class="job-dictionary-letter">N<a name="names-N"></a></h1>
         <hr class="job-hr"/>
@@ -172,19 +172,19 @@ export default class Home extends Component {
         <hr class="job-hr"/>
         <div class="job-link">
           {/* Final do link está manual */}
-            <a href="/contrate/manutencao/passeador-de-caes">
-              <div class="row">
-                <div class="column job-imagecontainer">
-                  <button class="passeador-de-caes-icon-button-class"> </button>
-                </div>
-                <div class="column job-textcontainer">
-                  {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
-                  <p class="job-name">Passeador(a) de cães</p>
-                  <p class="job-workers-count">1 profissionais</p>
-                </div>
+          <a href="/contrate/manutencao/passeador-de-caes">
+            <div class="row">
+              <div class="column job-imagecontainer">
+                <button class="passeador-de-caes-icon-button-class"> </button>
               </div>
-            </a>
-          </div>
+              <div class="column job-textcontainer">
+                {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
+                <p class="job-name">Passeador(a) de cães</p>
+                <p class="job-workers-count">1 profissionais</p>
+              </div>
+            </div>
+          </a>
+        </div>
         <hr class="job-hr"/>
           <h1 class="job-dictionary-letter">Q<a name="names-Q"></a></h1>
         <hr class="job-hr"/>
