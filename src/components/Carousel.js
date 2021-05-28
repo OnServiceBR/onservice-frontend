@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import '../styles/carousel.css';
 
+import WhiteLeft from '../assets/BrancoEsquerda.png';
+import WhiteRight from '../assets/BrancoDireita.png';
+
 const Carousel = (props) => {
     const {children, show} = props
 
@@ -14,13 +17,13 @@ const Carousel = (props) => {
 
     const next = () => {
         if (currentIndex < (length - show)) {
-            setCurrentIndex(prevState => prevState + 1)
+            setCurrentIndex(prevState => prevState + 3)
         }
     }
 
     const prev = () => {
         if (currentIndex > 0) {
-            setCurrentIndex(prevState => prevState - 1)
+            setCurrentIndex(prevState => prevState - 3)
         }
     }
 
@@ -53,36 +56,42 @@ const Carousel = (props) => {
     }
 
     return (
-        <div className="carousel-container">
-            <div className="carousel-wrapper">
-                {/* You can alwas change the content of the button to other things */}
-                {
-                    currentIndex > 0 &&
-                    <button onClick={prev} className="left-arrow">
-                        &lt;
-                    </button>
-                }
-                <div
-                    className="carousel-content-wrapper"
-                    onTouchStart={handleTouchStart}
-                    onTouchMove={handleTouchMove}
-                >
+        <div class="carousel-center">
+            <img src={WhiteLeft} id="white-left" width="330px"/>
+            <div className="carousel-container">
+                <div className="carousel-wrapper">
+                    {/* You can alwas change the content of the button to other things */}
+                    {
+                        currentIndex > 0 &&
+                        <button onClick={prev} className="left-arrow">
+                            &lt;
+                        </button>
+                    }
                     <div
-                        className={`carousel-content show-${show}`}
-                        style={{ transform: `translateX(-${currentIndex * (100 / show)}%)` }}
+                        className="carousel-content-wrapper"
+                        onTouchStart={handleTouchStart}
+                        onTouchMove={handleTouchMove}
                     >
-                        {children}
+                        <div
+                            className={`carousel-content show-${show}`}
+                            style={{ transform: `translateX(-${currentIndex * (100 / show)}%)`, 
+                            transition: '0.8s' }}
+                        >
+                            {children}
+                        </div>
                     </div>
+                    {/* You can alwas change the content of the button to other things */}
+                    {
+                        currentIndex < (length - show) &&
+                        <button onClick={next} className="right-arrow">
+                            &gt;
+                        </button>
+                    }
                 </div>
-                {/* You can alwas change the content of the button to other things */}
-                {
-                    currentIndex < (length - show) &&
-                    <button onClick={next} className="right-arrow">
-                        &gt;
-                    </button>
-                }
             </div>
+            <img src={WhiteRight} id="white-right" width="330px"/>
         </div>
+        
     )
 }
 

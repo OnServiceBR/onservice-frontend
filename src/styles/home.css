@@ -48,22 +48,24 @@
   font-weight: bold;
   margin-bottom: 5px;
   margin-top: 5px;
-  margin-left: 1.5%
+  margin-left: 1.5%;
+  transition: 0.3s;
 }
 
-#white-left {
-  z-index: 1;
-  left: 70px !important;
-  top: 113.5px !important;
-  height: 130% !important;
+#button2-search-home:hover {
+  background: rgb(255,255,255);
+  color: rgb(237,125,49);
+  transition: 0.3s;
 }
 
-#white-right {
-  z-index: 1;
-  left: unset !important;
-  right: -210px !important;
-  top: 113.5px !important;
-  height: 130% !important;
+.carousel-title {
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 17pt;
+  color: rgb(64, 64, 64);
+  letter-spacing: 3.5px;
+  margin-top: 50px;
+  margin-bottom: 5px;
 }
 
 /* Espaço onde ficam todos os cards de destaque */
@@ -74,6 +76,8 @@
   display: block;
   font-family: GlacialIndifference;
   position: relative;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 /* Centraliza todos textos dentro dos cartões */
@@ -130,10 +134,11 @@
 /* Espaço onde fica o nome no card */
 .row-card-name {
   display: block;
-  height: 40px;
+  height: 30px;
   position: relative;
   font-size: 11pt;
   color: rgb(64,64,64);
+  margin-bottom: 10px;
 }
 
 /* Espaço de cada card */
@@ -198,6 +203,13 @@
   margin-bottom: 5px;
   margin-top: 5px;
 	position: relative;
+  transition: 0.3s;
+}
+
+#button3-register-home:hover {
+  background: rgb(255,255,255);
+  color: rgb(237,125,49);
+  transition: 0.3s;
 }
 
 #mouse-pointer{
@@ -208,15 +220,4 @@
 
 #claudia{
 	margin-left: 60px;
-}
-
-.carousel-home {
-  max-width: 1200;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 64px;
-}
-
-.carousel-home img {
-  padding: 8px;
 }

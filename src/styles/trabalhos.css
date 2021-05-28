@@ -225,11 +225,13 @@ html {
 .job-link a {
   text-decoration: none;
   color: rgb(118,113,113);
+  transition: 0.3s;
 }
 
 /* Sublinha título do serviço*/
 .job-link a:hover {
   color: rgb(237,125,49);
+  transition: 0.3s;
 }
 
 /* Troca o ícone pelo ícone laranja */
@@ -237,6 +239,7 @@ html {
   color: rgb(237,125,49);
   background-image: url('../assets/icones/privadalaranja.png');
   outline: none;
+  transition: 0.3s;
 }
 
 /* Lugar onde fica o ícone */
@@ -249,4 +252,5 @@ html {
   margin-bottom: 0px;
   background-color: white;
   background-image: url('../assets/icones/privada.png');
+  transition: 0.3s;
 }
