@@ -15,17 +15,8 @@ export default class Home extends Component {
   }
   render() {
     const jobs = this.jobs;
-    const alphabet = [];
+    const alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
     
-    const isInArray = (value, array) => {
-      return array.indexOf(value) > -1;
-    }
-
-    for(var i = 0; i < jobs.length; i++) {
-      if(isInArray(jobs[i].job[0],alphabet))
-          alphabet = [...alphabet, jobs[i].job[0]];
-    }
-
     return(
       <div>
         {/* O caminho aqui está só para Manutenção, tem que automatizar pra cada uma das categorias de serviços que estão nos botões */}
