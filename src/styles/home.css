@@ -113,6 +113,7 @@
 	border-bottom-right-radius: 0.3cm;
 	width: 160px;
   text-decoration: none;
+  margin-top: 5px;
 }
 
 /* Espaço onde fica a profissão no card */
@@ -214,8 +215,17 @@
 
 #mouse-pointer{
 	position: absolute;
+	right: -18px;
+	bottom: -30px;
+  transition: 0.3s;
+}
+
+#button3-register-home:hover #mouse-pointer{
+	position: absolute;
 	right: -4px;
 	bottom: -10px;
+  transition: 0.3s;
+  transform: scale(1.1);
 }
 
 #claudia{
