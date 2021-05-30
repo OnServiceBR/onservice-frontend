@@ -53,3 +53,6 @@
   z-index: 100;
 }
 
+button {
+  outline: none !important;
+}

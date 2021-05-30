@@ -48,7 +48,14 @@
   font-weight: bold;
   margin-bottom: 5px;
   margin-top: 5px;
-  margin-left: 1.5%
+  margin-left: 1.5%;
+  transition: 0.3s;
+}
+
+#button2-search-home:hover {
+  background: rgb(255,255,255);
+  color: rgb(237,125,49);
+  transition: 0.3s;
 }
 
 #white-left {
@@ -198,12 +205,28 @@
   margin-bottom: 5px;
   margin-top: 5px;
 	position: relative;
+  transition: 0.3s;
+}
+
+#button3-register-home:hover {
+  background: rgb(255,255,255);
+  color: rgb(237,125,49);
+  transition: 0.3s;
 }
 
 #mouse-pointer{
 	position: absolute;
+	right: -18px;
+	bottom: -30px;
+  transition: 0.3s;
+}
+
+#button3-register-home:hover #mouse-pointer{
+	position: absolute;
 	right: -4px;
 	bottom: -10px;
+  transition: 0.3s;
+  transform: scale(1.1);
 }
 
 #claudia{

@@ -227,20 +227,16 @@ html {
 .job-link a{
   text-decoration: none;
   color: rgb(118,113,113);
+  transition: 0.3s;
 }
 
-/* Sublinha título do serviço*/
+/* Muda para laranja a cor do título do serviço*/
 .job-link a:hover{
   color: rgb(237,125,49);
+  transition: 0.3s;
 }
 
-/* Troca o ícone pelo ícone laranja */
-.job-link a:hover .job-icon-gray-class{
-  color: rgb(237,125,49);
-  outline: none;
-}
-
-/* Lugar onde fica o ícone */
+/* Lugar onde fica o ícone cinza */
 .job-icon-gray-class {
   width: 65px;
 	height: 65px;
@@ -250,10 +246,9 @@ html {
   margin-bottom: 1px;
   display: inline;
   position: absolute;
-  z-index: 2;
 }
 
-/* Lugar onde fica o ícone */
+/* Lugar onde fica o ícone laranja transparente */
 .job-icon-orange-class {
 	width: 65px;
 	height: 65px;
@@ -263,13 +258,13 @@ html {
   margin-bottom: 1px;
   display: inline;
   position: relative;
-  z-index: 1;
-}
-
-.job-link:hover .job-icon-gray-class {
-  z-index: 1;
-}
-
-.job-link:hover .job-icon-orange-class {
   z-index: 2;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+/* Deixa o ícone laranja opaco */
+.job-link:hover .job-icon-orange-class {
+  opacity: 100;
+  transition: 0.3s;
 }
