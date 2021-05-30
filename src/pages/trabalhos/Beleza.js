@@ -8,18 +8,23 @@ export default class Home extends Component {
   constructor(props){
     super(props)
     this.jobs = [
-      {job:"Arvor@", link:"/contrate/manutencao/barbeiro", count:"10", iconC:"../assets/icones/BarbeiroC.png", iconL:"../assets/icones/BarbeiroL.png"},
-      {job:"Banan@", link:"/contrate/manutencao/barbeiro", count:"10", iconC:"../assets/icones/BarbeiroC.png", iconL:"../assets/icones/BarbeiroL.png"},
-      {job:"Caralh@", link:"/contrate/manutencao/barbeiro", count:"10", iconC:"../assets/icones/BarbeiroC.png", iconL:"../assets/icones/BarbeiroL.png"},
+      {job:"Arvore", link:"/contrate/beleza/arvore", count:"3", iconC:"../assets/icones/CabeleireiroC.png", iconL:"../assets/icones/CabeleireiroL.png"},
+      {job:"Banana", link:"/contrate/beleza/banana", count:"4", iconC:"../assets/icones/BarbeiroC.png", iconL:"../assets/icones/BarbeiroL.png"},
+      {job:"Carro", link:"/contrate/beleza/carro", count:"5", iconC:"../assets/icones/ManicureC.png", iconL:"../assets/icones/ManicureL.png"},
+      {job:"Dado", link:"/contrate/beleza/dado", count:"6", iconC:"../assets/icones/GarcomC.png", iconL:"../assets/icones/GarcomL.png"},
+      {job:"Estojo", link:"/contrate/beleza/estojo", count:"7", iconC:"../assets/icones/CozinheiroC.png", iconL:"../assets/icones/CozinheiroL.png"},
     ]
   }
+  
   render() {
     const jobs = this.jobs;
+    // const alphabet = [];
     const alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-    
+    // this.setState(prevState => ({
+    //   alphabet: [...prevState.alphabet, 'A']
+    // }));
     return(
       <div>
-        {/* O caminho aqui está só para Manutenção, tem que automatizar pra cada uma das categorias de serviços que estão nos botões */}
         <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><h2 class="path-actual">Beleza</h2>
         <div class="search-box">
           <form method="get" action="/contrate">
@@ -69,6 +74,12 @@ export default class Home extends Component {
           <a href="#names-Z"> Z </a>|
         </div>
         <br/>
+        {/* {jobs.map(item => {
+          if(item.job[0] === "A")
+          return
+          
+
+        })} */}
         {alphabet.map(letter => (
           <div>
             <hr class="job-hr"/>

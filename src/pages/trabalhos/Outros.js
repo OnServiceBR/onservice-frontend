@@ -2,12 +2,26 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "../../styles/trabalhos.css";
 
+import Job from "../../components/Job";
+
 export default class Home extends Component {
- 
+  constructor(props){
+    super(props)
+    this.jobs = [
+      {job:"Arvore", link:"/contrate/outros/arvore", count:"3", iconC:"../assets/icones/CabeleireiroC.png", iconL:"../assets/icones/CabeleireiroL.png"},
+      {job:"Banana", link:"/contrate/outros/banana", count:"4", iconC:"../assets/icones/BarbeiroC.png", iconL:"../assets/icones/BarbeiroL.png"},
+      {job:"Carro", link:"/contrate/outros/carro", count:"5", iconC:"../assets/icones/ManicureC.png", iconL:"../assets/icones/ManicureL.png"},
+      {job:"Dado", link:"/contrate/outros/dado", count:"6", iconC:"../assets/icones/GarcomC.png", iconL:"../assets/icones/GarcomL.png"},
+      {job:"Estojo", link:"/contrate/outros/estojo", count:"7", iconC:"../assets/icones/CozinheiroC.png", iconL:"../assets/icones/CozinheiroL.png"},
+    ]
+  }
+
   render() {
+    const jobs = this.jobs;
+    const alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+    
     return(
       <div>
-        {/* O caminho aqui está só para Manutenção, tem que automatizar pra cada uma das categorias de serviços que estão nos botões */}
         <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><h2 class="path-actual">Outros</h2>
         <div class="search-box">
           <form method="get" action="/contrate">
@@ -57,155 +71,24 @@ export default class Home extends Component {
           <a href="#names-Z"> Z </a>|
         </div>
         <br/>
-        <hr class="job-hr"/>
-         <h1 class="job-dictionary-letter">A<a name="names-A"></a></h1>
-        <hr class="job-hr"/>
-        <div class="job-link">
-          {/* Final do link está manual */}
-          <a href="/contrate/manutencao/artesao">
-            <div class="row">
-              <div class="column job-imagecontainer">
-                <button class="artesao-icon-button-class"> </button>
-              </div>
-              <div class="column job-textcontainer">
-                {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
-                <p class="job-name">Artesã(o)</p>
-                <p class="job-workers-count">3 profissionais</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">B<a name="names-B"></a></h1>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">C<a name="names-C"></a></h1>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">D<a name="names-D"></a></h1>
-        <hr class="job-hr"/>
-        <div class="job-link">
-          {/* Final do link está manual */}
-          <a href="/contrate/manutencao/desenhista">
-            <div class="row">
-              <div class="column job-imagecontainer">
-                <button class="desenhista-icon-button-class"> </button>
-              </div>
-              <div class="column job-textcontainer">
-                {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
-                <p class="job-name">Desenhista</p>
-                <p class="job-workers-count">1 profissionais</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">E<a name="names-E"></a></h1>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">F<a name="names-F"></a></h1>
-        <hr class="job-hr"/>
-        <div class="job-link">
-          {/* Final do link está manual */}
-          <a href="/contrate/manutencao/frete">
-            <div class="row">
-              <div class="column job-imagecontainer">
-                <button class="frete-icon-button-class"> </button>
-              </div>
-              <div class="column job-textcontainer">
-                {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
-                <p class="job-name">Frete</p>
-                <p class="job-workers-count">1 profissionais</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">G<a name="names-G"></a></h1>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">H<a name="names-H"></a></h1>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">I<a name="names-I"></a></h1>
-        <hr class="job-hr"/>
-        <div class="job-link">
-          {/* Final do link está manual */}
-            <a href="/contrate/manutencao/impressao">
-            <div class="row">
-              <div class="column job-imagecontainer">
-                <button class="impressao-icon-button-class"> </button>
-              </div>
-              <div class="column job-textcontainer">
-                {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
-                <p class="job-name">Impressão</p>
-                <p class="job-workers-count">1 profissionais</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">J<a name="names-J"></a></h1>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">K<a name="names-K"></a></h1>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">L<a name="names-L"></a></h1>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">M<a name="names-M"></a></h1>
-        <hr class="job-hr"/>
-        <div class="job-link">
-          {/* Final do link está manual */}
-          <a href="/contrate/manutencao/motorista">
-            <div class="row">
-              <div class="column job-imagecontainer">
-                <button class="motorista-icon-button-class"> </button>
-              </div>
-              <div class="column job-textcontainer">
-                {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
-                <p class="job-name">Motorista</p>
-                <p class="job-workers-count">2 profissionais</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">N<a name="names-N"></a></h1>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">O<a name="names-O"></a></h1>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">P<a name="names-P"></a></h1>
-        <hr class="job-hr"/>
-        <div class="job-link">
-          {/* Final do link está manual */}
-          <a href="/contrate/manutencao/passeador-de-caes">
-            <div class="row">
-              <div class="column job-imagecontainer">
-                <button class="passeador-de-caes-icon-button-class"> </button>
-              </div>
-              <div class="column job-textcontainer">
-                {/* Texto a ser escrito está manual, tanto título quanto quantidade de profissionais */}
-                <p class="job-name">Passeador(a) de cães</p>
-                <p class="job-workers-count">1 profissionais</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">Q<a name="names-Q"></a></h1>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">R<a name="names-R"></a></h1>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">S<a name="names-S"></a></h1>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">T<a name="names-T"></a></h1>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">U<a name="names-U"></a></h1>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">V<a name="names-V"></a></h1>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">W<a name="names-W"></a></h1>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">X<a name="names-X"></a></h1>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">Y<a name="names-Y"></a></h1>
-        <hr class="job-hr"/>
-          <h1 class="job-dictionary-letter">Z<a name="names-Z"></a></h1>
-        <hr class="job-hr"/>        
+        {alphabet.map(letter => (
+          <div>
+            <hr class="job-hr"/>
+            <h1 class="job-dictionary-letter">{letter}<a name={`names-${letter}`}></a></h1>
+            <hr class="job-hr"/>
+            {jobs.filter((item) => {
+              if(item.job[0] === letter) return item;
+            }).map(item =>
+              <Job
+              JobName={item.job}
+              JobLink={item.link}
+              JobCount={item.count}
+              IconGray={item.iconC}
+              IconOrange={item.iconL}
+              />
+            )}
+          </div>
+        ))}
       </div>
     )
   }
