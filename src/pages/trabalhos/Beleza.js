@@ -5,9 +5,9 @@ import Job from "../../components/Job";
 
 function Beleza() {
   const [jobs, setJobs] = useState([
-    {job:"Arvore", link:"/contrate/beleza/arvore", count:"3", iconC:"../assets/icones/CabeleireiroC.png", iconL:"../assets/icones/CabeleireiroL.png"},
+    {job:"Árvore", link:"/contrate/beleza/arvore", count:"3", iconC:"../assets/icones/CabeleireiroC.png", iconL:"../assets/icones/CabeleireiroL.png"},
     {job:"Banana", link:"/contrate/beleza/banana", count:"4", iconC:"../assets/icones/BarbeiroC.png", iconL:"../assets/icones/BarbeiroL.png"},
-    {job:"Carro", link:"/contrate/beleza/carro", count:"5", iconC:"../assets/icones/ManicureC.png", iconL:"../assets/icones/ManicureL.png"},
+    {job:"Barro", link:"/contrate/beleza/carro", count:"5", iconC:"../assets/icones/ManicureC.png", iconL:"../assets/icones/ManicureL.png"},
     {job:"Dado", link:"/contrate/beleza/dado", count:"6", iconC:"../assets/icones/GarcomC.png", iconL:"../assets/icones/GarcomL.png"},
     {job:"Estojo", link:"/contrate/beleza/estojo", count:"7", iconC:"../assets/icones/CozinheiroC.png", iconL:"../assets/icones/CozinheiroL.png"},
   ])
@@ -15,13 +15,15 @@ function Beleza() {
   const [alphabet, setAlphabet] = useState([])
   
   useEffect(() => {
+    let prevLet = ""
     for(let i = 0; i<jobs.length; i++){
-      if(!alphabet.includes(jobs[i].job[0])){
-        console.log(jobs[i].job[0])
-        setAlphabet(alphabet => [...alphabet, jobs[i].job[0]])
+      if(jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === prevLet){
+        continue
+      }else{
+        prevLet = jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        setAlphabet(alphabet => [...alphabet, jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "")])
       }
     }
-    console.log(alphabet)
   }, [])
 
   return(
@@ -82,7 +84,7 @@ function Beleza() {
           <h1 class="job-dictionary-letter">{letter}<a name={`names-${letter}`}></a></h1>
           <hr class="job-hr"/>
           {jobs.filter((item) => {
-            if(item.job[0] === letter) return item;
+            if(item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item;
           }).map(item =>
             <Job
             JobName={item.job}
