@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "../styles/trabalhos.css";
 import "../styles/profissionais.css";
 import ServicoDataService from "../services/servico.service";
@@ -173,7 +172,7 @@ export default class Home extends Component {
         <div class="search-box">
           <form method="get" action="/contrate">
             <div id="search-contrate">
-              <FontAwesomeIcon icon={['fas', 'search']} size="lg" color="rgb(237,125,49)"/>
+              {/* Icone de busca */}
               <input id="search-input-contrate" placeholder="Buscar por um profissional"/>
             </div>
             <button id="search-button-contrate" type="submit">

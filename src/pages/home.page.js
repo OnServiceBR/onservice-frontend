@@ -5,7 +5,6 @@ import WhiteLeft from '../assets/BrancoEsquerda.png';
 import WhiteRight from '../assets/BrancoDireita.png';
 import Pessoa from '../assets/PessoaX.png';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class Home extends Component {
   render() {
@@ -20,7 +19,7 @@ export default class Home extends Component {
   		<div class="homephrase">
   			<form method="get" action="/contrate">
   				  <button id="button1-search-home" type="submit">
-  					<FontAwesomeIcon icon={['fas', 'search']} size="lg" color="rgb(237,125,49)"/>
+  					{/* Icone de busca */}
   					&nbsp; &nbsp; Buscar por um profissional
   				  </button>
   				  <button id="button2-search-home" type="submit">
@@ -114,7 +113,6 @@ export default class Home extends Component {
             <form method="get" action="/anuncie">
               <button id="button3-register-home">
                 Cadastre-se na OnService Grátis
-                <FontAwesomeIcon id="mouse-pointer" icon={['fas', 'mouse-pointer']} size="lg" color="rgb(64,64,64)"/>
               </button>
             </form>
           </div>

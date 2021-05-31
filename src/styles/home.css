@@ -214,13 +214,6 @@
   transition: 0.3s;
 }
 
-#mouse-pointer{
-	position: absolute;
-	right: -18px;
-	bottom: -30px;
-  transition: 0.3s;
-}
-
 #button3-register-home:hover #mouse-pointer{
 	position: absolute;
 	right: -4px;
