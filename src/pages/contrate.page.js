@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../styles/contrate.css";
+import { FaSearch } from 'react-icons/fa';
 
 export default class Home extends Component {
   constructor(props){
@@ -17,6 +18,7 @@ export default class Home extends Component {
             <div id="search-contrate">
               {/* Icone de busca */}
               <input id="search-input-contrate" placeholder="Buscar por um profissional"/>
+              <FaSearch id="search-lupe"/>
             </div>
             <button id="search-button-contrate" type="submit">
               Buscar

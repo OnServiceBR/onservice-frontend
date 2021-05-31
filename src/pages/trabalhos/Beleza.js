@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/trabalhos.css";
+import { FaSearch } from 'react-icons/fa';
 
 import Job from "../../components/Job";
 
@@ -34,6 +35,7 @@ function Beleza() {
           <div id="search-contrate">
             {/* Icone de busca */}
             <input id="search-input-contrate" placeholder="Buscar por um profissional"/>
+            <FaSearch id="search-lupe"/>
           </div>
           <button id="search-button-contrate" type="submit">
             Buscar

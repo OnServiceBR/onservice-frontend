@@ -4,7 +4,7 @@ import Claudia from '../assets/Claudia-Fundo-Laranja.png';
 import WhiteLeft from '../assets/BrancoEsquerda.png';
 import WhiteRight from '../assets/BrancoDireita.png';
 import Pessoa from '../assets/PessoaX.png';
-
+import { FaMousePointer, FaSearch } from 'react-icons/fa';
 
 export default class Home extends Component {
   render() {
@@ -21,6 +21,7 @@ export default class Home extends Component {
   				  <button id="button1-search-home" type="submit">
   					{/* Icone de busca */}
   					&nbsp; &nbsp; Buscar por um profissional
+            <FaSearch id="search-lupe"/>
   				  </button>
   				  <button id="button2-search-home" type="submit">
   					Buscar
@@ -113,6 +114,7 @@ export default class Home extends Component {
             <form method="get" action="/anuncie">
               <button id="button3-register-home">
                 Cadastre-se na OnService Grátis
+                <FaMousePointer id="mouse-pointer"/>
               </button>
             </form>
           </div>

@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/trabalhos.css";
+import { FaSearch } from 'react-icons/fa';
 
 import Job from "../../components/Job";
 
 function Eventos() {
   const [jobs, setJobs] = useState([
-    {job:"Árvore", link:"/contrate/beleza/arvore", count:"3", iconC:"../assets/icones/CabeleireiroC.png", iconL:"../assets/icones/CabeleireiroL.png"},
-    {job:"Banana", link:"/contrate/beleza/banana", count:"4", iconC:"../assets/icones/BarbeiroC.png", iconL:"../assets/icones/BarbeiroL.png"},
-    {job:"Barro", link:"/contrate/beleza/carro", count:"5", iconC:"../assets/icones/ManicureC.png", iconL:"../assets/icones/ManicureL.png"},
-    {job:"Dado", link:"/contrate/beleza/dado", count:"6", iconC:"../assets/icones/GarcomC.png", iconL:"../assets/icones/GarcomL.png"},
-    {job:"Estojo", link:"/contrate/beleza/estojo", count:"7", iconC:"../assets/icones/CozinheiroC.png", iconL:"../assets/icones/CozinheiroL.png"},
+    {job:"Árvore", link:"/contrate/eventos/arvore", count:"3", iconC:"../assets/icones/CabeleireiroC.png", iconL:"../assets/icones/CabeleireiroL.png"},
+    {job:"Banana", link:"/contrate/eventos/banana", count:"4", iconC:"../assets/icones/BarbeiroC.png", iconL:"../assets/icones/BarbeiroL.png"},
+    {job:"Barro", link:"/contrate/eventos/carro", count:"5", iconC:"../assets/icones/ManicureC.png", iconL:"../assets/icones/ManicureL.png"},
+    {job:"Dado", link:"/contrate/eventos/dado", count:"6", iconC:"../assets/icones/GarcomC.png", iconL:"../assets/icones/GarcomL.png"},
+    {job:"Estojo", link:"/contrate/eventos/estojo", count:"7", iconC:"../assets/icones/CozinheiroC.png", iconL:"../assets/icones/CozinheiroL.png"},
   ])
 
   const [alphabet, setAlphabet] = useState([])
@@ -34,6 +35,7 @@ function Eventos() {
           <div id="search-contrate">
             {/* Icone de busca */}
             <input id="search-input-contrate" placeholder="Buscar por um profissional"/>
+            <FaSearch id="search-lupe"/>
           </div>
           <button id="search-button-contrate" type="submit">
             Buscar
