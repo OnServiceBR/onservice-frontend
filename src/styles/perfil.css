@@ -11,6 +11,7 @@
   width: 22.39cm;
 }
 
+ /* Formatação título no swal */
 .swal-footer {
   text-align: center;
   overflow: hidden;
@@ -20,19 +21,21 @@
 }
 
 /* Formatação título no swal */
-.swal-title {
+.swal-title--perfil {
+  padding-top: 10px;
+  margin-bottom: 0px;
   font-size: 18px;
   font-family: GlacialIndifference;
   color: rgb(237, 125, 49);
-  padding: 0%;
 }
 
 /* Formatação textos no swal */
-.swal-text {
+.swal-text--perfil {
   font-family: GlacialIndifference;
   padding: 0px;
+  margin-top: -4px;
   display: block;
-  margin-bottom: 5px !important;
+  margin-bottom: 2px !important;
   text-align: center;
   color: rgb(64, 64, 64);
   font-size: 12pt;
@@ -41,7 +44,7 @@
 }
 
 /* Formatação Links no swal */
-.swal-text a {
+.swal-text--perfil a {
   font-weight: bold;
   text-decoration: underline;
   color: rgb(64, 64, 64);
@@ -56,23 +59,25 @@
 }
 
 /* Botao do swal */
-.swal-button {
-  font-size: 18 pt ;
+.swal-button--contact {
+  border-radius: 2px;
+  background-color:rgb(237, 125, 49);
+  font-size: 16px;
+  border: 1px solid rgb(237,125,49);
   text-align: center;
-  border-width: 0.5pt;
-  border-style: solid;
-  border-color: rgb(237,125,49);
-  background-color: rgb(237, 125, 49);
   color: rgb(255, 255, 255);
-  text-align: center;
   font-family: GlacialIndifference;
   height: 40px;
   width:  200px;
+  line-height: 0%;
+  background-image: url('../assets/Ícones/privada.png')
 }
 
+/*Configurações gerais do swal*/
 .swal-modal {
-  height: 40%;
-  width:  40%;
+  height: 300px;
+  width:  700px;
+  border-radius: 20px
 }
 
 /* Hover botao do swal */
