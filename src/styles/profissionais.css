@@ -20,12 +20,6 @@
   border-color: rgb(237, 125, 49);
 }
 
-._1cgu0CqbPSvU9G_sHmk1wv {
-  bottom: 5px !important;
-  transform: unset !important;
-  top:unset !important;
-}
-
 /* Espaço com settings+workers */
 .workers-row-order {
   width: 20%;
@@ -149,16 +143,19 @@
 #workers-change-color-on-hover {
   text-decoration: none;
   color: rgb(64,64,64);
+  transition: 0.3s;
 }
 
 #workers-change-color-on-hover a {
   text-decoration: none;
   color: rgb(64,64,64);
+  transition: 0.3s;
 }
 
 #workers-change-color-on-hover a:hover {
   color: rgb(237,125,49);
   box-shadow: 0px 0px 5pt rgba(237, 125, 49, 0.6);
+  transition: 0.3s;
 }
 
 /* Descrição de cada um dos profissionais */

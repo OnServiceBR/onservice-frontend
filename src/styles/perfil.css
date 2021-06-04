@@ -11,6 +11,93 @@
   width: 22.39cm;
 }
 
+ /* Formatação título no swal */
+.swal-footer {
+  text-align: center;
+  overflow: hidden;
+  margin-top: 0px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+/* Formatação título no swal */
+.swal-title--perfil {
+  padding-top: 10px;
+  margin-bottom: 0px;
+  font-size: 18px;
+  font-family: GlacialIndifference;
+  color: rgb(237, 125, 49);
+}
+
+/* Formatação textos no swal */
+.swal-text--perfil {
+  font-family: GlacialIndifference;
+  padding: 0px;
+  margin-top: -4px;
+  display: block;
+  margin-bottom: 2px !important;
+  text-align: center;
+  color: rgb(64, 64, 64);
+  font-size: 12pt;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Formatação Links no swal */
+.swal-text--perfil a {
+  font-weight: bold;
+  text-decoration: underline;
+  color: rgb(64, 64, 64);
+}
+
+/* Formataçãp Link para contato dentro do swal */
+.swal-text--newlink {
+  font-family: 'Bebas Neue', cursive !important; 
+  text-decoration: underline; 
+  font-size: 12pt;
+  color: rgb(237, 125, 49) !important;
+}
+
+/* Botao do swal */
+.swal-button--contact {
+  border-radius: 2px;
+  background-color:rgb(237, 125, 49);
+  font-size: 16px;
+  border: 1px solid rgb(237,125,49);
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: GlacialIndifference;
+  height: 40px;
+  width:  200px;
+  line-height: 0%;
+}
+
+/*Configurações gerais do swal*/
+.swal-modal {
+  height: 300px;
+  width:  700px;
+  border-radius: 20px
+}
+
+/* Hover botao do swal */
+.swal-button:hover {
+  /* border-radius: 0.15cm; */
+  border-width: 0.5pt;
+  border-style: solid;
+  border-color: rgb(237,125,49);
+  background-color: rgb(255, 255, 255) !important;
+  color: rgb(237, 125, 49);
+  outline: none;
+  box-shadow: 0px 0px 5pt rgba(237, 125, 49, 0.6);
+
+}
+
+.swal-button img {
+  font: bold;
+}
+
+
+
 /* Nome do prestador */
 .perfil-h1 {
   font-family: GlacialIndifference;
@@ -77,7 +164,7 @@
 }
 
 /* Estilo do botão "entrar em contato" */
-#button-entraremcontato{
+.button-entraremcontato{
   text-align: left;
   margin-top: -15%;
   width: 4.50cm;

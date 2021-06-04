@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import "../styles/home.css";
 import Claudia from '../assets/Claudia-Fundo-Laranja.png';
 import WhiteLeft from '../assets/BrancoEsquerda.png';
@@ -6,8 +7,31 @@ import WhiteRight from '../assets/BrancoDireita.png';
 import Pessoa from '../assets/PessoaX.png';
 import { FaMousePointer, FaSearch } from 'react-icons/fa';
 
+import Carousel from "../components/Carousel.js";
+import Card from '../components/Card.js';
 export default class Home extends Component {
+  constructor(props){
+    super(props)
+    this.cards = [
+      {name:"José", job:"Pedreiro", picture:"../assets/Pessoa1.png"},
+      {name:"Paulonilson", job:"Organizador de festas infantis", picture:"../assets/Pessoa2.png"},
+      {name:"Maria", job:"Cantora", picture:"../assets/Pessoa3.png"},
+      {name:"Antonio", job:"Cozinheiro", picture:"../assets/Pessoa4.png"},
+      {name:"Carlos", job:"Segurança", picture:"../assets/Pessoa5.png"},
+      {name:"Vanessa", job:"DJ", picture:"../assets/Pessoa6.png"},
+      {name:"Henrique", job:"Massagista", picture:"../assets/Pessoa7.png"},
+      {name:"Paulo", job:"Motoboy", picture:"../assets/Pessoa8.png"},
+      {name:"Raissa", job:"Fotógrafa", picture:"../assets/Pessoa9.png"},
+      {name:"Juliana", job:"Tradutora", picture:"../assets/Pessoa10.png"},
+      {name:"Fabiano", job:"Fisioterapeuta", picture:"../assets/Pessoa11.png"},
+      {name:"Bruna", job:"Cabelereira", picture:"../assets/Pessoa12.png"},
+      {name:"Otávio", job:"Pintor", picture:"../assets/Pessoa13.png"},
+      {name:"Rodolgo", job:"Professor", picture:"../assets/Pessoa14.png"},
+    ];
+  }
   render() {
+    const cards = this.cards;
+    
     return(
   	<div>
   		<div class="homephrase">
@@ -28,74 +52,21 @@ export default class Home extends Component {
   				  </button>
   			</form>
   		</div>
-      <div>
+      <p class="carousel-title">DESTAQUES DO MÊS</p>
+      <Carousel
+        show={5}
+        infiniteLoop={true}
+      >
+        {cards.map(item =>
+          <Card
+            Job={item.job}
+            Name={item.name}
+            Picture={item.picture}
+          />
+        )}
+      </Carousel>
       <br />
       <br />
-      </div>
-      <div class="row row-all-cards" id="cards-change-color-on-hover">
-        <img src={WhiteLeft} id="white-left" height="100%"/>
-        <img src={WhiteRight} id="white-right" height="100%"/>
-        <a href="/perfil" class="column column-each-card">
-          <div class="row row-card-work">
-            <p>Organizador de festas infantis</p>
-          </div>
-          <hr class="each-card-hr"/>
-          <div class="row row-card-picture">
-            <img src={Pessoa}/>
-          </div>
-          <div class="row row-card-name">
-            <p>Paulonilson</p>
-          </div>
-        </a>
-        <a href="/perfil" class="column column-each-card">
-          <div class="row row-card-work">
-            <p>Organizador de festas infantis</p>
-          </div>
-          <hr class="each-card-hr"/>
-          <div class="row row-card-picture">
-            <img src={Pessoa}/>
-          </div>
-          <div class="row row-card-name">
-            <p>Paulonilson</p>
-          </div>
-        </a>
-        <a href="/perfil" class="column column-each-card">
-          <div class="row row-card-work">
-            <p>Organizador de festas infantis</p>
-          </div>
-          <hr class="each-card-hr"/>
-          <div class="row row-card-picture">
-            <img src={Pessoa}/>
-          </div>
-          <div class="row row-card-name">
-            <p>Paulonilson</p>
-          </div>
-        </a>
-        <a href="/perfil" class="column column-each-card">
-          <div class="row row-card-work">
-            <p>Organizador de festas infantis</p>
-          </div>
-          <hr class="each-card-hr"/>
-          <div class="row row-card-picture">
-            <img src={Pessoa}/>
-          </div>
-          <div class="row row-card-name">
-            <p>Paulonilson</p>
-          </div>
-        </a>
-        <a href="/perfil" class="column column-each-card">
-          <div class="row row-card-work">
-            <p>Organizador de festas infantis</p>
-          </div>
-          <hr class="each-card-hr"/>
-          <div class="row row-card-picture">
-            <img src={Pessoa}/>
-          </div>
-          <div class="row row-card-name">
-            <p>Paulonilson</p>
-          </div>
-        </a>
-      </div>
       <br/>
       <br/>
       <br/>

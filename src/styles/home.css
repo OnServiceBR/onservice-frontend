@@ -73,12 +73,14 @@
   height: 130% !important;
 }
 
-#white-right {
-  z-index: 1;
-  left: unset !important;
-  right: -210px !important;
-  top: 113.5px !important;
-  height: 130% !important;
+.carousel-title {
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 17pt;
+  color: rgb(64, 64, 64);
+  letter-spacing: 3.5px;
+  margin-top: 50px;
+  margin-bottom: 5px;
 }
 
 /* Espaço onde ficam todos os cards de destaque */
@@ -89,6 +91,8 @@
   display: block;
   font-family: GlacialIndifference;
   position: relative;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 /* Centraliza todos textos dentro dos cartões */
@@ -124,6 +128,7 @@
 	border-bottom-right-radius: 0.3cm;
 	width: 160px;
   text-decoration: none;
+  margin-top: 5px;
 }
 
 /* Espaço onde fica a profissão no card */
@@ -145,10 +150,11 @@
 /* Espaço onde fica o nome no card */
 .row-card-name {
   display: block;
-  height: 40px;
+  height: 30px;
   position: relative;
   font-size: 11pt;
   color: rgb(64,64,64);
+  margin-bottom: 10px;
 }
 
 /* Espaço de cada card */
