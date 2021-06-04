@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../styles/anunciantes.css";
 import Anuncio from "../assets/Anuncio.png";
 import Pessoa from '../assets/PessoaX.png'
+import Megafone from '../assets/megafone.png'
 
 function Anunciantes() {
     return (
@@ -75,14 +76,21 @@ function Anunciantes() {
             </div>
             <br/>
             <br/>
-            <br/>
-            <br/>
-            <div class="row">
+            <div class="row row-anuncio">
                 <div class="column column-left">
-                    <p>sai</p>
+                    <div class= "row row-megafone">
+                        <img id="megafone" src={Megafone} width="220px" alt="megafone"/>
+                    </div>
                 </div>
                 <div class="column column-right">
-                    <p>Para entrar em contato conosco, basta enviar um e-mail para <span style={{color:"rgb(237,125,49)",fontWeight:"bold"}}>onservicesac@gmail.com</span> ou acessar nossa aba <span style={{color:"rgb(237,125,49)",fontWeight:"bold"}}>CONTATO</span> e enviar uma mensagem!</p>
+                    <div class="row row-right">
+                        <p>Para entrar em contato conosco, basta enviar um e-mail para <span style={{color:"rgb(237,125,49)",fontWeight:"bold"}}>onservicesac@gmail.com</span> ou acessar nossa aba <span style={{color:"rgb(237,125,49)",fontWeight:"bold"}}>CONTATO</span> e enviar uma mensagem!</p>
+                        <form method="get" action="/contato">
+                            <button class="btn-contact">
+                                Clique aqui para entrar em CONTATO
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
