@@ -6,7 +6,6 @@ import LogoOnservice from "../assets/LogoSimboloLaranja.png";
 import Prestadorimage from "../assets/IMG-20190914-WA0056.jpg";
 import Whatsappimage from "../assets/whatsappicon.png";
 import Fotoperfil from "../assets/edinaldocirculo.jpg";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 export default class Perfil extends Component {

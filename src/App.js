@@ -1,7 +1,6 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
 
-import './styles/fontawesome';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import './App.css';
@@ -22,6 +21,7 @@ import Sobrenos from "./pages/sobrenos.page";
 import Perfil from "./pages/perfil.page";
 import Profissionais from "./pages/profissionais.page";
 import Seguranca from "./pages/seguranca.page";
+import Anunciantes from "./pages/anunciantes.page";
 
 function App() {
   return (
@@ -47,6 +47,7 @@ function App() {
           <Route exact path="/como-utilizar-o-site/" component={ComoUtilizaroSite} />
           <Route exact path="/sobre-nos/" component={Sobrenos} />
           <Route exact path="/seguranca" component={Seguranca} />
+          <Route exact path="/anunciantes/" component={Anunciantes} />
         </Switch>
       </div>
       <Footer />

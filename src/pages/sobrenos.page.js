@@ -16,7 +16,7 @@ function Sobrenos() {
             </div>
             <p></p>
             <div class="subs-sobrenos"> 
-               <h2 class="subs-sobrenos">Mais sobre nós</h2>
+               <h2 class="subs-sobrenos"><span style={{color:"rgb(237,125,49)",fontWeight:"bold"}}>Mais sobre nós</span></h2>
             </div>
             <div class="paragrafo-sobrenos"> 
                 <p>A missão da OnService é garantir um prestador de serviço para cada problema do dia a dia. Para isso, temos um compromisso de garantir renda para os melhores profissionais e facilitar o contato com contratantes, através de uma plataforma digital segura e de qualidade. Nosso objetivo é revolucionar o mercado de contratação de profissionais.</p>

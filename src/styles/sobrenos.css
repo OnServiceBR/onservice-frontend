@@ -19,9 +19,10 @@
     margin-left: auto;
 	margin-right: auto;
 	text-align: left;
+    font-weight: bold;
 	font-family: GlacialIndifference;
     font-size: 10pt;
-    color: rgb(64, 64, 64);
+    color: rgb(237, 125, 49);
     text-decoration-line: underline; 
 }
 .subs-sobrenos {
