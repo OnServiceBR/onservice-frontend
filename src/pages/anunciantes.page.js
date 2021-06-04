@@ -77,6 +77,14 @@ function Anunciantes() {
             <br/>
             <br/>
             <br/>
+            <div class="row">
+                <div class="column column-left">
+                    <p>sai</p>
+                </div>
+                <div class="column column-right">
+                    <p>Para entrar em contato conosco, basta enviar um e-mail para <span style={{color:"rgb(237,125,49)",fontWeight:"bold"}}>onservicesac@gmail.com</span> ou acessar nossa aba <span style={{color:"rgb(237,125,49)",fontWeight:"bold"}}>CONTATO</span> e enviar uma mensagem!</p>
+                </div>
+            </div>
         </div>
     );
 }
