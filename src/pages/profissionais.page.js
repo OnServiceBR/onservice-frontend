@@ -17,8 +17,8 @@ export default class Home extends Component {
       manutencao: [],
       ensino: [],
       eventos: [],
-      categoria: props.category,
-      profissao: useParams.workers,
+      categoria: this.props.match.params.job,
+      profissao: this.props.match.params.workers,
       w2w:"",
 
       DropdownOrder: [
@@ -57,7 +57,7 @@ export default class Home extends Component {
   }
 
   componentDidMount () {
-    console.log(this.props)
+    console.log(this.props.match.params)
   }
 
   render() {
