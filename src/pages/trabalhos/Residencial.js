@@ -6,11 +6,8 @@ import Job from "../../components/Job";
 
 function Residencial() {
   const [jobs, setJobs] = useState([
-    {job:"Árvore", link:"/contrate/residencial/arvore", count:"3", iconC:"../assets/icones/CabeleireiroC.png", iconL:"../assets/icones/CabeleireiroL.png"},
-    {job:"Banana", link:"/contrate/residencial/banana", count:"4", iconC:"../assets/icones/BarbeiroC.png", iconL:"../assets/icones/BarbeiroL.png"},
-    {job:"Barro", link:"/contrate/residencial/carro", count:"5", iconC:"../assets/icones/ManicureC.png", iconL:"../assets/icones/ManicureL.png"},
-    {job:"Dado", link:"/contrate/residencial/dado", count:"6", iconC:"../assets/icones/GarcomC.png", iconL:"../assets/icones/GarcomL.png"},
-    {job:"Estojo", link:"/contrate/residencial/estojo", count:"7", iconC:"../assets/icones/CozinheiroC.png", iconL:"../assets/icones/CozinheiroL.png"},
+    {job:"Diarista", link:"/contrate/residencial/diarista", count:"3", iconC:"../assets/icones/DiaristaC.png", iconL:"../assets/icones/DiaristaL.png"},
+    {job:"Jardineiro(a)", link:"/contrate/residencial/jardineiro", count:"4", iconC:"../assets/icones/JardineiroC.png", iconL:"../assets/icones/JardineiroL.png"},
   ])
 
   const [alphabet, setAlphabet] = useState([])

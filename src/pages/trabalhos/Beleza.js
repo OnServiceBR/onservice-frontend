@@ -5,12 +5,12 @@ import { FaSearch } from 'react-icons/fa';
 import Job from "../../components/Job";
 
 function Beleza() {
+
   const [jobs, setJobs] = useState([
-    {job:"Árvore", link:"/contrate/beleza/arvore", count:"3", iconC:"../assets/icones/CabeleireiroC.png", iconL:"../assets/icones/CabeleireiroL.png"},
-    {job:"Banana", link:"/contrate/beleza/banana", count:"4", iconC:"../assets/icones/BarbeiroC.png", iconL:"../assets/icones/BarbeiroL.png"},
-    {job:"Barro", link:"/contrate/beleza/carro", count:"5", iconC:"../assets/icones/ManicureC.png", iconL:"../assets/icones/ManicureL.png"},
-    {job:"Dado", link:"/contrate/beleza/dado", count:"6", iconC:"../assets/icones/GarcomC.png", iconL:"../assets/icones/GarcomL.png"},
-    {job:"Estojo", link:"/contrate/beleza/estojo", count:"7", iconC:"../assets/icones/CozinheiroC.png", iconL:"../assets/icones/CozinheiroL.png"},
+    {job:"Barbeiro(a)", link:"/contrate/beleza/barbeiro(a)", count:"3", iconC:"../assets/icones/BarbeiroC.png", iconL:"../assets/icones/BarbeiroL.png"},
+    {job:"Cabeleireiro(a)", link:"/contrate/beleza/cabeleireiro(a)", count:"4", iconC:"../assets/icones/CabeleireiroC.png", iconL:"../assets/icones/CabeleireiroL.png"},
+    {job:"Maquiador(a)", link:"/contrate/beleza/maquiador(a)", count:"5", iconC:"../assets/icones/MaquiadorC.png", iconL:"../assets/icones/MaquiadorL.png"},
+    {job:"Micropigmentador(a)", link:"/contrate/beleza/micropigmentador(a)", count:"6", iconC:"../assets/icones/MicropigmentadorC.png", iconL:"../assets/icones/MicropigmentadorL.png"},
   ])
 
   const [alphabet, setAlphabet] = useState([])

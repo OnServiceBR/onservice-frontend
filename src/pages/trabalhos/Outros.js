@@ -6,11 +6,13 @@ import Job from "../../components/Job";
 
 function Outros() {
   const [jobs, setJobs] = useState([
-    {job:"Árvore", link:"/contrate/outros/arvore", count:"3", iconC:"../assets/icones/CabeleireiroC.png", iconL:"../assets/icones/CabeleireiroL.png"},
-    {job:"Banana", link:"/contrate/outros/banana", count:"4", iconC:"../assets/icones/BarbeiroC.png", iconL:"../assets/icones/BarbeiroL.png"},
-    {job:"Barro", link:"/contrate/outros/carro", count:"5", iconC:"../assets/icones/ManicureC.png", iconL:"../assets/icones/ManicureL.png"},
-    {job:"Dado", link:"/contrate/outros/dado", count:"6", iconC:"../assets/icones/GarcomC.png", iconL:"../assets/icones/GarcomL.png"},
-    {job:"Estojo", link:"/contrate/outros/estojo", count:"7", iconC:"../assets/icones/CozinheiroC.png", iconL:"../assets/icones/CozinheiroL.png"},
+    {job:"Artesã(o)", link:"/contrate/outros/artesao", count:"3", iconC:"../assets/icones/PintorC.png", iconL:"../assets/icones/PintorL.png"},
+    {job:"Desenhista", link:"/contrate/outros/desenhista", count:"4", iconC:"../assets/icones/DesenhistaC.png", iconL:"../assets/icones/DesenhistaL.png"},
+    {job:"Fretes e Mudanças", link:"/contrate/outros/fretes-e-mudancas", count:"5", iconC:"../assets/icones/FretesC.png", iconL:"../assets/icones/FretesL.png"},
+    {job:"Montador(a) de Móveis", link:"/contrate/outros/montador-de-moveis", count:"6", iconC:"../assets/icones/MontadordeMoveisC.png", iconL:"../assets/icones/MontadordeMoveisL.png"},
+    {job:"Motoboy", link:"/contrate/outros/motoboy", count:"7", iconC:"../assets/icones/MotoboyC.png", iconL:"../assets/icones/MotoboyL.png"},
+    {job:"Motorista Particular", link:"/contrate/outros/motorista-particular", count:"7", iconC:"../assets/icones/MotoristaParticularC.png", iconL:"../assets/icones/MotoristaParticularL.png"},
+    {job:"Passeador(a) de cães", link:"/contrate/outros/passeador-de-caes", count:"7", iconC:"../assets/icones/PasseadordeCaesC.png", iconL:"../assets/icones/PasseadordeCaesL.png"},
   ])
 
   const [alphabet, setAlphabet] = useState([])

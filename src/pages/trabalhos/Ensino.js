@@ -6,11 +6,11 @@ import Job from "../../components/Job";
 
 function Ensino() {
   const [jobs, setJobs] = useState([
-    {job:"Árvore", link:"/contrate/ensino/arvore", count:"3", iconC:"../assets/icones/CabeleireiroC.png", iconL:"../assets/icones/CabeleireiroL.png"},
-    {job:"Banana", link:"/contrate/ensino/banana", count:"4", iconC:"../assets/icones/BarbeiroC.png", iconL:"../assets/icones/BarbeiroL.png"},
-    {job:"Barro", link:"/contrate/ensino/carro", count:"5", iconC:"../assets/icones/ManicureC.png", iconL:"../assets/icones/ManicureL.png"},
-    {job:"Dado", link:"/contrate/ensino/dado", count:"6", iconC:"../assets/icones/GarcomC.png", iconL:"../assets/icones/GarcomL.png"},
-    {job:"Estojo", link:"/contrate/ensino/estojo", count:"7", iconC:"../assets/icones/CozinheiroC.png", iconL:"../assets/icones/CozinheiroL.png"},
+    {job:"Coach", link:"/contrate/ensino/coach", count:"3", iconC:"../assets/icones/CoachC.png", iconL:"../assets/icones/CoachL.png"},
+    {job:"Professor(a) de Francês", link:"/contrate/ensino/professor-de-frances", count:"4", iconC:"../assets/icones/ProfessorC.png", iconL:"../assets/icones/ProfessorL.png"},
+    {job:"Professor(a) de Inglês", link:"/contrate/ensino/professor-de-ingles", count:"5", iconC:"../assets/icones/ProfessorC.png", iconL:"../assets/icones/ProfessorL.png"},
+    {job:"Professor(a) de Programação", link:"/contrate/ensino/professor-de-programacao", count:"6", iconC:"../assets/icones/ProfessorC.png", iconL:"../assets/icones/ProfessorL.png"},
+    {job:"Tradutor(a)", link:"/contrate/ensino/tradutor", count:"7", iconC:"../assets/icones/TradutorC.png", iconL:"../assets/icones/TradutorL.png"},
   ])
 
   const [alphabet, setAlphabet] = useState([])

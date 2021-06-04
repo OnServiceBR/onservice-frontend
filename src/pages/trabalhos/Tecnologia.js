@@ -6,12 +6,13 @@ import Job from "../../components/Job";
 
 function Tecnologia() {
   const [jobs, setJobs] = useState([
-    {job:"Árvore", link:"/contrate/tecnologia/arvore", count:"3", iconC:"../assets/icones/CabeleireiroC.png", iconL:"../assets/icones/CabeleireiroL.png"},
-    {job:"Banana", link:"/contrate/tecnologia/banana", count:"4", iconC:"../assets/icones/BarbeiroC.png", iconL:"../assets/icones/BarbeiroL.png"},
-    {job:"Barro", link:"/contrate/tecnologia/carro", count:"5", iconC:"../assets/icones/ManicureC.png", iconL:"../assets/icones/ManicureL.png"},
-    {job:"Dado", link:"/contrate/tecnologia/dado", count:"6", iconC:"../assets/icones/GarcomC.png", iconL:"../assets/icones/GarcomL.png"},
-    {job:"Estojo", link:"/contrate/tecnologia/estojo", count:"7", iconC:"../assets/icones/CozinheiroC.png", iconL:"../assets/icones/CozinheiroL.png"},
-  ])
+    {job:"Analista de Sistemas", link:"/contrate/tecnologia/analista-de-sistemas", count:"3", iconC:"../assets/icones/AnalistadeSistemasC.png", iconL:"../assets/icones/AnalistadeSistemasL.png"},
+    {job:"Assistente Técnico", link:"/contrate/tecnologia/assistente-tecnico", count:"4", iconC:"../assets/icones/AssistenteTecnicoC.png", iconL:"../assets/icones/AssistenteTecnicoL.png"},
+    {job:"Designer Gráfico", link:"/contrate/tecnologia/designer-grafico", count:"5", iconC:"../assets/icones/DesignerGraficoC.png", iconL:"../assets/icones/DesignerGraficoL.png"},
+    {job:"Editor(a) de Vídeos", link:"/contrate/tecnologia/editor-de-videos", count:"6", iconC:"../assets/icones/EditordevideoC.png", iconL:"../assets/icones/EditordevideoL.png"},
+    {job:"Manutenção de PABX", link:"/contrate/tecnologia/manutencao-de-pabx", count:"7", iconC:"../assets/icones/PABXC.png", iconL:"../assets/icones/PABXL.png"},
+    {job:"Programador", link:"/contrate/tecnologia/programador", count:"7", iconC:"../assets/icones/ProgramadorC.png", iconL:"../assets/icones/ProgramadorL.png"},
+])
 
   const [alphabet, setAlphabet] = useState([])
   

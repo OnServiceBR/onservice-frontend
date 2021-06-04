@@ -6,11 +6,11 @@ import Job from "../../components/Job";
 
 function Manutencao() {
   const [jobs, setJobs] = useState([
-    {job:"Árvore", link:"/contrate/manutencao/arvore", count:"3", iconC:"../assets/icones/CabeleireiroC.png", iconL:"../assets/icones/CabeleireiroL.png"},
-    {job:"Banana", link:"/contrate/manutencao/banana", count:"4", iconC:"../assets/icones/BarbeiroC.png", iconL:"../assets/icones/BarbeiroL.png"},
-    {job:"Barro", link:"/contrate/manutencao/carro", count:"5", iconC:"../assets/icones/ManicureC.png", iconL:"../assets/icones/ManicureL.png"},
-    {job:"Dado", link:"/contrate/manutencao/dado", count:"6", iconC:"../assets/icones/GarcomC.png", iconL:"../assets/icones/GarcomL.png"},
-    {job:"Estojo", link:"/contrate/manutencao/estojo", count:"7", iconC:"../assets/icones/CozinheiroC.png", iconL:"../assets/icones/CozinheiroL.png"},
+    {job:"Eletricista", link:"/contrate/manutencao/eletricista", count:"3", iconC:"../assets/icones/EletricistaC.png", iconL:"../assets/icones/EletricistaL.png"},
+    {job:"Encanador", link:"/contrate/manutencao/encanador", count:"4", iconC:"../assets/icones/EncanadorC.png", iconL:"../assets/icones/EncanadorL.png"},
+    {job:"Faz Tudo", link:"/contrate/manutencao/faz-tudo", count:"5", iconC:"../assets/icones/FazTudoC.png", iconL:"../assets/icones/FazTudoL.png"},
+    {job:"Marceneiro(a)", link:"/contrate/manutencao/marceneiro", count:"6", iconC:"../assets/icones/MarceneiroC.png", iconL:"../assets/icones/MarceneiroL.png"},
+    {job:"Pintor(a)", link:"/contrate/manutencao/pintor", count:"7", iconC:"../assets/icones/PintorC.png", iconL:"../assets/icones/PintorL.png"},
   ])
 
   const [alphabet, setAlphabet] = useState([])

@@ -6,11 +6,10 @@ import Job from "../../components/Job";
 
 function Saude() {
   const [jobs, setJobs] = useState([
-    {job:"Árvore", link:"/contrate/saude/arvore", count:"3", iconC:"../assets/icones/CabeleireiroC.png", iconL:"../assets/icones/CabeleireiroL.png"},
-    {job:"Banana", link:"/contrate/saude/banana", count:"4", iconC:"../assets/icones/BarbeiroC.png", iconL:"../assets/icones/BarbeiroL.png"},
-    {job:"Barro", link:"/contrate/saude/carro", count:"5", iconC:"../assets/icones/ManicureC.png", iconL:"../assets/icones/ManicureL.png"},
-    {job:"Dado", link:"/contrate/saude/dado", count:"6", iconC:"../assets/icones/GarcomC.png", iconL:"../assets/icones/GarcomL.png"},
-    {job:"Estojo", link:"/contrate/saude/estojo", count:"7", iconC:"../assets/icones/CozinheiroC.png", iconL:"../assets/icones/CozinheiroL.png"},
+    {job:"Fisioterapeuta", link:"/contrate/saude/fisioterapeuta", count:"3", iconC:"../assets/icones/FisioterapeutaC.png", iconL:"../assets/icones/FisioterapeutaL.png"},
+    {job:"Personal Trainer", link:"/contrate/saude/personal-trainer", count:"4", iconC:"../assets/icones/PersonalTrainerC.png", iconL:"../assets/icones/PersonalTrainerL.png"},
+    {job:"Psicólogo(a)", link:"/contrate/saude/psicologo", count:"5", iconC:"../assets/icones/PsicologoC.png", iconL:"../assets/icones/PsicologoL.png"},
+    {job:"Terapeuta Ocupacional", link:"/contrate/saude/terapeuta-ocupacional", count:"6", iconC:"../assets/icones/TerapeutaOcupacionalC.png", iconL:"../assets/icones/TerapeutaOcupacionalL.png"},
   ])
 
   const [alphabet, setAlphabet] = useState([])
