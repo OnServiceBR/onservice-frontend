@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import "../styles/trabalhos.css";
 import "../styles/profissionais.css";
-import ServicoDataService from "../services/servico.service";
 import Profissional1 from "../assets/Profissionais/prof1.png";
 import { Multiselect } from 'multiselect-react-dropdown';
+import Database from "../components/Database.js";
+import { useParams } from "react-router";
 
 export default class Home extends Component {
   constructor(props){
@@ -15,8 +16,8 @@ export default class Home extends Component {
       manutencao: [],
       ensino: [],
       eventos: [],
-      trabalho:"",
-      profissão:"",
+      categoria: this.props.match.params.job,
+      profissao: this.props.match.params.workers,
       w2w:"",
 
       DropdownOrder: [
@@ -54,117 +55,13 @@ export default class Home extends Component {
     }
   }
 
-  componentDidMount() {
-    this.retrieveServicos();
-  }
-
-  retrieveServicos() {
-    if(this.props.match.params.job==="tecnologia"){
-      ServicoDataService.getTecnologia()
-        .then(res => {
-          this.setState({
-            tecnologia: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Tecnologia"
-        });
-    }
-
-
-    
-    // vvvvvvvvvvvvvvvvvvvv SÓ ALTEREI AQUIIIIIIIIII TEM QUE MUDAR E AUTOMATIZAR OS OUTROS. SÓ FUNCIONA PRA MANUTENÇÃO & ENCANADOR!!!!!!!!!!
-    else if(this.props.match.params.job==="manutencao"){
-      ServicoDataService.getManutencao()
-        .then(res => {
-          this.setState({
-            manutencao: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Manutenção"
-        });
-        this.setState({
-          profissão:"Encanador(a)"
-        });
-    }
-    // ^^^^^^^^^^^ SÓ ALTEREI AQUIIIIIIIIII TEM QUE MUDAR E AUTOMATIZAR OS OUTROS. SÓ FUNCIONA PRA MANUTENÇÃO & ENCANADOR!!!!!!!!!!
-
-
-
-    else if(this.props.match.params.job==="saude"){
-      ServicoDataService.getSaude()
-        .then(res => {
-          this.setState({
-            saude: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Saúde"
-        });
-    }
-    else if(this.props.match.params.job==="ensino"){
-      ServicoDataService.getEnsino()
-        .then(res => {
-          this.setState({
-            ensino: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Ensino"
-        });
-    }
-    else if(this.props.match.params.job==="beleza"){
-      ServicoDataService.getBeleza()
-        .then(res => {
-          this.setState({
-            beleza: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Beleza"
-        });
-    }
-    else if(this.props.match.params.job==="eventos"){
-      ServicoDataService.getEventos()
-        .then(res => {
-          this.setState({
-            eventos: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Eventos"
-        });
-    }
+  componentDidMount () {
+    console.log(this.props.match.params)
   }
 
   render() {
-    const {trabalho} = this.state;
-    const {profissão} = this.state;
+    const {categoria} = this.state;
+    const {profissao} = this.state;
     return(
       <div>
         {/* O caminho aqui está só para Manutenção, tem que automatizar pra cada uma das categorias de serviços que estão nos botões */}
@@ -256,24 +153,29 @@ export default class Home extends Component {
           </div>
           <div id="workers-change-color-on-hover" class="column workers-column-profile">
             {/* -------------------------------------------------------------------- */}
-            <a href="/perfil" class="row workers-row-profile">
-              <div class="column workers-image">
-                <img src={Profissional1} class="workers-picture-profissões"/>
-              </div>
-              <div class="column workers-profile">
-                <div id="workers-name-change" class="workers-name">
-                  Pablo Picasso
+            {Database.filter ((item) => {
+              if (item.job === profissao) return item;
+            }).map(item =>
+              <a href="/perfil" class="row workers-row-profile">
+                <div class="column workers-image">
+                  <img src={Profissional1} class="workers-picture-profissões"/>
                 </div>
-                <div class="workers-description">
-                  <p>
-                    Por conseguinte, o surgimento do comércio virtual aponta para a melhoria das condições financeiras e administrativas exigidas. O incentivo ao avanço tecnológico, assim como a complexidade dos estudos efetuados deve passar por modificações independentemente do sistema de formação de quadros que corresponde às necessidades. A prática cotidiana prova que a revolução dos costumes exige a precisão e aaaaaaaaaaaaaaaaaaaaaa
-                  </p>
+                <div class="column workers-profile">
+                  <div id="workers-name-change" class="workers-name">
+                    {item.name}
+                  </div>
+                  <div class="workers-description">
+                    <p>
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <hr class="workers-hr"/>
-            </a>
+                <hr class="workers-hr"/>
+              </a>
+            )}
+          
             {/* -------------------------------------------------------------------- */}
-            <a href="/perfil" class="row workers-row-profile">
+            {/* <a href="/perfil" class="row workers-row-profile">
               <div class="column workers-image">
                 <img src={Profissional1} class="workers-picture-profissões"/>
               </div>
@@ -288,9 +190,9 @@ export default class Home extends Component {
                 </div>
               </div>
               <hr class="workers-hr"/>
-            </a>
+            </a> */}
             {/* -------------------------------------------------------------------- */}
-            <a href="/perfil" class="row workers-row-profile">
+            {/* <a href="/perfil" class="row workers-row-profile">
               <div class="column workers-image">
                 <img src={Profissional1} class="workers-picture-profissões"/>
               </div>
@@ -305,9 +207,9 @@ export default class Home extends Component {
                 </div>
               </div>
               <hr class="workers-hr"/>
-            </a>
+            </a> */}
             {/* -------------------------------------------------------------------- */}
-            <a href="/perfil" class="row workers-row-profile">
+            {/* <a href="/perfil" class="row workers-row-profile">
               <div class="column workers-image">
                 <img src={Profissional1} class="workers-picture-profissões"/>
               </div>
@@ -322,7 +224,7 @@ export default class Home extends Component {
                 </div>
               </div>
               <hr class="workers-hr"/>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
