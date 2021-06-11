@@ -151,7 +151,7 @@
 	display: inline-block;
   margin-top: auto;
   margin-bottom: auto;
-	width: 70%;
+	width: 98%;
   vertical-align: top;
 }
 
@@ -168,7 +168,7 @@
   text-align: left;
   margin-bottom: -3%;
   color: rgb(64, 64, 64) !important;
-  margin-left: 4%;
+  margin-left: 2%;
 }
 
 /* Linha cinza*/
@@ -220,6 +220,7 @@
   width: 88%;
   height: 2.83cm;
   margin-bottom: 5%;
+  margin-left: 2%;
 }
 
 /* Estilo da texto na caixa de descrição */
@@ -233,7 +234,7 @@
 
 /*Imagem dentro do botão*/
 #buttonimageperfil{
-  margin-top: -2%;
-  margin-left: 5%;
+  margin-top: -1%;
+  margin-left: 4%;
 }
 

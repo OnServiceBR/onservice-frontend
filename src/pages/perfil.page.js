@@ -11,11 +11,6 @@ export default class Perfil extends Component {
 
   sendErrorAlertPerfil = (msg) => {
     swal({
-      button: {
-        className: "swal-button--contact",
-        text: "Entrar em contato",
-        icon: "success",
-      },
       content: (
         <div>
           <img src={LogoOnservice} width="90px" alt="Perfil" />
@@ -25,8 +20,24 @@ export default class Perfil extends Component {
           </p>
           <p class="swal-text--perfil">Ao clicar em <span style={{ fontWeight: "bold" }}>“Entrar em Contato”</span>, você está de acordo com nosso <a href="/termos-de-uso/">Termos de Uso</a> e <a href="/politica-de-privacidade/">Política de Privacidade</a>. Para fazer qualquer tipo de reclamação ou denúncia, envie-nos uma mensagem na aba <a href="/contato/" class="swal-text--newlink">CONTATO</a>!</p>
         </div>
-      )
+      ),
+      button: {
+        className: "swal-button--contact",
+        text: "Entrar em contato",
+        icon: "success",
+        value: "whatsapp",
+      },
     })
+      .then((value) => {
+        switch (value) {
+
+          case "whatsapp":
+            window.open('https://api.whatsapp.com/send?phone=5516982704941&text=Ol%C3%A1%2C%20encontrei%20seu%20perfil%20na%20OnService.%20Tenho%20interesse%20em%20seu%20servi%C3%A7o%2C%20voc%C3%AA%20poderia%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F', '_blank');
+
+          default:
+            break;
+        }
+      });
   }
 
   messageContrate = () => {
@@ -38,16 +49,16 @@ export default class Perfil extends Component {
       <div class="row row-information-center">
         <div class="column column-perfilimage">
           <div class="row row-perfilimage">
-            <img src={Prestadorimage} width="300px" alt="Perfil" />
+            <img src={Prestadorimage} width="310px" alt="Perfil" />
           </div>
         </div>
         <div class="column column-perfilinformation">
           <div class="row row-main-information-perfil">
-            <div class="column column-perfilcircleimage">
-              <div class="row row-perfilcircleimage">
-                <img src={Prestadorimage} alt="Perfil" />
-              </div>
-            </div>
+            {/* <div class="column column-perfilcircleimage"> */}
+            {/* <div class="row row-perfilcircleimage"> */}
+            {/*<img src={Prestadorimage} alt="Perfil" />*/}
+            {/*</div>*/}
+            {/*</div>*/}
             <div class="column column-perfilnameandbutton">
               <div class="row row-perfilnameandbutton">
                 <a>Ednaldo Pereira</a>
