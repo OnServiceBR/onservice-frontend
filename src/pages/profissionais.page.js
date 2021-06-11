@@ -65,7 +65,7 @@ export default class Home extends Component {
     return(
       <div>
         {/* O caminho aqui está só para Manutenção, tem que automatizar pra cada uma das categorias de serviços que estão nos botões */}
-        <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate/manutencao">{categoria}</a><h2 class="path"> &gt; </h2><h2 class="path-actual">{profissão}</h2>
+        <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate/manutencao">{categoria}</a><h2 class="path"> &gt; </h2><h2 class="path-actual">{profissao}</h2>
         <div class="search-box">
           <form method="get" action="/contrate">
             <div id="search-contrate">
