@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../styles/trabalhos.css";
 import "../styles/profissionais.css";
-import Profissional1 from "../assets/Profissionais/prof1.png";
 import { Multiselect } from 'multiselect-react-dropdown';
 import Database from "../components/Database.js";
 import { useParams } from "react-router";
