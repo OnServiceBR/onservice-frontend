@@ -193,6 +193,8 @@
 .job-imagecontainer {
   width: 7%;
   margin-left: 23%;
+  margin-right: -1%;
+  display: inline;
 }
 
 /* Espaço para o texto com título e descrição do serviço */
@@ -228,29 +230,41 @@ html {
   transition: 0.3s;
 }
 
-/* Sublinha título do serviço*/
-.job-link a:hover {
+/* Muda para laranja a cor do título do serviço*/
+.job-link a:hover{
   color: rgb(237,125,49);
   transition: 0.3s;
 }
 
-/* Troca o ícone pelo ícone laranja */
-.job-link a:hover .job-icon-button-class {
-  color: rgb(237,125,49);
-  background-image: url('../assets/icones/privadalaranja.png');
-  outline: none;
-  transition: 0.3s;
-}
-
-/* Lugar onde fica o ícone */
-.job-icon-button-class {
-  width: 70px;
-	height: 70px;
+/* Lugar onde fica o ícone cinza */
+.job-icon-gray-class {
+  width: 65px;
+	height: 65px;
 	border-style: none;
   margin-right: auto;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  background-color: white;
-  background-image: url('../assets/icones/privada.png');
+  margin-top: 1px;
+  margin-bottom: 1px;
+  display: inline;
+  position: absolute;
+}
+
+/* Lugar onde fica o ícone laranja transparente */
+.job-icon-orange-class {
+	width: 65px;
+	height: 65px;
+  border-style: none;
+  margin-right: auto;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  display: inline;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+/* Deixa o ícone laranja opaco */
+.job-link:hover .job-icon-orange-class {
+  opacity: 100;
   transition: 0.3s;
 }

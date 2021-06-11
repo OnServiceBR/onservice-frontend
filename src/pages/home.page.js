@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import "../styles/home.css";
 import Claudia from '../assets/Claudia-Fundo-Laranja.png';
-import Pessoa from '../assets/PessoaX.png'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import WhiteLeft from '../assets/BrancoEsquerda.png';
+import WhiteRight from '../assets/BrancoDireita.png';
+import Pessoa from '../assets/PessoaX.png';
+import { FaMousePointer, FaSearch } from 'react-icons/fa';
 
 import Carousel from "../components/Carousel.js";
 import Card from '../components/Card.js';
-
 export default class Home extends Component {
   constructor(props){
     super(props)
@@ -43,8 +43,9 @@ export default class Home extends Component {
   		<div class="homephrase">
   			<form method="get" action="/contrate">
   				  <button id="button1-search-home" type="submit">
-  					<FontAwesomeIcon icon={['fas', 'search']} size="lg" color="rgb(237,125,49)"/>
+  					{/* Icone de busca */}
   					&nbsp; &nbsp; Buscar por um profissional
+            <FaSearch id="search-lupe"/>
   				  </button>
   				  <button id="button2-search-home" type="submit">
   					Buscar
@@ -84,7 +85,7 @@ export default class Home extends Component {
             <form method="get" action="/anuncie">
               <button id="button3-register-home">
                 Cadastre-se na OnService Grátis
-                <FontAwesomeIcon id="mouse-pointer" icon={['fas', 'mouse-pointer']} size="lg" color="rgb(64,64,64)"/>
+                <FaMousePointer id="mouse-pointer"/>
               </button>
             </form>
           </div>

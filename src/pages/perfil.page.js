@@ -3,9 +3,8 @@ import "../styles/perfil.css";
 import swal from '@sweetalert/with-react';
 
 import LogoOnservice from "../assets/LogoSimboloLaranja.png";
-import Prestadorimage from "../assets/IMG-20190914-WA0056.jpg";
+import Prestadorimage from "../assets/edinaldocirculo.jpg";
 import Whatsappimage from "../assets/whatsappicon.png";
-
 
 export default class Perfil extends Component {
 

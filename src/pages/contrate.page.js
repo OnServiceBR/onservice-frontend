@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "../styles/contrate.css";
+import { FaSearch } from 'react-icons/fa';
 
 export default class Home extends Component {
   constructor(props){
@@ -16,8 +16,9 @@ export default class Home extends Component {
         <div class="search-box">
           <form method="get" action="/contrate">
             <div id="search-contrate">
-              <FontAwesomeIcon icon={['fas', 'search']} size="lg" color="rgb(237,125,49)"/>
+              {/* Icone de busca */}
               <input id="search-input-contrate" placeholder="Buscar por um profissional"/>
+              <FaSearch id="search-lupe"/>
             </div>
             <button id="search-button-contrate" type="submit">
               Buscar
@@ -31,7 +32,7 @@ export default class Home extends Component {
         </div>
         <div class="category-buttons row">
           <div class="col">
-            <a href="/contrate/tecnologia">
+            <a href="/contrate/tecnologia" id="contrate-zoom-on-hover">
               <button id="tecnology-button" class="category-button">
                 Tecnologia
               </button>
