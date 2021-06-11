@@ -1,6 +1,7 @@
 /* Bloco da caixa que fica no fundo */
 .row-information-center {
   border: none;
+  display: block;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0px 0px 5pt rgba(191, 191, 191, 0.6);
@@ -89,7 +90,6 @@
   color: rgb(237, 125, 49);
   outline: none;
   box-shadow: 0px 0px 5pt rgba(237, 125, 49, 0.6);
-
 }
 
 .swal-button img {
@@ -99,8 +99,142 @@
 /* Coluna com imagem do prestador*/
 .column-perfilimage {
 	display: inline-block;
-	width: 40%;
-	text-align: center;
-	margin-left: 10px;
-	margin-top: 10px;
+	width: 37%;
+	margin-top: 2%;
+  vertical-align: top;
+  text-align: left;
+  margin-left: 2%;
 }
+
+/* Row com imagem do prestador*/
+.row-perfilimage {
+  display: block;
+  margin-left: 0%;
+}
+
+/* Coluna com informações e foto circular do prestador*/
+.column-perfilinformation {
+	display: inline-block;
+	width: 57%;
+	margin-left: 4%;
+	margin-top: 2%;
+}
+
+/* Row com informacoes do prestador*/
+.row-main-information-perfil {
+  display: block;
+}
+
+/* Coluna com foto em circulo do prestador*/
+.column-perfilcircleimage {
+	display: inline-block;
+	width: 20%;
+  margin-left: 2%;
+}
+
+.row-perfilcircleimage {
+  margin-left: 4%;
+  display: block;
+  top: 10%;
+}
+
+.row-perfilcircleimage img{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  vertical-align: bottom;
+}
+
+/* Coluna com nome e botao*/
+.column-perfilnameandbutton {
+	display: inline-block;
+  margin-top: auto;
+  margin-bottom: auto;
+	width: 98%;
+  vertical-align: top;
+}
+
+/* Coluna com nome e botao*/
+.row-perfilnameandbutton {
+	display: block;
+  margin-left: 5%;
+}
+
+/* Formatação texto a da coluna com com nome e botao*/
+.column-perfilnameandbutton a{
+	font-family: GlacialIndifference;
+  font-size: 16pt;
+  text-align: left;
+  margin-bottom: -3%;
+  color: rgb(64, 64, 64) !important;
+  margin-left: 2%;
+}
+
+/* Linha cinza*/
+.perfil-hr {
+  margin-left: 0%;
+  margin-right: 0%;
+  width: 88%;
+  border-top-color: rgb(231,230,230);
+  margin-bottom: 3%;
+  margin-top: 1%;
+}
+
+/* Butão entrar em contato */
+.button-entraremcontato{
+  text-align: left;
+  width: 4.50cm;
+  height: 0.8cm;
+  border-width: 0.5pt;
+  border-style: solid;
+  border-color: rgb(237,125,49);
+  font-size: 12pt;
+  background: rgb(237,125,49);
+  font-family: GlacialIndifference;
+  color: rgb(255,255,255);
+  padding-left: 2%;
+  margin-top: 0%;
+}
+
+/* Row com profissoes prestador*/
+.row-professionperfil {
+  display: block;
+  margin-top: 5%;
+  margin-left: 0px;
+}
+
+/* Texto a dentro da Row com profissoes prestador*/
+.row-professionperfil p {
+  font-family: GlacialIndifference;
+  font-size: 12pt;
+  text-align: left;
+  color: rgb(64, 64, 64) !important;
+  margin-bottom: 4%;
+  margin-left: 2%;
+}
+
+/* Estilo da caixa de descrição */
+.perfil-description {
+  border: solid 1px rgba(191, 191, 191);
+  width: 88%;
+  height: 2.83cm;
+  margin-bottom: 5%;
+  margin-left: 2%;
+}
+
+/* Estilo da texto na caixa de descrição */
+.perfil-description-text {
+  font-size: 8pt;
+  font-family: GlacialIndifference;
+  color: rgb(175, 171, 171);
+  text-align: left;
+  margin: 5px;
+}
+
+/*Imagem dentro do botão*/
+#buttonimageperfil{
+  margin-top: -1%;
+  margin-left: 4%;
+}
+
