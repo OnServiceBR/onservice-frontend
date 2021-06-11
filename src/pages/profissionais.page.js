@@ -65,7 +65,7 @@ export default class Home extends Component {
     return(
       <div>
         {/* O caminho aqui está só para Manutenção, tem que automatizar pra cada uma das categorias de serviços que estão nos botões */}
-        <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate/manutencao">{this.state.trabalho}</a><h2 class="path"> &gt; </h2><h2 class="path-actual">{this.state.profissão}</h2>
+        <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate/manutencao">{categoria}</a><h2 class="path"> &gt; </h2><h2 class="path-actual">{profissão}</h2>
         <div class="search-box">
           <form method="get" action="/contrate">
             <div id="search-contrate">
@@ -158,7 +158,7 @@ export default class Home extends Component {
             }).map(item =>
               <a href="/perfil" class="row workers-row-profile">
                 <div class="column workers-image">
-                  <img src={Profissional1} class="workers-picture-profissões"/>
+                  <img src={item.picture} class="workers-picture-profissões"/>
                 </div>
                 <div class="column workers-profile">
                   <div id="workers-name-change" class="workers-name">
