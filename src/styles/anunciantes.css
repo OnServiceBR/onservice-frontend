@@ -139,21 +139,64 @@
 	color: rgb(118,113,113);
 }
 
+.row-anuncio {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 .column-left {
   display: inline-block;
-  width: 350px;
   text-decoration: none;
   margin-right: 5%;
-  margin-left: 15%;
   height: 210px;
+}
+
+.row-megafone {
+  position: relative;
+  display: inline-block;
 }
 
 .column-right {
   display: inline-block;
-  width: 350px;
+  width: 400px;
   text-decoration: none;
-  margin-right: 15%;
   margin-left:5%;
   height: 210px;
   text-align: center;
+  position: relative;
+}
+
+.row-right {
+  display: block;
+  position: absolute;
+  top: 70%;
+}
+
+.btn-contact {
+  text-align: center;
+  border-radius: 0.15cm;
+  border-width: 0.5pt;
+  border-style: solid;
+  border-color: rgb(237,125,49);
+  font-size: 12pt;
+  width: 8cm;
+  height: 0.9cm;
+  background: rgb(237,125,49);
+  font-family: GlacialIndifference;
+  color: rgb(255,255,255);
+  margin-top: 0.4cm;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5cm;
+  display:block;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-contact:hover {
+  background: rgb(255,255,255);
+  color: rgb(237,125,49);
+  transition: 0.3s;
 }
