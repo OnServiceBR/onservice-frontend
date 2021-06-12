@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import "../styles/perfil.css";
 import swal from '@sweetalert/with-react';
 
+import { IoLogoWhatsapp } from 'react-icons/io';
 import LogoOnservice from "../assets/LogoSimboloLaranja.png";
-import Prestadorimage from "../assets/icones/AssistenteTecnicoC.png";
-import Whatsappimage from "../assets/whatsappicon.png";
 
 import Database from "../components/Database.js";
 
@@ -61,44 +60,51 @@ export default class Perfil extends Component {
     console.log(this.props.match.params)
   }
 
+  sendErrorAlertPerfil = () => {
+    const { idperfil } = this.state;
+    <div>
+      {Database.filter((item) => {
+        if (item.id === idperfil) return item;
+      }).map(item =>
+        swal({
+          content: (
+            <div>
+              <img src={LogoOnservice} width="90px" alt="Perfil" />
+              <p class="swal-title--perfil">Você está a um passo de contratar {item.name}! </p>
+              <p>
+                { }
+              </p>
+              <p class="swal-text--perfil">Ao clicar em <span style={{ fontWeight: "bold" }}>“Entrar em Contato”</span>, você está de acordo com nosso <a href="/termos-de-uso/">Termos de Uso</a> e <a href="/politica-de-privacidade/">Política de Privacidade</a>. Para fazer qualquer tipo de reclamação ou denúncia, envie-nos uma mensagem na aba <a href="/contato/" class="swal-text--newlink">CONTATO</a>!</p>
+            </div>
+          ),
+          button: {
+            className: "swal-button--perfil",
+            text: "Entrar em contato",
+            value: "whatsapp",
+          },
+        })
+          .then((value) => {
+            switch (value) {
 
-  sendErrorAlertPerfil = (msg) => {
-    swal({
-      content: (
-        <div>
-          <img src={LogoOnservice} width="90px" alt="Perfil" />
-          <p class="swal-title--perfil">Você está a um passo de contratar um profissional!</p>
-          <p>
-            {''}
-          </p>
-          <p class="swal-text--perfil">Ao clicar em <span style={{ fontWeight: "bold" }}>“Entrar em Contato”</span>, você está de acordo com nosso <a href="/termos-de-uso/">Termos de Uso</a> e <a href="/politica-de-privacidade/">Política de Privacidade</a>. Para fazer qualquer tipo de reclamação ou denúncia, envie-nos uma mensagem na aba <a href="/contato/" class="swal-text--newlink">CONTATO</a>!</p>
-        </div>
-      ),
-      button: {
-        className: "swal-button--contact",
-        text: "Entrar em contato",
-        icon: "success",
-        value: "whatsapp",
-      },
-    })
-      .then((value) => {
-        switch (value) {
+              case "whatsapp":
+                window.open(`https://api.whatsapp.com/send?phone=${item.phone}&text=Ol%C3%A1%2C%20encontrei%20seu%20perfil%20na%20OnService.%20Tenho%20interesse%20em%20seu%20servi%C3%A7o%2C%20voc%C3%AA%20poderia%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F`, `_blank`);
 
-          case "whatsapp":
-            window.open('https://api.whatsapp.com/send?phone=5516982704941&text=Ol%C3%A1%2C%20encontrei%20seu%20perfil%20na%20OnService.%20Tenho%20interesse%20em%20seu%20servi%C3%A7o%2C%20voc%C3%AA%20poderia%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F', '_blank');
-
-          default:
-            break;
-        }
-      });
+              default:
+                break;
+            }
+          })
+      )}
+    </div>
   }
 
   messageContrate = () => {
-    this.sendErrorAlertPerfil("")
+    this.sendErrorAlertPerfil()
   }
 
   render() {
+
     const { idperfil } = this.state;
+
     return (
       <div class="row row-information-center">
         {Database.filter((item) => {
@@ -107,7 +113,7 @@ export default class Perfil extends Component {
           <div>
             <div class="column column-perfilimage">
               <div class="row row-perfilimage">
-                <img src={item.picture} width="310px" alt="Perfil" />
+                <img src={item.picture} width="260px" alt="Perfil" />
               </div>
             </div>
             <div class="column column-perfilinformation">
@@ -126,14 +132,15 @@ export default class Perfil extends Component {
                         this.messageContrate.bind(this)
                       } class="button-entraremcontato">
                       Entrar em contato
-                            <img id="buttonimageperfil" src={Whatsappimage} width="22px" alt="Perfil" />
+                      <IoLogoWhatsapp id="buttonimageperfil" width="90px" />
                     </button>
                   </div>
                 </div>
               </div>
               <div class="row row-professionperfil">
-                <p class="capitalletter"> {item.job}</p>
-                <p class="capitalletter"> {item.job}</p>
+                {item.job.map(jobs =>
+                  <p> {jobs}<br /></p>
+                )}
                 <div class="perfil-description">
                   <label class="perfil-description-text">{item.description}</label>
                 </div>

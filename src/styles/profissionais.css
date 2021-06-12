@@ -199,5 +199,6 @@
   margin-right: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
-  object-fit: fill;
+  object-fit: cover;
+  border-radius: 50%;
 }

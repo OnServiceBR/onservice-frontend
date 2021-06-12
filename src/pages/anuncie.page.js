@@ -14,7 +14,7 @@ import NumberFormat from 'react-number-format';
 const SITE_KEY = "6Ldo9loaAAAAADMRNqgi69nefNZrZfluNekE9YJQ";
 
 export default class Home extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       name: "",
@@ -35,51 +35,51 @@ export default class Home extends Component {
       description: "",
       w2w: false,
       terms: false,
-      
+
       cities: [],
       services: [],
 
       DropdownStates: [
-        {name: 'Acre', id: 'AC', value: 'AC'},
-        {name: 'Alagoas', id: 'AL', value: 'AL'},
-        {name: 'Amapá', id: 'AP', value: 'AP'},
-        {name: 'Amazonas', id: 'AM', value: 'AM'},
-        {name: 'Bahia', id: 'BA', value: 'BA'},
-        {name: 'Ceará', id: 'CE', value: 'CE'},
-        {name: 'Distrito Federal', id: 'DF', value: 'DF'},
-        {name: 'Espírito Santo', id: 'ES', value: 'ES'},
-        {name: 'Goiânia', id: 'GO', value: 'GO'},
-        {name: 'Maranhão', id: 'MA', value: 'MA'},
-        {name: 'Mato Grosso', id: 'MT', value: 'MT'},
-        {name: 'Mato Grosso do Sul', id: 'MS', value: 'MS'},
-        {name: 'Minas Gerais', id: 'MG', value: 'MG'},
-        {name: 'Pará', id: 'PA', value: 'PA'},
-        {name: 'Paraíba', id: 'PB', value: 'PB'},
-        {name: 'Paraná', id: 'PR', value: 'PR'},
-        {name: 'Pernambuco', id: 'PE', value: 'PE'},
-        {name: 'Piauí', id: 'PI', value: 'PI'},
-        {name: 'Rio de Janeiro', id: 'RJ', value: 'RJ'},
-        {name: 'Rio Grande do Norte', id: 'RN', value: 'RN'},
-        {name: 'Rio Grande do Sul', id: 'RS', value: 'RS'},
-        {name: 'Rondônia', id: 'RO', value: 'RO'},
-        {name: 'Roraima', id: 'RR', value: 'RR'},
-        {name: 'Santa Catarina', id: 'SC', value: 'SC'},
-        {name: 'São Paulo', id: 'SP', value: 'SP'},
-        {name: 'Sergipe', id: 'SE', value: 'SE'},
-        {name: 'Tocantins', id: 'TO', value: 'TO'},
+        { name: 'Acre', id: 'AC', value: 'AC' },
+        { name: 'Alagoas', id: 'AL', value: 'AL' },
+        { name: 'Amapá', id: 'AP', value: 'AP' },
+        { name: 'Amazonas', id: 'AM', value: 'AM' },
+        { name: 'Bahia', id: 'BA', value: 'BA' },
+        { name: 'Ceará', id: 'CE', value: 'CE' },
+        { name: 'Distrito Federal', id: 'DF', value: 'DF' },
+        { name: 'Espírito Santo', id: 'ES', value: 'ES' },
+        { name: 'Goiânia', id: 'GO', value: 'GO' },
+        { name: 'Maranhão', id: 'MA', value: 'MA' },
+        { name: 'Mato Grosso', id: 'MT', value: 'MT' },
+        { name: 'Mato Grosso do Sul', id: 'MS', value: 'MS' },
+        { name: 'Minas Gerais', id: 'MG', value: 'MG' },
+        { name: 'Pará', id: 'PA', value: 'PA' },
+        { name: 'Paraíba', id: 'PB', value: 'PB' },
+        { name: 'Paraná', id: 'PR', value: 'PR' },
+        { name: 'Pernambuco', id: 'PE', value: 'PE' },
+        { name: 'Piauí', id: 'PI', value: 'PI' },
+        { name: 'Rio de Janeiro', id: 'RJ', value: 'RJ' },
+        { name: 'Rio Grande do Norte', id: 'RN', value: 'RN' },
+        { name: 'Rio Grande do Sul', id: 'RS', value: 'RS' },
+        { name: 'Rondônia', id: 'RO', value: 'RO' },
+        { name: 'Roraima', id: 'RR', value: 'RR' },
+        { name: 'Santa Catarina', id: 'SC', value: 'SC' },
+        { name: 'São Paulo', id: 'SP', value: 'SP' },
+        { name: 'Sergipe', id: 'SE', value: 'SE' },
+        { name: 'Tocantins', id: 'TO', value: 'TO' },
       ],
-      
+
       DropdownGender: [
         /* W2W */
-        {name: 'Masculino', id: "M", value: "masculino"},
-        {name: 'Feminino', id: "F", value: "feminino"},
-        {name: 'Prefiro não dizer', id: "X", value: "outro"},
+        { name: 'Masculino', id: "M", value: "masculino" },
+        { name: 'Feminino', id: "F", value: "feminino" },
+        { name: 'Prefiro não dizer', id: "X", value: "outro" },
       ],
 
       DropdownW2W: [
         /* W2W */
-        {name: 'Sim', id: "w2w_true", value: true},
-        {name: 'Não', id: "w2w_false", value: false},
+        { name: 'Sim', id: "w2w_true", value: true },
+        { name: 'Não', id: "w2w_false", value: false },
       ],
     };
     this.style = {
@@ -94,7 +94,7 @@ export default class Home extends Component {
       },
       inputField: {
         margin: 0,
-        "padding-left":"19px",
+        "padding-left": "19px",
         width: "100%",
       },
       multiselectContainer: {
@@ -122,39 +122,31 @@ export default class Home extends Component {
     this.onSelectCPF = this.onSelectCPF.bind(this);
     this.onSelectGender = this.onSelectGender.bind(this);
   }
-  
+
   handleChange(event) {
     const field = event.target.id;
-    if (field === "name")
-    {
+    if (field === "name") {
       this.setState({ name: event.target.value });
     }
-    else if (field === "email")
-    {
+    else if (field === "email") {
       this.setState({ email: event.target.value });
     }
-    else if (field === "city")
-    {
+    else if (field === "city") {
       this.setState({ city: event.target.value });
     }
-    else if (field === "address")
-    {
+    else if (field === "address") {
       this.setState({ address: event.target.value });
     }
-    else if (field === "complement")
-    {
+    else if (field === "complement") {
       this.setState({ complement: event.target.value });
     }
-    else if (field === "file")
-    {
+    else if (field === "file") {
       this.setState({ file: event.target.files });
     }
-    else if (field === "description")
-    {
+    else if (field === "description") {
       this.setState({ description: event.target.value });
     }
-    else if (field === "terms")
-    {
+    else if (field === "terms") {
       this.setState({ terms: event.target.value });
     }
     // console.log(this.state)
@@ -165,7 +157,7 @@ export default class Home extends Component {
     this.retrieveServicos();
     const loadScriptByURL = (id, url, callback) => {
       const isScriptExist = document.getElementById(id);
- 
+
       if (!isScriptExist) {
         var script = document.createElement("script");
         script.type = "text/javascript";
@@ -176,7 +168,7 @@ export default class Home extends Component {
         };
         document.body.appendChild(script);
       }
- 
+
       if (isScriptExist && callback) callback();
     }
     loadScriptByURL("recaptcha-key", `https://www.google.com/recaptcha/api.js?render=${SITE_KEY}`, function () {
@@ -187,7 +179,7 @@ export default class Home extends Component {
   sendErrorAlert = (msg) => {
     swal({
       icon: "error",
-      button:{
+      button: {
         className: "button-alert",
       },
       content: (
@@ -212,85 +204,85 @@ export default class Home extends Component {
 
   savePrestador = (token) => {
 
-    if (this.state.name === ""){
+    if (this.state.name === "") {
       this.sendErrorAlert("Seu nome não pode estar em branco!")
       return;
     }
-    if (this.state.cpf.value !== "" && this.state.cpf !== ""){
+    if (this.state.cpf.value !== "" && this.state.cpf !== "") {
       var cpf = this.state.cpf.value;
-      if (cpf.length !== 11 || 
-        cpf === "00000000000" || 
-        cpf === "11111111111" || 
-        cpf === "22222222222" || 
-        cpf === "33333333333" || 
-        cpf === "44444444444" || 
-        cpf === "55555555555" || 
-        cpf === "66666666666" || 
-        cpf === "77777777777" || 
-        cpf === "88888888888" || 
-        cpf === "99999999999"){
-          this.sendErrorAlert("Seu número de CPF está errado!")
-          return;
+      if (cpf.length !== 11 ||
+        cpf === "00000000000" ||
+        cpf === "11111111111" ||
+        cpf === "22222222222" ||
+        cpf === "33333333333" ||
+        cpf === "44444444444" ||
+        cpf === "55555555555" ||
+        cpf === "66666666666" ||
+        cpf === "77777777777" ||
+        cpf === "88888888888" ||
+        cpf === "99999999999") {
+        this.sendErrorAlert("Seu número de CPF está errado!")
+        return;
       }
       // Verifica primeiro dígito
       var add = 0;
-      for (let i=0; i < 9; i ++){
-        add += parseInt(cpf.charAt(i)) * (10 - i);	
+      for (let i = 0; i < 9; i++) {
+        add += parseInt(cpf.charAt(i)) * (10 - i);
       }
-      let rev = 11 - (add % 11);	
-      if (rev === 10 || rev === 11)		
-        rev = 0;	
-      if (rev !== parseInt(cpf.charAt(9))){
+      let rev = 11 - (add % 11);
+      if (rev === 10 || rev === 11)
+        rev = 0;
+      if (rev !== parseInt(cpf.charAt(9))) {
         this.sendErrorAlert("Seu número de CPF está errado!")
         return;
       }
       // Verifica segundo dígito
-      add = 0;	
-      for (let i = 0; i < 10; i ++){
-        add += parseInt(cpf.charAt(i)) * (11 - i);	
+      add = 0;
+      for (let i = 0; i < 10; i++) {
+        add += parseInt(cpf.charAt(i)) * (11 - i);
       }
-      rev = 11 - (add % 11);	
-      if (rev === 10 || rev === 11)	
-        rev = 0;	
-      if (rev !== parseInt(cpf.charAt(10))){
+      rev = 11 - (add % 11);
+      if (rev === 10 || rev === 11)
+        rev = 0;
+      if (rev !== parseInt(cpf.charAt(10))) {
         this.sendErrorAlert("Seu número de CPF está errado!")
         return;
       }
-    }else{
+    } else {
       this.sendErrorAlert("Seu número de CPF não pode estar em branco!")
       return;
     }
 
     if (this.state.email === "") {
-      this.sendErrorAlert("Seu endereço de email não pode estar em branco!")
+      this.sendErrorAlert("Seu endereço de e-mail não pode estar em branco!")
       return;
-    }else{
+    } else {
       var re = /\S+@\S+\.\S+/;
-      if(re.test(this.state.email)===false){
-        this.sendErrorAlert("Seu endereço de email não é válido!")
+      if (re.test(this.state.email) === false) {
+        this.sendErrorAlert("Seu endereço de e-mail não é válido!")
         return;
       }
     }
 
-    if (this.state.birthday.value === "" || this.state.birthday === ""){
+    if (this.state.birthday.value === "" || this.state.birthday === "") {
       this.sendErrorAlert("Sua data de nascimento não pode estar em branco!")
       return;
-    }else{
+    } else {
       var data = this.state.birthday.formattedValue
       var data_array = data.split("/");                           // quebra a data em array
-      if(data_array[0].length !== 4){
-        data = data_array[2]+"-"+data_array[1]+"-"+data_array[0]; // remonto a data no formato yyyy/MM/dd
+      if (data_array[0].length !== 4) {
+        data = data_array[2] + "-" + data_array[1] + "-" + data_array[0]; // remonto a data no formato yyyy/MM/dd
       }
       var today = new Date();
       var birthday = new Date(data)
       var age = today.getFullYear() - birthday.getFullYear()
       var m = today.getMonth() - birthday.getMonth();
       if (m < 0 || (m === 0 && today.getDate() < birthday.getDate())) age--;
-  
-      if(age < 18){
+
+      if (age < 18) {
         this.sendErrorAlert("Você não pode se cadastrar sendo menor de 18 anos!")
         return;
-     }
+      }
     }
 
     if (this.state.gender === "") {
@@ -298,17 +290,17 @@ export default class Home extends Component {
       return;
     }
 
-    if (this.state.phone.value === "" || this.state.phone === ""){
+    if (this.state.phone.value === "" || this.state.phone === "") {
       this.sendErrorAlert("Seu número de celular não pode estar em branco!")
       return;
-    }else{
+    } else {
       re = /\(?\d{2}\)?\d{8,9}/;
-      if (re.test(this.state.phone.value) === false){
+      if (re.test(this.state.phone.value) === false) {
         this.sendErrorAlert("Seu número de celular está errado!")
         return;
       }
     }
-  
+
     if (this.state.cep === "" || this.state.cep.value === "") {
       this.sendErrorAlert("Seu cep não pode estar em branco!")
       return;
@@ -318,28 +310,28 @@ export default class Home extends Component {
       this.sendErrorAlert("Seu estado não pode estar em branco!")
       return;
     }
-  
+
     if (this.state.city === "") {
       this.sendErrorAlert("Sua cidade não pode estar em branco!")
       return;
     }
-  
+
     if (this.state.address === "") {
       this.sendErrorAlert("Seu endereço não pode estar em branco!")
       return;
     }
-  
+
     if (this.state.description === "") {
       this.sendErrorAlert("Sua descrição não pode estar em branco!")
       return;
     }
-  
+
     if (this.state.w2w !== false && this.state.w2w !== true) {
       this.sendErrorAlert("Você deve selecionar se seu serviço é exclusivo para mulheres!")
       return;
     }
-  
-    if (this.state.terms === false){
+
+    if (this.state.terms === false) {
       this.sendErrorAlert("Você deve concordar com nossos termos!")
       return;
     }
@@ -358,7 +350,7 @@ export default class Home extends Component {
       const formData = new FormData()
       formData.append("cpf", this.state.cpf.value)
       formData.append('file', this.state.file[0])
-  
+
       PrestadorDataService.upload(formData)
         .then(res => {
           console.log("Image Uploaded")
@@ -402,9 +394,9 @@ export default class Home extends Component {
                 services: res.data.services,
                 w2w: res.data.w2w,
                 terms: res.data.terms,
-                
+
                 published: res.data.published,
-  
+
                 submitted: true
               });
               swal("Concluído", "Sua inscrição foi enviada, você deve ser aprovado em breve!", "success");
@@ -466,11 +458,11 @@ export default class Home extends Component {
       description: "",
       w2w: false,
       terms: false,
-      
+
       submitted: false
     });
   }
-  
+
   onSelectCPF(values) {
     this.setState({ cpf: values });
   }
@@ -492,24 +484,24 @@ export default class Home extends Component {
   }
 
   onSelectCity(selectedList, selectedItem) {
-    let {cities} = this.state
+    let { cities } = this.state
     this.setState({ cities: cities.concat(selectedItem.id) });
   }
 
   onRemoveCity(selectedList, removedItem) {
-    let {cities} = this.state
+    let { cities } = this.state
     let index = cities.indexOf(removedItem.id)
     cities.splice(index, 1)
     this.setState({ cities: cities });
   }
 
   onSelectService(selectedList, selectedItem) {
-    let {services} = this.state
+    let { services } = this.state
     this.setState({ services: services.concat(selectedItem.id) });
   }
 
   onRemoveService(selectedList, removedItem) {
-    let {services} = this.state
+    let { services } = this.state
     let index = services.indexOf(removedItem.id)
     services.splice(index, 1)
     this.setState({ services: services });
@@ -525,33 +517,33 @@ export default class Home extends Component {
 
   render() {
     const { cidades, servicos } = this.state;
-    return(
+    return (
       <div class="row">
         <div class="col">
-          <img src={Anuncieimagem} width="500px" alt="Imagem Página Anuncie"/>
+          <img src={Anuncieimagem} width="500px" alt="Imagem Página Anuncie" />
         </div>
         <div class="col register-right">
           <h2>ANUNCIE-SE AQUI</h2>
           <div class="form-item">
-            <label for="name"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Nome:</label>
+            <label for="name"><span title="Campo obrigatório" style={{ color: "red" }}>*</span>Nome:</label>
             <input id="name" type="text" class='' required placeholder="Insira seu nome completo, conforme documento de identificação" onChange={this.handleChange.bind(this)} />
           </div>
           <div class="form-item">
-            <label for="cpf"><span title="Campo obrigatório" style={{color: "red"}}>*</span>CPF:</label>
+            <label for="cpf"><span title="Campo obrigatório" style={{ color: "red" }}>*</span>CPF:</label>
             <NumberFormat id="cpf" placeholder="Insira seu nome CPF" onValueChange={this.onSelectCPF} format="###.###.###-##" mask="_" />
           </div>
           <div class="form-item">
-            <label for="email"><span title="Campo obrigatório" style={{color: "red"}}>*</span>E-mail:</label>
-            <input id="email" type="email" class='' required placeholder="Insira seu e-mail mais utilizado" onChange={this.handleChange.bind(this)}/>
+            <label for="email"><span title="Campo obrigatório" style={{ color: "red" }}>*</span>E-mail:</label>
+            <input id="email" type="email" class='' required placeholder="Insira seu e-mail mais utilizado" onChange={this.handleChange.bind(this)} />
           </div>
           <div class="form-item">
-            <label for="birthday"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Data de Nascimento:</label>
+            <label for="birthday"><span title="Campo obrigatório" style={{ color: "red" }}>*</span>Data de Nascimento:</label>
             <NumberFormat id="birthday" placeholder="DD/MM/AAAA" onValueChange={this.onSelectBirthday} format="##/##/####" mask="_" />
           </div>
           <div class="form-item">
-            <label for="gender"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Gênero:</label>
+            <label for="gender"><span title="Campo obrigatório" style={{ color: "red" }}>*</span>Gênero:</label>
             <div class="form-item">
-                <Multiselect
+              <Multiselect
                 options={this.state.DropdownGender} // Options to display in the dropdown
                 onSelect={this.onSelectGender} // Function will trigger on select event
                 displayValue="name" // Property name to display in the dropdown options
@@ -562,39 +554,39 @@ export default class Home extends Component {
                 singleSelect={true}
                 avoidHighlightFirstOption={true}
                 placeholder="Selecione uma opção"
-                />
-              </div>
+              />
+            </div>
           </div>
           <div class="form-item">
-            <label for="phone"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Celular:</label>
+            <label for="phone"><span title="Campo obrigatório" style={{ color: "red" }}>*</span>Celular:</label>
             <NumberFormat id="phone" placeholder="Insira somente os números do seu celular, com ddd" onValueChange={this.onSelectPhone} format="(##) #####-####" mask="_" />
             <small class=''>*É obrigatório que este número tenha Whatsapp</small>
           </div>
           <div class="form-item">
-            <label for="cep"><span title="Campo obrigatório" style={{color: "red"}}>*</span>CEP:</label>
+            <label for="cep"><span title="Campo obrigatório" style={{ color: "red" }}>*</span>CEP:</label>
             <NumberFormat id="cep" placeholder="Insira apenas os números do seu CEP" onValueChange={this.onSelectCEP} format="#####-###" mask="_" />
           </div>
           <div class="form-item">
-            <label for="state"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Estado:</label>
+            <label for="state"><span title="Campo obrigatório" style={{ color: "red" }}>*</span>Estado:</label>
             <Multiselect
-                options={this.state.DropdownStates} // Options to display in the dropdown
-                onSelect={this.onSelectState} // Function will trigger on select event
-                displayValue="name" // Property name to display in the dropdown options
-                closeOnSelect={true}
-                showArrow={true}
-                id="StatesDropdown"
-                style={this.style}
-                singleSelect={true}
-                avoidHighlightFirstOption={true}
-                placeholder="Selecione seu estado de residência"
-                />
+              options={this.state.DropdownStates} // Options to display in the dropdown
+              onSelect={this.onSelectState} // Function will trigger on select event
+              displayValue="name" // Property name to display in the dropdown options
+              closeOnSelect={true}
+              showArrow={true}
+              id="StatesDropdown"
+              style={this.style}
+              singleSelect={true}
+              avoidHighlightFirstOption={true}
+              placeholder="Selecione seu estado de residência"
+            />
           </div>
           <div class="form-item">
-            <label for="city"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Cidade:</label>
-            <input id="city" type="text" class='' required placeholder="Informe sua cidade" onChange={this.handleChange.bind(this)}/>
+            <label for="city"><span title="Campo obrigatório" style={{ color: "red" }}>*</span>Cidade:</label>
+            <input id="city" type="text" class='' required placeholder="Informe sua cidade" onChange={this.handleChange.bind(this)} />
           </div>
           <div class="form-item">
-            <label for="address"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Endereço:</label>
+            <label for="address"><span title="Campo obrigatório" style={{ color: "red" }}>*</span>Endereço:</label>
             <input id="address" type="text" class='' required placeholder="Insira sua rua/avenida e número" onChange={this.handleChange.bind(this)} />
           </div>
           <div class="form-item">
@@ -602,9 +594,9 @@ export default class Home extends Component {
             <input id="complement" type="text" class='' placeholder="Insira o complemento'" onChange={this.handleChange.bind(this)} />
           </div>
           <div class="form-item">
-            <label for="cities"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Local de Trabalho:</label>
-              <div class="form-item">
-                <Multiselect
+            <label for="cities"><span title="Campo obrigatório" style={{ color: "red" }}>*</span>Local de Trabalho:</label>
+            <div class="form-item">
+              <Multiselect
                 options={cidades} // Options to display in the dropdown
                 onSelect={this.onSelectCity} // Function will trigger on select event
                 onRemove={this.onRemoveCity} // Function will trigger on remove event
@@ -616,13 +608,13 @@ export default class Home extends Component {
                 style={this.style}
                 selectionLimit={4}
                 placeholder="Selecione todas as cidades onde você oferece seus serviços"
-                />
-              </div>
+              />
+            </div>
           </div>
           <div class="form-item">
-            <label for="services"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Profissão:</label>
-              <div class="form-item">
-                <Multiselect
+            <label for="services"><span title="Campo obrigatório" style={{ color: "red" }}>*</span>Profissão:</label>
+            <div class="form-item">
+              <Multiselect
                 options={servicos} // Options to display in the dropdown
                 onSelect={this.onSelectService} // Function will trigger on select event
                 onRemove={this.onRemoveService} // Function will trigger on remove event
@@ -634,24 +626,24 @@ export default class Home extends Component {
                 style={this.style}
                 selectionLimit={4}
                 placeholder="Selecione de 1 a 4 profissões"
-                />
-              </div>
+              />
+            </div>
           </div>
           <div class="form-item">
-            <label for="file"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Foto de Perfil:</label>
+            <label for="file"><span title="Campo obrigatório" style={{ color: "red" }}>*</span>Foto de Perfil:</label>
             <input id="file" type="file" name="file" class="" required onChange={this.handleChange.bind(this)} />
             <small class=''>*Insira uma foto que tenha fundo branco e mostre bem o seu rosto. Logotipos não são aceitos.</small>
           </div>
           <div class="form-item">
-              <label class="label"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Descrição do Serviço:</label>
-              <div style={{textAlign: "center"}}>
-                <textarea id="description" name="description" required class="textarea-contact" rows="6" placeholder="Escreva uma descrição dos seus serviços, com o máximo de detalhes possível" onChange={this.handleChange.bind(this)}></textarea>
-              </div>
+            <label class="label"><span title="Campo obrigatório" style={{ color: "red" }}>*</span>Descrição do Serviço:</label>
+            <div style={{ textAlign: "center" }}>
+              <textarea id="description" name="description" required class="textarea-contact" rows="6" placeholder="Escreva uma descrição dos seus serviços, com o máximo de detalhes possível" onChange={this.handleChange.bind(this)}></textarea>
             </div>
+          </div>
           <div class="form-item">
-            <label for="w2w"><span title="Campo obrigatório" style={{color: "red"}}>*</span>Serviço exclusivo para mulheres?</label>
-              <div class="form-item">
-                <Multiselect
+            <label for="w2w"><span title="Campo obrigatório" style={{ color: "red" }}>*</span>Serviço exclusivo para mulheres?</label>
+            <div class="form-item">
+              <Multiselect
                 options={this.state.DropdownW2W} // Options to display in the dropdown
                 onSelect={this.onSelectW2W} // Function will trigger on select event
                 displayValue="name" // Property name to display in the dropdown options
@@ -662,8 +654,8 @@ export default class Home extends Component {
                 singleSelect={true}
                 avoidHighlightFirstOption={true}
                 placeholder="Selecione uma opção"
-                />
-              </div>
+              />
+            </div>
           </div>
           <div class="form-item">
             <div>
@@ -671,13 +663,13 @@ export default class Home extends Component {
                 <input id="terms" name="terms" type="checkbox" onChange={this.handleChange.bind(this)} />
                 <span class="checkmark"></span>
               </label>
-              <label for="checkbox" style={{marginLeft:"10%"}}>Li e aceito o <a href="/codigo-de-conduta">Código de Conduta</a> e a <a href="/politica-de-privacidade">Política de Privacidade</a></label>
+              <label for="checkbox" style={{ marginLeft: "10%" }}>Li e aceito o <a href="/codigo-de-conduta">Código de Conduta</a> e a <a href="/politica-de-privacidade">Política de Privacidade</a></label>
             </div>
-            <p style={{fontSize:"8pt",marginLeft:"5.5%", marginRight:"3%"}}>Ao clicar no botão <span style={{fontWeight:"bold"}}>“Registrar-se”</span> você concorda e expressa sua vontade livre, consciente e informada de cumprir com e ser regido por nosso <a href="/codigo-de-conduta">Código de Conduta</a> e <a href="/politica-de-privacidade">Política de Privacidade</a></p>
-          </div>  
+            <p style={{ fontSize: "8pt", marginLeft: "5.5%", marginRight: "3%" }}>Ao clicar no botão <span style={{ fontWeight: "bold" }}>“Registrar-se”</span> você concorda e expressa sua vontade livre, consciente e informada de cumprir com e ser regido por nosso <a href="/codigo-de-conduta">Código de Conduta</a> e <a href="/politica-de-privacidade">Política de Privacidade</a></p>
+          </div>
           <button type='button' onClick={this.handleOnClick.bind(this)} class='btn-primary'>Registre-se</button>
         </div>
-        
+
       </div>
     )
   }
