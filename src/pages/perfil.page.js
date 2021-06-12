@@ -3,7 +3,7 @@ import "../styles/perfil.css";
 import swal from '@sweetalert/with-react';
 
 import LogoOnservice from "../assets/LogoSimboloLaranja.png";
-import Prestadorimage from "../assets/edinaldocirculo.jpg";
+import Prestadorimage from "../assets/icones/AssistenteTecnicoC.png";
 import Whatsappimage from "../assets/whatsappicon.png";
 
 export default class Perfil extends Component {
@@ -67,7 +67,7 @@ export default class Perfil extends Component {
                     this.messageContrate.bind(this)
                   } class="button-entraremcontato">
                   Entrar em contato
-                      <img id="buttonimageperfil" src={Whatsappimage} width="22px" alt="Perfil" />
+                    <img id="buttonimageperfil" src={Whatsappimage} width="22px" alt="Perfil" />
                 </button>
               </div>
             </div>
