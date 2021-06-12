@@ -205,6 +205,11 @@
   margin-left: 0px;
 }
 
+/* Deixa maiústula a primeira letra de cada palavra no caminho */
+.capitalletter:first-letter {
+  text-transform: uppercase;
+}
+
 /* Texto a dentro da Row com profissoes prestador*/
 .row-professionperfil p {
   font-family: GlacialIndifference;

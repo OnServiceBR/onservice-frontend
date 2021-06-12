@@ -6,7 +6,61 @@ import LogoOnservice from "../assets/LogoSimboloLaranja.png";
 import Prestadorimage from "../assets/icones/AssistenteTecnicoC.png";
 import Whatsappimage from "../assets/whatsappicon.png";
 
+import Database from "../components/Database.js";
+
 export default class Perfil extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      tecnologia: [],
+      beleza: [],
+      saude: [],
+      manutencao: [],
+      ensino: [],
+      eventos: [],
+      w2w: "",
+      idperfil: this.props.match.params.idperfil,
+
+      DropdownOrder: [
+        /* W2W */
+        { name: 'Destaque', id: "destaque" },
+        { name: 'Avaliação', id: "avaliação" },
+      ],
+    };
+    this.style = {
+      chips: {
+        background: "rgb(237, 125, 49)"
+      },
+      searchBox: {
+        "border": "0.5pt none rgb(118,113,113)",
+        "border-radius": "0.15cm",
+        padding: 0,
+      },
+      inputField: {
+        margin: 0,
+        "padding-left": "19px",
+        width: "100%",
+      },
+      multiselectContainer: {
+        color: "rgb(175,171,171)",
+        width: "95%",
+        "margin-right": "auto",
+        "margin-left": "auto"
+      },
+      groupHeading: {
+        color: "rgb(237, 125, 49)",
+      },
+      option: { // To change css for dropdown options
+        color: "rgb(118,113,113)",
+      },
+    }
+  }
+
+  componentDidMount() {
+    console.log(this.props.match.params)
+  }
+
 
   sendErrorAlertPerfil = (msg) => {
     swal({
@@ -44,42 +98,49 @@ export default class Perfil extends Component {
   }
 
   render() {
+    const { idperfil } = this.state;
     return (
       <div class="row row-information-center">
-        <div class="column column-perfilimage">
-          <div class="row row-perfilimage">
-            <img src={Prestadorimage} width="310px" alt="Perfil" />
-          </div>
-        </div>
-        <div class="column column-perfilinformation">
-          <div class="row row-main-information-perfil">
-            {/* <div class="column column-perfilcircleimage"> */}
-            {/* <div class="row row-perfilcircleimage"> */}
-            {/*<img src={Prestadorimage} alt="Perfil" />*/}
-            {/*</div>*/}
-            {/*</div>*/}
-            <div class="column column-perfilnameandbutton">
-              <div class="row row-perfilnameandbutton">
-                <a>Ednaldo Pereira</a>
-                <hr class="perfil-hr" />
-                <button type='button'
-                  onClick={
-                    this.messageContrate.bind(this)
-                  } class="button-entraremcontato">
-                  Entrar em contato
-                    <img id="buttonimageperfil" src={Whatsappimage} width="22px" alt="Perfil" />
-                </button>
+        {Database.filter((item) => {
+          if (item.id === idperfil) return item;
+        }).map(item =>
+          <div>
+            <div class="column column-perfilimage">
+              <div class="row row-perfilimage">
+                <img src={item.picture} width="310px" alt="Perfil" />
+              </div>
+            </div>
+            <div class="column column-perfilinformation">
+              <div class="row row-main-information-perfil">
+                {/* <div class="column column-perfilcircleimage"> */}
+                {/* <div class="row row-perfilcircleimage"> */}
+                {/*<img src={Prestadorimage} alt="Perfil" />*/}
+                {/*</div>*/}
+                {/*</div>*/}
+                <div class="column column-perfilnameandbutton">
+                  <div class="row row-perfilnameandbutton">
+                    <a>{item.name}</a>
+                    <hr class="perfil-hr" />
+                    <button type='button'
+                      onClick={
+                        this.messageContrate.bind(this)
+                      } class="button-entraremcontato">
+                      Entrar em contato
+                            <img id="buttonimageperfil" src={Whatsappimage} width="22px" alt="Perfil" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="row row-professionperfil">
+                <p class="capitalletter"> {item.job}</p>
+                <p class="capitalletter"> {item.job}</p>
+                <div class="perfil-description">
+                  <label class="perfil-description-text">{item.description}</label>
+                </div>
               </div>
             </div>
           </div>
-          <div class="row row-professionperfil">
-            <p> Cantor</p>
-            <p> Compositor</p>
-            <div class="perfil-description">
-              <label class="perfil-description-text">O incentivo ao avanço tecnológico, assim como o início da atividade geral de formação de atitudes acarreta um processo de reformulação e modernização das condições financeiras e administrativas exigidas.Caros amigos, a complexidade dos estudos efetuados exige a precisão e a definição dos métodos utilizados na avaliação de resultados. Nunca é demais lembrar o peso e o significado destes problemas, uma vez que a consulta aos diversos militantes.</label>
-            </div>
-          </div>
-        </div>
+        )}
       </div>
     )
   }

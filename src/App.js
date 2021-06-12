@@ -47,7 +47,7 @@ function App() {
           <Route exact path="/contato" component={Contato} />
           <Route exact path="/contrate/:job/:workers" component={Profissionais} />
           <Route exact path="/codigo-de-conduta/" component={Conduta} />
-          <Route exact path="/perfil/" component={Perfil} />
+          <Route exact path="/contrate/:job/:workers/:idperfil" component={Perfil} />
           <Route exact path="/termos-de-uso/" component={Termos} />
           <Route exact path="/politica-de-privacidade/" component={Privacidade} />
           <Route exact path="/como-utilizar-o-site/" component={ComoUtilizaroSite} />

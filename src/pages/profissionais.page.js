@@ -6,7 +6,7 @@ import Database from "../components/Database.js";
 import { useParams } from "react-router";
 
 export default class Home extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       tecnologia: [],
@@ -17,12 +17,12 @@ export default class Home extends Component {
       eventos: [],
       categoria: this.props.match.params.job,
       profissao: this.props.match.params.workers,
-      w2w:"",
+      w2w: "",
 
       DropdownOrder: [
         /* W2W */
-        {name: 'Destaque', id: "destaque"},
-        {name: 'Avaliação', id: "avaliação"},
+        { name: 'Destaque', id: "destaque" },
+        { name: 'Avaliação', id: "avaliação" },
       ],
     };
     this.style = {
@@ -36,7 +36,7 @@ export default class Home extends Component {
       },
       inputField: {
         margin: 0,
-        "padding-left":"19px",
+        "padding-left": "19px",
         width: "100%",
       },
       multiselectContainer: {
@@ -54,14 +54,14 @@ export default class Home extends Component {
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     console.log(this.props.match.params)
   }
 
   render() {
-    const {categoria} = this.state;
-    const {profissao} = this.state;
-    return(
+    const { categoria } = this.state;
+    const { profissao } = this.state;
+    return (
       <div>
         {/* O caminho aqui está só para Manutenção, tem que automatizar pra cada uma das categorias de serviços que estão nos botões */}
         <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate/manutencao">{categoria}</a><h2 class="path"> &gt; </h2><h2 class="path-actual">{profissao}</h2>
@@ -69,7 +69,7 @@ export default class Home extends Component {
           <form method="get" action="/contrate">
             <div id="search-contrate">
               {/* Icone de busca */}
-              <input id="search-input-contrate" placeholder="Buscar por um profissional"/>
+              <input id="search-input-contrate" placeholder="Buscar por um profissional" />
             </div>
             <button id="search-button-contrate" type="submit">
               Buscar
@@ -85,7 +85,7 @@ export default class Home extends Component {
           </a>
           <label id="profissionais-job-label">Profissionais</label>
         </div>
-        <br/>
+        <br />
         <div class="row workers-row-order">
           <div class="column workers-column-order-title">
             <div class="order-workers">
@@ -121,10 +121,10 @@ export default class Home extends Component {
             </div>
             <div class="workers-settings-text">
               <label class="container">
-                <input type="checkbox"/>
+                <input type="checkbox" />
                 <span class="checkmark"></span>
               </label>
-              <label for="checkbox" style={{marginLeft:"14%", marginBottom:"0%"}}>
+              <label for="checkbox" style={{ marginLeft: "14%", marginBottom: "0%" }}>
                 São Carlos
               </label>
             </div>
@@ -133,31 +133,31 @@ export default class Home extends Component {
             </div>
             <div class="workers-settings-text">
               <label class="container">
-                <input type="checkbox"/>
+                <input type="checkbox" />
                 <span class="checkmark"></span>
               </label>
-              <label for="checkbox" style={{marginLeft:"14%", marginBottom:"0%"}}>
+              <label for="checkbox" style={{ marginLeft: "14%", marginBottom: "0%" }}>
                 Feminino
               </label>
             </div>
             <div class="workers-settings-text">
               <label class="container">
-                <input type="checkbox"/>
+                <input type="checkbox" />
                 <span class="checkmark"></span>
               </label>
-              <label for="checkbox" style={{marginLeft:"14%", marginBottom:"0%"}}>
+              <label for="checkbox" style={{ marginLeft: "14%", marginBottom: "0%" }}>
                 Masculino
               </label>
             </div>
           </div>
           <div id="workers-change-color-on-hover" class="column workers-column-profile">
             {/* -------------------------------------------------------------------- */}
-            {Database.filter ((item) => {
+            {Database.filter((item) => {
               if (item.job === profissao) return item;
             }).map(item =>
-              <a href="/perfil" class="row workers-row-profile">
+              <a href={item.link} class="row workers-row-profile">
                 <div class="column workers-image">
-                  <img src={item.picture} class="workers-picture-profissões"/>
+                  <img src={item.picture} class="workers-picture-profissões" />
                 </div>
                 <div class="column workers-profile">
                   <div id="workers-name-change" class="workers-name">
@@ -169,10 +169,10 @@ export default class Home extends Component {
                     </p>
                   </div>
                 </div>
-                <hr class="workers-hr"/>
+                <hr class="workers-hr" />
               </a>
             )}
-          
+
             {/* -------------------------------------------------------------------- */}
             {/* <a href="/perfil" class="row workers-row-profile">
               <div class="column workers-image">
