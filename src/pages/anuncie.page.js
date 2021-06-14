@@ -5,6 +5,7 @@ import PrestadorDataService from "../services/prestador.service";
 import CidadeDataService from "../services/cidade.service";
 import ServicoDataService from "../services/servico.service";
 import Anuncieimagem from "../assets/Slide5.PNG";
+import LogoOnservice from "../assets/LogoSimboloLaranja.png";
 
 import "../styles/anuncie.css";
 import { Multiselect } from 'multiselect-react-dropdown';
@@ -178,14 +179,15 @@ export default class Home extends Component {
 
   sendErrorAlert = (msg) => {
     swal({
-      icon: "error",
+      className: "swal-dimensions--register",
       button: {
         className: "button-alert",
       },
       content: (
         <div>
-          <h3>Ops, algo deu errado...</h3>
-          <p>
+          <img src={LogoOnservice} width="90px" alt="SwalRegister" />
+          <h3 class="swal-title--register">Ops, algo deu errado...</h3>
+          <p class="swal-text--register">
             {msg}
           </p>
         </div>

@@ -342,3 +342,34 @@
   transform: translateY(10%) !important;
   top:unset !important;
 }
+
+/* Formatação título no swal */
+.swal-title--register {
+  padding-top: 10px;
+  margin-top: 2%;
+  margin-bottom: 0px;
+  font-size: 18px;
+  font-family: GlacialIndifference;
+  color: rgb(237, 125, 49);
+}
+
+/* Formatação textos no swal */
+.swal-text--register {
+  font-family: GlacialIndifference;
+  padding: 0px;
+  margin-top: 1%;
+  display: block;
+  margin-bottom: 2px !important;
+  text-align: center;
+  color: rgb(64, 64, 64);
+  font-size: 12pt;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*Configurações gerais do swal*/
+.swal-dimensions--register {
+  height: 255px !important;
+  width:  500px !important;
+  border-radius: 20px
+}
