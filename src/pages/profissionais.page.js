@@ -18,16 +18,21 @@ export default class Home extends Component {
       categoria: this.props.match.params.job,
       profissao: this.props.match.params.workers,
       w2w: "",
-
+      profissionais: [],
+      feminino: true,
+      masculino: true,
+    
       DropdownOrder: [
-        /* W2W */
         { name: 'Destaque', id: "destaque" },
         { name: 'Avaliação', id: "avaliação" },
+        { name: 'A-Z', id: "a-z"},
       ],
+
     };
     this.style = {
       chips: {
-        background: "rgb(237, 125, 49)"
+        background: "rgb(237, 125, 49)",
+        color: "rgb(255,255,255)"
       },
       searchBox: {
         "border": "0.5pt none rgb(118,113,113)",
@@ -51,16 +56,73 @@ export default class Home extends Component {
       option: { // To change css for dropdown options
         color: "rgb(118,113,113)",
       },
+    };
+
+    this.onSelect = this.onSelect.bind(this);
+  }
+
+  onSelect(selectedList, selectedItem) {
+    if (selectedItem.id === "a-z"){
+      let mapped = Database.filter((item) => {
+        for (var i = 0; i < item.job.length; i++) {
+          if (item.job[i] === this.state.profissao) return item;
+        }
+      }).map ((item)=>{
+        return item
+      });
+      mapped.sort (function (a, b) {
+        return a.name.localeCompare(b.name);
+      })
+      console.log(mapped)
+      this.setState({ profissionais: mapped})
+    }
+    else if (selectedItem.id === "destaque"){
+      let mapped = Database.filter((item) => {
+        for (var i = 0; i < item.job.length; i++) {
+          if (item.job[i] === this.state.profissao) return item;
+        }
+      }).map ((item)=>{
+        return item
+      });
+      this.setState({ profissionais: mapped})
+    }
+  }
+
+  handleChange(event) {
+    const field = event.target.id;
+    if (field === "feminino") {
+      this.setState({ feminino: event.target.value })
+      console.log(this.state.feminino)
+    }
+    if (this.state.feminino === true) {
+      let mapped = Database.filter((item) => {
+        for (var i = 0; i < item.job.length; i++) {
+            if (item.job[i] === this.state.profissao){
+                if (this.state.feminino && item.gender==="feminino") return item;
+                if (this.state.masculino && item.gender==="masculino") return item;
+            }
+        }
+    }).map ((item)=>{
+        return item
+    });
+    this.setState({ profissionais: mapped})
     }
   }
 
   componentDidMount() {
     console.log(this.props.match.params)
+    let mapped = Database.filter((item) => {
+      for (var i = 0; i < item.job.length; i++) {
+        if (item.job[i] === this.state.profissao) return item;
+      }
+    }).map ((item)=>{
+      return item
+    });
+    this.setState({ profissionais: mapped})
   }
 
   render() {
-    const { categoria } = this.state;
-    const { profissao } = this.state;
+    const { categoria, profissao, profissionais } = this.state;
     return (
       <div>
         {/* O caminho aqui está só para Manutenção, tem que automatizar pra cada uma das categorias de serviços que estão nos botões */}
@@ -107,7 +169,8 @@ export default class Home extends Component {
                 showArrow={true}
                 id="MultipleDropdownWorkers"
                 style={this.style}
-                selectionLimit={1}
+                singleSelect={true}
+                avoidHighlightFirstOption={true}
                 placeholder="Selecione"
                 hidePlaceholder={true}
               />
@@ -133,7 +196,7 @@ export default class Home extends Component {
             </div>
             <div class="workers-settings-text">
               <label class="container">
-                <input type="checkbox" />
+                <input id="feminino" type="checkbox" value={true} onChange={this.handleChange.bind(this)}/>
                 <span class="checkmark"></span>
               </label>
               <label for="checkbox" style={{ marginLeft: "14%", marginBottom: "0%" }}>
@@ -152,7 +215,26 @@ export default class Home extends Component {
           </div>
           <div id="workers-change-color-on-hover" class="column workers-column-profile">
             {/* -------------------------------------------------------------------- */}
-            {Database.filter((item) => {
+            
+            {profissionais.map(item =>
+              <a href={item.link} class="row workers-row-profile">
+                <div class="column workers-image">
+                  <img src={item.picture} class="workers-picture-profissões" />
+                </div>
+                <div class="column workers-profile">
+                  <div id="workers-name-change" class="workers-name">
+                    {item.name}
+                  </div>
+                  <div class="workers-description">
+                    <p>
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+                <hr class="workers-hr" />
+              </a>
+            )}
+            {/* {Database.filter((item) => {
               for (var i = 0; i < item.job.length; i++) {
                 if (item.job[i] === profissao) return item;
               }
@@ -173,7 +255,7 @@ export default class Home extends Component {
                 </div>
                 <hr class="workers-hr" />
               </a>
-            )}
+            )} */}
 
             {/* -------------------------------------------------------------------- */}
             {/* <a href="/perfil" class="row workers-row-profile">
