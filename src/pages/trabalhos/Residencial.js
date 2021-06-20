@@ -6,33 +6,33 @@ import Job from "../../components/Job";
 
 function Residencial() {
   const [jobs, setJobs] = useState([
-    {job:"Diarista", link:"/contrate/residencial/diarista", count:"3", iconC:"../assets/icones/DiaristaC.png", iconL:"../assets/icones/DiaristaL.png"},
-    {job:"Jardineiro(a)", link:"/contrate/residencial/jardineiro", count:"4", iconC:"../assets/icones/JardineiroC.png", iconL:"../assets/icones/JardineiroL.png"},
+    { job: "Diarista", link: "/contrate/residencial/diarista", count: "3", iconC: "../assets/icones/DiaristaC.png", iconL: "../assets/icones/DiaristaL.png" },
+    { job: "Jardineiro(a)", link: "/contrate/residencial/jardineiro(a)", count: "4", iconC: "../assets/icones/JardineiroC.png", iconL: "../assets/icones/JardineiroL.png" },
   ])
 
   const [alphabet, setAlphabet] = useState([])
-  
+
   useEffect(() => {
     let prevLet = ""
-    for(let i = 0; i<jobs.length; i++){
-      if(jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === prevLet){
+    for (let i = 0; i < jobs.length; i++) {
+      if (jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === prevLet) {
         continue
-      }else{
+      } else {
         prevLet = jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "")
         setAlphabet(alphabet => [...alphabet, jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "")])
       }
     }
   }, [])
 
-  return(
+  return (
     <div>
       <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><h2 class="path-actual">Residencial</h2>
       <div class="search-box">
         <form method="get" action="/contrate">
           <div id="search-contrate">
             {/* Icone de busca */}
-            <input id="search-input-contrate" placeholder="Buscar por um profissional"/>
-            <FaSearch id="search-lupe"/>
+            <input id="search-input-contrate" placeholder="Buscar por um profissional" />
+            <FaSearch id="search-lupe" />
           </div>
           <button id="search-button-contrate" type="submit">
             Buscar
@@ -41,7 +41,7 @@ function Residencial() {
       </div>
       <div class="search-tabs">
         <a href="javascript:history.back()">
-          <label id="trabalhos-category-label"  class="link-bar-label">Categorias</label>
+          <label id="trabalhos-category-label" class="link-bar-label">Categorias</label>
         </a>
         <label id="trabalhos-service-label">Serviços</label>
         <label id="trabalhos-job-label">Profissionais</label>
@@ -75,22 +75,22 @@ function Residencial() {
         <a href="#names-Y"> Y </a>|
         <a href="#names-Z"> Z </a>|
       </div>
-      <br/>
-      
+      <br />
+
       {alphabet.map(letter => (
         <div>
-          <hr class="job-hr"/>
+          <hr class="job-hr" />
           <h1 class="job-dictionary-letter">{letter}<a name={`names-${letter}`}></a></h1>
-          <hr class="job-hr"/>
+          <hr class="job-hr" />
           {jobs.filter((item) => {
-            if(item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item;
+            if (item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item;
           }).map(item =>
             <Job
-            JobName={item.job}
-            JobLink={item.link}
-            JobCount={item.count}
-            IconGray={item.iconC}
-            IconOrange={item.iconL}
+              JobName={item.job}
+              JobLink={item.link}
+              JobCount={item.count}
+              IconGray={item.iconC}
+              IconOrange={item.iconL}
             />
           )}
         </div>

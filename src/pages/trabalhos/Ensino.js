@@ -6,36 +6,36 @@ import Job from "../../components/Job";
 
 function Ensino() {
   const [jobs, setJobs] = useState([
-    {job:"Coach", link:"/contrate/ensino/coach", count:"3", iconC:"../assets/icones/CoachC.png", iconL:"../assets/icones/CoachL.png"},
-    {job:"Professor(a) de Francês", link:"/contrate/ensino/professor-de-frances", count:"4", iconC:"../assets/icones/ProfessorC.png", iconL:"../assets/icones/ProfessorL.png"},
-    {job:"Professor(a) de Inglês", link:"/contrate/ensino/professor-de-ingles", count:"5", iconC:"../assets/icones/ProfessorC.png", iconL:"../assets/icones/ProfessorL.png"},
-    {job:"Professor(a) de Programação", link:"/contrate/ensino/professor-de-programacao", count:"6", iconC:"../assets/icones/ProfessorC.png", iconL:"../assets/icones/ProfessorL.png"},
-    {job:"Tradutor(a)", link:"/contrate/ensino/tradutor", count:"7", iconC:"../assets/icones/TradutorC.png", iconL:"../assets/icones/TradutorL.png"},
+    { job: "Coach", link: "/contrate/ensino/coach", count: "3", iconC: "../assets/icones/CoachC.png", iconL: "../assets/icones/CoachL.png" },
+    { job: "Professor(a) de Francês", link: "/contrate/ensino/professor(a)-de-frances", count: "4", iconC: "../assets/icones/ProfessorC.png", iconL: "../assets/icones/ProfessorL.png" },
+    { job: "Professor(a) de Inglês", link: "/contrate/ensino/professor(a)-de-ingles", count: "5", iconC: "../assets/icones/ProfessorC.png", iconL: "../assets/icones/ProfessorL.png" },
+    { job: "Professor(a) de Programação", link: "/contrate/ensino/professor(a)-de-programacao", count: "6", iconC: "../assets/icones/ProfessorC.png", iconL: "../assets/icones/ProfessorL.png" },
+    { job: "Tradutor(a)", link: "/contrate/ensino/tradutor(a)", count: "7", iconC: "../assets/icones/TradutorC.png", iconL: "../assets/icones/TradutorL.png" },
   ])
 
   const [alphabet, setAlphabet] = useState([])
-  
+
   useEffect(() => {
     let prevLet = ""
-    for(let i = 0; i<jobs.length; i++){
-      if(jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === prevLet){
+    for (let i = 0; i < jobs.length; i++) {
+      if (jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === prevLet) {
         continue
-      }else{
+      } else {
         prevLet = jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "")
         setAlphabet(alphabet => [...alphabet, jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "")])
       }
     }
   }, [])
 
-  return(
+  return (
     <div>
       <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><h2 class="path-actual">Ensino</h2>
       <div class="search-box">
         <form method="get" action="/contrate">
           <div id="search-contrate">
             {/* Icone de busca */}
-            <input id="search-input-contrate" placeholder="Buscar por um profissional"/>
-            <FaSearch id="search-lupe"/>
+            <input id="search-input-contrate" placeholder="Buscar por um profissional" />
+            <FaSearch id="search-lupe" />
           </div>
           <button id="search-button-contrate" type="submit">
             Buscar
@@ -44,7 +44,7 @@ function Ensino() {
       </div>
       <div class="search-tabs">
         <a href="javascript:history.back()">
-          <label id="trabalhos-category-label"  class="link-bar-label">Categorias</label>
+          <label id="trabalhos-category-label" class="link-bar-label">Categorias</label>
         </a>
         <label id="trabalhos-service-label">Serviços</label>
         <label id="trabalhos-job-label">Profissionais</label>
@@ -78,22 +78,22 @@ function Ensino() {
         <a href="#names-Y"> Y </a>|
         <a href="#names-Z"> Z </a>|
       </div>
-      <br/>
-      
+      <br />
+
       {alphabet.map(letter => (
         <div>
-          <hr class="job-hr"/>
+          <hr class="job-hr" />
           <h1 class="job-dictionary-letter">{letter}<a name={`names-${letter}`}></a></h1>
-          <hr class="job-hr"/>
+          <hr class="job-hr" />
           {jobs.filter((item) => {
-            if(item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item;
+            if (item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item;
           }).map(item =>
             <Job
-            JobName={item.job}
-            JobLink={item.link}
-            JobCount={item.count}
-            IconGray={item.iconC}
-            IconOrange={item.iconL}
+              JobName={item.job}
+              JobLink={item.link}
+              JobCount={item.count}
+              IconGray={item.iconC}
+              IconOrange={item.iconL}
             />
           )}
         </div>

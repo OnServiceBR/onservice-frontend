@@ -6,37 +6,37 @@ import Job from "../../components/Job";
 
 function Eventos() {
   const [jobs, setJobs] = useState([
-    {job:"Animador(a) de Festas", link:"/contrate/eventos/animador--defestas", count:"3", iconC:"../assets/icones/AnimadordeFestaC.png", iconL:"../assets/icones/AnimadordeFestaL.png"},
-    {job:"Bartender", link:"/contrate/eventos/bartender", count:"4", iconC:"../assets/icones/BartenderC.png", iconL:"../assets/icones/BartenderL.png"},
-    {job:"Fotógrafo(a)", link:"/contrate/eventos/fotografo", count:"6", iconC:"../assets/icones/FotografoC.png", iconL:"../assets/icones/FotografoL.png"},
-    {job:"Garçom/Garçonete", link:"/contrate/eventos/garcom", count:"5", iconC:"../assets/icones/GarcomC.png", iconL:"../assets/icones/GarcomL.png"},
-    {job:"Organizador(a) de Eventos", link:"/contrate/eventos/organizador-de-eventos", count:"7", iconC:"../assets/icones/OrganizadordeEventosC.png", iconL:"../assets/icones/OrganizadordeEventosL.png"},
-    {job:"Recepcionista", link:"/contrate/eventos/recepcionista", count:"5", iconC:"../assets/icones/RecepcionistaC.png", iconL:"../assets/icones/RecepcionistaL.png"},
+    { job: "Animador(a) de Festas", link: "/contrate/eventos/animador(a)-de-festas", count: "3", iconC: "../assets/icones/AnimadordeFestaC.png", iconL: "../assets/icones/AnimadordeFestaL.png" },
+    { job: "Bartender", link: "/contrate/eventos/bartender", count: "4", iconC: "../assets/icones/BartenderC.png", iconL: "../assets/icones/BartenderL.png" },
+    { job: "Fotógrafo(a)", link: "/contrate/eventos/fotografo(a)", count: "6", iconC: "../assets/icones/FotografoC.png", iconL: "../assets/icones/FotografoL.png" },
+    { job: "Garçom/Garçonete", link: "/contrate/eventos/garcom(garçonete)", count: "5", iconC: "../assets/icones/GarcomC.png", iconL: "../assets/icones/GarcomL.png" },
+    { job: "Organizador(a) de Eventos", link: "/contrate/eventos/organizador(a)-de-eventos", count: "7", iconC: "../assets/icones/OrganizadordeEventosC.png", iconL: "../assets/icones/OrganizadordeEventosL.png" },
+    { job: "Recepcionista", link: "/contrate/eventos/recepcionista", count: "5", iconC: "../assets/icones/RecepcionistaC.png", iconL: "../assets/icones/RecepcionistaL.png" },
   ])
 
   const [alphabet, setAlphabet] = useState([])
-  
+
   useEffect(() => {
     let prevLet = ""
-    for(let i = 0; i<jobs.length; i++){
-      if(jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === prevLet){
+    for (let i = 0; i < jobs.length; i++) {
+      if (jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === prevLet) {
         continue
-      }else{
+      } else {
         prevLet = jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "")
         setAlphabet(alphabet => [...alphabet, jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "")])
       }
     }
   }, [])
 
-  return(
+  return (
     <div>
       <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><h2 class="path-actual">Eventos</h2>
       <div class="search-box">
         <form method="get" action="/contrate">
           <div id="search-contrate">
             {/* Icone de busca */}
-            <input id="search-input-contrate" placeholder="Buscar por um profissional"/>
-            <FaSearch id="search-lupe"/>
+            <input id="search-input-contrate" placeholder="Buscar por um profissional" />
+            <FaSearch id="search-lupe" />
           </div>
           <button id="search-button-contrate" type="submit">
             Buscar
@@ -45,7 +45,7 @@ function Eventos() {
       </div>
       <div class="search-tabs">
         <a href="javascript:history.back()">
-          <label id="trabalhos-category-label"  class="link-bar-label">Categorias</label>
+          <label id="trabalhos-category-label" class="link-bar-label">Categorias</label>
         </a>
         <label id="trabalhos-service-label">Serviços</label>
         <label id="trabalhos-job-label">Profissionais</label>
@@ -79,22 +79,22 @@ function Eventos() {
         <a href="#names-Y"> Y </a>|
         <a href="#names-Z"> Z </a>|
       </div>
-      <br/>
-      
+      <br />
+
       {alphabet.map(letter => (
         <div>
-          <hr class="job-hr"/>
+          <hr class="job-hr" />
           <h1 class="job-dictionary-letter">{letter}<a name={`names-${letter}`}></a></h1>
-          <hr class="job-hr"/>
+          <hr class="job-hr" />
           {jobs.filter((item) => {
-            if(item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item;
+            if (item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item;
           }).map(item =>
             <Job
-            JobName={item.job}
-            JobLink={item.link}
-            JobCount={item.count}
-            IconGray={item.iconC}
-            IconOrange={item.iconL}
+              JobName={item.job}
+              JobLink={item.link}
+              JobCount={item.count}
+              IconGray={item.iconC}
+              IconOrange={item.iconL}
             />
           )}
         </div>

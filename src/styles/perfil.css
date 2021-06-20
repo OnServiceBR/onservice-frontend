@@ -229,8 +229,8 @@
 }
 
 /* Deixa maiústula a primeira letra de cada palavra no caminho */
-.row-professionperfil p:first-letter {
-  text-transform: uppercase;
+.row-professionperfil p::first-letter {
+  text-transform: capitalize;
 }
 
 /* Estilo da caixa de descrição */

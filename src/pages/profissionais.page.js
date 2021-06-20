@@ -153,7 +153,9 @@ export default class Home extends Component {
           <div id="workers-change-color-on-hover" class="column workers-column-profile">
             {/* -------------------------------------------------------------------- */}
             {Database.filter((item) => {
-              if (item.job === profissao) return item;
+              for (var i = 0; i < item.job.length; i++) {
+                if (item.job[i] === profissao) return item;
+              }
             }).map(item =>
               <a href={item.link} class="row workers-row-profile">
                 <div class="column workers-image">
