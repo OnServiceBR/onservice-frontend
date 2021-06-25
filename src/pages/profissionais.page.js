@@ -64,8 +64,8 @@ export default class Home extends Component {
   onSelect(selectedList, selectedItem) {
     if (selectedItem.id === "a-z"){
       let mapped = Database.filter((item) => {
-        for (var i = 0; i < item.job.length; i++) {
-          if (item.job[i] === this.state.profissao) return item;
+        for (var i = 0; i < item.jobs.length; i++) {
+          if (item.jobs[i] === this.state.profissao) return item;
         }
       }).map ((item)=>{
         return item
@@ -78,8 +78,8 @@ export default class Home extends Component {
     }
     else if (selectedItem.id === "destaque"){
       let mapped = Database.filter((item) => {
-        for (var i = 0; i < item.job.length; i++) {
-          if (item.job[i] === this.state.profissao) return item;
+        for (var i = 0; i < item.jobs.length; i++) {
+          if (item.jobs[i] === this.state.profissao) return item;
         }
       }).map ((item)=>{
         return item
@@ -96,8 +96,8 @@ export default class Home extends Component {
     }
     if (this.state.feminino === true) {
       let mapped = Database.filter((item) => {
-        for (var i = 0; i < item.job.length; i++) {
-            if (item.job[i] === this.state.profissao){
+        for (var i = 0; i < item.jobs.length; i++) {
+            if (item.jobs[i] === this.state.profissao){
                 if (this.state.feminino && item.gender==="feminino") return item;
                 if (this.state.masculino && item.gender==="masculino") return item;
             }
@@ -112,8 +112,8 @@ export default class Home extends Component {
   componentDidMount() {
     console.log(this.props.match.params)
     let mapped = Database.filter((item) => {
-      for (var i = 0; i < item.job.length; i++) {
-        if (item.job[i] === this.state.profissao) return item;
+      for (var i = 0; i < item.jobs.length; i++) {
+        if (item.jobs[i] === this.state.profissao) return item;
       }
     }).map ((item)=>{
       return item
@@ -126,7 +126,7 @@ export default class Home extends Component {
     return (
       <div>
         {/* O caminho aqui está só para Manutenção, tem que automatizar pra cada uma das categorias de serviços que estão nos botões */}
-        <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate/manutencao">{categoria}</a><h2 class="path"> &gt; </h2><h2 class="path-actual">{profissao}</h2>
+        <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoria}`}>{categoria}</a><h2 class="path"> &gt; </h2><h2 class="path-actual">{profissao}</h2>
         <div class="search-box">
           <form method="get" action="/contrate">
             <div id="search-contrate">
@@ -234,80 +234,6 @@ export default class Home extends Component {
                 <hr class="workers-hr" />
               </a>
             )}
-            {/* {Database.filter((item) => {
-              for (var i = 0; i < item.job.length; i++) {
-                if (item.job[i] === profissao) return item;
-              }
-            }).map(item =>
-              <a href={item.link} class="row workers-row-profile">
-                <div class="column workers-image">
-                  <img src={item.picture} class="workers-picture-profissões" />
-                </div>
-                <div class="column workers-profile">
-                  <div id="workers-name-change" class="workers-name">
-                    {item.name}
-                  </div>
-                  <div class="workers-description">
-                    <p>
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-                <hr class="workers-hr" />
-              </a>
-            )} */}
-
-            {/* -------------------------------------------------------------------- */}
-            {/* <a href="/perfil" class="row workers-row-profile">
-              <div class="column workers-image">
-                <img src={Profissional1} class="workers-picture-profissões"/>
-              </div>
-              <div class="column workers-profile">
-                <div id="workers-name-change" class="workers-name">
-                  Vincent van Gogh
-                </div>
-                <div class="workers-description">
-                  <p>
-                    Nunca é demais lembrar o peso e o significado destes problemas, uma vez que a valorização de fatores subjetivos agrega valor ao estabelecimento das regras de conduta normativas. Não obstante, o julgamento imparcial das eventualidades pode nos levar a considerar a reestruturação de alternativas às soluções ortodoxas. Do mesmo modo, a constante divulgação das informações representa uma abertura para a melhoria do remanejamento dos quadros
-                  </p>
-                </div>
-              </div>
-              <hr class="workers-hr"/>
-            </a> */}
-            {/* -------------------------------------------------------------------- */}
-            {/* <a href="/perfil" class="row workers-row-profile">
-              <div class="column workers-image">
-                <img src={Profissional1} class="workers-picture-profissões"/>
-              </div>
-              <div class="column workers-profile">
-                <div id="workers-name-change" class="workers-name">
-                  Michelangelo
-                </div>
-                <div class="workers-description">
-                  <p>
-                    Percebemos, cada vez mais, que a execução dos pontos do programa nos obriga à análise dos procedimentos normalmente adotados
-                  </p>
-                </div>
-              </div>
-              <hr class="workers-hr"/>
-            </a> */}
-            {/* -------------------------------------------------------------------- */}
-            {/* <a href="/perfil" class="row workers-row-profile">
-              <div class="column workers-image">
-                <img src={Profissional1} class="workers-picture-profissões"/>
-              </div>
-              <div class="column workers-profile">
-                <div id="workers-name-change" class="workers-name">
-                  Salvador Dalí
-                </div>
-                <div class="workers-description">
-                  <p>
-                    Todavia, a crescente influência da mídia possibilita uma melhor visão global das direções preferenciais no sentido do progresso. Por outro lado, o aumento do diálogo entre os diferentes setores produtivos assume importantes posições no estabelecimento do fluxo de informações. O cuidado em identificar pontos críticos no comprometimento entre as equipes auxilia a preparação e a composição das diretrizes de desenvolvimento para o futuro
-                  </p>
-                </div>
-              </div>
-              <hr class="workers-hr"/>
-            </a> */}
           </div>
         </div>
       </div>
