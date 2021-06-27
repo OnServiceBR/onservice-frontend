@@ -6,8 +6,8 @@ const Job = (props) => {
       <a href={props.JobLink}>
         <div class="row">
           <div class="column job-imagecontainer">
-            <img class="job-icon-gray-class" src={props.IconGray}/>
-            <img class="job-icon-orange-class" src={props.IconOrange}/>
+            <img alt="" class="job-icon-gray-class" src={props.IconGray}/>
+            <img alt="" class="job-icon-orange-class" src={props.IconOrange}/>
           </div>
           <div class="column job-textcontainer">
             <p class="job-name">{props.JobName}</p>

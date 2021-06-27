@@ -3,7 +3,6 @@ import "../styles/trabalhos.css";
 import "../styles/profissionais.css";
 import { Multiselect } from 'multiselect-react-dropdown';
 import Database from "../components/Database.js";
-import { useParams } from "react-router";
 
 export default class Home extends Component {
   constructor(props) {
@@ -219,7 +218,7 @@ export default class Home extends Component {
             {profissionais.map(item =>
               <a href={item.link} class="row workers-row-profile">
                 <div class="column workers-image">
-                  <img src={item.picture} class="workers-picture-profissões" />
+                  <img alt="" src={item.picture} class="workers-picture-profissões" />
                 </div>
                 <div class="column workers-profile">
                   <div id="workers-name-change" class="workers-name">

@@ -5,13 +5,13 @@ import { FaSearch } from 'react-icons/fa';
 import Job from "../../components/Job";
 
 function Manutencao() {
-  const [jobs, setJobs] = useState([
+  const jobs = [
     { job: "Eletricista", link: "/contrate/manutencao/eletricista/", count: "3", iconC: "../assets/icones/EletricistaC.png", iconL: "../assets/icones/EletricistaL.png" },
     { job: "Encanador(a)", link: "/contrate/manutencao/encanador(a)/", count: "4", iconC: "../assets/icones/EncanadorC.png", iconL: "../assets/icones/EncanadorL.png" },
     { job: "Faz Tudo", link: "/contrate/manutencao/faz-tudo/", count: "5", iconC: "../assets/icones/FazTudoC.png", iconL: "../assets/icones/FazTudoL.png" },
     { job: "Marceneiro(a)", link: "/contrate/manutencao/marceneiro(a)/", count: "6", iconC: "../assets/icones/MarceneiroC.png", iconL: "../assets/icones/MarceneiroL.png" },
     { job: "Pintor(a)", link: "/contrate/manutencao/pintor(a)/", count: "7", iconC: "../assets/icones/PintorC.png", iconL: "../assets/icones/PintorL.png" },
-  ])
+  ]
 
   const [alphabet, setAlphabet] = useState([])
 

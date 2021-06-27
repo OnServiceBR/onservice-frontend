@@ -5,10 +5,10 @@ import { FaSearch } from 'react-icons/fa';
 import Job from "../../components/Job";
 
 function Residencial() {
-  const [jobs, setJobs] = useState([
+  const jobs = [
     { job: "Diarista", link: "/contrate/residencial/diarista", count: "3", iconC: "../assets/icones/DiaristaC.png", iconL: "../assets/icones/DiaristaL.png" },
     { job: "Jardineiro(a)", link: "/contrate/residencial/jardineiro(a)", count: "4", iconC: "../assets/icones/JardineiroC.png", iconL: "../assets/icones/JardineiroL.png" },
-  ])
+  ]
 
   const [alphabet, setAlphabet] = useState([])
 
