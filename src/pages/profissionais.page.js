@@ -3,6 +3,7 @@ import "../styles/trabalhos.css";
 import "../styles/profissionais.css";
 import { Multiselect } from 'multiselect-react-dropdown';
 import Database from "../components/Database.js";
+import { FaSearch } from 'react-icons/fa';
 
 export default class Home extends Component {
   constructor(props) {
@@ -124,13 +125,12 @@ export default class Home extends Component {
     const { categoria, profissao, profissionais } = this.state;
     return (
       <div>
-        {/* O caminho aqui está só para Manutenção, tem que automatizar pra cada uma das categorias de serviços que estão nos botões */}
         <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoria}`}>{categoria}</a><h2 class="path"> &gt; </h2><h2 class="path-actual">{profissao}</h2>
         <div class="search-box">
           <form method="get" action="/contrate">
             <div id="search-contrate">
-              {/* Icone de busca */}
               <input id="search-input-contrate" placeholder="Buscar por um profissional" />
+              <FaSearch id="search-lupe" />
             </div>
             <button id="search-button-contrate" type="submit">
               Buscar
@@ -159,9 +159,6 @@ export default class Home extends Component {
                 options={this.state.DropdownOrder} // Options to display in the dropdown
                 selectedValues={this.state.selectedValue} // Preselected value to persist in dropdown
                 onSelect={this.onSelect} // Function will trigger on select event
-                // ------------------------------------------------------------------------------------------------
-                // VER AQUI COMO DESABILITAR A CAIXINHA DO DROPDOWN QUANDO SELECIONA PELO THIS.ONSELECT
-                // ------------------------------------------------------------------------------------------------
                 onRemove={this.onRemove} // Function will trigger on remove event
                 displayValue="name" // Property name to display in the dropdown options
                 closeOnSelect={true}
@@ -213,10 +210,8 @@ export default class Home extends Component {
             </div>
           </div>
           <div id="workers-change-color-on-hover" class="column workers-column-profile">
-            {/* -------------------------------------------------------------------- */}
-
             {profissionais.map(item =>
-              <a href={item.link} class="row workers-row-profile">
+              <a href={`/contrate/${categoria}/${profissao}/${item.id}`} class="row workers-row-profile">
                 <div class="column workers-image">
                   <img alt="" src={item.picture} class="workers-picture-profissões" />
                 </div>

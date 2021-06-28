@@ -36,7 +36,6 @@ function Tecnologia() {
       <div class="search-box">
         <form method="get" action="/contrate">
           <div id="search-contrate">
-            {/* Icone de busca */}
             <input id="search-input-contrate" placeholder="Buscar por um profissional" />
             <FaSearch id="search-lupe" />
           </div>
