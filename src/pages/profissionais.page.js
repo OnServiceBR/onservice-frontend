@@ -19,9 +19,9 @@ export default class Home extends Component {
       profissao: this.props.match.params.workers,
       w2w: "",
       profissionais: [],
-      feminino: true,
-      masculino: true,
-
+      sortType: 'Destaque',
+      options: ['masculino', 'feminino'],
+    
       DropdownOrder: [
         { name: 'Destaque', id: "destaque" },
         { name: 'Avaliação', id: "avaliação" },
@@ -61,51 +61,73 @@ export default class Home extends Component {
     this.onSelect = this.onSelect.bind(this);
   }
 
+  sortAZ() {
+    let mapped = Database.filter((item) => {
+      for (var i = 0; i < item.jobs.length; i++) {
+        if (item.jobs[i] === this.state.profissao){
+          if(this.state.options.includes(item.gender))
+            return item
+        }
+      }
+    }).map ((item)=>{
+      return item
+    });
+    mapped.sort (function (a, b) {
+      return a.name.localeCompare(b.name);
+    })
+    this.setState({ profissionais: mapped})
+  }
+
+  sortDestaque() {
+    let mapped = Database.filter((item) => {
+      for (var i = 0; i < item.jobs.length; i++) {
+        if (item.jobs[i] === this.state.profissao) return item;
+      }
+    }).map ((item)=>{
+      return item
+    });
+    this.setState({ profissionais: mapped})
+  }
+
   onSelect(selectedList, selectedItem) {
-    if (selectedItem.id === "a-z") {
-      let mapped = Database.filter((item) => {
-        for (var i = 0; i < item.jobs.length; i++) {
-          if (item.jobs[i] === this.state.profissao) return item;
-        }
-      }).map((item) => {
-        return item
-      });
-      mapped.sort(function (a, b) {
-        return a.name.localeCompare(b.name);
-      })
-      console.log(mapped)
-      this.setState({ profissionais: mapped })
+    if (selectedItem.id === "a-z"){
+      this.setState({sortType: 'a-z'})
+      this.sortAZ()
     }
-    else if (selectedItem.id === "destaque") {
-      let mapped = Database.filter((item) => {
-        for (var i = 0; i < item.jobs.length; i++) {
-          if (item.jobs[i] === this.state.profissao) return item;
-        }
-      }).map((item) => {
-        return item
-      });
-      this.setState({ profissionais: mapped })
+    else if (selectedItem.id === "destaque"){
+      this.sortDestaque()
     }
   }
 
   handleChange(event) {
     const field = event.target.id;
+    console.log(event)
+    console.log(this.state.options)
     if (field === "feminino") {
-      this.setState({ feminino: event.target.value })
-      console.log(this.state.feminino)
-    }
-    if (this.state.feminino === true) {
-      let mapped = Database.filter((item) => {
-        for (var i = 0; i < item.jobs.length; i++) {
-          if (item.jobs[i] === this.state.profissao) {
-            if (this.state.feminino && item.gender === "feminino" || item.gender === "prefiro não dizer") return item;
-            if (this.state.masculino && item.gender === "masculino" || item.gender === "prefiro não dizer") return item;
-          }
-        }
-      }).map((item) => {
-        return item
-      });
-      this.setState({ profissionais: mapped })
+      if (event.target.checked){
+        this.setState({options: [...this.state.options, "feminino"]}, () => {
+          this.sortAZ()
+          console.log(this.state.options)
+        })
+      }else{
+        let index = this.state.options.indexOf("feminino");
+        this.setState({options: [...this.state.options]}, () => {
+          this.state.options.splice(index, 1)
+          this.sortAZ()
+        })
+      }
+    }else if(field === "masculino"){
+      if (event.target.checked){
+        this.setState({options: [...this.state.options, "masculino"]}, () => {
+          this.sortAZ()
+        })
+      }else{
+        let index = this.state.options.indexOf("masculino");
+        this.setState({options: [...this.state.options]}, () => {
+          this.state.options.splice(index, 1)
+          this.sortAZ()
+        })
+      }
     }
   }
 
@@ -118,7 +140,7 @@ export default class Home extends Component {
     }).map((item) => {
       return item
     });
-    this.setState({ profissionais: mapped })
+    this.setState({profissionais: mapped})
   }
 
   render() {
@@ -192,7 +214,7 @@ export default class Home extends Component {
             </div>
             <div class="workers-settings-text">
               <label class="container">
-                <input id="feminino" type="checkbox" value={true} onChange={this.handleChange.bind(this)} />
+                <input id="feminino" type="checkbox" defaultChecked onChange={this.handleChange.bind(this)}/>
                 <span class="checkmark"></span>
               </label>
               <label for="checkbox" style={{ marginLeft: "14%", marginBottom: "0%" }}>
@@ -201,7 +223,7 @@ export default class Home extends Component {
             </div>
             <div class="workers-settings-text">
               <label class="container">
-                <input type="checkbox" />
+                <input id="masculino" type="checkbox" defaultChecked onChange={this.handleChange.bind(this)}/>
                 <span class="checkmark"></span>
               </label>
               <label for="checkbox" style={{ marginLeft: "14%", marginBottom: "0%" }}>
