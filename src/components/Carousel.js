@@ -57,7 +57,7 @@ const Carousel = (props) => {
 
     return (
         <div class="carousel-center">
-            <img src={WhiteLeft} id="white-left" width="330px"/>
+            <img alt="" src={WhiteLeft} id="white-left" width="330px"/>
             <div className="carousel-container">
                 <div className="carousel-wrapper">
                     {/* You can alwas change the content of the button to other things */}
@@ -89,7 +89,7 @@ const Carousel = (props) => {
                     }
                 </div>
             </div>
-            <img src={WhiteRight} id="white-right" width="330px"/>
+            <img alt="" src={WhiteRight} id="white-right" width="330px"/>
         </div>
         
     )

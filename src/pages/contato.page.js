@@ -15,7 +15,6 @@ function Contato() {
   const [message, setMessage] = useState("");
   const [subject, setSubject] = useState("");
   const [loading, setLoading] = useState(false);
-  const [response, setResponse] = useState(false);
 
   const DropdownSubject = [
     { name: "Problemas com a conta" },
@@ -164,7 +163,6 @@ function Contato() {
       }
 
       setLoading(false);
-      setResponse(res);
     });
   }
 

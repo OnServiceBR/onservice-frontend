@@ -9,7 +9,7 @@ const Card = (props) => {
             </div>
             <hr class="each-card-hr"/>
             <div class="row row-card-picture">
-                <img src={props.Picture}/>
+                <img alt="" src={props.Picture}/>
             </div>
             <div class="row row-card-name">
                 <p>{props.Name}</p>

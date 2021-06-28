@@ -1,10 +1,6 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import "../styles/home.css";
 import Claudia from '../assets/Claudia-Fundo-Laranja.png';
-import WhiteLeft from '../assets/BrancoEsquerda.png';
-import WhiteRight from '../assets/BrancoDireita.png';
-import Pessoa from '../assets/PessoaX.png';
 import { FaMousePointer, FaSearch } from 'react-icons/fa';
 
 import Carousel from "../components/Carousel.js";

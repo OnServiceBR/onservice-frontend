@@ -5,12 +5,12 @@ import { FaSearch } from 'react-icons/fa';
 import Job from "../../components/Job";
 
 function Saude() {
-  const [jobs, setJobs] = useState([
+  const jobs = [
     { job: "Fisioterapeuta", link: "/contrate/saude/fisioterapeuta/", count: "3", iconC: "../assets/icones/FisioterapeutaC.png", iconL: "../assets/icones/FisioterapeutaL.png" },
     { job: "Personal Trainer", link: "/contrate/saude/personal-trainer/", count: "4", iconC: "../assets/icones/PersonalTrainerC.png", iconL: "../assets/icones/PersonalTrainerL.png" },
     { job: "Psicólogo(a)", link: "/contrate/saude/psicologo(a)/", count: "5", iconC: "../assets/icones/PsicologoC.png", iconL: "../assets/icones/PsicologoL.png" },
     { job: "Terapeuta Ocupacional", link: "/contrate/saude/terapeuta-ocupacional/", count: "6", iconC: "../assets/icones/TerapeutaOcupacionalC.png", iconL: "../assets/icones/TerapeutaOcupacionalL.png" },
-  ])
+  ]
 
   const [alphabet, setAlphabet] = useState([])
 

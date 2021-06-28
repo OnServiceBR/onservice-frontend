@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../styles/anunciantes.css";
 import Anuncio from "../assets/Anuncio.png";
-import Pessoa from '../assets/PessoaX.png'
 import Megafone from '../assets/megafone.png'
 
 function Anunciantes() {
@@ -44,7 +43,7 @@ function Anunciantes() {
                     </div>
                 </div>
                 <div class="column column-central-ad">
-                    <img src={Anuncio} width="300px"/>
+                    <img alt="" src={Anuncio} width="300px"/>
                 </div>
                 <div class="column column-each-side-ad" id="side-ad-change-color-on-hover">
                     <div class="row row-title-side-ad">
