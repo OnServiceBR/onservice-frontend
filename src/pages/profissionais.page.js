@@ -21,11 +21,11 @@ export default class Home extends Component {
       profissionais: [],
       feminino: true,
       masculino: true,
-    
+
       DropdownOrder: [
         { name: 'Destaque', id: "destaque" },
         { name: 'Avaliação', id: "avaliação" },
-        { name: 'A-Z', id: "a-z"},
+        { name: 'A-Z', id: "a-z" },
       ],
 
     };
@@ -62,29 +62,29 @@ export default class Home extends Component {
   }
 
   onSelect(selectedList, selectedItem) {
-    if (selectedItem.id === "a-z"){
+    if (selectedItem.id === "a-z") {
       let mapped = Database.filter((item) => {
         for (var i = 0; i < item.jobs.length; i++) {
           if (item.jobs[i] === this.state.profissao) return item;
         }
-      }).map ((item)=>{
+      }).map((item) => {
         return item
       });
-      mapped.sort (function (a, b) {
+      mapped.sort(function (a, b) {
         return a.name.localeCompare(b.name);
       })
       console.log(mapped)
-      this.setState({ profissionais: mapped})
+      this.setState({ profissionais: mapped })
     }
-    else if (selectedItem.id === "destaque"){
+    else if (selectedItem.id === "destaque") {
       let mapped = Database.filter((item) => {
         for (var i = 0; i < item.jobs.length; i++) {
           if (item.jobs[i] === this.state.profissao) return item;
         }
-      }).map ((item)=>{
+      }).map((item) => {
         return item
       });
-      this.setState({ profissionais: mapped})
+      this.setState({ profissionais: mapped })
     }
   }
 
@@ -97,15 +97,15 @@ export default class Home extends Component {
     if (this.state.feminino === true) {
       let mapped = Database.filter((item) => {
         for (var i = 0; i < item.jobs.length; i++) {
-            if (item.jobs[i] === this.state.profissao){
-                if (this.state.feminino && item.gender==="feminino") return item;
-                if (this.state.masculino && item.gender==="masculino") return item;
-            }
+          if (item.jobs[i] === this.state.profissao) {
+            if (this.state.feminino && item.gender === "feminino" || item.gender === "prefiro não dizer") return item;
+            if (this.state.masculino && item.gender === "masculino" || item.gender === "prefiro não dizer") return item;
+          }
         }
-    }).map ((item)=>{
+      }).map((item) => {
         return item
-    });
-    this.setState({ profissionais: mapped})
+      });
+      this.setState({ profissionais: mapped })
     }
   }
 
@@ -115,10 +115,10 @@ export default class Home extends Component {
       for (var i = 0; i < item.jobs.length; i++) {
         if (item.jobs[i] === this.state.profissao) return item;
       }
-    }).map ((item)=>{
+    }).map((item) => {
       return item
     });
-    this.setState({ profissionais: mapped})
+    this.setState({ profissionais: mapped })
   }
 
   render() {
@@ -196,7 +196,7 @@ export default class Home extends Component {
             </div>
             <div class="workers-settings-text">
               <label class="container">
-                <input id="feminino" type="checkbox" value={true} onChange={this.handleChange.bind(this)}/>
+                <input id="feminino" type="checkbox" value={true} onChange={this.handleChange.bind(this)} />
                 <span class="checkmark"></span>
               </label>
               <label for="checkbox" style={{ marginLeft: "14%", marginBottom: "0%" }}>
@@ -215,7 +215,7 @@ export default class Home extends Component {
           </div>
           <div id="workers-change-color-on-hover" class="column workers-column-profile">
             {/* -------------------------------------------------------------------- */}
-            
+
             {profissionais.map(item =>
               <a href={item.link} class="row workers-row-profile">
                 <div class="column workers-image">
