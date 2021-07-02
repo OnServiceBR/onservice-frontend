@@ -241,3 +241,8 @@
 #claudia {
 	margin-left: 60px;
 }
+
+.emphasize-picture-profissões {
+  object-fit: cover;
+  border-radius: 50%;
+}
