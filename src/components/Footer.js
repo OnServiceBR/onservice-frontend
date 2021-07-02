@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../styles/footer.css";
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 export default class Footer extends Component {
   render(){
@@ -23,9 +24,9 @@ export default class Footer extends Component {
               <div class="col">
                 <label class="footer-title-2">Confira</label>
                 <ul class="social">
-                  <li><a href="https://www.facebook.com/OnServiceOficial"></a></li>
-                  <li><a href="https://www.instagram.com/onserviceoficial/"></a></li>
-                  <li><a href="https://www.linkedin.com/company/onserviceoficial"></a></li>
+                  <li><a href="https://www.facebook.com/OnServiceOficial"><FaFacebook color='white' size='1.8em'/></a></li>
+                  <li><a href="https://www.instagram.com/onserviceoficial/"><FaInstagram color='white' size='1.8em'/></a></li>
+                  <li><a href="https://www.linkedin.com/company/onserviceoficial"> <FaLinkedin color='white' size='1.8em'/></a></li>
                 </ul>
               </div>
             </div>
