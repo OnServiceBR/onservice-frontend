@@ -87,9 +87,9 @@ function Residencial() {
             <Job
               JobName={item.job}
               JobLink={item.link}
-              JobCount={item.count}
               IconGray={item.iconC}
               IconOrange={item.iconL}
+              jobs={jobs}
             />
           )}
         </div>
