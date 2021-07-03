@@ -10,22 +10,6 @@ import "../pages/trabalhos/Saude";
 import "../pages/trabalhos/Tecnologia";
 
 const Job = (props) => {
-  // Set the initial count state to zero, 0
-  const [count, setCount] = useState(0);
-  
-  useEffect(() => {
-    props.jobs.map((trabalhos) => {
-      Database.map(alljobs =>
-        alljobs.jobsRight.map((each) => {
-          if (each === trabalhos.job) {
-            setCount(prevCount => prevCount + 1)
-            console.log(each)
-          }
-        })
-      )
-    })
-  },[])
-
   return (
     <div class="job-link">
       <a href={props.JobLink}>
