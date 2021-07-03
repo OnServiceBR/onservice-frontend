@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from "react";
-import Database from "./Database";
+import React from "react";
 import "../pages/trabalhos/Beleza";
 import "../pages/trabalhos/Ensino";
 import "../pages/trabalhos/Eventos";
@@ -20,7 +19,7 @@ const Job = (props) => {
           </div>
           <div class="column job-textcontainer">
             <p class="job-name">{props.JobName}</p>
-            <p class="job-workers-count">{count} profissionais</p>
+            <p class="job-workers-count">{props.Count} profissionais</p>
           </div>
         </div>
       </a>

@@ -106,7 +106,7 @@ function Beleza() {
               JobLink={item.link}
               IconGray={item.iconC}
               IconOrange={item.iconL}
-              jobs={jobs}
+              Count={item.count}
             />
           )}
         </div>
