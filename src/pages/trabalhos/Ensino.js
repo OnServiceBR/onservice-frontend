@@ -6,12 +6,12 @@ import Job from "../../components/Job";
 
 function Ensino() {
   const jobs = [
-    { job: "Coach", link: "/contrate/ensino/coach", count: "3", iconC: "../assets/icones/CoachC.png", iconL: "../assets/icones/CoachL.png" },
-    { job: "Professor(a) de Educação Física", link: "/contrate/ensino/professor(a)-de-educacao-fisica", count: "4", iconC: "../assets/icones/ProfessorC.png", iconL: "../assets/icones/ProfessorL.png" },
-    { job: "Professor(a) de Francês", link: "/contrate/ensino/professor(a)-de-frances", count: "4", iconC: "../assets/icones/ProfessorC.png", iconL: "../assets/icones/ProfessorL.png" },
-    { job: "Professor(a) de Inglês", link: "/contrate/ensino/professor(a)-de-ingles", count: "5", iconC: "../assets/icones/ProfessorC.png", iconL: "../assets/icones/ProfessorL.png" },
-    { job: "Professor(a) de Programação", link: "/contrate/ensino/professor(a)-de-programacao", count: "6", iconC: "../assets/icones/ProfessorC.png", iconL: "../assets/icones/ProfessorL.png" },
-    { job: "Tradutor(a)", link: "/contrate/ensino/tradutor(a)", count: "7", iconC: "../assets/icones/TradutorC.png", iconL: "../assets/icones/TradutorL.png" },
+    { job: "Coach", link: "/contrate/ensino/coach", count: "1", iconC: "../assets/icones/CoachC.png", iconL: "../assets/icones/CoachL.png" },
+    { job: "Professor(a) de Educação Física", link: "/contrate/ensino/professor(a)-de-educacao-fisica", count: "1", iconC: "../assets/icones/ProfessorC.png", iconL: "../assets/icones/ProfessorL.png" },
+    // { job: "Professor(a) de Francês", link: "/contrate/ensino/professor(a)-de-frances", count: "0", iconC: "../assets/icones/ProfessorC.png", iconL: "../assets/icones/ProfessorL.png" },
+    { job: "Professor(a) de Inglês", link: "/contrate/ensino/professor(a)-de-ingles", count: "1", iconC: "../assets/icones/ProfessorC.png", iconL: "../assets/icones/ProfessorL.png" },
+    { job: "Professor(a) de Programação", link: "/contrate/ensino/professor(a)-de-programacao", count: "1", iconC: "../assets/icones/ProfessorC.png", iconL: "../assets/icones/ProfessorL.png" },
+    { job: "Tradutor(a)", link: "/contrate/ensino/tradutor(a)", count: "1", iconC: "../assets/icones/TradutorC.png", iconL: "../assets/icones/TradutorL.png" },
   ]
 
   const [alphabet, setAlphabet] = useState([])

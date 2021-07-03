@@ -7,11 +7,11 @@ import Job from "../../components/Job";
 function Beleza() {
 
   const jobs = [
-    { job: "Barbeiro(a)", link: "/contrate/beleza/barbeiro(a)", count: "3", iconC: "../../assets/icones/BarbeiroC.png", iconL: "../../assets/icones/BarbeiroL.png" },
-    { job: "Cabeleireiro(a)", link: "/contrate/beleza/cabeleireiro(a)", count: "4", iconC: "../../assets/icones/CabeleireiroC.png", iconL: "../../assets/icones/CabeleireiroL.png" },
-    { job: "Esteticista", link: "/contrate/beleza/esteticista", count: "5", iconC: "../../assets/icones/EsteticistaC.png", iconL: "../../assets/icones/EsteticistaL.png" },
-    { job: "Maquiador(a)", link: "/contrate/beleza/maquiador(a)", count: "5", iconC: "../../assets/icones/MaquiadorC.png", iconL: "../../assets/icones/MaquiadorL.png" },
-    { job: "Micropigmentador(a)", link: "/contrate/beleza/micropigmentador(a)", count: "6", iconC: "../../assets/icones/MicropigmentadorC.png", iconL: "../../assets/icones/MicropigmentadorL.png" },
+    // { job: "Barbeiro(a)", link: "/contrate/beleza/barbeiro(a)", count: "0", iconC: "../../assets/icones/BarbeiroC.png", iconL: "../../assets/icones/BarbeiroL.png" },
+    { job: "Cabeleireiro(a)", link: "/contrate/beleza/cabeleireiro(a)", count: "1", iconC: "../../assets/icones/CabeleireiroC.png", iconL: "../../assets/icones/CabeleireiroL.png" },
+    { job: "Esteticista", link: "/contrate/beleza/esteticista", count: "1", iconC: "../../assets/icones/EsteticistaC.png", iconL: "../../assets/icones/EsteticistaL.png" },
+    // { job: "Maquiador(a)", link: "/contrate/beleza/maquiador(a)", count: "0", iconC: "../../assets/icones/MaquiadorC.png", iconL: "../../assets/icones/MaquiadorL.png" },
+    { job: "Micropigmentador(a)", link: "/contrate/beleza/micropigmentador(a)", count: "1", iconC: "../../assets/icones/MicropigmentadorC.png", iconL: "../../assets/icones/MicropigmentadorL.png" },
   ]
 
   const [alphabet, setAlphabet] = useState([])
@@ -26,6 +26,19 @@ function Beleza() {
         setAlphabet(alphabet => [...alphabet, jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "")])
       }
     }
+    // Tentar fazer o contador no futuro usando Array ou outro jeito
+    // for ( let i = 0; i < jobs.length; i++) {
+    //         Database.map((alljobs) => 
+    //     alljobs.jobsRight.map((eachjob) => {
+    //       if (eachjob === jobs[i].job) {
+    //         setCount(prevCount => prevCount + 1)
+    //       }
+    //     })
+    //   )
+    //   let obj = JSON.parse(jobs[i])
+    //   obj.count = count
+    //   setCount (0)
+    // }
   }, [])
 
   return (
