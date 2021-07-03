@@ -9,7 +9,7 @@ function Eventos() {
     { job: "Animador(a) de Festas", link: "/contrate/eventos/animador(a)-de-festas", count: "3", iconC: "../assets/icones/AnimadordeFestaC.png", iconL: "../assets/icones/AnimadordeFestaL.png" },
     { job: "Bartender", link: "/contrate/eventos/bartender", count: "4", iconC: "../assets/icones/BartenderC.png", iconL: "../assets/icones/BartenderL.png" },
     { job: "Fotógrafo(a)", link: "/contrate/eventos/fotografo(a)", count: "6", iconC: "../assets/icones/FotografoC.png", iconL: "../assets/icones/FotografoL.png" },
-    { job: "Garçom/Garçonete", link: "/contrate/eventos/garcom(garconete)", count: "5", iconC: "../assets/icones/GarcomC.png", iconL: "../assets/icones/GarcomL.png" },
+    { job: "Garçom(Garçonete)", link: "/contrate/eventos/garcom(garconete)", count: "5", iconC: "../assets/icones/GarcomC.png", iconL: "../assets/icones/GarcomL.png" },
     { job: "Organizador(a) de Eventos", link: "/contrate/eventos/organizador(a)-de-eventos", count: "7", iconC: "../assets/icones/OrganizadordeEventosC.png", iconL: "../assets/icones/OrganizadordeEventosL.png" },
     { job: "Recepcionista", link: "/contrate/eventos/recepcionista", count: "5", iconC: "../assets/icones/RecepcionistaC.png", iconL: "../assets/icones/RecepcionistaL.png" },
   ]
