@@ -56,7 +56,7 @@ function Beleza() {
         </form>
       </div>
       <div class="search-tabs">
-        <a href="javascript:history.back()">
+        <a href="/contrate">
           <label id="trabalhos-category-label" class="link-bar-label">Categorias</label>
         </a>
         <label id="trabalhos-service-label">Serviços</label>

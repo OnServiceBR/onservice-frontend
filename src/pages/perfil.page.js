@@ -19,7 +19,9 @@ export default class Perfil extends Component {
       ensino: [],
       eventos: [],
       w2w: "",
+      categoriaCode: this.props.match.params.job, // Não alterar, serve para o html
       categoria: this.props.match.params.job,
+      profissaoCode: this.props.match.params.workers, // Não alterar, serve para o html
       profissao: this.props.match.params.workers,
       idperfil: this.props.match.params.idperfil,
 
@@ -63,7 +65,7 @@ export default class Perfil extends Component {
   }
 
   sendErrorAlertPerfil = () => {
-    const { profissao, idperfil } = this.state;
+    const { profissao, idperfil, profissaoCode } = this.state;
     <div>
       {Database.filter((item) => {
         if (item.id === idperfil) return item;
@@ -89,7 +91,7 @@ export default class Perfil extends Component {
             switch (value) {
 
               case "whatsapp":
-                window.open(`https://api.whatsapp.com/send?phone=${item.phone}&text=Ol%C3%A1%20${item.name}%2C%20encontrei%20seu%20perfil%20na%20OnService.%20Tenho%20interesse%20em%20seu%20servi%C3%A7o%20de%20${profissao}%2C%20voc%C3%AA%20poderia%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F`, `_blank`);
+                window.open(`https://api.whatsapp.com/send?phone=${item.phone}&text=Ol%C3%A1%20${item.name}%2C%20encontrei%20seu%20perfil%20na%20OnService.%20Tenho%20interesse%20em%20seu%20servi%C3%A7o%20de%20${profissaoCode}%2C%20voc%C3%AA%20poderia%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F`, `_blank`);
                 break;
               default:
                 break;
@@ -104,16 +106,73 @@ export default class Perfil extends Component {
   }
 
   render() {
+    var { idperfil, categoria, profissao, categoriaCode, profissaoCode } = this.state;
 
-    const { idperfil, categoria, profissao } = this.state;
+    // Correção gramatical das categorias
+    if (categoria === "manutencao") {
+      categoria = "manutenção"
+    }
+    else if (categoria === "saude") {
+      categoria = "saúde"
+    }
 
+    // Correção gramatical das profissões
+    if (profissao === "artesa(o)") {
+      profissao = "Artesã(o)"
+    }
+    else if (profissao === "assistente-tecnico(a)") {
+      profissao = "Assistente Técnico(a)"
+    }
+    else if (profissao === "designer-grafico") {
+      profissao = "Designer Gráfico"
+    }
+    else if (profissao === "editor(a)-de-videos") {
+      profissao = "Editor(a) de Vídeos"
+    }
+    else if (profissao === "especialista-em-midias") {
+      profissao = "Especialista em Mídias"
+    }
+    else if (profissao === "fotografo(a)") {
+      profissao = "Fotógrafo(a)"
+    }
+    else if (profissao === "fretes-e-mudancas") {
+      profissao = "Fretes e Mudanças"
+    }
+    else if (profissao === "garcom(garconete)") {
+      profissao = "Garçom(Garçonete)"
+    }
+    else if (profissao === "manutencao-de-pabx") {
+      profissao = "Manutenção de PABX"
+    }
+    else if (profissao === "montador(a)-de-moveis") {
+      profissao = "Montador(a) de Móveis"
+    }
+    else if (profissao === "passeador(a)-de-caes") {
+      profissao = "Passeador(a) de cães"
+    }
+    else if (profissao === "professor(a)-de-educacao-fisica") {
+      profissao = "Professor(a) de Educação Física"
+    }
+    else if (profissao === "professor(a)-de-ingles") {
+      profissao = "Professor(a) de Inglês"
+    }
+    else if (profissao === "professor(a)-de-programacao") {
+      profissao = "Professor(a) de Programação"
+    }
+    else if (profissao === "psicologo(a)") {
+      profissao = "Psicólogo(a)"
+    }
+    else if (profissao === "publicitario(a)") {
+      profissao = "Publicitário(a)"
+    }
+    
     return (
       <div>
         {Database.filter((item) => {
           if (item.id === idperfil) return item;
         }).map(item =>
           <div>
-            <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoria}`}>{categoria}</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoria}/${profissao}`}>{profissao}</a><h2 class="path"> &gt; </h2><h2 class="path-actual-name">{item.name}</h2>
+            <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}`}>{categoria}</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}/${profissaoCode}`}>{profissao}</a><h2 class="path"> &gt; </h2><h2 class="path-actual-name">{item.name}</h2>
             <div class="row row-information-center">
               <div class="column column-perfilimage">
                 <div class="row row-perfilimage">

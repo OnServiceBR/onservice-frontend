@@ -15,7 +15,9 @@ export default class Home extends Component {
       manutencao: [],
       ensino: [],
       eventos: [],
+      categoriaCode: this.props.match.params.job, // Não alterar, serve para o atalho "Serviços" e html
       categoria: this.props.match.params.job,
+      profissaoCode: this.props.match.params.workers, // Não alterar, serve para o html
       profissao: this.props.match.params.workers,
       w2w: "",
       profissionais: [],
@@ -64,7 +66,7 @@ export default class Home extends Component {
   sortAZ() {
     let mapped = Database.filter((item) => {
       for (var i = 0; i < item.jobs.length; i++) {
-        if (item.jobs[i] === this.state.profissao){
+        if (item.jobs[i] === this.state.profissaoCode){
           if(this.state.options.includes(item.gender))
             return item
         }
@@ -81,7 +83,7 @@ export default class Home extends Component {
   sortDestaque() {
     let mapped = Database.filter((item) => {
       for (var i = 0; i < item.jobs.length; i++) {
-        if (item.jobs[i] === this.state.profissao) return item;
+        if (item.jobs[i] === this.state.profissaoCode) return item;
       }
     }).map ((item)=>{
       return item
@@ -135,7 +137,7 @@ export default class Home extends Component {
     console.log(this.props.match.params)
     let mapped = Database.filter((item) => {
       for (var i = 0; i < item.jobs.length; i++) {
-        if (item.jobs[i] === this.state.profissao) return item;
+        if (item.jobs[i] === this.state.profissaoCode) return item;
       }
     }).map((item) => {
       return item
@@ -144,10 +146,69 @@ export default class Home extends Component {
   }
 
   render() {
-    const { categoria, profissao, profissionais } = this.state;
+    var { categoria, profissao, profissionais, categoriaCode, profissaoCode } = this.state;
+    
+    // Correção gramatical das categorias
+    if (categoria === "manutencao") {
+      categoria = "manutenção"
+    }
+    else if (categoria === "saude") {
+      categoria = "saúde"
+    }
+    
+    // Correção gramatical das profissões
+    if (profissao === "artesa(o)") {
+      profissao = "Artesã(o)"
+    }
+    else if (profissao === "assistente-tecnico(a)") {
+      profissao = "Assistente Técnico(a)"
+    }
+    else if (profissao === "designer-grafico") {
+      profissao = "Designer Gráfico"
+    }
+    else if (profissao === "editor(a)-de-videos") {
+      profissao = "Editor(a) de Vídeos"
+    }
+    else if (profissao === "especialista-em-midias") {
+      profissao = "Especialista em Mídias"
+    }
+    else if (profissao === "fotografo(a)") {
+      profissao = "Fotógrafo(a)"
+    }
+    else if (profissao === "fretes-e-mudancas") {
+      profissao = "Fretes e Mudanças"
+    }
+    else if (profissao === "garcom(garconete)") {
+      profissao = "Garçom(Garçonete)"
+    }
+    else if (profissao === "manutencao-de-pabx") {
+      profissao = "Manutenção de PABX"
+    }
+    else if (profissao === "montador(a)-de-moveis") {
+      profissao = "Montador(a) de Móveis"
+    }
+    else if (profissao === "passeador(a)-de-caes") {
+      profissao = "Passeador(a) de cães"
+    }
+    else if (profissao === "professor(a)-de-educacao-fisica") {
+      profissao = "Professor(a) de Educação Física"
+    }
+    else if (profissao === "professor(a)-de-ingles") {
+      profissao = "Professor(a) de Inglês"
+    }
+    else if (profissao === "professor(a)-de-programacao") {
+      profissao = "Professor(a) de Programação"
+    }
+    else if (profissao === "psicologo(a)") {
+      profissao = "Psicólogo(a)"
+    }
+    else if (profissao === "publicitario(a)") {
+      profissao = "Publicitário(a)"
+    }
+
     return (
       <div>
-        <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoria}`}>{categoria}</a><h2 class="path"> &gt; </h2><h2 class="path-actual">{profissao}</h2>
+        <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}`}>{categoria}</a><h2 class="path"> &gt; </h2><h2 class="path-actual">{profissao}</h2>
         <div class="search-box">
           <form method="get" action="/contrate">
             <div id="search-contrate">
@@ -163,7 +224,7 @@ export default class Home extends Component {
           <a href="/contrate">
             <label id="profissionais-category-label" class="link-bar-label">Categorias</label>
           </a>
-          <a href="javascript:history.back()">
+          <a href={`/contrate/${categoriaCode}`}>
             <label id="profissionais-service-label" class="link-bar-label">Serviços</label>
           </a>
           <label id="profissionais-job-label">Profissionais</label>
@@ -233,7 +294,7 @@ export default class Home extends Component {
           </div>
           <div id="workers-change-color-on-hover" class="column workers-column-profile">
             {profissionais.map(item =>
-              <a href={`/contrate/${categoria}/${profissao}/${item.id}`} class="row workers-row-profile">
+              <a href={`/contrate/${categoriaCode}/${profissaoCode}/${item.id}`} class="row workers-row-profile">
                 <div class="column workers-image">
                   <img alt="" src={item.picture} class="workers-picture-profissões" />
                 </div>
