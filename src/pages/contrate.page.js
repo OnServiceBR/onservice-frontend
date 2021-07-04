@@ -14,16 +14,15 @@ export default class Home extends Component {
       <div>
         <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><h2 class="path-actual">Contrate um serviço</h2>
         <div class="search-box">
-          <form method="get" action="/contrate">
+          {/* <form method="get" action="/contrate">
             <div id="search-contrate">
-              {/* Icone de busca */}
               <input id="search-input-contrate" placeholder="Buscar por um profissional"/>
               <FaSearch id="search-lupe"/>
             </div>
             <button id="search-button-contrate" type="submit">
               Buscar
             </button>
-          </form>
+          </form> */}
         </div>
         <div class="search-tabs">
           <label id="contrate-category-label">Categorias</label>

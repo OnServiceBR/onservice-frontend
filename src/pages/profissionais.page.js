@@ -210,7 +210,7 @@ export default class Home extends Component {
       <div>
         <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}`}>{categoria}</a><h2 class="path"> &gt; </h2><h2 class="path-actual">{profissao}</h2>
         <div class="search-box">
-          <form method="get" action="/contrate">
+          {/* <form method="get" action="/contrate">
             <div id="search-contrate">
               <input id="search-input-contrate" placeholder="Buscar por um profissional" />
               <FaSearch id="search-lupe" />
@@ -218,7 +218,7 @@ export default class Home extends Component {
             <button id="search-button-contrate" type="submit">
               Buscar
             </button>
-          </form>
+          </form> */}
         </div>
         <div class="search-tabs">
           <a href="/contrate">
