@@ -26,7 +26,7 @@ function ComoUtilizaroSite() {
                     </div>
                     <div class="row row-video-howtouse">
                         <iframe id="player" type="text/html" width="400" height="225"
-                            src="https://www.youtube.com/embed/DBiNucJ64F8"
+                            src="https://www.youtube.com/embed/CfYZsw0ldvQ"
                             frameborder="0">
                         </iframe>
                     </div>
@@ -44,7 +44,7 @@ function ComoUtilizaroSite() {
                     </div>
                     <div class="row row-video-howtouse">
                         <iframe id="player" type="text/html" width="400" height="225"
-                            src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
+                            src="https://www.youtube.com/embed/VgyWc0xpwZU"
                             frameborder="0">
                         </iframe>
                     </div>
@@ -67,11 +67,11 @@ function ComoUtilizaroSite() {
                         </iframe>
                     </div>
                     <div class="row row-subtitle-howtouse">
-                        <h2 class="topic-big-howtouse">7. <span class="topic-small-howtouse">Onde ler os termos e condições de uso do site</span></h2>
+                        <h2 class="topic-big-howtouse">7. <span class="topic-small-howtouse">Onde encontrar as informações do site</span></h2>
                     </div>
                     <div class="row row-video-howtouse">
                         <iframe id="player" type="text/html" width="400" height="225"
-                            src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
+                            src="https://www.youtube.com/embed/se4NDgXdzfc"
                             frameborder="0">
                         </iframe>
                     </div>
@@ -80,7 +80,7 @@ function ComoUtilizaroSite() {
                     </div>
                     <div class="row row-video-howtouse">
                         <iframe id="player" type="text/html" width="400" height="225"
-                            src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
+                            src="https://www.youtube.com/embed/G7oG5-yUq60"
                             frameborder="0">
                         </iframe>
                     </div>
@@ -91,11 +91,11 @@ function ComoUtilizaroSite() {
                         <h2 class="titlerow-howtouse">Tutoriais para <span style={{ color: "rgb(237,125,49)" }}>Profissional</span></h2>
                     </div>
                     <div class="row row-subtitle-howtouse">
-                        <h2 class="topic-big-howtouse">1. <span class="topic-small-howtouse">Como criar uma conta no site</span></h2>
+                        <h2 class="topic-big-howtouse">1. <span class="topic-small-howtouse">Como anunciar seu serviço</span></h2>
                     </div>
                     <div class="row row-video-howtouse">
                         <iframe id="player" type="text/html" width="400" height="225"
-                            src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
+                            src="https://www.youtube.com/embed/kz8JUhrKhf8"
                             frameborder="0">
                         </iframe>
                     </div>
@@ -149,7 +149,7 @@ function ComoUtilizaroSite() {
                     </div>
                     <div class="row row-video-howtouse">
                         <iframe id="player" type="text/html" width="400" height="225"
-                            src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
+                            src="https://www.youtube.com/embed/se4NDgXdzfc"
                             frameborder="0">
                         </iframe>
                     </div>
@@ -158,7 +158,7 @@ function ComoUtilizaroSite() {
                     </div>
                     <div class="row row-video-howtouse">
                         <iframe id="player" type="text/html" width="400" height="225"
-                            src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
+                            src="https://www.youtube.com/embed/G7oG5-yUq60"
                             frameborder="0">
                         </iframe>
                     </div>
