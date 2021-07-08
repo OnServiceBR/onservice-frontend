@@ -7,10 +7,10 @@ import Job from "../../components/Job";
 function Ensino() {
   const jobs = [
     { job: "Coach", link: "/contrate/ensino/coach", count: "1", iconC: "../assets/icones/CoachC.png", iconL: "../assets/icones/CoachL.png" },
-    { job: "Professor(a) de Educação Física", link: "/contrate/ensino/professor(a)-de-educacao-fisica", count: "1", iconC: "../assets/icones/ProfessorC.png", iconL: "../assets/icones/ProfessorL.png" },
+    { job: "Professor(a) de Educação Física", link: "/contrate/ensino/professor(a)-de-educacao-fisica", count: "1", iconC: "../assets/icones/ProfessordeEducacaoFisicaC.png", iconL: "../assets/icones/ProfessordeEducacaoFisicaL.png" },
     // { job: "Professor(a) de Francês", link: "/contrate/ensino/professor(a)-de-frances", count: "0", iconC: "../assets/icones/ProfessorC.png", iconL: "../assets/icones/ProfessorL.png" },
-    { job: "Professor(a) de Inglês", link: "/contrate/ensino/professor(a)-de-ingles", count: "1", iconC: "../assets/icones/ProfessorC.png", iconL: "../assets/icones/ProfessorL.png" },
-    { job: "Professor(a) de Programação", link: "/contrate/ensino/professor(a)-de-programacao", count: "1", iconC: "../assets/icones/ProfessorC.png", iconL: "../assets/icones/ProfessorL.png" },
+    { job: "Professor(a) de Inglês", link: "/contrate/ensino/professor(a)-de-ingles", count: "1", iconC: "../assets/icones/ProfessordeInglesC.png", iconL: "../assets/icones/ProfessordeInglesL.png" },
+    { job: "Professor(a) de Programação", link: "/contrate/ensino/professor(a)-de-programacao", count: "1", iconC: "../assets/icones/ProfessordeProgramacaoC.png", iconL: "../assets/icones/ProfessordeProgramacaoL.png" },
     { job: "Tradutor(a)", link: "/contrate/ensino/tradutor(a)", count: "1", iconC: "../assets/icones/TradutorC.png", iconL: "../assets/icones/TradutorL.png" },
   ]
 
