@@ -6,6 +6,7 @@ import CidadeDataService from "../services/cidade.service";
 import ServicoDataService from "../services/servico.service";
 import Anuncieimagem from "../assets/Slide5.PNG";
 import LogoOnservice from "../assets/LogoSimboloLaranja.png";
+import { BiErrorCircle } from 'react-icons/bi';
 
 import "../styles/anuncie.css";
 import { Multiselect } from 'multiselect-react-dropdown';
@@ -186,7 +187,27 @@ export default class Home extends Component {
       content: (
         <div>
           <img src={LogoOnservice} width="90px" alt="SwalRegister" />
+          <BiErrorCircle id="erroriconregister" />
           <h3 class="swal-title--register">Ops, algo deu errado...</h3>
+          <p class="swal-text--register">
+            {msg}
+          </p>
+        </div>
+      )
+    })
+  }
+
+  sendSucessAlert = (msg) => {
+    swal({
+      className: "swal-dimensions--register",
+      button: {
+        className: "button-alert",
+      },
+      content: (
+        <div>
+          <img src={LogoOnservice} width="90px" alt="SwalRegister" />
+          <BiErrorCircle id="erroriconregister" />
+          <h3 class="swal-title--register">Concluído!</h3>
           <p class="swal-text--register">
             {msg}
           </p>
@@ -401,11 +422,11 @@ export default class Home extends Component {
 
                 submitted: true
               });
-              swal("Concluído", "Sua inscrição foi enviada, você deve ser aprovado em breve!", "success");
+              this.sendSucessAlert("Sua inscrição foi enviada, você deve ser aprovado em breve!");
               this.newPrestador();
             })
             .catch(e => {
-              swal("Ops, algo deu errado...", "Talvez nosso sistema esteja fora do ar, tente novamente mais tarde!", "error");
+              this.sendErrorAlert("Talvez nosso sistema esteja fora do ar, tente novamente mais tarde!");
               console.log(e);
             });
         })

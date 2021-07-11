@@ -115,7 +115,7 @@ function Contato() {
       content: (
         <div>
           <img src={LogoOnservice} width="90px" alt="SwalContact" />
-          <BiErrorCircle id="erroricon" width="200px" />
+          <BiErrorCircle id="erroricon" />
           <h3 class="swal-title--contact">{header}</h3>
           <p class="swal-text--contact">
             {msg}
