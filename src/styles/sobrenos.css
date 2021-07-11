@@ -1,5 +1,5 @@
 .title-sobrenos {
-    font-size: 16pt;
+    font-size: 24pt;
     color: rgb(237, 125, 49);
     margin-left: auto;
 	margin-right: auto;
@@ -12,7 +12,7 @@
 	margin-right: auto;
 	text-align: left;
 	font-family: GlacialIndifference;
-    font-size: 10pt;
+    font-size: 12pt;
     color: rgb(64, 64, 64);
 }
 .subtitle-sobrenos {
@@ -21,7 +21,7 @@
 	text-align: left;
     font-weight: bold;
 	font-family: GlacialIndifference;
-    font-size: 10pt;
+    font-size: 14pt;
     color: rgb(237, 125, 49);
     text-decoration-line: underline; 
 }
@@ -30,7 +30,7 @@
 	margin-right: auto;
 	text-align: left;
 	font-family: GlacialIndifference;
-    font-size: 12pt;
+    font-size: 14pt;
     font-weight: bold;
     color: rgb(64, 64, 64);
 }

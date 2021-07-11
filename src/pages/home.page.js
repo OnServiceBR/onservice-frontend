@@ -86,7 +86,7 @@ export default class Home extends Component {
               </div>
               <form method="get" action="/anuncie">
                 <button id="button3-register-home">
-                  Cadastre-se na OnService Grátis
+                  Cadastre-se de Graça na OnService
                   <FaMousePointer id="mouse-pointer" />
                 </button>
               </form>

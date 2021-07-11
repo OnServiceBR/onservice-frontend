@@ -19,7 +19,7 @@ export default class Footer extends Component {
                 <label class="footer-title">OnService</label><br />
                 <label class="footer-content"><a href="/sobre-nos">Sobre a OnService</a></label><br />
                 <label class="footer-content"><a href="/contato">Fale conosco</a></label><br />
-                <label class="footer-content"><a href= "/anunciantes">Anuncie com a gente</a></label><br />
+                <label class="footer-content"><a href= "/anunciantes">Divulgue sua marca</a></label><br />
               </div>
               <div class="col">
                 <label class="footer-title-2">Confira</label>

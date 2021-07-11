@@ -23,7 +23,7 @@ function Anunciantes() {
                     <div class="row row-text-side-ad">
                         <p>
                             <span style={{color:"rgb(237,125,49)"}}>Mínimo</span> de<br/>
-                            <span style={{color:"rgb(237,125,49)"}}>150 pessoas</span><br/>
+                            <span style={{color:"rgb(237,125,49)"}}>500 pessoas</span><br/>
                             vendo o seu<br/>
                             anúncio<br/>
                         </p>
@@ -37,7 +37,7 @@ function Anunciantes() {
                         <p>
                             Possibilidade<br/>
                             de mais de<br/>
-                            <span style={{color:"rgb(237,125,49)"}}>mil pessoas</span><br/>
+                            <span style={{color:"rgb(237,125,49)"}}>5.000 pessoas</span><br/>
                             por <span style={{color:"rgb(237,125,49)"}}>mês</span><br/>
                         </p>
                     </div>
@@ -52,10 +52,10 @@ function Anunciantes() {
                     <div class="row row-text-side-ad">
                         <p>
                             Jovens de<br/>
-                            <span style={{color:"rgb(237,125,49)"}}>18</span> a <span style={{color:"rgb(237,125,49)"}}>24 anos</span><br/>
+                            <span style={{color:"rgb(237,125,49)"}}>18</span> a <span style={{color:"rgb(237,125,49)"}}>35 anos</span><br/>
                             <br/>
                             Profissionais de<br/>
-                            <span style={{color:"rgb(237,125,49)"}}>35</span> a <span style={{color:"rgb(237,125,49)"}}>65 anos</span><br/>
+                            <span style={{color:"rgb(237,125,49)"}}>20</span> a <span style={{color:"rgb(237,125,49)"}}>60 anos</span><br/>
                         </p>
                     </div>
                 </div>
@@ -65,10 +65,11 @@ function Anunciantes() {
                     </div>
                     <div class="row row-text-side-ad">
                         <p>
-                            Possibilidade<br/>
-                            de mais de<br/>
-                            <span style={{color:"rgb(237,125,49)"}}>mil pessoas</span><br/>
-                            por <span style={{color:"rgb(237,125,49)"}}>mês</span><br/>
+                            Vincule sua<br/>
+                            marca à<br/>
+                            <span style={{color:"rgb(237,125,49)"}}>OnService</span><br/>
+                            pelo tempo <br/>
+                            <span style={{color:"rgb(237,125,49)"}}>que quiser</span><br/>
                         </p>
                     </div>
                 </div>
