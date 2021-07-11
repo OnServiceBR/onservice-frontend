@@ -6,6 +6,7 @@ import Contatoimagem from "../assets/Slide2.PNG"
 import LogoOnservice from "../assets/LogoSimboloLaranja.png";
 import swal from '@sweetalert/with-react'
 import { Multiselect } from 'multiselect-react-dropdown';
+import { BiErrorCircle } from 'react-icons/bi';
 
 const SITE_KEY = "6Ldo9loaAAAAADMRNqgi69nefNZrZfluNekE9YJQ";
 
@@ -105,24 +106,44 @@ function Contato() {
     })
   }
 
+  const sendAlertError = (header, msg) => {
+    swal({
+      className: "swal-dimensions--contact",
+      button: {
+        className: "button-alert",
+      },
+      content: (
+        <div>
+          <img src={LogoOnservice} width="90px" alt="SwalContact" />
+          <BiErrorCircle id="erroricon" width="200px" />
+          <h3 class="swal-title--contact">{header}</h3>
+          <p class="swal-text--contact">
+            {msg}
+          </p>
+          <div class="swal-footer--contact"></div>
+        </div>
+      )
+    })
+  }
+
   const submitData = token => {
     if (name === "") {
-      sendAlert("Ops, algo deu errado...", "O campo do nome não pode estar vazio!", "error")
+      sendAlertError("Ops, algo deu errado...", "O campo do nome não pode estar vazio!", "error")
       setLoading(false);
       return
     }
     if (email === "") {
-      sendAlert("Ops, algo deu errado...", "O campo do e-mail não pode estar vazio!", "error")
+      sendAlertError("Ops, algo deu errado...", "O campo do e-mail não pode estar vazio!", "error")
       setLoading(false);
       return
     }
     if (subject === "") {
-      sendAlert("Ops, algo deu errado...", "O campo do assunto não pode estar vazio!", "error")
+      sendAlertError("Ops, algo deu errado...", "O campo do assunto não pode estar vazio!", "error")
       setLoading(false);
       return
     }
     if (message === "") {
-      sendAlert("Ops, algo deu errado...", "O campo da mensagem não pode estar vazio!", "error")
+      sendAlertError("Ops, algo deu errado...", "O campo da mensagem não pode estar vazio!", "error")
       setLoading(false);
       return
     }
@@ -154,7 +175,7 @@ function Contato() {
               setMessage("");
               sendAlert("Concluído", "Sua mensagem foi enviada, em breve entraremos em contato com você!", "success")
             }).catch(err => {
-              sendAlert("Ops, algo deu errado...", "Nosso sistema pode estar fora do ar, tente novamente mais tarde!", "error")
+              sendAlertError("Ops, algo deu errado...", "Nosso sistema pode estar fora do ar, tente novamente mais tarde!", "error")
               console.log(err);
             })
         } else {
