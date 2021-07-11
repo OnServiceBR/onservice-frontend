@@ -23,7 +23,7 @@ export default class Home extends Component {
       profissionais: [],
       sortType: 'Destaque',
       options: ['masculino', 'feminino'],
-    
+
       DropdownOrder: [
         { name: 'Destaque', id: "destaque" },
         { name: 'Avaliação', id: "avaliação" },
@@ -66,18 +66,18 @@ export default class Home extends Component {
   sortAZ() {
     let mapped = Database.filter((item) => {
       for (var i = 0; i < item.jobs.length; i++) {
-        if (item.jobs[i] === this.state.profissaoCode){
-          if(this.state.options.includes(item.gender))
+        if (item.jobs[i] === this.state.profissaoCode) {
+          if (this.state.options.includes(item.gender))
             return item
         }
       }
-    }).map ((item)=>{
+    }).map((item) => {
       return item
     });
-    mapped.sort (function (a, b) {
+    mapped.sort(function (a, b) {
       return a.name.localeCompare(b.name);
     })
-    this.setState({ profissionais: mapped})
+    this.setState({ profissionais: mapped })
   }
 
   sortDestaque() {
@@ -85,18 +85,18 @@ export default class Home extends Component {
       for (var i = 0; i < item.jobs.length; i++) {
         if (item.jobs[i] === this.state.profissaoCode) return item;
       }
-    }).map ((item)=>{
+    }).map((item) => {
       return item
     });
-    this.setState({ profissionais: mapped})
+    this.setState({ profissionais: mapped })
   }
 
   onSelect(selectedList, selectedItem) {
-    if (selectedItem.id === "a-z"){
-      this.setState({sortType: 'a-z'})
+    if (selectedItem.id === "a-z") {
+      this.setState({ sortType: 'a-z' })
       this.sortAZ()
     }
-    else if (selectedItem.id === "destaque"){
+    else if (selectedItem.id === "destaque") {
       this.sortDestaque()
     }
   }
@@ -106,26 +106,26 @@ export default class Home extends Component {
     console.log(event)
     console.log(this.state.options)
     if (field === "feminino") {
-      if (event.target.checked){
-        this.setState({options: [...this.state.options, "feminino"]}, () => {
+      if (event.target.checked) {
+        this.setState({ options: [...this.state.options, "feminino"] }, () => {
           this.sortAZ()
           console.log(this.state.options)
         })
-      }else{
+      } else {
         let index = this.state.options.indexOf("feminino");
-        this.setState({options: [...this.state.options]}, () => {
+        this.setState({ options: [...this.state.options] }, () => {
           this.state.options.splice(index, 1)
           this.sortAZ()
         })
       }
-    }else if(field === "masculino"){
-      if (event.target.checked){
-        this.setState({options: [...this.state.options, "masculino"]}, () => {
+    } else if (field === "masculino") {
+      if (event.target.checked) {
+        this.setState({ options: [...this.state.options, "masculino"] }, () => {
           this.sortAZ()
         })
-      }else{
+      } else {
         let index = this.state.options.indexOf("masculino");
-        this.setState({options: [...this.state.options]}, () => {
+        this.setState({ options: [...this.state.options] }, () => {
           this.state.options.splice(index, 1)
           this.sortAZ()
         })
@@ -142,12 +142,12 @@ export default class Home extends Component {
     }).map((item) => {
       return item
     });
-    this.setState({profissionais: mapped})
+    this.setState({ profissionais: mapped })
   }
 
   render() {
     var { categoria, profissao, profissionais, categoriaCode, profissaoCode } = this.state;
-    
+
     // Correção gramatical das categorias
     if (categoria === "manutencao") {
       categoria = "manutenção"
@@ -155,7 +155,7 @@ export default class Home extends Component {
     else if (categoria === "saude") {
       categoria = "saúde"
     }
-    
+
     // Correção gramatical das profissões
     if (profissao === "artesa(o)") {
       profissao = "Artesã(o)"
@@ -204,6 +204,9 @@ export default class Home extends Component {
     }
     else if (profissao === "publicitario(a)") {
       profissao = "Publicitário(a)"
+    }
+    else if (profissao === "personal-trainer") {
+      profissao = "Personal Trainer"
     }
 
     return (
@@ -275,7 +278,7 @@ export default class Home extends Component {
             </div>
             <div class="workers-settings-text">
               <label class="container">
-                <input id="feminino" type="checkbox" defaultChecked onChange={this.handleChange.bind(this)}/>
+                <input id="feminino" type="checkbox" defaultChecked onChange={this.handleChange.bind(this)} />
                 <span class="checkmark"></span>
               </label>
               <label for="checkbox" style={{ marginLeft: "14%", marginBottom: "0%" }}>
@@ -284,7 +287,7 @@ export default class Home extends Component {
             </div>
             <div class="workers-settings-text">
               <label class="container">
-                <input id="masculino" type="checkbox" defaultChecked onChange={this.handleChange.bind(this)}/>
+                <input id="masculino" type="checkbox" defaultChecked onChange={this.handleChange.bind(this)} />
                 <span class="checkmark"></span>
               </label>
               <label for="checkbox" style={{ marginLeft: "14%", marginBottom: "0%" }}>

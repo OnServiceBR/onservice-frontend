@@ -9,7 +9,7 @@ function Tecnologia() {
     // { job: "Analista de Sistemas", link: "/contrate/tecnologia/analista-de-sistemas/", count: "0", iconC: "../assets/icones/AnalistadeSistemasC.png", iconL: "../assets/icones/AnalistadeSistemasL.png" },
     { job: "Assistente Técnico(a)", link: "/contrate/tecnologia/assistente-tecnico(a)/", count: "1", iconC: "../assets/icones/AssistenteTecnicoC.png", iconL: "../assets/icones/AssistenteTecnicoL.png" },
     { job: "Consultor(a) de Marketing Digital", link: "/contrate/tecnologia/consultor(a)-de-marketing-digital/", count: "1", iconC: "../assets/icones/ConsultordeMarketingDigitalC.png", iconL: "../assets/icones/ConsultordeMarketingDigitalL.png" },
-    // { job: "Designer Gráfico", link: "/contrate/tecnologia/designer-grafico/", count: "0", iconC: "../assets/icones/DesignerGraficoC.png", iconL: "../assets/icones/DesignerGraficoL.png" },
+    { job: "Designer Gráfico", link: "/contrate/tecnologia/designer-grafico/", count: "1", iconC: "../assets/icones/DesignerGraficoC.png", iconL: "../assets/icones/DesignerGraficoL.png" },
     { job: "Editor(a) de Vídeos", link: "/contrate/tecnologia/editor(a)-de-videos", count: "1", iconC: "../assets/icones/EditordevideoC.png", iconL: "../assets/icones/EditordevideoL.png" },
     // { job: "Especialista em Mídias", link: "/contrate/tecnologia/especialista-em-midias/", count: "8", iconC: "../assets/icones/EspecialistaemmidiasC.png", iconL: "../assets/icones/EspecialistaemmidiasL.png" },
     { job: "Manutenção de PABX", link: "/contrate/tecnologia/manutencao-de-pabx/", count: "1", iconC: "../assets/icones/PABXC.png", iconL: "../assets/icones/PABXL.png" },
