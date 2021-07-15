@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import swal from '@sweetalert/with-react'
 import ProfissionalDataService from "../services/ProfissionalService";
@@ -12,8 +12,6 @@ import { Multiselect } from 'multiselect-react-dropdown';
 
 import NumberFormat from 'react-number-format';
 
-const SITE_KEY = "6Ldo9loaAAAAADMRNqgi69nefNZrZfluNekE9YJQ";
-
 const Anuncie = () => {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
@@ -26,7 +24,7 @@ const Anuncie = () => {
   const [citiesOffer, setCitiesOffer] = useState([])
   const [servicesOffer, setServicesOffer] = useState([])
   const [picture, setPicture] = useState([])
-  const [file, setFile] = useState(undefined)
+  const [file, setFile] = useState(null)
   const [description, setDescription] = useState("")
   const [w2w, setW2W] = useState(false)
   const [terms, setTerms] = useState(false)
@@ -118,7 +116,7 @@ const Anuncie = () => {
       setCity(event.target.value)
     }
     else if (field === "file") {
-      this.setState({ file: event.target.files });
+      setFile(event.target.files[0])
     }
     else if (field === "description") {
       setDescription(event.target.value)
@@ -145,7 +143,7 @@ const Anuncie = () => {
 
     setCitiesAvailable(cidades)
   }
-  
+
   const retrieveServicos = (items) => {
     let servicos = [];
 
@@ -158,8 +156,7 @@ const Anuncie = () => {
         category: data.category,
       });
     });
-    
-    console.log(servicos)
+
     setServicesAvailable(servicos)
   }
 
@@ -167,25 +164,6 @@ const Anuncie = () => {
     CidadeDataService.getAll().on("value", retrieveCidades);
     ServicoDataService.getAll().on("value", retrieveServicos);
 
-    const loadScriptByURL = (id, url, callback) => {
-      const isScriptExist = document.getElementById(id);
-
-      if (!isScriptExist) {
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = url;
-        script.id = id;
-        script.onload = function () {
-          if (callback) callback();
-        };
-        document.body.appendChild(script);
-      }
-
-      if (isScriptExist && callback) callback();
-    }
-    loadScriptByURL("recaptcha-key", `https://www.google.com/recaptcha/api.js?render=${SITE_KEY}`, function () {
-      console.log("Script loaded!");
-    });
     return () => {
       CidadeDataService.getAll().off("value", retrieveCidades);
       ServicoDataService.getAll().off("value", retrieveServicos);
@@ -276,7 +254,7 @@ const Anuncie = () => {
     }
 
     if (state === "") {
-      this.sendErrorAlert("Seu estado não pode estar em branco!")
+      sendErrorAlert("Seu estado não pode estar em branco!")
       return;
     }
 
@@ -286,7 +264,7 @@ const Anuncie = () => {
     }
 
     if (description === "") {
-      this.sendErrorAlert("Sua descrição não pode estar em branco!")
+      sendErrorAlert("Sua descrição não pode estar em branco!")
       return;
     }
 
@@ -300,23 +278,27 @@ const Anuncie = () => {
       return;
     }
 
-    var data = {
-      name: name,
-      email: email,
-      birthday: birthday.formattedValue,
-      gender: gender,
-      phone: phone.value,
-      cep: cep.value,
-      state: state,
-      city: city,
-      cidades: citiesOffer,
-      servicos: servicesOffer,
-      description: description,
-      w2w: w2w,
-      terms: terms
-    };
-    console.log(data)
-    ProfissionalDataService.create(data)
+    ProfissionalDataService.uploadImage(email,file)
+    .then(uploadUrl => {
+
+      var data = {
+        name: name,
+        email: email,
+        birthday: birthday.formattedValue,
+        gender: gender,
+        phone: phone.value,
+        cep: cep.value,
+        state: state,
+        city: city,
+        cidades: citiesOffer,
+        servicos: servicesOffer,
+        picture: uploadUrl,
+        description: description,
+        w2w: w2w,
+        terms: terms
+      };
+
+      ProfissionalDataService.create(data)
       .then(res => {
         swal("Concluído", "Sua inscrição foi enviada, você deve ser aprovado em breve!", "success");
         newPrestador();
@@ -325,6 +307,7 @@ const Anuncie = () => {
         swal("Ops, algo deu errado...", "Talvez nosso sistema esteja fora do ar, tente novamente mais tarde!", "error");
         console.log(e);
       });
+    })
   }
 
   const newPrestador = () => {
