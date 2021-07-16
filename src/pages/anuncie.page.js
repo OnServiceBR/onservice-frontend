@@ -190,7 +190,7 @@ const Anuncie = () => {
     })
   }
 
-  sendSucessAlert = (msg) => {
+  const sendSucessAlert = (msg) => {
     swal({
       className: "swal-dimensions--register",
       button: {
