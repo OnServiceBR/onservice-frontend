@@ -3,18 +3,18 @@ import "../styles/contrate.css";
 import { FaSearch } from 'react-icons/fa';
 
 export default class Home extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
     }
   }
 
   render() {
-    return(
+    return (
       <div>
         <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><h2 class="path-actual">Contrate um serviço</h2>
-        <div class="search-box">
-          {/* <form method="get" action="/contrate">
+        {/*<div class="search-box">
+          <form method="get" action="/contrate">
             <div id="search-contrate">
               <input id="search-input-contrate" placeholder="Buscar por um profissional"/>
               <FaSearch id="search-lupe"/>
@@ -22,8 +22,8 @@ export default class Home extends Component {
             <button id="search-button-contrate" type="submit">
               Buscar
             </button>
-          </form> */}
-        </div>
+          </form> 
+        </div> */}
         <div class="search-tabs">
           <label id="contrate-category-label">Categorias</label>
           <label id="contrate-service-label">Serviços</label>

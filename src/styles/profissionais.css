@@ -41,7 +41,9 @@
   font-family: GlacialIndifference;
   color: rgb(118,113,113);
   margin-top: 0px;
-  margin-bottom: 35px;
+  /* Margin com search bar */
+  /* margin-bottom: 35px;*/
+  margin-bottom: 25px;
   display: inline-block;
   text-transform: lowercase;
   font-size: 10pt;

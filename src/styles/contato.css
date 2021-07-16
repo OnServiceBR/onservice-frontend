@@ -186,3 +186,14 @@
   padding-top: 5px;
   padding-bottom: 10px;
 }
+
+ /* ícone de erro no swal */
+#erroricon{
+  position: absolute;
+  text-align: left;
+  margin-top: -3px;
+  margin-left: -5px;
+  color: rgb(237, 125, 49);
+  transform: scale(1.4);
+  transition: 0.3s;  
+}

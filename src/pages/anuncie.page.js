@@ -6,6 +6,7 @@ import CidadeDataService from "../services/CidadeService";
 import ServicoDataService from "../services/ServicoService";
 import Anuncieimagem from "../assets/Slide5.PNG";
 import LogoOnservice from "../assets/LogoSimboloLaranja.png";
+import { BiErrorCircle } from 'react-icons/bi';
 
 import "../styles/anuncie.css";
 import { Multiselect } from 'multiselect-react-dropdown';
@@ -179,7 +180,27 @@ const Anuncie = () => {
       content: (
         <div>
           <img src={LogoOnservice} width="90px" alt="SwalRegister" />
+          <BiErrorCircle id="erroriconregister" />
           <h3 class="swal-title--register">Ops, algo deu errado...</h3>
+          <p class="swal-text--register">
+            {msg}
+          </p>
+        </div>
+      )
+    })
+  }
+
+  sendSucessAlert = (msg) => {
+    swal({
+      className: "swal-dimensions--register",
+      button: {
+        className: "button-alert",
+      },
+      content: (
+        <div>
+          <img src={LogoOnservice} width="90px" alt="SwalRegister" />
+          <BiErrorCircle id="erroriconregister" />
+          <h3 class="swal-title--register">Concluído!</h3>
           <p class="swal-text--register">
             {msg}
           </p>
