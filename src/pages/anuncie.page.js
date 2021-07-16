@@ -43,7 +43,7 @@ const Anuncie = () => {
     { name: 'Ceará', id: 'CE', value: 'CE' },
     { name: 'Distrito Federal', id: 'DF', value: 'DF' },
     { name: 'Espírito Santo', id: 'ES', value: 'ES' },
-    { name: 'Goiânia', id: 'GO', value: 'GO' },
+    { name: 'Goiás', id: 'GO', value: 'GO' },
     { name: 'Maranhão', id: 'MA', value: 'MA' },
     { name: 'Mato Grosso', id: 'MT', value: 'MT' },
     { name: 'Mato Grosso do Sul', id: 'MS', value: 'MS' },
