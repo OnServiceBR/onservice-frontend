@@ -1,25 +1,36 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/trabalhos.css";
 import { FaSearch } from 'react-icons/fa';
+import Counter from "../../components/Counter";
 
 import Job from "../../components/Job";
 
 function Residencial() {
   const jobs = [
     { job: "Diarista", link: "/contrate/residencial/diarista", count: "1", iconC: "../assets/icones/DiaristaC.png", iconL: "../assets/icones/DiaristaL.png" },
-    // { job: "Jardineiro(a)", link: "/contrate/residencial/jardineiro(a)", count: "0", iconC: "../assets/icones/JardineiroC.png", iconL: "../assets/icones/JardineiroL.png" },
+    { job: "Jardineiro(a)", link: "/contrate/residencial/jardineiro(a)", count: "0", iconC: "../assets/icones/JardineiroC.png", iconL: "../assets/icones/JardineiroL.png" },
   ]
 
   const [alphabet, setAlphabet] = useState([])
 
   useEffect(() => {
+    {jobs.map((item) => {
+      Counter.filter((item2) => {
+        if (item2.jobCounted === item.job) {
+          item.count = item2.counter
+        }
+      })
+    })}
     let prevLet = ""
     for (let i = 0; i < jobs.length; i++) {
-      if (jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === prevLet) {
-        continue
-      } else {
-        prevLet = jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-        setAlphabet(alphabet => [...alphabet, jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "")])
+      console.log(jobs[i].count)
+      if (jobs[i].count != 0) {
+        if (jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === prevLet) {
+          continue
+        } else {
+          prevLet = jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+          setAlphabet(alphabet => [...alphabet, jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "")])
+        }
       }
     }
   }, [])
@@ -82,16 +93,25 @@ function Residencial() {
           <h1 class="job-dictionary-letter">{letter}<a name={`names-${letter}`}></a></h1>
           <hr class="job-hr" />
           {jobs.filter((item) => {
-            if (item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item;
-          }).map(item =>
-            <Job
-              JobName={item.job}
-              JobLink={item.link}
-              IconGray={item.iconC}
-              IconOrange={item.iconL}
-              Count={item.count}
-            />
-          )}
+            if (item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item            
+          }).map((item) => {
+            Counter.filter((item2) => {
+              if (item2.jobCounted === item.job) {
+                item.count = item2.counter
+              }
+            })
+            if (item.count != 0) {
+              return (
+                <Job
+                  JobName={item.job}
+                  JobLink={item.link}
+                  IconGray={item.iconC}
+                  IconOrange={item.iconL}
+                  Count={item.count}
+                />
+              )
+            }
+          })}
         </div>
       ))}
     </div>

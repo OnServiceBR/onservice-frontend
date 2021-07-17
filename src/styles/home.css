@@ -66,13 +66,21 @@
   transition: 0.3s;
 }
 
+.total-counter {
+  text-align: center;
+  font-family: GlacialIndifference;
+  font-size: 20pt;
+	color: rgb(64,64,64);
+  margin-top: 60px;
+  margin-bottom: 10px;
+}
+
 .carousel-title {
   text-align: center;
   font-family: 'Bebas Neue', cursive;
   font-size: 17pt;
   color: rgb(64, 64, 64);
   letter-spacing: 3.5px;
-  margin-top: 50px;
   margin-bottom: 5px;
 }
 

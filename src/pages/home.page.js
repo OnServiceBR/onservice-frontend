@@ -6,6 +6,7 @@ import { FaMousePointer, FaSearch } from 'react-icons/fa';
 import Carousel from "../components/Carousel.js";
 import Card from '../components/Card.js';
 import Database from '../components/Database'
+import Counter from "../components/Counter";
 
 export default class Home extends Component {
   constructor(props) {
@@ -30,6 +31,11 @@ export default class Home extends Component {
   render() {
     const cards = this.cards;
     var nameSimplified = "this.cards";
+    var totalCount = 0
+
+    Counter.map((item) => {
+      totalCount = totalCount + Number(item.counter)
+    })
 
     return (
       <div>
@@ -51,6 +57,8 @@ export default class Home extends Component {
             </button>
           </form>
         </div>
+        
+        <p class="total-counter"><span style={{ color: "rgb(237,125,49)", fontWeight: "bold", fontSize: "22pt" }}>{totalCount}</span> Profissionais cadastrados!</p>
         <p class="carousel-title">DESTAQUES DO MÊS</p>
         <Carousel
           show={5}
