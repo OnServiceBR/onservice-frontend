@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/trabalhos.css";
 import { FaSearch } from 'react-icons/fa';
+import Counter from "../../components/Counter";
 
 import Job from "../../components/Job";
 
@@ -9,19 +10,29 @@ function Saude() {
     { job: "Fisioterapeuta", link: "/contrate/saude/fisioterapeuta/", count: "2", iconC: "../assets/icones/FisioterapeutaC.png", iconL: "../assets/icones/FisioterapeutaL.png" },
     { job: "Personal Trainer", link: "/contrate/saude/personal-trainer/", count: "1", iconC: "../assets/icones/PersonalTrainerC.png", iconL: "../assets/icones/PersonalTrainerL.png" },
     { job: "Psicólogo(a)", link: "/contrate/saude/psicologo(a)/", count: "3", iconC: "../assets/icones/PsicologoC.png", iconL: "../assets/icones/PsicologoL.png" },
-    // { job: "Terapeuta Ocupacional", link: "/contrate/saude/terapeuta-ocupacional/", count: "0", iconC: "../assets/icones/TerapeutaOcupacionalC.png", iconL: "../assets/icones/TerapeutaOcupacionalL.png" },
+    { job: "Terapeuta Ocupacional", link: "/contrate/saude/terapeuta-ocupacional/", count: "", iconC: "../assets/icones/TerapeutaOcupacionalC.png", iconL: "../assets/icones/TerapeutaOcupacionalL.png" },
   ]
 
   const [alphabet, setAlphabet] = useState([])
 
   useEffect(() => {
+    {jobs.map((item) => {
+      Counter.filter((item2) => {
+        if (item2.jobCounted === item.job) {
+          item.count = item2.counter
+        }
+      })
+    })}
     let prevLet = ""
     for (let i = 0; i < jobs.length; i++) {
-      if (jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === prevLet) {
-        continue
-      } else {
-        prevLet = jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-        setAlphabet(alphabet => [...alphabet, jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "")])
+      console.log(jobs[i].count)
+      if (jobs[i].count != 0) {
+        if (jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === prevLet) {
+          continue
+        } else {
+          prevLet = jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+          setAlphabet(alphabet => [...alphabet, jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "")])
+        }
       }
     }
   }, [])
@@ -84,16 +95,25 @@ function Saude() {
           <h1 class="job-dictionary-letter">{letter}<a name={`names-${letter}`}></a></h1>
           <hr class="job-hr" />
           {jobs.filter((item) => {
-            if (item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item;
-          }).map(item =>
-            <Job
-              JobName={item.job}
-              JobLink={item.link}
-              IconGray={item.iconC}
-              IconOrange={item.iconL}
-              Count={item.count}
-            />
-          )}
+            if (item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item            
+          }).map((item) => {
+            Counter.filter((item2) => {
+              if (item2.jobCounted === item.job) {
+                item.count = item2.counter
+              }
+            })
+            if (item.count != 0) {
+              return (
+                <Job
+                  JobName={item.job}
+                  JobLink={item.link}
+                  IconGray={item.iconC}
+                  IconOrange={item.iconL}
+                  Count={item.count}
+                />
+              )
+            }
+          })}
         </div>
       ))}
     </div>

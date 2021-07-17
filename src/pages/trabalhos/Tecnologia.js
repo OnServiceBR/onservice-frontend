@@ -1,31 +1,42 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/trabalhos.css";
 import { FaSearch } from 'react-icons/fa';
+import Counter from "../../components/Counter";
 
 import Job from "../../components/Job";
 
 function Tecnologia() {
   const jobs = [
-    // { job: "Analista de Sistemas", link: "/contrate/tecnologia/analista-de-sistemas/", count: "0", iconC: "../assets/icones/AnalistadeSistemasC.png", iconL: "../assets/icones/AnalistadeSistemasL.png" },
-    { job: "Assistente Técnico(a)", link: "/contrate/tecnologia/assistente-tecnico(a)/", count: "1", iconC: "../assets/icones/AssistenteTecnicoC.png", iconL: "../assets/icones/AssistenteTecnicoL.png" },
-    { job: "Consultor(a) de Marketing Digital", link: "/contrate/tecnologia/consultor(a)-de-marketing-digital/", count: "1", iconC: "../assets/icones/ConsultordeMarketingDigitalC.png", iconL: "../assets/icones/ConsultordeMarketingDigitalL.png" },
-    { job: "Designer Gráfico", link: "/contrate/tecnologia/designer-grafico/", count: "1", iconC: "../assets/icones/DesignerGraficoC.png", iconL: "../assets/icones/DesignerGraficoL.png" },
-    { job: "Editor(a) de Vídeos", link: "/contrate/tecnologia/editor(a)-de-videos", count: "1", iconC: "../assets/icones/EditordevideoC.png", iconL: "../assets/icones/EditordevideoL.png" },
-    // { job: "Especialista em Mídias", link: "/contrate/tecnologia/especialista-em-midias/", count: "8", iconC: "../assets/icones/EspecialistaemmidiasC.png", iconL: "../assets/icones/EspecialistaemmidiasL.png" },
-    { job: "Manutenção de PABX", link: "/contrate/tecnologia/manutencao-de-pabx/", count: "1", iconC: "../assets/icones/PABXC.png", iconL: "../assets/icones/PABXL.png" },
-    { job: "Programador(a)", link: "/contrate/tecnologia/programador(a)/", count: "2", iconC: "../assets/icones/ProgramadorC.png", iconL: "../assets/icones/ProgramadorL.png" },
+    { job: "Analista de Sistemas", link: "/contrate/tecnologia/analista-de-sistemas/", count: "", iconC: "../assets/icones/AnalistadeSistemasC.png", iconL: "../assets/icones/AnalistadeSistemasL.png" },
+    { job: "Assistente Técnico(a)", link: "/contrate/tecnologia/assistente-tecnico(a)/", count: "", iconC: "../assets/icones/AssistenteTecnicoC.png", iconL: "../assets/icones/AssistenteTecnicoL.png" },
+    { job: "Consultor(a) de Marketing Digital", link: "/contrate/tecnologia/consultor(a)-de-marketing-digital/", count: "", iconC: "../assets/icones/ConsultordeMarketingDigitalC.png", iconL: "../assets/icones/ConsultordeMarketingDigitalL.png" },
+    { job: "Designer Gráfico", link: "/contrate/tecnologia/designer-grafico/", count: "", iconC: "../assets/icones/DesignerGraficoC.png", iconL: "../assets/icones/DesignerGraficoL.png" },
+    { job: "Editor(a) de Vídeos", link: "/contrate/tecnologia/editor(a)-de-videos", count: "", iconC: "../assets/icones/EditordevideoC.png", iconL: "../assets/icones/EditordevideoL.png" },
+    { job: "Especialista em Mídias", link: "/contrate/tecnologia/especialista-em-midias/", count: "", iconC: "../assets/icones/EspecialistaemmidiasC.png", iconL: "../assets/icones/EspecialistaemmidiasL.png" },
+    { job: "Manutenção de PABX", link: "/contrate/tecnologia/manutencao-de-pabx/", count: "", iconC: "../assets/icones/PABXC.png", iconL: "../assets/icones/PABXL.png" },
+    { job: "Programador(a)", link: "/contrate/tecnologia/programador(a)/", count: "", iconC: "../assets/icones/ProgramadorC.png", iconL: "../assets/icones/ProgramadorL.png" },
   ]
 
   const [alphabet, setAlphabet] = useState([])
 
   useEffect(() => {
+    {jobs.map((item) => {
+      Counter.filter((item2) => {
+        if (item2.jobCounted === item.job) {
+          item.count = item2.counter
+        }
+      })
+    })}
     let prevLet = ""
     for (let i = 0; i < jobs.length; i++) {
-      if (jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === prevLet) {
-        continue
-      } else {
-        prevLet = jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-        setAlphabet(alphabet => [...alphabet, jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "")])
+      console.log(jobs[i].count)
+      if (jobs[i].count != 0) {
+        if (jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === prevLet) {
+          continue
+        } else {
+          prevLet = jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+          setAlphabet(alphabet => [...alphabet, jobs[i].job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "")])
+        }
       }
     }
   }, [])
@@ -88,16 +99,25 @@ function Tecnologia() {
           <h1 class="job-dictionary-letter">{letter}<a name={`names-${letter}`}></a></h1>
           <hr class="job-hr" />
           {jobs.filter((item) => {
-            if (item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item;
-          }).map(item =>
-            <Job
-              JobName={item.job}
-              JobLink={item.link}
-              IconGray={item.iconC}
-              IconOrange={item.iconL}
-              Count={item.count}
-            />
-          )}
+            if (item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item            
+          }).map((item) => {
+            Counter.filter((item2) => {
+              if (item2.jobCounted === item.job) {
+                item.count = item2.counter
+              }
+            })
+            if (item.count != 0) {
+              return (
+                <Job
+                  JobName={item.job}
+                  JobLink={item.link}
+                  IconGray={item.iconC}
+                  IconOrange={item.iconL}
+                  Count={item.count}
+                />
+              )
+            }
+          })}
         </div>
       ))}
     </div>
