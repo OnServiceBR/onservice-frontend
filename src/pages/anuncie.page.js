@@ -199,7 +199,6 @@ const Anuncie = () => {
       content: (
         <div>
           <img src={LogoOnservice} width="90px" alt="SwalRegister" />
-          <BiErrorCircle id="erroriconregister" />
           <h3 class="swal-title--register">Concluído!</h3>
           <p class="swal-text--register">
             {msg}
@@ -299,36 +298,36 @@ const Anuncie = () => {
       return;
     }
 
-    ProfissionalDataService.uploadImage(email,file)
-    .then(uploadUrl => {
+    ProfissionalDataService.uploadImage(email, file)
+      .then(uploadUrl => {
 
-      var data = {
-        name: name,
-        email: email,
-        birthday: birthday.formattedValue,
-        gender: gender,
-        phone: phone.value,
-        cep: cep.value,
-        state: state,
-        city: city,
-        cidades: citiesOffer,
-        servicos: servicesOffer,
-        picture: uploadUrl,
-        description: description,
-        w2w: w2w,
-        terms: terms
-      };
+        var data = {
+          name: name,
+          email: email,
+          birthday: birthday.formattedValue,
+          gender: gender,
+          phone: phone.value,
+          cep: cep.value,
+          state: state,
+          city: city,
+          cidades: citiesOffer,
+          servicos: servicesOffer,
+          picture: uploadUrl,
+          description: description,
+          w2w: w2w,
+          terms: terms
+        };
 
-      ProfissionalDataService.create(data)
-      .then(res => {
-        swal("Concluído", "Sua inscrição foi enviada, você deve ser aprovado em breve!", "success");
-        newPrestador();
+        ProfissionalDataService.create(data)
+          .then(res => {
+            sendSucessAlert("Sua inscrição foi enviada, você deve ser aprovado em breve!");
+            newPrestador();
+          })
+          .catch(e => {
+            sendErrorAlert("Talvez nosso sistema esteja fora do ar, tente novamente mais tarde!");
+            console.log(e);
+          });
       })
-      .catch(e => {
-        swal("Ops, algo deu errado...", "Talvez nosso sistema esteja fora do ar, tente novamente mais tarde!", "error");
-        console.log(e);
-      });
-    })
   }
 
   const newPrestador = () => {
@@ -520,7 +519,7 @@ const Anuncie = () => {
                 avoidHighlightFirstOption={true}
                 placeholder="Selecione uma opção"
               />
-            <small class=''>*Será implementado em breve.</small>
+              <small class=''>*Será implementado em breve.</small>
             </div>
           </div>
           <div class="form-item">
