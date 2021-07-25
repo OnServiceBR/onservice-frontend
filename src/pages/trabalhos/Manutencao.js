@@ -7,22 +7,24 @@ import Job from "../../components/Job";
 
 function Manutencao() {
   const jobs = [
-    { job: "Eletricista", link: "/contrate/manutencao/eletricista/", count: "1", iconC: "../assets/icones/EletricistaC.png", iconL: "../assets/icones/EletricistaL.png" },
-    { job: "Encanador(a)", link: "/contrate/manutencao/encanador(a)/", count: "1", iconC: "../assets/icones/EncanadorC.png", iconL: "../assets/icones/EncanadorL.png" },
-    { job: "Faz Tudo", link: "/contrate/manutencao/faz-tudo/", count: "1", iconC: "../assets/icones/FazTudoC.png", iconL: "../assets/icones/FazTudoL.png" },
-    { job: "Pintor(a)", link: "/contrate/manutencao/pintor(a)/", count: "2", iconC: "../assets/icones/PintorC.png", iconL: "../assets/icones/PintorL.png" },
+    { job: "Eletricista", link: "/contrate/manutencao/eletricista/", count: "", iconC: "../assets/icones/EletricistaC.png", iconL: "../assets/icones/EletricistaL.png" },
+    { job: "Encanador(a)", link: "/contrate/manutencao/encanador(a)/", count: "", iconC: "../assets/icones/EncanadorC.png", iconL: "../assets/icones/EncanadorL.png" },
+    { job: "Faz Tudo", link: "/contrate/manutencao/faz-tudo/", count: "", iconC: "../assets/icones/FazTudoC.png", iconL: "../assets/icones/FazTudoL.png" },
+    { job: "Pintor(a)", link: "/contrate/manutencao/pintor(a)/", count: "", iconC: "../assets/icones/PintorC.png", iconL: "../assets/icones/PintorL.png" },
   ]
 
   const [alphabet, setAlphabet] = useState([])
 
   useEffect(() => {
-    {jobs.map((item) => {
-      Counter.filter((item2) => {
-        if (item2.jobCounted === item.job) {
-          item.count = item2.counter
-        }
+    {
+      jobs.map((item) => {
+        Counter.filter((item2) => {
+          if (item2.jobCounted === item.job) {
+            item.count = item2.counter
+          }
+        })
       })
-    })}
+    }
     let prevLet = ""
     for (let i = 0; i < jobs.length; i++) {
       console.log(jobs[i].count)
@@ -95,7 +97,7 @@ function Manutencao() {
           <h1 class="job-dictionary-letter">{letter}<a name={`names-${letter}`}></a></h1>
           <hr class="job-hr" />
           {jobs.filter((item) => {
-            if (item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item            
+            if (item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item
           }).map((item) => {
             Counter.filter((item2) => {
               if (item2.jobCounted === item.job) {

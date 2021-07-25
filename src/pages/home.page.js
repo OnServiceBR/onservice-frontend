@@ -31,11 +31,7 @@ export default class Home extends Component {
   render() {
     const cards = this.cards;
     var nameSimplified = "this.cards";
-    var totalCount = 0
-
-    Counter.map((item) => {
-      totalCount = totalCount + Number(item.counter)
-    })
+    var totalCount = Database.length;
 
     return (
       <div>
@@ -57,7 +53,7 @@ export default class Home extends Component {
             </button>
           </form>
         </div>
-        
+
         <p class="total-counter"><span style={{ color: "rgb(237,125,49)", fontWeight: "bold", fontSize: "22pt" }}>{totalCount}</span> Profissionais cadastrados!</p>
         <p class="carousel-title">DESTAQUES DO MÊS</p>
         <Carousel

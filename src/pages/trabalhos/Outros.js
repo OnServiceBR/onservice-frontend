@@ -9,25 +9,27 @@ function Outros() {
   const jobs = [
     { job: "Artesã(o)", link: "/contrate/outros/artesa(o)", count: "", iconC: "../assets/icones/ArtesaoC.png", iconL: "../assets/icones/ArtesaoL.png" },
     { job: "Desenhista", link: "/contrate/outros/desenhista", count: "", iconC: "../assets/icones/DesenhistaC.png", iconL: "../assets/icones/DesenhistaL.png" },
-    { job: "Fretes e Mudanças", link: "/contrate/outros/fretes-e-mudancas", count: "1", iconC: "../assets/icones/FretesC.png", iconL: "../assets/icones/FretesL.png" },
+    { job: "Fretes e Mudanças", link: "/contrate/outros/fretes-e-mudancas", count: "", iconC: "../assets/icones/FretesC.png", iconL: "../assets/icones/FretesL.png" },
     { job: "Marceneiro(a)", link: "/contrate/outros/marceneiro(a)", count: "", iconC: "../assets/icones/MarceneiroC.png", iconL: "../assets/icones/MarceneiroL.png" },
     { job: "Montador(a) de Móveis", link: "/contrate/outros/montador(a)-de-moveis", count: "", iconC: "../assets/icones/MontadordeMoveisC.png", iconL: "../assets/icones/MontadordeMoveisL.png" },
-    { job: "Motoboy", link: "/contrate/outros/motoboy", count: "1", iconC: "../assets/icones/MotoboyC.png", iconL: "../assets/icones/MotoboyL.png" },
+    { job: "Motoboy", link: "/contrate/outros/motoboy", count: "", iconC: "../assets/icones/MotoboyC.png", iconL: "../assets/icones/MotoboyL.png" },
     { job: "Motorista Particular", link: "/contrate/outros/motorista-particular", count: "", iconC: "../assets/icones/MotoristaParticularC.png", iconL: "../assets/icones/MotoristaParticularL.png" },
-    { job: "Passeador(a) de Cães", link: "/contrate/outros/passeador(a)-de-caes", count: "1", iconC: "../assets/icones/PasseadordeCaesC.png", iconL: "../assets/icones/PasseadordeCaesL.png" },
-    { job: "Publicitário(a)", link: "/contrate/outros/publicitario(a)", count: "1", iconC: "../assets/icones/PublicitarioC.png", iconL: "../assets/icones/PublicitarioL.png" },
+    { job: "Passeador(a) de Cães", link: "/contrate/outros/passeador(a)-de-caes", count: "", iconC: "../assets/icones/PasseadordeCaesC.png", iconL: "../assets/icones/PasseadordeCaesL.png" },
+    { job: "Publicitário(a)", link: "/contrate/outros/publicitario(a)", count: "", iconC: "../assets/icones/PublicitarioC.png", iconL: "../assets/icones/PublicitarioL.png" },
   ]
 
   const [alphabet, setAlphabet] = useState([])
 
   useEffect(() => {
-    {jobs.map((item) => {
-      Counter.filter((item2) => {
-        if (item2.jobCounted === item.job) {
-          item.count = item2.counter
-        }
+    {
+      jobs.map((item) => {
+        Counter.filter((item2) => {
+          if (item2.jobCounted === item.job) {
+            item.count = item2.counter
+          }
+        })
       })
-    })}
+    }
     let prevLet = ""
     for (let i = 0; i < jobs.length; i++) {
       console.log(jobs[i].count)
@@ -100,7 +102,7 @@ function Outros() {
           <h1 class="job-dictionary-letter">{letter}<a name={`names-${letter}`}></a></h1>
           <hr class="job-hr" />
           {jobs.filter((item) => {
-            if (item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item            
+            if (item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item
           }).map((item) => {
             Counter.filter((item2) => {
               if (item2.jobCounted === item.job) {

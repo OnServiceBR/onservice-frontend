@@ -20,13 +20,15 @@ function Tecnologia() {
   const [alphabet, setAlphabet] = useState([])
 
   useEffect(() => {
-    {jobs.map((item) => {
-      Counter.filter((item2) => {
-        if (item2.jobCounted === item.job) {
-          item.count = item2.counter
-        }
+    {
+      jobs.map((item) => {
+        Counter.filter((item2) => {
+          if (item2.jobCounted === item.job) {
+            item.count = item2.counter
+          }
+        })
       })
-    })}
+    }
     let prevLet = ""
     for (let i = 0; i < jobs.length; i++) {
       console.log(jobs[i].count)
@@ -99,7 +101,7 @@ function Tecnologia() {
           <h1 class="job-dictionary-letter">{letter}<a name={`names-${letter}`}></a></h1>
           <hr class="job-hr" />
           {jobs.filter((item) => {
-            if (item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item            
+            if (item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item
           }).map((item) => {
             Counter.filter((item2) => {
               if (item2.jobCounted === item.job) {
