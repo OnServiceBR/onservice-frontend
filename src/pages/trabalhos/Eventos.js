@@ -12,7 +12,7 @@ function Eventos() {
     { job: "Fotógrafo(a)", link: "/contrate/eventos/fotografo(a)", count: "", iconC: "../assets/icones/FotografoC.png", iconL: "../assets/icones/FotografoL.png" },
     { job: "Garçom(Garçonete)", link: "/contrate/eventos/garcom(garconete)", count: "", iconC: "../assets/icones/GarcomC.png", iconL: "../assets/icones/GarcomL.png" },
     { job: "Músico(a)", link: "/contrate/eventos/musico(a)", count: "", iconC: "../assets/icones/MusicoC.png", iconL: "../assets/icones/MusicoL.png" },
-    { job: "Organizador(a) de Eventos", link: "/contrate/eventos/organizador(a)-de-eventos", count: "", iconC: "../assets/icones/OrganizadordeEventosC.png", iconL: "../assets/icones/OrganizadordeEventosL.png" },
+    { job: "Organizador(a) de Eventos", link: "/contrate/eventos/organizador(a)-de-eventos", count: "", iconC: "../assets/icones/OrganizadordeEventosC.PNG", iconL: "../assets/icones/OrganizadordeEventosL.PNG" },
     { job: "Recepcionista", link: "/contrate/eventos/recepcionista", count: "", iconC: "../assets/icones/RecepcionistaC.png", iconL: "../assets/icones/RecepcionistaL.png" },
   ]
 
