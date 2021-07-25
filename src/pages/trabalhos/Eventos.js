@@ -7,24 +7,27 @@ import Job from "../../components/Job";
 
 function Eventos() {
   const jobs = [
-    { job: "Animador(a) de Festas", link: "/contrate/eventos/animador(a)-de-festas", count: "1", iconC: "../assets/icones/AnimadordeFestaC.png", iconL: "../assets/icones/AnimadordeFestaL.png" },
-    { job: "Bartender", link: "/contrate/eventos/bartender", count: "1", iconC: "../assets/icones/BartenderC.png", iconL: "../assets/icones/BartenderL.png" },
-    { job: "Fotógrafo(a)", link: "/contrate/eventos/fotografo(a)", count: "1", iconC: "../assets/icones/FotografoC.png", iconL: "../assets/icones/FotografoL.png" },
-    { job: "Garçom(Garçonete)", link: "/contrate/eventos/garcom(garconete)", count: "2", iconC: "../assets/icones/GarcomC.png", iconL: "../assets/icones/GarcomL.png" },
-    { job: "Organizador(a) de Eventos", link: "/contrate/eventos/organizador(a)-de-eventos", count: "1", iconC: "../assets/icones/OrganizadordeEventosC.png", iconL: "../assets/icones/OrganizadordeEventosL.png" },
-    { job: "Recepcionista", link: "/contrate/eventos/recepcionista", count: "1", iconC: "../assets/icones/RecepcionistaC.png", iconL: "../assets/icones/RecepcionistaL.png" },
+    { job: "Animador(a) de Festas", link: "/contrate/eventos/animador(a)-de-festas", count: "", iconC: "../assets/icones/AnimadordeFestaC.png", iconL: "../assets/icones/AnimadordeFestaL.png" },
+    { job: "Bartender", link: "/contrate/eventos/bartender", count: "", iconC: "../assets/icones/BartenderC.png", iconL: "../assets/icones/BartenderL.png" },
+    { job: "Fotógrafo(a)", link: "/contrate/eventos/fotografo(a)", count: "", iconC: "../assets/icones/FotografoC.png", iconL: "../assets/icones/FotografoL.png" },
+    { job: "Garçom(Garçonete)", link: "/contrate/eventos/garcom(garconete)", count: "", iconC: "../assets/icones/GarcomC.png", iconL: "../assets/icones/GarcomL.png" },
+    { job: "Músico(a)", link: "/contrate/eventos/musico(a)", count: "", iconC: "../assets/icones/MusicoC.png", iconL: "../assets/icones/MusicoL.png" },
+    { job: "Organizador(a) de Eventos", link: "/contrate/eventos/organizador(a)-de-eventos", count: "", iconC: "../assets/icones/OrganizadordeEventosC.png", iconL: "../assets/icones/OrganizadordeEventosL.png" },
+    { job: "Recepcionista", link: "/contrate/eventos/recepcionista", count: "", iconC: "../assets/icones/RecepcionistaC.png", iconL: "../assets/icones/RecepcionistaL.png" },
   ]
 
   const [alphabet, setAlphabet] = useState([])
 
   useEffect(() => {
-    {jobs.map((item) => {
-      Counter.filter((item2) => {
-        if (item2.jobCounted === item.job) {
-          item.count = item2.counter
-        }
+    {
+      jobs.map((item) => {
+        Counter.filter((item2) => {
+          if (item2.jobCounted === item.job) {
+            item.count = item2.counter
+          }
+        })
       })
-    })}
+    }
     let prevLet = ""
     for (let i = 0; i < jobs.length; i++) {
       console.log(jobs[i].count)
@@ -97,7 +100,7 @@ function Eventos() {
           <h1 class="job-dictionary-letter">{letter}<a name={`names-${letter}`}></a></h1>
           <hr class="job-hr" />
           {jobs.filter((item) => {
-            if (item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item            
+            if (item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item
           }).map((item) => {
             Counter.filter((item2) => {
               if (item2.jobCounted === item.job) {

@@ -67,9 +67,9 @@ export default class Home extends Component {
     let mapped = Database.filter((item) => {
       for (var i = 0; i < item.jobs.length; i++) {
         if (item.jobs[i] === this.state.profissaoCode) {
-          if(!this.state.options)
+          if (!this.state.options)
             return item
-          else if(this.state.options.include(item.gender))
+          else if (this.state.options.include(item.gender))
             return item
         }
       }
@@ -85,7 +85,7 @@ export default class Home extends Component {
   sortDestaque() {
     // Busca destacados
     let mapped = this.state.tempProfissionais.filter((item) => {
-      if(item.emphasize == true){
+      if (item.emphasize == true) {
         for (var i = 0; i < item.jobs.length; i++) {
           if (item.jobs[i] === this.state.profissaoCode)
             return item;
@@ -99,10 +99,10 @@ export default class Home extends Component {
 
       // Coloca não destaques por último
       let mapped2 = this.state.tempProfissionais.filter((item) => {
-        if(item.emphasize == false){
+        if (item.emphasize == false) {
           for (var i = 0; i < item.jobs.length; i++) {
             if (item.jobs[i] === this.state.profissaoCode)
-            return item;
+              return item;
           }
         }
       }).map((item) => {
@@ -160,7 +160,7 @@ export default class Home extends Component {
     mapped.sort(function (a, b) {
       return a.name.localeCompare(b.name);
     })
-    this.setState({ tempProfissionais: mapped }, () =>{
+    this.setState({ tempProfissionais: mapped }, () => {
       this.sortDestaque()
     })
   }
@@ -177,6 +177,9 @@ export default class Home extends Component {
     }
 
     // Correção gramatical das profissões
+    if (profissao === "animador(a)-de-festas") {
+      profissao = "Animador(a) de festas"
+    }
     if (profissao === "artesa(o)") {
       profissao = "Artesã(o)"
     }
@@ -207,8 +210,14 @@ export default class Home extends Component {
     else if (profissao === "montador(a)-de-moveis") {
       profissao = "Montador(a) de Móveis"
     }
+    else if (profissao === "musico(a)") {
+      profissao = "Músico(a)"
+    }
     else if (profissao === "passeador(a)-de-caes") {
       profissao = "Passeador(a) de cães"
+    }
+    else if (profissao === "personal-trainer") {
+      profissao = "Personal Trainer"
     }
     else if (profissao === "professor(a)-de-educacao-fisica") {
       profissao = "Professor(a) de Educação Física"
@@ -224,9 +233,6 @@ export default class Home extends Component {
     }
     else if (profissao === "publicitario(a)") {
       profissao = "Publicitário(a)"
-    }
-    else if (profissao === "personal-trainer") {
-      profissao = "Personal Trainer"
     }
 
     return (
@@ -314,12 +320,12 @@ export default class Home extends Component {
             </div>
           </div>
           <div id="workers-change-color-on-hover" class="column workers-column-profile">
-            {profissionais.filter((item)=>{
-              if(options.length == 0){
+            {profissionais.filter((item) => {
+              if (options.length == 0) {
                 console.log(item)
                 return item
               }
-              else if(options.includes(item.gender)){
+              else if (options.includes(item.gender)) {
                 console.log(item)
                 return item
               }

@@ -7,22 +7,24 @@ import Job from "../../components/Job";
 
 function Saude() {
   const jobs = [
-    { job: "Fisioterapeuta", link: "/contrate/saude/fisioterapeuta/", count: "2", iconC: "../assets/icones/FisioterapeutaC.png", iconL: "../assets/icones/FisioterapeutaL.png" },
-    { job: "Personal Trainer", link: "/contrate/saude/personal-trainer/", count: "1", iconC: "../assets/icones/PersonalTrainerC.png", iconL: "../assets/icones/PersonalTrainerL.png" },
-    { job: "Psicólogo(a)", link: "/contrate/saude/psicologo(a)/", count: "3", iconC: "../assets/icones/PsicologoC.png", iconL: "../assets/icones/PsicologoL.png" },
+    { job: "Fisioterapeuta", link: "/contrate/saude/fisioterapeuta/", count: "", iconC: "../assets/icones/FisioterapeutaC.png", iconL: "../assets/icones/FisioterapeutaL.png" },
+    { job: "Personal Trainer", link: "/contrate/saude/personal-trainer/", count: "", iconC: "../assets/icones/PersonalTrainerC.png", iconL: "../assets/icones/PersonalTrainerL.png" },
+    { job: "Psicólogo(a)", link: "/contrate/saude/psicologo(a)/", count: "", iconC: "../assets/icones/PsicologoC.png", iconL: "../assets/icones/PsicologoL.png" },
     { job: "Terapeuta Ocupacional", link: "/contrate/saude/terapeuta-ocupacional/", count: "", iconC: "../assets/icones/TerapeutaOcupacionalC.png", iconL: "../assets/icones/TerapeutaOcupacionalL.png" },
   ]
 
   const [alphabet, setAlphabet] = useState([])
 
   useEffect(() => {
-    {jobs.map((item) => {
-      Counter.filter((item2) => {
-        if (item2.jobCounted === item.job) {
-          item.count = item2.counter
-        }
+    {
+      jobs.map((item) => {
+        Counter.filter((item2) => {
+          if (item2.jobCounted === item.job) {
+            item.count = item2.counter
+          }
+        })
       })
-    })}
+    }
     let prevLet = ""
     for (let i = 0; i < jobs.length; i++) {
       console.log(jobs[i].count)
@@ -95,7 +97,7 @@ function Saude() {
           <h1 class="job-dictionary-letter">{letter}<a name={`names-${letter}`}></a></h1>
           <hr class="job-hr" />
           {jobs.filter((item) => {
-            if (item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item            
+            if (item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item
           }).map((item) => {
             Counter.filter((item2) => {
               if (item2.jobCounted === item.job) {

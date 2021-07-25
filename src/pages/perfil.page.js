@@ -70,6 +70,9 @@ export default class Perfil extends Component {
     var { profissao, idperfil, profissaoCode } = this.state;
 
     // Correção gramatical das profissões
+    if (profissao === "animador(a)-de-festas") {
+      profissao = "Animador(a) de festas"
+    }
     if (profissao === "artesa(o)") {
       profissao = "Artesã(o)"
     }
@@ -100,8 +103,14 @@ export default class Perfil extends Component {
     else if (profissao === "montador(a)-de-moveis") {
       profissao = "Montador(a) de Móveis"
     }
+    else if (profissao === "musico(a)") {
+      profissao = "Músico(a)"
+    }
     else if (profissao === "passeador(a)-de-caes") {
       profissao = "Passeador(a) de cães"
+    }
+    else if (profissao === "personal-trainer") {
+      profissao = "Personal Trainer"
     }
     else if (profissao === "professor(a)-de-educacao-fisica") {
       profissao = "Professor(a) de Educação Física"
@@ -117,9 +126,6 @@ export default class Perfil extends Component {
     }
     else if (profissao === "publicitario(a)") {
       profissao = "Publicitário(a)"
-    }
-    else if (profissao === "personal-trainer") {
-      profissao = "Personal Trainer"
     }
 
     <div>
@@ -173,6 +179,9 @@ export default class Perfil extends Component {
     }
 
     // Correção gramatical das profissões
+    if (profissao === "animador(a)-de-festas") {
+      profissao = "Animador(a) de festas"
+    }
     if (profissao === "artesa(o)") {
       profissao = "Artesã(o)"
     }
@@ -203,8 +212,14 @@ export default class Perfil extends Component {
     else if (profissao === "montador(a)-de-moveis") {
       profissao = "Montador(a) de Móveis"
     }
+    else if (profissao === "musico(a)") {
+      profissao = "Músico(a)"
+    }
     else if (profissao === "passeador(a)-de-caes") {
       profissao = "Passeador(a) de cães"
+    }
+    else if (profissao === "personal-trainer") {
+      profissao = "Personal Trainer"
     }
     else if (profissao === "professor(a)-de-educacao-fisica") {
       profissao = "Professor(a) de Educação Física"
@@ -220,9 +235,6 @@ export default class Perfil extends Component {
     }
     else if (profissao === "publicitario(a)") {
       profissao = "Publicitário(a)"
-    }
-    else if (profissao === "personal-trainer") {
-      profissao = "Personal Trainer"
     }
 
     return (
