@@ -13,7 +13,7 @@ function Tecnologia() {
     { job: "Designer Gráfico", link: "/contrate/tecnologia/designer-grafico/", count: "", iconC: "../assets/icones/DesignerGraficoC.png", iconL: "../assets/icones/DesignerGraficoL.png" },
     { job: "Editor(a) de Vídeos", link: "/contrate/tecnologia/editor(a)-de-videos", count: "", iconC: "../assets/icones/EditordevideoC.png", iconL: "../assets/icones/EditordevideoL.png" },
     { job: "Especialista em Mídias", link: "/contrate/tecnologia/especialista-em-midias/", count: "", iconC: "../assets/icones/EspecialistaemmidiasC.png", iconL: "../assets/icones/EspecialistaemmidiasL.png" },
-    { job: "Manutenção de PABX", link: "/contrate/tecnologia/manutencao-de-pabx/", count: "", iconC: "../assets/icones/PABXC.png", iconL: "../assets/icones/PABXL.png" },
+    { job: "Manutenção de PABX", link: "/contrate/tecnologia/manutencao-de-pabx/", count: "", iconC: "../assets/icones/PABXC.PNG", iconL: "../assets/icones/PABXL.PNG" },
     { job: "Programador(a)", link: "/contrate/tecnologia/programador(a)/", count: "", iconC: "../assets/icones/ProgramadorC.png", iconL: "../assets/icones/ProgramadorL.png" },
   ]
 
