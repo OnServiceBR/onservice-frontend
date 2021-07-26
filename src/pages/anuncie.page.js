@@ -13,6 +13,8 @@ import { Multiselect } from 'multiselect-react-dropdown';
 
 import NumberFormat from 'react-number-format';
 
+const SITE_KEY = "6Ldo9loaAAAAADMRNqgi69nefNZrZfluNekE9YJQ";
+
 const Anuncie = () => {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
@@ -165,6 +167,28 @@ const Anuncie = () => {
     CidadeDataService.getAll().on("value", retrieveCidades);
     ServicoDataService.getAll().on("value", retrieveServicos);
 
+    const loadScriptByURL = (id, url, callback) => {
+      const isScriptExist = document.getElementById(id);
+
+      if (!isScriptExist) {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = url;
+        script.id = id;
+        script.onload = function () {
+          if (callback) callback();
+        };
+        document.body.appendChild(script);
+      }
+
+      if (isScriptExist && callback) callback();
+    }
+
+    // load the script by passing the URL
+    loadScriptByURL("recaptcha-key", `https://www.google.com/recaptcha/api.js?render=${SITE_KEY}`, function () {
+      console.log("Script loaded!");
+    });
+
     return () => {
       CidadeDataService.getAll().off("value", retrieveCidades);
       ServicoDataService.getAll().off("value", retrieveServicos);
@@ -210,10 +234,14 @@ const Anuncie = () => {
 
   const handleOnClick = e => {
     e.preventDefault();
-    savePrestador();
+    window.grecaptcha.ready(() => {
+      window.grecaptcha.execute(SITE_KEY, { action: 'submit' }).then(token => {
+        savePrestador(token);
+      });
+    });
   }
 
-  const savePrestador = () => {
+  const savePrestador = (token) => {
 
     if (name === "") {
       sendErrorAlert("Seu nome não pode estar em branco!")
@@ -298,27 +326,39 @@ const Anuncie = () => {
       return;
     }
 
-    ProfissionalDataService.uploadImage(email, file)
-      .then(uploadUrl => {
+    fetch(process.env.REACT_APP_RECAPTCHA, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        "g-recaptcha-response": token
+      })
+    }).then(res => res.json()).then(res => {
 
-        var data = {
-          name: name,
-          email: email,
-          birthday: birthday.formattedValue,
-          gender: gender,
-          phone: phone.value,
-          cep: cep.value,
-          state: state,
-          city: city,
-          cidades: citiesOffer,
-          servicos: servicesOffer,
-          picture: uploadUrl,
-          description: description,
-          w2w: w2w,
-          terms: terms
-        };
+      if(res.success){
+        ProfissionalDataService.uploadImage(email, file)
+        .then(uploadUrl => {
 
-        ProfissionalDataService.create(data)
+          var data = {
+            name: name,
+            email: email,
+            birthday: birthday.formattedValue,
+            gender: gender,
+            phone: phone.value,
+            cep: cep.value,
+            state: state,
+            city: city,
+            cidades: citiesOffer,
+            servicos: servicesOffer,
+            picture: uploadUrl,
+            description: description,
+            w2w: w2w,
+            terms: terms,
+            published: false
+          };
+
+          ProfissionalDataService.create(data)
           .then(res => {
             sendSucessAlert("Sua inscrição foi enviada, você deve ser aprovado em breve!");
             newPrestador();
@@ -327,7 +367,10 @@ const Anuncie = () => {
             sendErrorAlert("Talvez nosso sistema esteja fora do ar, tente novamente mais tarde!");
             console.log(e);
           });
-      })
+        })
+      }
+    })
+
   }
 
   const newPrestador = () => {
