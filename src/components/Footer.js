@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../styles/footer.css";
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 export default class Footer extends Component {
   render(){
@@ -20,14 +19,14 @@ export default class Footer extends Component {
                 <label class="footer-title">OnService</label><br />
                 <label class="footer-content"><a href="/sobre-nos">Sobre a OnService</a></label><br />
                 <label class="footer-content"><a href="/contato">Fale conosco</a></label><br />
-                <label class="footer-content"><a href= "/anuncie">Anuncie com a gente</a></label><br />
+                <label class="footer-content"><a href= "/anunciantes">Divulgue sua marca</a></label><br />
               </div>
               <div class="col">
                 <label class="footer-title-2">Confira</label>
                 <ul class="social">
-                  <li><a href="https://www.facebook.com/OnServiceOficial"><FontAwesomeIcon icon={['fab', 'facebook']} size="lg" color="white"/></a></li>
-                  <li><a href="https://www.instagram.com/onserviceoficial/"><FontAwesomeIcon icon={['fab', 'instagram']} size="lg" color="white"/></a></li>
-                  <li><a href="https://www.linkedin.com/company/onserviceoficial"><FontAwesomeIcon icon={['fab', 'linkedin']} size="lg" color="white"/></a></li>
+                  <li><a href="https://www.facebook.com/OnServiceOficial"><FaFacebook color='white' size='1.8em'/></a></li>
+                  <li><a href="https://www.instagram.com/onserviceoficial/"><FaInstagram color='white' size='1.8em'/></a></li>
+                  <li><a href="https://www.linkedin.com/company/onserviceoficial"> <FaLinkedin color='white' size='1.8em'/></a></li>
                 </ul>
               </div>
             </div>

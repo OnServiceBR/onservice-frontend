@@ -1,29 +1,29 @@
 import React, { Component } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "../styles/contrate.css";
+import { FaSearch } from 'react-icons/fa';
 
 export default class Home extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
     }
   }
 
   render() {
-    return(
+    return (
       <div>
         <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><h2 class="path-actual">Contrate um serviço</h2>
-        <div class="search-box">
+        {/*<div class="search-box">
           <form method="get" action="/contrate">
             <div id="search-contrate">
-              <FontAwesomeIcon icon={['fas', 'search']} size="lg" color="rgb(237,125,49)"/>
               <input id="search-input-contrate" placeholder="Buscar por um profissional"/>
+              <FaSearch id="search-lupe"/>
             </div>
             <button id="search-button-contrate" type="submit">
               Buscar
             </button>
-          </form>
-        </div>
+          </form> 
+        </div> */}
         <div class="search-tabs">
           <label id="contrate-category-label">Categorias</label>
           <label id="contrate-service-label">Serviços</label>
@@ -31,7 +31,7 @@ export default class Home extends Component {
         </div>
         <div class="category-buttons row">
           <div class="col">
-            <a href="/contrate/tecnologia">
+            <a href="/contrate/tecnologia" id="contrate-zoom-on-hover">
               <button id="tecnology-button" class="category-button">
                 Tecnologia
               </button>

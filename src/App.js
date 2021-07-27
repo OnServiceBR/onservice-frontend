@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
+import useGaTracker from './useGaTracker'
 
-import './styles/fontawesome';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import './App.css';
@@ -29,8 +29,10 @@ import Residencial from "./pages/trabalhos/Residencial";
 import Saude from "./pages/trabalhos/Saude";
 import Tecnologia from "./pages/trabalhos/Tecnologia";
 import Seguranca from "./pages/seguranca.page";
+import Anunciantes from "./pages/anunciantes.page";
 
-function App() {
+const App = () => {
+  useGaTracker();
   return (
     <div>
       <Navbar />
@@ -47,7 +49,7 @@ function App() {
           <Route exact path="/contato" component={Contato} />
           <Route exact path="/contrate/:job/:workers" component={Profissionais} />
           <Route exact path="/codigo-de-conduta/" component={Conduta} />
-          <Route exact path="/perfil/" component={Perfil} />
+          <Route exact path="/contrate/:job/:workers/:idperfil" component={Perfil} />
           <Route exact path="/termos-de-uso/" component={Termos} />
           <Route exact path="/politica-de-privacidade/" component={Privacidade} />
           <Route exact path="/como-utilizar-o-site/" component={ComoUtilizaroSite} />
@@ -61,6 +63,7 @@ function App() {
           <Route exact path="/contrate/tecnologia" component={Tecnologia} />
           <Route exact path="/sobre-nos/" component={Sobrenos} />
           <Route exact path="/seguranca" component={Seguranca} />
+          <Route exact path="/anunciantes/" component={Anunciantes} />
         </Switch>
       </div>
       <Footer />

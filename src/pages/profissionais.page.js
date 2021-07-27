@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "../styles/trabalhos.css";
 import "../styles/profissionais.css";
-import ServicoDataService from "../services/servico.service";
-import Profissional1 from "../assets/Profissionais/prof1.png";
 import { Multiselect } from 'multiselect-react-dropdown';
+import Database from "../components/Database.js";
+import { FaSearch } from 'react-icons/fa';
 
 export default class Home extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       tecnologia: [],
@@ -16,19 +15,26 @@ export default class Home extends Component {
       manutencao: [],
       ensino: [],
       eventos: [],
-      trabalho:"",
-      profissão:"",
-      w2w:"",
+      categoriaCode: this.props.match.params.job, // Não alterar, serve para o atalho "Serviços" e html
+      categoria: this.props.match.params.job,
+      profissaoCode: this.props.match.params.workers, // Não alterar, serve para o html
+      profissao: this.props.match.params.workers,
+      w2w: "",
+      profissionais: [],
+      tempProfissionais: [],
+      sortType: 'Destaque',
+      options: [],
 
       DropdownOrder: [
-        /* W2W */
-        {name: 'Destaque', id: "destaque"},
-        {name: 'Avaliação', id: "avaliação"},
+        { name: 'Destaques', id: "destaque" },
+        { name: 'A-Z', id: "a-z" },
       ],
+
     };
     this.style = {
       chips: {
-        background: "rgb(237, 125, 49)"
+        background: "rgb(237, 125, 49)",
+        color: "rgb(255,255,255)"
       },
       searchBox: {
         "border": "0.5pt none rgb(118,113,113)",
@@ -37,7 +43,7 @@ export default class Home extends Component {
       },
       inputField: {
         margin: 0,
-        "padding-left":"19px",
+        "padding-left": "19px",
         width: "100%",
       },
       multiselectContainer: {
@@ -52,145 +58,207 @@ export default class Home extends Component {
       option: { // To change css for dropdown options
         color: "rgb(118,113,113)",
       },
+    };
+
+    this.onSelect = this.onSelect.bind(this);
+  }
+
+  sortAZ() {
+    let mapped = Database.filter((item) => {
+      for (var i = 0; i < item.jobs.length; i++) {
+        if (item.jobs[i] === this.state.profissaoCode) {
+          if (!this.state.options)
+            return item
+          else if (this.state.options.include(item.gender))
+            return item
+        }
+      }
+    }).map((item) => {
+      return item
+    });
+    mapped.sort(function (a, b) {
+      return a.name.localeCompare(b.name);
+    })
+    this.setState({ profissionais: mapped })
+  }
+
+  sortDestaque() {
+    // Busca destacados
+    let mapped = this.state.tempProfissionais.filter((item) => {
+      if (item.emphasize == true) {
+        for (var i = 0; i < item.jobs.length; i++) {
+          if (item.jobs[i] === this.state.profissaoCode)
+            return item;
+        }
+      }
+    }).map((item) => {
+      return item
+    });
+
+    this.setState({ profissionais: mapped }, () => {
+
+      // Coloca não destaques por último
+      let mapped2 = this.state.tempProfissionais.filter((item) => {
+        if (item.emphasize == false) {
+          for (var i = 0; i < item.jobs.length; i++) {
+            if (item.jobs[i] === this.state.profissaoCode)
+              return item;
+          }
+        }
+      }).map((item) => {
+        return item
+      });
+      this.setState({ profissionais: [...this.state.profissionais, ...mapped2] })
+    })
+  }
+
+  onSelect(selectedList, selectedItem) {
+    if (selectedItem.id === "a-z") {
+      this.setState({ sortType: 'a-z' })
+      this.setState({ profissionais: this.state.tempProfissionais })
+    }
+    else if (selectedItem.id === "destaque") {
+      this.sortDestaque()
+    }
+  }
+
+  handleChange(event) {
+    const field = event.target.id;
+    if (field === "feminino") {
+      if (event.target.checked) {
+        this.setState({ options: [...this.state.options, "feminino"] }, () => {
+          console.log(this.state.options)
+        })
+      } else {
+        let index = this.state.options.indexOf("feminino");
+        this.state.options.splice(index, 1)
+        this.setState({ options: [...this.state.options] })
+      }
+    } else if (field === "masculino") {
+      if (event.target.checked) {
+        this.setState({ options: [...this.state.options, "masculino"] }, () => {
+          console.log(this.state.options)
+        })
+      } else {
+        let index = this.state.options.indexOf("masculino");
+        this.state.options.splice(index, 1)
+        this.setState({ options: [...this.state.options] })
+      }
     }
   }
 
   componentDidMount() {
-    this.retrieveServicos();
-  }
-
-  retrieveServicos() {
-    if(this.props.match.params.job==="tecnologia"){
-      ServicoDataService.getTecnologia()
-        .then(res => {
-          this.setState({
-            tecnologia: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Tecnologia"
-        });
-    }
-
-
-    
-    // vvvvvvvvvvvvvvvvvvvv SÓ ALTEREI AQUIIIIIIIIII TEM QUE MUDAR E AUTOMATIZAR OS OUTROS. SÓ FUNCIONA PRA MANUTENÇÃO & ENCANADOR!!!!!!!!!!
-    else if(this.props.match.params.job==="manutencao"){
-      ServicoDataService.getManutencao()
-        .then(res => {
-          this.setState({
-            manutencao: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Manutenção"
-        });
-        this.setState({
-          profissão:"Encanador(a)"
-        });
-    }
-    // ^^^^^^^^^^^ SÓ ALTEREI AQUIIIIIIIIII TEM QUE MUDAR E AUTOMATIZAR OS OUTROS. SÓ FUNCIONA PRA MANUTENÇÃO & ENCANADOR!!!!!!!!!!
-
-
-
-    else if(this.props.match.params.job==="saude"){
-      ServicoDataService.getSaude()
-        .then(res => {
-          this.setState({
-            saude: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Saúde"
-        });
-    }
-    else if(this.props.match.params.job==="ensino"){
-      ServicoDataService.getEnsino()
-        .then(res => {
-          this.setState({
-            ensino: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Ensino"
-        });
-    }
-    else if(this.props.match.params.job==="beleza"){
-      ServicoDataService.getBeleza()
-        .then(res => {
-          this.setState({
-            beleza: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Beleza"
-        });
-    }
-    else if(this.props.match.params.job==="eventos"){
-      ServicoDataService.getEventos()
-        .then(res => {
-          this.setState({
-            eventos: res.data
-          });
-          // console.log(res.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        this.setState({
-          trabalho:"Eventos"
-        });
-    }
+    let mapped = Database.filter((item) => {
+      for (var i = 0; i < item.jobs.length; i++) {
+        if (item.jobs[i] === this.state.profissaoCode) {
+          return item
+        }
+      }
+    }).map((item) => {
+      return item
+    });
+    mapped.sort(function (a, b) {
+      return a.name.localeCompare(b.name);
+    })
+    this.setState({ tempProfissionais: mapped }, () => {
+      this.sortDestaque()
+    })
   }
 
   render() {
-    const {trabalho} = this.state;
-    const {profissão} = this.state;
-    return(
+    var { categoria, profissao, profissionais, categoriaCode, profissaoCode, options } = this.state;
+
+    // Correção gramatical das categorias
+    if (categoria === "manutencao") {
+      categoria = "manutenção"
+    }
+    else if (categoria === "saude") {
+      categoria = "saúde"
+    }
+
+    // Correção gramatical das profissões
+    if (profissao === "animador(a)-de-festas") {
+      profissao = "Animador(a) de festas"
+    }
+    if (profissao === "artesa(o)") {
+      profissao = "Artesã(o)"
+    }
+    else if (profissao === "assistente-tecnico(a)") {
+      profissao = "Assistente Técnico(a)"
+    }
+    else if (profissao === "designer-grafico") {
+      profissao = "Designer Gráfico"
+    }
+    else if (profissao === "editor(a)-de-videos") {
+      profissao = "Editor(a) de Vídeos"
+    }
+    else if (profissao === "especialista-em-midias") {
+      profissao = "Especialista em Mídias"
+    }
+    else if (profissao === "fotografo(a)") {
+      profissao = "Fotógrafo(a)"
+    }
+    else if (profissao === "fretes-e-mudancas") {
+      profissao = "Fretes e Mudanças"
+    }
+    else if (profissao === "garcom(garconete)") {
+      profissao = "Garçom(Garçonete)"
+    }
+    else if (profissao === "manutencao-de-pabx") {
+      profissao = "Manutenção de PABX"
+    }
+    else if (profissao === "montador(a)-de-moveis") {
+      profissao = "Montador(a) de Móveis"
+    }
+    else if (profissao === "musico(a)") {
+      profissao = "Músico(a)"
+    }
+    else if (profissao === "passeador(a)-de-caes") {
+      profissao = "Passeador(a) de cães"
+    }
+    else if (profissao === "personal-trainer") {
+      profissao = "Personal Trainer"
+    }
+    else if (profissao === "professor(a)-de-educacao-fisica") {
+      profissao = "Professor(a) de Educação Física"
+    }
+    else if (profissao === "professor(a)-de-ingles") {
+      profissao = "Professor(a) de Inglês"
+    }
+    else if (profissao === "professor(a)-de-programacao") {
+      profissao = "Professor(a) de Programação"
+    }
+    else if (profissao === "psicologo(a)") {
+      profissao = "Psicólogo(a)"
+    }
+    else if (profissao === "publicitario(a)") {
+      profissao = "Publicitário(a)"
+    }
+
+    return (
       <div>
-        {/* O caminho aqui está só para Manutenção, tem que automatizar pra cada uma das categorias de serviços que estão nos botões */}
-        <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate/manutencao">{this.state.trabalho}</a><h2 class="path"> &gt; </h2><h2 class="path-actual">{this.state.profissão}</h2>
+        <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}`}>{categoria}</a><h2 class="path"> &gt; </h2><h2 class="path-actual">{profissao}</h2>
         <div class="search-box">
-          <form method="get" action="/contrate">
+          {/* <form method="get" action="/contrate">
             <div id="search-contrate">
-              <FontAwesomeIcon icon={['fas', 'search']} size="lg" color="rgb(237,125,49)"/>
-              <input id="search-input-contrate" placeholder="Buscar por um profissional"/>
+              <input id="search-input-contrate" placeholder="Buscar por um profissional" />
+              <FaSearch id="search-lupe" />
             </div>
             <button id="search-button-contrate" type="submit">
               Buscar
             </button>
-          </form>
+          </form> */}
         </div>
         <div class="search-tabs">
           <a href="/contrate">
             <label id="profissionais-category-label" class="link-bar-label">Categorias</label>
           </a>
-          <a href="javascript:history.back()">
+          <a href={`/contrate/${categoriaCode}`}>
             <label id="profissionais-service-label" class="link-bar-label">Serviços</label>
           </a>
           <label id="profissionais-job-label">Profissionais</label>
         </div>
-        <br/>
+        <br />
         <div class="row workers-row-order">
           <div class="column workers-column-order-title">
             <div class="order-workers">
@@ -203,17 +271,13 @@ export default class Home extends Component {
                 options={this.state.DropdownOrder} // Options to display in the dropdown
                 selectedValues={this.state.selectedValue} // Preselected value to persist in dropdown
                 onSelect={this.onSelect} // Function will trigger on select event
-                // ------------------------------------------------------------------------------------------------
-                // VER AQUI COMO DESABILITAR A CAIXINHA DO DROPDOWN QUANDO SELECIONA PELO THIS.ONSELECT
-                // ------------------------------------------------------------------------------------------------
                 onRemove={this.onRemove} // Function will trigger on remove event
                 displayValue="name" // Property name to display in the dropdown options
-                closeOnSelect={true}
-                showArrow={true}
                 id="MultipleDropdownWorkers"
                 style={this.style}
-                selectionLimit={1}
-                placeholder="Selecione"
+                singleSelect={true}
+                avoidHighlightFirstOption={true}
+                placeholder="Destaques"
                 hidePlaceholder={true}
               />
             </div>
@@ -226,10 +290,10 @@ export default class Home extends Component {
             </div>
             <div class="workers-settings-text">
               <label class="container">
-                <input type="checkbox"/>
+                <input type="checkbox" defaultChecked={true} disabled />
                 <span class="checkmark"></span>
               </label>
-              <label for="checkbox" style={{marginLeft:"14%", marginBottom:"0%"}}>
+              <label for="checkbox" style={{ marginLeft: "14%", marginBottom: "0%" }}>
                 São Carlos
               </label>
             </div>
@@ -238,92 +302,51 @@ export default class Home extends Component {
             </div>
             <div class="workers-settings-text">
               <label class="container">
-                <input type="checkbox"/>
+                <input id="feminino" type="checkbox" onChange={this.handleChange.bind(this)} />
                 <span class="checkmark"></span>
               </label>
-              <label for="checkbox" style={{marginLeft:"14%", marginBottom:"0%"}}>
+              <label for="checkbox" style={{ marginLeft: "14%", marginBottom: "0%" }}>
                 Feminino
               </label>
             </div>
             <div class="workers-settings-text">
               <label class="container">
-                <input type="checkbox"/>
+                <input id="masculino" type="checkbox" onChange={this.handleChange.bind(this)} />
                 <span class="checkmark"></span>
               </label>
-              <label for="checkbox" style={{marginLeft:"14%", marginBottom:"0%"}}>
+              <label for="checkbox" style={{ marginLeft: "14%", marginBottom: "0%" }}>
                 Masculino
               </label>
             </div>
           </div>
           <div id="workers-change-color-on-hover" class="column workers-column-profile">
-            {/* -------------------------------------------------------------------- */}
-            <a href="/perfil" class="row workers-row-profile">
-              <div class="column workers-image">
-                <img src={Profissional1} class="workers-picture-profissões"/>
-              </div>
-              <div class="column workers-profile">
-                <div id="workers-name-change" class="workers-name">
-                  Pablo Picasso
+            {profissionais.filter((item) => {
+              if (options.length == 0) {
+                console.log(item)
+                return item
+              }
+              else if (options.includes(item.gender)) {
+                console.log(item)
+                return item
+              }
+            }).map(item =>
+              <a href={`/contrate/${categoriaCode}/${profissaoCode}/${item.id}`} class="row workers-row-profile">
+                <div class="column workers-image">
+                  <img alt="" src={item.picture} class="workers-picture-profissões" />
                 </div>
-                <div class="workers-description">
-                  <p>
-                    Por conseguinte, o surgimento do comércio virtual aponta para a melhoria das condições financeiras e administrativas exigidas. O incentivo ao avanço tecnológico, assim como a complexidade dos estudos efetuados deve passar por modificações independentemente do sistema de formação de quadros que corresponde às necessidades. A prática cotidiana prova que a revolução dos costumes exige a precisão e aaaaaaaaaaaaaaaaaaaaaa
-                  </p>
+                <div class="column workers-profile">
+                  <div id="workers-name-change" class="workers-name">
+                    {item.name}
+                  </div>
+                  <div class="workers-description">
+                    <p>
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <hr class="workers-hr"/>
-            </a>
-            {/* -------------------------------------------------------------------- */}
-            <a href="/perfil" class="row workers-row-profile">
-              <div class="column workers-image">
-                <img src={Profissional1} class="workers-picture-profissões"/>
-              </div>
-              <div class="column workers-profile">
-                <div id="workers-name-change" class="workers-name">
-                  Vincent van Gogh
-                </div>
-                <div class="workers-description">
-                  <p>
-                    Nunca é demais lembrar o peso e o significado destes problemas, uma vez que a valorização de fatores subjetivos agrega valor ao estabelecimento das regras de conduta normativas. Não obstante, o julgamento imparcial das eventualidades pode nos levar a considerar a reestruturação de alternativas às soluções ortodoxas. Do mesmo modo, a constante divulgação das informações representa uma abertura para a melhoria do remanejamento dos quadros
-                  </p>
-                </div>
-              </div>
-              <hr class="workers-hr"/>
-            </a>
-            {/* -------------------------------------------------------------------- */}
-            <a href="/perfil" class="row workers-row-profile">
-              <div class="column workers-image">
-                <img src={Profissional1} class="workers-picture-profissões"/>
-              </div>
-              <div class="column workers-profile">
-                <div id="workers-name-change" class="workers-name">
-                  Michelangelo
-                </div>
-                <div class="workers-description">
-                  <p>
-                    Percebemos, cada vez mais, que a execução dos pontos do programa nos obriga à análise dos procedimentos normalmente adotados
-                  </p>
-                </div>
-              </div>
-              <hr class="workers-hr"/>
-            </a>
-            {/* -------------------------------------------------------------------- */}
-            <a href="/perfil" class="row workers-row-profile">
-              <div class="column workers-image">
-                <img src={Profissional1} class="workers-picture-profissões"/>
-              </div>
-              <div class="column workers-profile">
-                <div id="workers-name-change" class="workers-name">
-                  Salvador Dalí
-                </div>
-                <div class="workers-description">
-                  <p>
-                    Todavia, a crescente influência da mídia possibilita uma melhor visão global das direções preferenciais no sentido do progresso. Por outro lado, o aumento do diálogo entre os diferentes setores produtivos assume importantes posições no estabelecimento do fluxo de informações. O cuidado em identificar pontos críticos no comprometimento entre as equipes auxilia a preparação e a composição das diretrizes de desenvolvimento para o futuro
-                  </p>
-                </div>
-              </div>
-              <hr class="workers-hr"/>
-            </a>
+                <hr class="workers-hr" />
+              </a>
+            )}
           </div>
         </div>
       </div>
