@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
+import useGaTracker from './useGaTracker'
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -30,7 +31,8 @@ import Tecnologia from "./pages/trabalhos/Tecnologia";
 import Seguranca from "./pages/seguranca.page";
 import Anunciantes from "./pages/anunciantes.page";
 
-function App() {
+const App = () => {
+  useGaTracker();
   return (
     <div>
       <Navbar />
