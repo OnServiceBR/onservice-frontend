@@ -21,7 +21,6 @@ const Anuncie = () => {
   const [birthday, setBirthday] = useState("")
   const [gender, setGender] = useState("")
   const [phone, setPhone] = useState("")
-  const [cep, setCep] = useState("")
   const [state, setState] = useState("")
   const [city, setCity] = useState("")
   const [citiesOffer, setCitiesOffer] = useState([])
@@ -143,6 +142,10 @@ const Anuncie = () => {
         country: data.country,
       });
     });
+
+    cidades.sort(function (a, b) {
+      return a.name.localeCompare(b.name);
+    })
 
     setCitiesAvailable(cidades)
   }
@@ -296,11 +299,6 @@ const Anuncie = () => {
       }
     }
 
-    if (cep === "" || cep.value === "") {
-      sendErrorAlert("Seu cep não pode estar em branco!")
-      return;
-    }
-
     if (state === "") {
       sendErrorAlert("Seu estado não pode estar em branco!")
       return;
@@ -346,7 +344,6 @@ const Anuncie = () => {
             birthday: birthday.formattedValue,
             gender: gender,
             phone: phone.value,
-            cep: cep.value,
             state: state,
             city: city,
             cidades: citiesOffer,
@@ -379,7 +376,6 @@ const Anuncie = () => {
     setBirthday("")
     setGender("")
     setPhone("")
-    setCep("")
     setState("")
     setCity("")
     setCitiesOffer([])
@@ -392,7 +388,6 @@ const Anuncie = () => {
     document.getElementById("register-form").reset()
     document.getElementById("birthday").setAttribute("value", "")
     document.getElementById("phone").setAttribute("value", "")
-    document.getElementById("cep").setAttribute("value", "")
   }
 
   const onSelectBirthday = (values) => {
@@ -401,10 +396,6 @@ const Anuncie = () => {
 
   const onSelectPhone = (values) => {
     setPhone(values)
-  }
-
-  const onSelectCEP = (values) => {
-    setCep(values)
   }
 
   const onSelectState = (selectedList, selectedItem) => {
@@ -478,10 +469,6 @@ const Anuncie = () => {
             <label for="phone"><span title="Campo obrigatório" style={{ color: "red" }}>*</span>Celular:</label>
             <NumberFormat id="phone" placeholder="Insira somente os números do seu celular, com ddd" onValueChange={onSelectPhone} format="(##) #####-####" mask="_" />
             <small class=''>*É obrigatório que este número tenha Whatsapp</small>
-          </div>
-          <div class="form-item">
-            <label for="cep"><span title="Campo obrigatório" style={{ color: "red" }}>*</span>CEP:</label>
-            <NumberFormat id="cep" placeholder="Insira apenas os números do seu CEP" onValueChange={onSelectCEP} format="#####-###" mask="_" />
           </div>
           <div class="form-item">
             <label for="state"><span title="Campo obrigatório" style={{ color: "red" }}>*</span>Estado:</label>
