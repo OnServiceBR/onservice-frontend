@@ -153,7 +153,7 @@ export default class Perfil extends Component {
             switch (value) {
 
               case "whatsapp":
-                window.open(`https://api.whatsapp.com/send?phone=${item.phone}&text=Ol%C3%A1%20${item.name}%2C%20encontrei%20seu%20perfil%20na%20OnService.%20Tenho%20interesse%20em%20seu%20servi%C3%A7o%20de%20${profissao}%2C%20voc%C3%AA%20poderia%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F`, `_blank`);
+                window.open(`https://api.whatsapp.com/send?phone=55${item.phone}&text=Ol%C3%A1%20${item.name}%2C%20encontrei%20seu%20perfil%20na%20OnService.%20Tenho%20interesse%20em%20seu%20servi%C3%A7o%20de%20${profissao}%2C%20voc%C3%AA%20poderia%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F`, `_blank`);
                 break;
               default:
                 break;
