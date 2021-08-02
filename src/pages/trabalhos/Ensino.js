@@ -7,24 +7,26 @@ import Job from "../../components/Job";
 
 function Ensino() {
   const jobs = [
-    { job: "Coach", link: "/contrate/ensino/coach", count: "", iconC: "../assets/icones/CoachC.png", iconL: "../assets/icones/CoachL.png" },
-    { job: "Professor(a) de Educação Física", link: "/contrate/ensino/professor(a)-de-educacao-fisica", count: "", iconC: "../assets/icones/ProfessordeEducacaoFisicaC.png", iconL: "../assets/icones/ProfessordeEducacaoFisicaL.png" },
-    { job: "Professor(a) de Francês", link: "/contrate/ensino/professor(a)-de-frances", count: "", iconC: "../assets/icones/ProfessorC.png", iconL: "../assets/icones/ProfessorL.png" },
-    { job: "Professor(a) de Inglês", link: "/contrate/ensino/professor(a)-de-ingles", count: "", iconC: "../assets/icones/ProfessordeInglesC.png", iconL: "../assets/icones/ProfessordeInglesL.png" },
-    { job: "Professor(a) de Programação", link: "/contrate/ensino/professor(a)-de-programacao", count: "", iconC: "../assets/icones/ProfessordeProgramacaoC.png", iconL: "../assets/icones/ProfessordeProgramacaoL.png" },
-    { job: "Tradutor(a)", link: "/contrate/ensino/tradutor(a)", count: "", iconC: "../assets/icones/TradutorC.png", iconL: "../assets/icones/TradutorL.png" },
+    { job: "Coach", link: "/contrate/ensino/coach", count: "", iconC: "../assets/icones/CoachC.jpg", iconL: "../assets/icones/CoachL.jpg" },
+    { job: "Professor(a) de Educação Física", link: "/contrate/ensino/professor(a)-de-educacao-fisica", count: "", iconC: "../assets/icones/ProfessordeEducacaoFisicaC.jpg", iconL: "../assets/icones/ProfessordeEducacaoFisicaL.jpg" },
+    { job: "Professor(a) de Francês", link: "/contrate/ensino/professor(a)-de-frances", count: "", iconC: "../assets/icones/ProfessorC.jpg", iconL: "../assets/icones/ProfessorL.jpg" },
+    { job: "Professor(a) de Inglês", link: "/contrate/ensino/professor(a)-de-ingles", count: "", iconC: "../assets/icones/ProfessordeInglesC.jpg", iconL: "../assets/icones/ProfessordeInglesL.jpg" },
+    { job: "Professor(a) de Programação", link: "/contrate/ensino/professor(a)-de-programacao", count: "", iconC: "../assets/icones/ProfessordeProgramacaoC.jpg", iconL: "../assets/icones/ProfessordeProgramacaoL.jpg" },
+    { job: "Tradutor(a)", link: "/contrate/ensino/tradutor(a)", count: "", iconC: "../assets/icones/TradutorC.jpg", iconL: "../assets/icones/TradutorL.jpg" },
   ]
 
   const [alphabet, setAlphabet] = useState([])
 
   useEffect(() => {
-    {jobs.map((item) => {
-      Counter.filter((item2) => {
-        if (item2.jobCounted === item.job) {
-          item.count = item2.counter
-        }
+    {
+      jobs.map((item) => {
+        Counter.filter((item2) => {
+          if (item2.jobCounted === item.job) {
+            item.count = item2.counter
+          }
+        })
       })
-    })}
+    }
     let prevLet = ""
     for (let i = 0; i < jobs.length; i++) {
       console.log(jobs[i].count)
@@ -97,7 +99,7 @@ function Ensino() {
           <h1 class="job-dictionary-letter">{letter}<a name={`names-${letter}`}></a></h1>
           <hr class="job-hr" />
           {jobs.filter((item) => {
-            if (item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item            
+            if (item.job[0].normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter) return item
           }).map((item) => {
             Counter.filter((item2) => {
               if (item2.jobCounted === item.job) {

@@ -7,8 +7,8 @@ import Job from "../../components/Job";
 
 function Residencial() {
   const jobs = [
-    { job: "Diarista", link: "/contrate/residencial/diarista", count: "", iconC: "../assets/icones/DiaristaC.png", iconL: "../assets/icones/DiaristaL.png" },
-    { job: "Jardineiro(a)", link: "/contrate/residencial/jardineiro(a)", count: "", iconC: "../assets/icones/JardineiroC.png", iconL: "../assets/icones/JardineiroL.png" },
+    { job: "Diarista", link: "/contrate/residencial/diarista", count: "", iconC: "../assets/icones/DiaristaC.jpg", iconL: "../assets/icones/DiaristaL.jpg" },
+    { job: "Jardineiro(a)", link: "/contrate/residencial/jardineiro(a)", count: "", iconC: "../assets/icones/JardineiroC.jpg", iconL: "../assets/icones/JardineiroL.jpg" },
   ]
 
   const [alphabet, setAlphabet] = useState([])
