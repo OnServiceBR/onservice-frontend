@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Switch, Route } from "react-router-dom";
-import useGaTracker from './useGaTracker'
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-204284257-1');
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -32,7 +33,11 @@ import Seguranca from "./pages/seguranca.page";
 import Anunciantes from "./pages/anunciantes.page";
 
 const App = () => {
-  useGaTracker();
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
   return (
     <div>
       <Navbar />
