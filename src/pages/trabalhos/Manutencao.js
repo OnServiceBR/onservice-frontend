@@ -7,10 +7,10 @@ import Job from "../../components/Job";
 
 function Manutencao() {
   const jobs = [
-    { job: "Eletricista", link: "/contrate/manutencao/eletricista/", count: "", iconC: "../assets/icones/EletricistaC.png", iconL: "../assets/icones/EletricistaL.png" },
-    { job: "Encanador(a)", link: "/contrate/manutencao/encanador(a)/", count: "", iconC: "../assets/icones/EncanadorC.png", iconL: "../assets/icones/EncanadorL.png" },
-    { job: "Faz Tudo", link: "/contrate/manutencao/faz-tudo/", count: "", iconC: "../assets/icones/FazTudoC.png", iconL: "../assets/icones/FazTudoL.png" },
-    { job: "Pintor(a)", link: "/contrate/manutencao/pintor(a)/", count: "", iconC: "../assets/icones/PintorC.png", iconL: "../assets/icones/PintorL.png" },
+    { job: "Eletricista", link: "/contrate/manutencao/eletricista/", count: "", iconC: "../assets/icones/EletricistaC.jpg", iconL: "../assets/icones/EletricistaL.jpg" },
+    { job: "Encanador(a)", link: "/contrate/manutencao/encanador(a)/", count: "", iconC: "../assets/icones/EncanadorC.jpg", iconL: "../assets/icones/EncanadorL.jpg" },
+    { job: "Faz Tudo", link: "/contrate/manutencao/faz-tudo/", count: "", iconC: "../assets/icones/FazTudoC.jpg", iconL: "../assets/icones/FazTudoL.jpg" },
+    { job: "Pintor(a)", link: "/contrate/manutencao/pintor(a)/", count: "", iconC: "../assets/icones/PintorC.jpg", iconL: "../assets/icones/PintorL.jpg" },
   ]
 
   const [alphabet, setAlphabet] = useState([])
