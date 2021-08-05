@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Switch, Route } from "react-router-dom";
 import ReactGA from 'react-ga';
-ReactGA.initialize('UA-204284257-1');
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -32,6 +31,7 @@ import Tecnologia from "./pages/trabalhos/Tecnologia";
 import Seguranca from "./pages/seguranca.page";
 import Anunciantes from "./pages/anunciantes.page";
 
+ReactGA.initialize('UA-204284257-1');
 const App = () => {
 
   useEffect(() => {
