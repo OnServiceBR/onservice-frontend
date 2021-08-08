@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import ReactGA from 'react-ga';
 import { Switch, Route } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -31,6 +32,12 @@ import Seguranca from "./pages/seguranca.page";
 import Anunciantes from "./pages/anunciantes.page";
 
 const App = () => {
+
+  useEffect(() = {
+    ReactGA.initialize("UA-204284257-1");
+
+    ReactGA.pageview('/');
+  }, [])
 
   return (
     <div>
