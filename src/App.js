@@ -33,11 +33,11 @@ import Anunciantes from "./pages/anunciantes.page";
 
 const App = () => {
 
-  useEffect(() = {
+  useEffect(() => {
     ReactGA.initialize("UA-204284257-1");
 
     ReactGA.pageview('/');
-  }, [])
+  }, []);
 
   return (
     <div>
