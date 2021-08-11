@@ -430,8 +430,8 @@ const Anuncie = () => {
 
   return (
     <div class="row">
-      <div class="col">
-        <img src={Anuncieimagem} width="500px" alt="Imagem Página Anuncie" />
+      <div class="col anuncie-image">
+        <img src={Anuncieimagem} class = "register-picture" alt="Imagem Página Anuncie" />
       </div>
       <div class="col register-right">
         <h2>ANUNCIE-SE AQUI</h2>
