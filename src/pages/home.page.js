@@ -48,7 +48,7 @@ const Home = () => {
         <form method="get" action="/contrate">
           <button id="button1-search-home" type="submit">
             {/* Icone de busca */}
-            &nbsp; &nbsp; Buscar por um profissional
+            <div>Buscar por um profissional</div>
             <FaSearch id="search-lupe" />
           </button>
           <button id="button2-search-home" type="submit">
@@ -74,38 +74,28 @@ const Home = () => {
           />
         )}
       </Carousel>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <div class="row">
-        <div class="col-5">
-          <div id="text-claudia">
-            <div id="text-h3-home">
-              <p><span style={{ color: "rgb(237,125,49)" }}>Cadastra-se</span> já e<br />
-                receba <span style={{ color: "rgb(237,125,49)" }}>novos clientes</span>!</p>
-            </div>
-            <div id="text-h4-home">
-              <p>Impulsione o seu negócio.<br />
-                A OnService divulga o seu perfil para<br />
-                milhares de clientes. E o melhor, é <span style={{ color: "rgb(237,125,49)" }}>grátis</span>!</p>
-            </div>
-            <form method="get" action="/anuncie">
-              <button id="button3-register-home">
-                Cadastre-se de Graça na OnService
-                <FaMousePointer id="mouse-pointer" />
-              </button>
-            </form>
+      <div class="claudia-flex">
+        <div class="claudia-text-flex">
+          <div id="text-h3-home">
+            <p><span style={{ color: "rgb(237,125,49)" }}>Cadastra-se</span> já e<br />
+              receba <span style={{ color: "rgb(237,125,49)" }}>novos clientes</span>!</p>
           </div>
+          <div id="text-h4-home">
+            <p>Impulsione o seu negócio.<br />
+              A OnService divulga o seu perfil para<br />
+              milhares de clientes. E o melhor, é <span style={{ color: "rgb(237,125,49)" }}>grátis</span>!</p>
+          </div>
+          <form class="orange-button-register-home" method="get" action="/anuncie">
+            <button id="button3-register-home">
+              Cadastre-se de Graça na OnService
+              <FaMousePointer id="mouse-pointer" />
+            </button>
+          </form>
         </div>
-        <div class="col-7">
-          <img id="claudia" src={Claudia} width="500px" alt="Home" />
+        <div class="claudia-image-flex">
+          <img id="claudia" src={Claudia} alt="Home" />
         </div>
       </div>
-      <br />
-      <br />
-      <br />
     </div>
   )
 }

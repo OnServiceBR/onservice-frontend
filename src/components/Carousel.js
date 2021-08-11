@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import '../styles/carousel.css';
 
-import WhiteLeft from '../assets/BrancoEsquerda.png';
-import WhiteRight from '../assets/BrancoDireita.png';
-
 const Carousel = (props) => {
     const {children, show} = props
 
@@ -36,28 +33,27 @@ const Carousel = (props) => {
 
     const handleTouchMove = (e) => {
         const touchDown = touchPosition
-    
+
         if(touchDown === null) {
             return
         }
-    
+
         const currentTouch = e.touches[0].clientX
         const diff = touchDown - currentTouch
-    
+
         if (diff > 5) {
             next()
         }
-    
+
         if (diff < -5) {
             prev()
         }
-    
+
         setTouchPosition(null)
     }
 
     return (
         <div class="carousel-center">
-            <img alt="" src={WhiteLeft} id="white-left" width="330px"/>
             <div className="carousel-container">
                 <div className="carousel-wrapper">
                     {/* You can alwas change the content of the button to other things */}
@@ -74,7 +70,7 @@ const Carousel = (props) => {
                     >
                         <div
                             className={`carousel-content show-${show}`}
-                            style={{ transform: `translateX(-${currentIndex * (100 / show)}%)`, 
+                            style={{ transform: `translateX(-${currentIndex * (100 / show)}%)`,
                             transition: '0.8s' }}
                         >
                             {children}
@@ -89,9 +85,8 @@ const Carousel = (props) => {
                     }
                 </div>
             </div>
-            <img alt="" src={WhiteRight} id="white-right" width="330px"/>
         </div>
-        
+
     )
 }
 
