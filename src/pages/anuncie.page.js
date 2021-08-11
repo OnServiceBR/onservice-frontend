@@ -429,11 +429,11 @@ const Anuncie = () => {
   }
 
   return (
-    <div class="row">
-      <div class="col anuncie-image">
+    <div class="anuncie-page">
+      <div class="anuncie-image">
         <img src={Anuncieimagem} class = "register-picture" alt="Imagem Página Anuncie" />
       </div>
-      <div class="col register-right">
+      <div class="register-right">
         <h2>ANUNCIE-SE AQUI</h2>
         <form id="register-form">
           <div class="form-item">
@@ -558,7 +558,7 @@ const Anuncie = () => {
                 <input id="terms" name="terms" type="checkbox" onChange={handleChange.bind(this)} />
                 <span class="checkmark"></span>
               </label>
-              <label for="checkbox" style={{ marginLeft: "10%" }}>Li e aceito o <a href="/codigo-de-conduta">Código de Conduta</a> e a <a href="/politica-de-privacidade">Política de Privacidade</a></label>
+              <label for="checkbox" class="terms-label">Li e aceito o <a href="/codigo-de-conduta">Código de Conduta</a> e a <a href="/politica-de-privacidade">Política de Privacidade</a></label>
             </div>
             <p style={{ fontSize: "8pt", marginLeft: "5.5%", marginRight: "3%" }}>Ao clicar no botão <span style={{ fontWeight: "bold" }}>“Registrar-se”</span> você concorda e expressa sua vontade livre, consciente e informada de cumprir com e ser regido por nosso <a href="/codigo-de-conduta">Código de Conduta</a> e <a href="/politica-de-privacidade">Política de Privacidade</a></p>
           </div>

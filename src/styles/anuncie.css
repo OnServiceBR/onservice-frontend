@@ -5,25 +5,38 @@
   }
   .register-right {
     width: 11.93cm;
+    padding-top: 15px;
+  }
+  .anuncie-page{
+    display: flex;
+    padding: 5px;
   }
 }
 
 @media only screen and (max-width: 1199px) and (min-width: 992px){
   .register-picture {
-    width: 100px;
+    max-width: 430px;
   }
 }
 
 @media only screen and (max-width: 576px){
   .register-picture {
-    width: 300px;
+    max-width: 250px;
   }
   .anuncie-image {
-    text-align: center;
-    padding-left: 0px !important;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
   }
   .register-right {
-    flex-grow: 0.95 !important;
+    /* flex-grow: 0.95 !important; */
+    margin: 5px;
+    padding-top: 10px; 
+  }
+  .terms-label{
+    margin-left: 50px !important;
   }
 }
 /* Bloco do formulário */
@@ -408,5 +421,5 @@
   margin-left: -5px;
   color: rgb(237, 125, 49);
   transform: scale(1.4);
-  transition: 0.3s;  
+  transition: 0.3s;
 }
