@@ -33,7 +33,8 @@
   .register-right {
     /* flex-grow: 0.95 !important; */
     margin: 5px;
-    padding-top: 10px; 
+    padding-top: 10px;
+    padding-bottom: 5px;
   }
   .terms-label{
     margin-left: 50px !important;
