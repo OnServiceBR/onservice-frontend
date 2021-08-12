@@ -8,11 +8,11 @@ import Job from "../../components/Job";
 function Beleza() {
 
   const jobs = [
-    { job: "Barbeiro(a)", link: "/contrate/beleza/barbeiro(a)", count: "", iconC: "../../assets/icones/BarbeiroC.png", iconL: "../../assets/icones/BarbeiroL.png" },
-    { job: "Cabeleireiro(a)", link: "/contrate/beleza/cabeleireiro(a)", count: "", iconC: "../../assets/icones/CabeleireiroC.png", iconL: "../../assets/icones/CabeleireiroL.png" },
-    { job: "Esteticista", link: "/contrate/beleza/esteticista", count: "", iconC: "../../assets/icones/EsteticistaC.png", iconL: "../../assets/icones/EsteticistaL.png" },
-    { job: "Maquiador(a)", link: "/contrate/beleza/maquiador(a)", count: "", iconC: "../../assets/icones/MaquiadorC.png", iconL: "../../assets/icones/MaquiadorL.png" },
-    { job: "Micropigmentador(a)", link: "/contrate/beleza/micropigmentador(a)", count: "", iconC: "../../assets/icones/MicropigmentadorC.png", iconL: "../../assets/icones/MicropigmentadorL.png" },
+    { job: "Barbeiro(a)", link: "/contrate/beleza/barbeiro(a)", count: "", iconC: "../../assets/icones/BarbeiroC.jpg", iconL: "../../assets/icones/BarbeiroL.jpg" },
+    { job: "Cabeleireiro(a)", link: "/contrate/beleza/cabeleireiro(a)", count: "", iconC: "../../assets/icones/CabeleireiroC.jpg", iconL: "../../assets/icones/CabeleireiroL.jpg" },
+    { job: "Esteticista", link: "/contrate/beleza/esteticista", count: "", iconC: "../../assets/icones/EsteticistaC.jpg", iconL: "../../assets/icones/EsteticistaL.jpg" },
+    { job: "Maquiador(a)", link: "/contrate/beleza/maquiador(a)", count: "", iconC: "../../assets/icones/MaquiadorC.jpg", iconL: "../../assets/icones/MaquiadorL.jpg" },
+    { job: "Micropigmentador(a)", link: "/contrate/beleza/micropigmentador(a)", count: "", iconC: "../../assets/icones/MicropigmentadorC.jpg", iconL: "../../assets/icones/MicropigmentadorL.jpg" },
   ]
 
   const [alphabet, setAlphabet] = useState([])

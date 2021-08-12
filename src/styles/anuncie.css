@@ -1,4 +1,47 @@
 /* CSS do formulário */
+@media only screen and (min-width: 1200px){
+  .register-picture {
+    width: 500px;
+  }
+  .register-right {
+    width: 11.93cm;
+    padding-top: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .anuncie-page{
+    display: flex;
+    padding: 5px;
+  }
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 992px){
+  .register-picture {
+    max-width: 430px;
+  }
+}
+
+@media only screen and (max-width: 576px){
+  .register-picture {
+    max-width: 250px;
+  }
+  .anuncie-image {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+  }
+  .register-right {
+    /* flex-grow: 0.95 !important; */
+    margin: 5px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+  .terms-label{
+    margin-left: 50px !important;
+  }
+}
 /* Bloco do formulário */
 .register-right {
   border: none;
@@ -8,7 +51,6 @@
   border-top-right-radius: 0.65cm;
   border-bottom-right-radius: 0.65cm;
   margin-bottom: 0.5cm;
-  width: 11.93cm;
 }
 
 .button-alert {
@@ -382,5 +424,5 @@
   margin-left: -5px;
   color: rgb(237, 125, 49);
   transform: scale(1.4);
-  transition: 0.3s;  
+  transition: 0.3s;
 }

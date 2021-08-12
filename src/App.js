@@ -34,10 +34,6 @@ import Anunciantes from "./pages/anunciantes.page";
 ReactGA.initialize('UA-204284257-1');
 const App = () => {
 
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
-
   return (
     <div>
       <Navbar />
