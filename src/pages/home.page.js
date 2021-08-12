@@ -58,22 +58,24 @@ const Home = () => {
       </div>
 
       <p class="total-counter"><span style={{ color: "rgb(237,125,49)", fontWeight: "bold", fontSize: "22pt" }}>{totalCount}</span> Profissionais cadastrados!</p>
-      <p class="carousel-title">DESTAQUES DO MÊS</p>
-      <Carousel
+      <div class="carrossel">
+        <p class="carousel-title">DESTAQUES DO MÊS</p>
+        <Carousel
         show={5}
         infiniteLoop={true}
-      >
+        >
         {Database.filter((item) => {
           if (item.emphasize === true) return item;
         }).map(item =>
           <Card
-            Job={item.jobsRight[0]}
-            Name={item.name.split(" ", 1)[0]}
-            Picture={item.picture}
-            Link={item.link}
+          Job={item.jobsRight[0]}
+          Name={item.name.split(" ", 1)[0]}
+          Picture={item.picture}
+          Link={item.link}
           />
         )}
-      </Carousel>
+        </Carousel>
+      </div>
       <div class="claudia-flex">
         <div class="claudia-text-flex">
           <div id="text-h3-home">
