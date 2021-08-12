@@ -104,21 +104,3 @@
 .carousel-content.show-5 > * {
     width: calc(100% / 5);
 }
-
-#white-left {
-    z-index: 1;
-    display: inline;
-    margin: 0px;
-    position: absolute;
-    bottom: -15%;
-    left: -12%;
-}
-
-#white-right {
-    z-index: 1;
-    display: inline;
-    margin: 0px;
-    position: absolute;
-    bottom: -15%;
-    right: -12%;
-}

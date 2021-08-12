@@ -1,3 +1,82 @@
+@media only screen and (min-width: 1200px){
+	.claudia-text-flex{
+		margin-right: 20px;
+	}
+	.claudia-image-flex{
+		margin-left: 150px;
+	}
+	#button1-search-home{
+		width: 44%;
+	}
+	#button2-search-home{
+		width: 10%;
+	}
+	#search-lupe{
+		top: 33%;
+	}
+	#claudia{
+		max-width: 500px;
+	}
+	.total-counter{
+		margin-top: 60px;
+	}
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 992px){
+  #button2-search-home{
+
+	}
+}
+
+@media only screen and (max-width: 576px) {
+	#button1-search-home{
+		width: 215px;
+	}
+	#button2-search-home{
+		width: 100px;
+	}
+	#search-lupe{
+		top: 7px;
+	}
+	#claudia{
+		max-width: 300px;
+		margin-top: 20px;
+		margin-bottom: 15px;
+	}
+	.orange-button-register-home{
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#mouse-pointer{
+		display:none;
+	}
+	.carrossel{
+		display: none;
+	}
+	.total-counter{
+		margin-top: 10px;
+	}
+}
+
+.claudia-flex{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 15px;
+}
+
+.claudia-text-flex{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.claudia-image-flex{
+	display: flex;
+	justify-content: center;
+}
+
 .homephrase{
 	margin-left: auto;
 	margin-right: auto;
@@ -26,7 +105,6 @@
   background: rgb(255,255,255);
   font-family: GlacialIndifference;
   color: rgb(175,171,171);
-  width: 44%;
   padding: 0.8%;
   margin-bottom: 5px;
   margin-top: 5px;
@@ -37,7 +115,6 @@
 #search-lupe {
   position: absolute;
 	right: 3%;
-  top: 33%;
   color: rgb(175,171,171);
 }
 
@@ -51,7 +128,6 @@
   background: rgb(237,125,49);
   font-family: GlacialIndifference;
   color: rgb(255,255,255);
-  width: 10%;
   padding: 0.8%;
   font-weight: bold;
   margin-bottom: 5px;
@@ -71,7 +147,6 @@
   font-family: GlacialIndifference;
   font-size: 20pt;
 	color: rgb(64,64,64);
-  margin-top: 60px;
   margin-bottom: 10px;
 }
 
@@ -196,6 +271,7 @@
 #text-h3-home{
 	font-family: GlacialIndifference;
 	font-size: 18pt;
+	display: flex;
 }
 
 #text-h4-home{
@@ -214,7 +290,7 @@
   background: rgb(237,125,49);
   font-family: GlacialIndifference;
   color: rgb(255,255,255);
-  width: 80%;
+  width: 100%;
   padding: 0.8%;
   font-weight: bold;
   margin-bottom: 5px;
@@ -244,10 +320,6 @@
 	bottom: -10px;
   transition: 0.3s;
   transform: scale(1.3);
-}
-
-#claudia {
-	margin-left: 60px;
 }
 
 .emphasize-picture-profissões {

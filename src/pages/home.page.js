@@ -48,7 +48,7 @@ const Home = () => {
         <form method="get" action="/contrate">
           <button id="button1-search-home" type="submit">
             {/* Icone de busca */}
-            &nbsp; &nbsp; Buscar por um profissional
+            <div>Buscar por um profissional</div>
             <FaSearch id="search-lupe" />
           </button>
           <button id="button2-search-home" type="submit">
@@ -58,54 +58,46 @@ const Home = () => {
       </div>
 
       <p class="total-counter"><span style={{ color: "rgb(237,125,49)", fontWeight: "bold", fontSize: "22pt" }}>{totalCount}</span> Profissionais cadastrados!</p>
-      <p class="carousel-title">DESTAQUES DO MÊS</p>
-      <Carousel
+      <div class="carrossel">
+        <p class="carousel-title">DESTAQUES DO MÊS</p>
+        <Carousel
         show={5}
         infiniteLoop={true}
-      >
+        >
         {Database.filter((item) => {
           if (item.emphasize === true) return item;
         }).map(item =>
           <Card
-            Job={item.jobsRight[0]}
-            Name={item.name.split(" ", 1)[0]}
-            Picture={item.picture}
-            Link={item.link}
+          Job={item.jobsRight[0]}
+          Name={item.name.split(" ", 1)[0]}
+          Picture={item.picture}
+          Link={item.link}
           />
         )}
-      </Carousel>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <div class="row">
-        <div class="col-5">
-          <div id="text-claudia">
-            <div id="text-h3-home">
-              <p><span style={{ color: "rgb(237,125,49)" }}>Cadastra-se</span> já e<br />
-                receba <span style={{ color: "rgb(237,125,49)" }}>novos clientes</span>!</p>
-            </div>
-            <div id="text-h4-home">
-              <p>Impulsione o seu negócio.<br />
-                A OnService divulga o seu perfil para<br />
-                milhares de clientes. E o melhor, é <span style={{ color: "rgb(237,125,49)" }}>grátis</span>!</p>
-            </div>
-            <form method="get" action="/anuncie">
-              <button id="button3-register-home">
-                Cadastre-se de Graça na OnService
-                <FaMousePointer id="mouse-pointer" />
-              </button>
-            </form>
+        </Carousel>
+      </div>
+      <div class="claudia-flex">
+        <div class="claudia-text-flex">
+          <div id="text-h3-home">
+            <p><span style={{ color: "rgb(237,125,49)" }}>Cadastra-se</span> já e<br />
+              receba <span style={{ color: "rgb(237,125,49)" }}>novos clientes</span>!</p>
           </div>
+          <div id="text-h4-home">
+            <p>Impulsione o seu negócio.<br />
+              A OnService divulga o seu perfil para<br />
+              milhares de clientes. E o melhor, é <span style={{ color: "rgb(237,125,49)" }}>grátis</span>!</p>
+          </div>
+          <form class="orange-button-register-home" method="get" action="/anuncie">
+            <button id="button3-register-home">
+              Cadastre-se de Graça na OnService
+              <FaMousePointer id="mouse-pointer" />
+            </button>
+          </form>
         </div>
-        <div class="col-7">
-          <img id="claudia" src={Claudia} width="500px" alt="Home" />
+        <div class="claudia-image-flex">
+          <img id="claudia" src={Claudia} alt="Home" />
         </div>
       </div>
-      <br />
-      <br />
-      <br />
     </div>
   )
 }
