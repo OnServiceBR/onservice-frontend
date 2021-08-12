@@ -11,7 +11,7 @@ export default class Footer extends Component {
             <div class="row row-size">
               <div class="col">
                 <label class="footer-title">Informações</label><br />
-                <label class="footer-content"><a href="como-utilizar-o-site">Como utilizar o site</a></label><br />
+                <label class="footer-content"><a>Como utilizar o site</a></label><br />
                 <label class="footer-content"><a>Como utilizar o app</a></label><br />
                 <label class="footer-content"><a href="/seguranca">Dicas de segurança</a></label><br />
               </div>
