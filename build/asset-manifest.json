@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bd737ddb.chunk.css",
+    "main.js": "/static/js/main.078f02a0.chunk.js",
+    "main.js.map": "/static/js/main.078f02a0.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.cc85cbe0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.cc85cbe0.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.8c1d3773.chunk.js": "/static/js/2.8c1d3773.chunk.js",
+    "static/js/2.8c1d3773.chunk.js.map": "/static/js/2.8c1d3773.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.bd737ddb.chunk.css.map": "/static/css/main.bd737ddb.chunk.css.map",
+    "static/js/2.8c1d3773.chunk.js.LICENSE.txt": "/static/js/2.8c1d3773.chunk.js.LICENSE.txt",
+    "static/media/Anuncio.c207d144.png": "/static/media/Anuncio.c207d144.png",
+    "static/media/contrate.css": "/static/media/TecnologiaLaranja.c712c409.png",
+    "static/media/Claudia-Fundo-Laranja.922c4304.png": "/static/media/Claudia-Fundo-Laranja.922c4304.png",
+    "static/media/App.css": "/static/media/GlacialIndifference-Regular.663a1c12.otf",
+    "static/media/Logo - Branco.7e5fab2a.png": "/static/media/Logo - Branco.7e5fab2a.png",
+    "static/media/LogoSimboloLaranja.a31a672b.png": "/static/media/LogoSimboloLaranja.a31a672b.png",
+    "static/media/Slide2.27ae4edb.PNG": "/static/media/Slide2.27ae4edb.PNG",
+    "static/media/Slide5.22fc8d25.PNG": "/static/media/Slide5.22fc8d25.PNG",
+    "static/media/megafone.cedbafbc.png": "/static/media/megafone.cedbafbc.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cc85cbe0.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.8c1d3773.chunk.js",
+    "static/css/main.bd737ddb.chunk.css",
+    "static/js/main.078f02a0.chunk.js"
+  ]
+}
