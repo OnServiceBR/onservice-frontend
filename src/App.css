@@ -48,9 +48,9 @@
 }
 
 .wave-container{
-  position: sticky;
-  top: 68px;
-  z-index: 100;
+  /* position: sticky; */
+  /* top: 68px; */
+  /* z-index: 100; */
 }
 
 button {
