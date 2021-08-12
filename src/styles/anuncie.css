@@ -6,6 +6,8 @@
   .register-right {
     width: 11.93cm;
     padding-top: 15px;
+    margin-right: auto;
+    margin-left: auto;
   }
   .anuncie-page{
     display: flex;
