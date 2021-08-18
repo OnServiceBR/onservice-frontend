@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactGA from 'react-ga';
 import "../styles/perfil.css";
 import swal from '@sweetalert/with-react';
 
@@ -59,12 +60,6 @@ export default class Perfil extends Component {
       },
     }
   }
-
-  componentDidMount() {
-    console.log(this.props.match.params)
-  }
-
-
 
   sendErrorAlertPerfil = () => {
     var { profissao, idperfil, profissaoCode } = this.state;
@@ -164,6 +159,10 @@ export default class Perfil extends Component {
   }
 
   messageContrate = () => {
+    ReactGA.event({
+      category: 'Button',
+      action: 'Clicou no botão contrate'
+    })
     this.sendErrorAlertPerfil()
   }
 

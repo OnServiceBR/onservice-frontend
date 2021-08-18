@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import ReactGA from 'react-ga';
 import { Switch, Route } from "react-router-dom";
 import ReactGA from 'react-ga';
 
@@ -34,6 +35,12 @@ import Anunciantes from "./pages/anunciantes.page";
 
 ReactGA.initialize('UA-204284257-1');
 const App = () => {
+
+  useEffect(()=>{
+    ReactGA.initialize(process.env.REACT_APP_GANALYTICS)
+
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  },[])
 
   return (
     <div>
