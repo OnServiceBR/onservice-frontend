@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import { Switch, Route } from "react-router-dom";
-import ReactGA from 'react-ga';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
