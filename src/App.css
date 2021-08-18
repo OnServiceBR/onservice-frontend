@@ -47,6 +47,12 @@
   }
 }
 
+@media only screen and (max-width: 576px){
+  .wave-container{
+    display: none;
+  }
+}
+
 .wave-container{
   /* position: sticky; */
   /* top: 68px; */

@@ -5,10 +5,24 @@
   z-index: 100;
 }
 
+.bg-nav {
+    background-color: #ED7D31;
+}
+
+.navbar-toggler {
+    color: rgba(0,0,0,.5);
+    border-color: rgba(0,0,0,.1);
+}
+
 @media only screen and (min-width: 1200px){
   .header-container {
     margin: auto;
+    padding-top: 10px;
     max-width: 1200px;
+  }
+
+  .header-container a{
+    padding: 0px 24px;
   }
 }
 
@@ -19,6 +33,18 @@
   }
 }
 
+@media only screen and (max-width: 576px){
+  .header-container{
+    margin: auto;
+    padding-top: 0px;
+    max-width: 576px;
+  }
+
+  .header-container a{
+    padding: 0px;
+  }
+}
+
 .header-container{
   padding-top: 10px;
   padding-bottom: 0px;
@@ -26,7 +52,6 @@
 
 .brand-logo{
   display: inline-block;
-  width: 20%;
 }
 
 .brand-logo a {
@@ -42,7 +67,6 @@
 
 .header-container a{
   color: white;
-  padding: 0px 24px;
   font-size: 13pt;
   margin-top: 10px;
   letter-spacing: 1px;
