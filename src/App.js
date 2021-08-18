@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import { Switch, Route } from "react-router-dom";
+import useGaTracker from './useGaTracker'
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -33,11 +34,7 @@ import Anunciantes from "./pages/anunciantes.page";
 
 const App = () => {
 
-  useEffect(() => {
-    ReactGA.initialize("UA-204284257-1");
-
-    ReactGA.pageview('/');
-  }, []);
+  useGaTracker();
 
   return (
     <div>
