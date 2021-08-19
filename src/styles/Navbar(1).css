@@ -1,0 +1,38 @@
+.header{
+  background-color: #ED7D31;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 992px){
+  .brand-logo{
+    justify-content: flex-end;
+    margin-right: 50px;
+  }
+}
+
+@media only screen and (max-width: 991px){
+  .brand-logo{
+    justify-content: flex-start;
+  }
+}
+
+.brand-logo{
+  display: none;
+  flex:1;
+}
+
+.navbar-collapse{
+  justify-content: center;
+}
+
+.nav-link{
+  font-family: 'Bebas Neue', cursive;
+}
+
+.header a{
+  color: white;
+  font-size: 13pt;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
