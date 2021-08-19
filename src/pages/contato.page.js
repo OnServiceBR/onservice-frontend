@@ -192,9 +192,9 @@ function Contato() {
   }
 
   return (
-    <div class="row">
-      <div class="col">
-        <img src={Contatoimagem} width="500px" alt="Imagem página contato" />
+    <div class="anuncie-page">
+      <div class="anuncie-image">
+        <img src={Contatoimagem} class = "register-picture" alt="Imagem página contato" />
       </div>
       <div class="col form-contact">
         <h3>FALE CONOSCO</h3>
