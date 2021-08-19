@@ -148,64 +148,80 @@
 
 #tecnology-button{
 	background-image: url('../assets/Imagens Site/Tecnologia.png');
+  background-position: center;
 }
 
 #maintenance-button{
 	background-image: url('../assets/Imagens Site/Manutenção.png');
+  background-position: center;
 }
 
 #beauty-button{
 	background-image: url('../assets/Imagens Site/Beleza.png');
+  background-position: center;
 }
 
 #teaching-button{
 	background-image: url('../assets/Imagens Site/Ensino.png');
+  background-position: center;
 }
 
 #health-button{
 	background-image: url('../assets/Imagens Site/Saúde.png');
+  background-position: center;
 }
 
 #event-button{
 	background-image: url('../assets/Imagens Site/Eventos.png');
+  background-position: center;
 }
 
 #residencial-button{
 	background-image: url('../assets/Imagens Site/Residencial.png');
+  background-position: center;
 }
 
 #others-button{
 	background-image: url('../assets/Imagens Site/Manutenção.png');
+  background-position: center;
 }
 
 #tecnology-button:hover{
 	background-image: url('../assets/Imagens Site/TecnologiaLaranja.png');
+  background-position: center;
 }
 
 #maintenance-button:hover{
 	background-image: url('../assets/Imagens Site/ManutençãoLaranja.png');
+  background-position: center;
 }
 
 #beauty-button:hover{
 	background-image: url('../assets/Imagens Site/BelezaLaranja.png');
+  background-position: center;
 }
 
 #teaching-button:hover{
 	background-image: url('../assets/Imagens Site/EnsinoLaranja.png');
+  background-position: center;
 }
 
 #health-button:hover{
 	background-image: url('../assets/Imagens Site/SaúdeLaranja.png');
+  background-position: center;
 }
 
 #event-button:hover{
 	background-image: url('../assets/Imagens Site/EventosLaranja.png');
+  background-position: center;
 }
 
 #residencial-button:hover{
 	background-image: url('../assets/Imagens Site/ResidencialLaranja.png');
+  background-position: center;
 }
 
 #others-button:hover{
 	background-image: url('../assets/Imagens Site/ManutençãoLaranja.png');
+  background-position: center;
 }

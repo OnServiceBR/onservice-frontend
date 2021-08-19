@@ -16,6 +16,7 @@
 
 footer {
   background-color: rgb(237, 125, 49);
+  margin-top: 20px;
 }
 
 footer hr {
@@ -69,6 +70,7 @@ ul.social li {
   color: white;
   font-size: 8pt;
   font-family: GlacialIndifference;
+  padding: 5px 5px 5px 5px;
 }
 
 .socket label {
@@ -78,4 +80,8 @@ ul.social li {
 .socket a {
   text-decoration: underline;
   color: white !important;
+}
+
+footer hr {
+  margin-bottom: 0px !important;
 }
