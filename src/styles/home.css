@@ -22,11 +22,11 @@
 	}
 }
 
-@media only screen and (max-width: 1199px) and (min-width: 992px){
+/* @media only screen and (max-width: 1199px) and (min-width: 992px){
   #button2-search-home{
 
 	}
-}
+} */
 
 @media only screen and (max-width: 576px) {
 	#button1-search-home{
@@ -41,7 +41,6 @@
 	#claudia{
 		max-width: 300px;
 		margin-top: 20px;
-		margin-bottom: 15px;
 	}
 	.orange-button-register-home{
 		margin-left: auto;
