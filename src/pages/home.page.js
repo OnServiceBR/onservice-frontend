@@ -95,7 +95,7 @@ const Home = () => {
       </div>
       <AdSense.Google
         client='ca-pub-8888005926892379'
-        slot='7806394673'
+        slot='7088926720'
         style={{ display: 'block' }}
         format='auto'
         responsive='true'
