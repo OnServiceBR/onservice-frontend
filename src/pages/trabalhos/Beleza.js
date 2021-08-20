@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/trabalhos.css";
-import { FaSearch } from 'react-icons/fa';
 import Counter from "../../components/Counter";
 
 import Job from "../../components/Job";
@@ -8,13 +7,13 @@ import Job from "../../components/Job";
 function Beleza() {
 
   const jobs = [
-    { job: "Barbeiro(a)", link: "/contrate/beleza/barbeiro(a)", count: "", iconC: "../../assets/icones/BarbeiroC.png", iconL: "../../assets/icones/BarbeiroL.png" },
-    { job: "Cabeleireiro(a)", link: "/contrate/beleza/cabeleireiro(a)", count: "", iconC: "../../assets/icones/CabeleireiroC.png", iconL: "../../assets/icones/CabeleireiroL.png" },
-    { job: "Depilador(a)", link: "/contrate/beleza/depilador(a)", count: "", iconC: "../../assets/icones/DepiladorC.png", iconL: "../../assets/icones/DepiladorL.png" },
-    { job: "Esteticista", link: "/contrate/beleza/esteticista", count: "", iconC: "../../assets/icones/EsteticistaC.png", iconL: "../../assets/icones/EsteticistaL.png" },
-    { job: "Manicure", link: "/contrate/beleza/manicure", count: "", iconC: "../../assets/icones/ManicureC.png", iconL: "../../assets/icones/ManicureL.png" },
-    { job: "Maquiador(a)", link: "/contrate/beleza/maquiador(a)", count: "", iconC: "../../assets/icones/MaquiadorC.png", iconL: "../../assets/icones/MaquiadorL.png" },
-    { job: "Micropigmentador(a)", link: "/contrate/beleza/micropigmentador(a)", count: "", iconC: "../../assets/icones/MicropigmentadorC.png", iconL: "../../assets/icones/MicropigmentadorL.png" },
+    { job: "Barbeiro(a)", link: "/contrate/beleza/barbeiro(a)", count: "", iconC: "../../assets/icones/BarbeiroC.jpg", iconL: "../../assets/icones/BarbeiroL.jpg" },
+    { job: "Cabeleireiro(a)", link: "/contrate/beleza/cabeleireiro(a)", count: "", iconC: "../../assets/icones/CabeleireiroC.jpg", iconL: "../../assets/icones/CabeleireiroL.jpg" },
+    //{ job: "Depilador(a)", link: "/contrate/beleza/depilador(a)", count: "", iconC: "../../assets/icones/DepiladorC.jpg", iconL: "../../assets/icones/DepiladorL.jpg" },
+    { job: "Esteticista", link: "/contrate/beleza/esteticista", count: "", iconC: "../../assets/icones/EsteticistaC.jpg", iconL: "../../assets/icones/EsteticistaL.jpg" },
+    //{ job: "Manicure", link: "/contrate/beleza/manicure", count: "", iconC: "../../assets/icones/ManicureC.jpg", iconL: "../../assets/icones/ManicureL.jpg" },
+    //{ job: "Maquiador(a)", link: "/contrate/beleza/maquiador(a)", count: "", iconC: "../../assets/icones/MaquiadorC.jpg", iconL: "../../assets/icones/MaquiadorL.jpg" },
+    { job: "Micropigmentador(a)", link: "/contrate/beleza/micropigmentador(a)", count: "", iconC: "../../assets/icones/MicropigmentadorC.jpg", iconL: "../../assets/icones/MicropigmentadorL.jpg" },
   ]
 
   const [alphabet, setAlphabet] = useState([])

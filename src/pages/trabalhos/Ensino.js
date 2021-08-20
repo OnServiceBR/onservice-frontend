@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/trabalhos.css";
-import { FaSearch } from 'react-icons/fa';
 import Counter from "../../components/Counter";
 
 import Job from "../../components/Job";
