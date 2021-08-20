@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/trabalhos.css";
-import { FaSearch } from 'react-icons/fa';
 import Counter from "../../components/Counter";
 
 import Job from "../../components/Job";
@@ -16,7 +15,7 @@ function Outros() {
     { job: "Motorista Particular", link: "/contrate/outros/motorista-particular", count: "", iconC: "../assets/icones/MotoristaParticularC.png", iconL: "../assets/icones/MotoristaParticularL.png" },
     { job: "Passeador(a) de Cães", link: "/contrate/outros/passeador(a)-de-caes", count: "", iconC: "../assets/icones/PasseadordeCaesC.png", iconL: "../assets/icones/PasseadordeCaesL.png" },
     { job: "Publicitário(a)", link: "/contrate/outros/publicitario(a)", count: "", iconC: "../assets/icones/PublicitarioC.png", iconL: "../assets/icones/PublicitarioL.png" },
-    { job: "Vendedor(a)", link: "/contrate/outros/vendedor(a)", count: "", iconC: "../assets/icones/VendedorC.png", iconL: "../assets/icones/VendedorL.png" },
+    //{ job: "Vendedor(a)", link: "/contrate/outros/vendedor(a)", count: "", iconC: "../assets/icones/VendedorC.png", iconL: "../assets/icones/VendedorL.png" },
   ]
 
   const [alphabet, setAlphabet] = useState([])
