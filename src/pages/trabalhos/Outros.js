@@ -14,7 +14,7 @@ function Outros() {
     { job: "Motoboy", link: "/contrate/outros/motoboy", count: "", iconC: "../assets/icones/MotoboyC.jpg", iconL: "../assets/icones/MotoboyL.jpg" },
     { job: "Motorista Particular", link: "/contrate/outros/motorista-particular", count: "", iconC: "../assets/icones/MotoristaParticularC.jpg", iconL: "../assets/icones/MotoristaParticularL.jpg" },
     { job: "Passeador(a) de Cães", link: "/contrate/outros/passeador(a)-de-caes", count: "", iconC: "../assets/icones/PasseadordeCaesC.jpg", iconL: "../assets/icones/PasseadordeCaesL.jpg" },
-    { job: "Publicitário(a)", link: "/contrate/outros/publicitario(a)", count: "", iconC: "../assets/icones/PublicitarioC.jpg", iconL: "../assets/icones/PublicitarioL.png" },
+    { job: "Publicitário(a)", link: "/contrate/outros/publicitario(a)", count: "", iconC: "../assets/icones/PublicitarioC.jpg", iconL: "../assets/icones/PublicitarioL.jpg" },
     //{ job: "Vendedor(a)", link: "/contrate/outros/vendedor(a)", count: "", iconC: "../assets/icones/VendedorC.jpg", iconL: "../assets/icones/VendedorL.jpg" },
   ]
 
