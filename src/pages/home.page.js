@@ -8,6 +8,8 @@ import Card from '../components/Card.js';
 import Database from '../components/Database'
 import Counter from "../components/Counter";
 
+import AdSense from 'react-adsense';
+
 const Home = () => {
 
   const cards = [
@@ -91,6 +93,14 @@ const Home = () => {
           <img id="claudia" src={Claudia} alt="Home" />
         </div>
       </div>
+      <AdSense.Google
+        client='ca-pub-8888005926892379'
+        slot='7806394673'
+        style={{ display: 'block' }}
+        format='auto'
+        responsive='true'
+        layoutKey='-gw-1+2a-9x+5c'
+      />
     </div>
   )
 }
