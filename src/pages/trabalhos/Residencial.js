@@ -7,8 +7,9 @@ import Job from "../../components/Job";
 
 function Residencial() {
   const jobs = [
-    //{ job: "Babá", link: "/contrate/residencial/baba", count: "", iconC: "../assets/icones/BabaC.png", iconL: "../assets/icones/BabaL.png" },
-    { job: "Diarista", link: "/contrate/residencial/diarista", count: "", iconC: "../assets/icones/DiaristaC.jpg", iconL: "../assets/icones/DiaristaL.png" }, { job: "Diarista", link: "/contrate/residencial/diarista", count: "", iconC: "../assets/icones/DiaristaC.jpg", iconL: "../assets/icones/DiaristaL.jpg" },
+    { job: "Babá", link: "/contrate/residencial/baba", count: "", iconC: "../assets/icones/BabaC.jpg", iconL: "../assets/icones/BabaL.jpg" },
+    { job: "Cuidador(a)", link: "/contrate/residencial/cuidador(a)", count: "", iconC: "../assets/icones/CuidadorC.jpg", iconL: "../assets/icones/CuidadorL.jpg" },
+    { job: "Diarista", link: "/contrate/residencial/diarista", count: "", iconC: "../assets/icones/DiaristaC.jpg", iconL: "../assets/icones/DiaristaL.jpg" },
     { job: "Jardineiro(a)", link: "/contrate/residencial/jardineiro(a)", count: "", iconC: "../assets/icones/JardineiroC.jpg", iconL: "../assets/icones/JardineiroL.png" },
   ]
 

@@ -15,7 +15,7 @@ function Outros() {
     { job: "Motorista Particular", link: "/contrate/outros/motorista-particular", count: "", iconC: "../assets/icones/MotoristaParticularC.jpg", iconL: "../assets/icones/MotoristaParticularL.jpg" },
     { job: "Passeador(a) de Cães", link: "/contrate/outros/passeador(a)-de-caes", count: "", iconC: "../assets/icones/PasseadordeCaesC.jpg", iconL: "../assets/icones/PasseadordeCaesL.jpg" },
     { job: "Publicitário(a)", link: "/contrate/outros/publicitario(a)", count: "", iconC: "../assets/icones/PublicitarioC.jpg", iconL: "../assets/icones/PublicitarioL.jpg" },
-    //{ job: "Vendedor(a)", link: "/contrate/outros/vendedor(a)", count: "", iconC: "../assets/icones/VendedorC.jpg", iconL: "../assets/icones/VendedorL.jpg" },
+    { job: "Vendedor(a) de Artigos Automotivos", link: "/contrate/outros/vendedor(a)-de-artigos-automotivos", count: "", iconC: "../assets/icones/VendedordeArtigosAutomotivosC.jpg", iconL: "../assets/icones/VendedordeArtigosAutomotivosL.jpg" },
   ]
 
   const [alphabet, setAlphabet] = useState([])
