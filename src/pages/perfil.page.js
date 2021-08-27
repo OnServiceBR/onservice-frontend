@@ -130,7 +130,7 @@ export default class Perfil extends Component {
         swal({
           content: (
             <div>
-              <img src={LogoOnservice} width="90px" alt="Perfil" />
+              <img src={LogoOnservice} class="imagelogo" />
               <p class="swal-title--perfil">Você está a um passo de contratar {item.name}! </p>
               <p>
                 { }
@@ -246,7 +246,7 @@ export default class Perfil extends Component {
             <div class="row row-information-center">
               <div class="column column-perfilimage">
                 <div class="row row-perfilimage">
-                  <img src={item.picture} width="260px" alt="Perfil" />
+                  <img src={item.picture} width="100%" alt="Perfil" />
                 </div>
               </div>
               <div class="column column-perfilinformation">
