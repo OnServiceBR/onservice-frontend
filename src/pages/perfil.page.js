@@ -8,32 +8,7 @@ import { IoLogoWhatsapp } from 'react-icons/io';
 import LogoOnservice from "../assets/LogoSimboloLaranja.png";
 
 import Database from "../components/Database.js";
-
-function useWindowSize() {
-  // Initialize state with undefined width/height so server and client renders match
-  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
-  const [windowSize, setWindowSize] = useState({
-    width: undefined,
-    height: undefined,
-  });
-  useEffect(() => {
-    // Handler to call on window resize
-    function handleResize() {
-      // Set window width/height to state
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    }
-    // Add event listener
-    window.addEventListener("resize", handleResize);
-    // Call handler right away so state gets updated with initial window size
-    handleResize();
-    // Remove event listener on cleanup
-    return () => window.removeEventListener("resize", handleResize);
-  }, []); // Empty array ensures that effect is only run on mount
-  return windowSize;
-}
+import useWindowSize from "../components/useWindowSize.js";
 
 export default class Perfil extends Component {
 
@@ -52,6 +27,7 @@ export default class Perfil extends Component {
       profissaoCode: this.props.match.params.workers, // Não alterar, serve para o html
       profissao: this.props.match.params.workers,
       idperfil: this.props.match.params.idperfil,
+      size: useWindowSize(),
 
       DropdownOrder: [
         /* W2W */
@@ -90,9 +66,6 @@ export default class Perfil extends Component {
 
   sendErrorAlertPerfil = () => {
     var { profissao, idperfil, profissaoCode } = this.state;
-    const [nCards, setNCards] = useState(0)
-    const size = useWindowSize();
-    const [skip, setSkip] = useState(0)
 
     // Correção gramatical das profissões
     if (profissao === "animador(a)-de-festas") {
@@ -197,7 +170,7 @@ export default class Perfil extends Component {
   }
 
   render() {
-    var { idperfil, categoria, profissao, categoriaCode, profissaoCode } = this.state;
+    var { idperfil, categoria, profissao, categoriaCode, profissaoCode, size } = this.state;
 
     // Correção gramatical das categorias
     if (categoria === "manutencao") {
@@ -266,53 +239,105 @@ export default class Perfil extends Component {
       profissao = "Publicitário(a)"
     }
 
-    return (
-      <div>
-        {Database.filter((item) => {
-          if (item.id === idperfil) return item;
-        }).map(item =>
-          <div>
-            <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}`}>{categoria}</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}/${profissaoCode}`}>{profissao}</a><h2 class="path"> &gt; </h2><h2 class="path-actual-name">{item.name}</h2>
-            <div class="row row-information-center">
-              <div class="column column-perfilimage">
-                <div class="row row-perfilimage">
-                  <img src={item.picture} width="100%" alt="Perfil" />
-                </div>
-              </div>
-              <div class="column column-perfilinformation">
-                <div class="row row-main-information-perfil">
-                  {/* <div class="column column-perfilcircleimage"> */}
-                  {/* <div class="row row-perfilcircleimage"> */}
-                  {/*<img src={Prestadorimage} alt="Perfil" />*/}
-                  {/*</div>*/}
-                  {/*</div>*/}
-                  <div class="column column-perfilnameandbutton">
-                    <div class="row row-perfilnameandbutton">
-                      <a>{item.name}</a>
-                      <hr class="perfil-hr" />
-                      <button type='button'
-                        onClick={
-                          this.messageContrate.bind(this)
-                        } class="button-entraremcontato">
-                        Entrar em contato
-                        <IoLogoWhatsapp id="buttonimageperfil" width="90px" />
-                      </button>
-                    </div>
+    if (922 >= size.width) {
+      return (
+        <div>
+          {Database.filter((item) => {
+            if (item.id === idperfil) return item;
+          }).map(item =>
+            <div>
+              <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">{size} Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}`}>{categoria}</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}/${profissaoCode}`}>{profissao}</a><h2 class="path"> &gt; </h2><h2 class="path-actual-name">{item.name}</h2>
+              <div class="row row-information-center">
+                <div class="column column-perfilimage">
+                  <div class="row row-perfilimage">
+                    <img src={item.picture} width="100%" alt="Perfil" />
                   </div>
                 </div>
-                <div class="row row-professionperfil">
-                  {item.jobsRight.map(job =>
-                    <p>{job}<br /></p>
-                  )}
-                  <div class="perfil-description">
-                    <label class="perfil-description-text">{item.description}</label>
+                <div class="column column-perfilinformation">
+                  <div class="row row-main-information-perfil">
+                    {/* <div class="column column-perfilcircleimage"> */}
+                    {/* <div class="row row-perfilcircleimage"> */}
+                    {/*<img src={Prestadorimage} alt="Perfil" />*/}
+                    {/*</div>*/}
+                    {/*</div>*/}
+                    <div class="column column-perfilnameandbutton">
+                      <div class="row row-perfilnameandbutton">
+                        <a>{item.name}</a>
+                        <hr class="perfil-hr" />
+                        <button type='button'
+                          onClick={
+                            this.messageContrate.bind(this)
+                          } class="button-entraremcontato">
+                          Entrar em contato
+                          <IoLogoWhatsapp id="buttonimageperfil" width="90px" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row row-professionperfil">
+                    {item.jobsRight.map(job =>
+                      <p>{job}<br /></p>
+                    )}
+                    <div class="perfil-description">
+                      <label class="perfil-description-text">{item.description}</label>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        )}
-      </div>
-    )
+          )}
+        </div>
+      )
+    }
+    else if ( size.width > 922) {
+      return (
+        <div>
+          {Database.filter((item) => {
+            if (item.id === idperfil) return item;
+          }).map(item =>
+            <div>
+              <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}`}>{categoria}</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}/${profissaoCode}`}>{profissao}</a><h2 class="path"> &gt; </h2><h2 class="path-actual-name">{item.name}</h2>
+              <div class="row row-information-center">
+                <div class="column column-perfilimage">
+                  <div class="row row-perfilimage">
+                    <img src={item.picture} width="100%" alt="Perfil" />
+                  </div>
+                </div>
+                <div class="column column-perfilinformation">
+                  <div class="row row-main-information-perfil">
+                    {/* <div class="column column-perfilcircleimage"> */}
+                    {/* <div class="row row-perfilcircleimage"> */}
+                    {/*<img src={Prestadorimage} alt="Perfil" />*/}
+                    {/*</div>*/}
+                    {/*</div>*/}
+                    <div class="column column-perfilnameandbutton">
+                      <div class="row row-perfilnameandbutton">
+                        <a>{item.name}</a>
+                        <hr class="perfil-hr" />
+                        <button type='button'
+                          onClick={
+                            this.messageContrate.bind(this)
+                          } class="button-entraremcontato">
+                          Entrar em contato
+                          <IoLogoWhatsapp id="buttonimageperfil" width="90px" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row row-professionperfil">
+                    {item.jobsRight.map(job =>
+                      <p>{job}<br /></p>
+                    )}
+                    <div class="perfil-description">
+                      <label class="perfil-description-text">{item.description}</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      )
+    }
   }
 }
