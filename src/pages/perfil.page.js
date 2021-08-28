@@ -10,7 +10,7 @@ import LogoOnservice from "../assets/LogoSimboloLaranja.png";
 import Database from "../components/Database.js";
 import useWindowSize from "../components/useWindowSize.js";
 
-export default function Perfil() {
+export default function Perfil(props) {
     const [tecnologia, setTecnologia] = useState([])
     const [beleza, setBeleza] = useState([])
     const [saude, setSaude] = useState([])
@@ -18,12 +18,13 @@ export default function Perfil() {
     const [ensino, setEnsino] = useState([])
     const [eventos, setEventos] = useState([])
     const [w2w, setW2W] = useState("")
-    const categoriaCode = this.props.match.params.job
-    var categoria = this.props.match.params.job
-    const profissaoCode = this.props.match.params.workers
-    var profissao = this.props.match.params.workers
-    const idperfil = this.props.match.params.idperfil
+    const categoriaCode = props.match.params.job
+    var categoria = props.match.params.job
+    const profissaoCode = props.match.params.workers
+    var profissao = props.match.params.workers
+    const idperfil = props.match.params.idperfil
     const size = useWindowSize()
+    var ala = 0
 
     const DropdownOrder = [
       /* W2W */
@@ -155,14 +156,13 @@ export default function Perfil() {
       </div>
     }
 
-    messageContrate = () => {
+    const messageContrate = () => {
       ReactGA.event({
         category: 'Button',
         action: 'Clicou no botão contrate'
       })
       sendErrorAlertPerfil()
     }
-
 
     // Correção gramatical das categorias
     if (categoria === "manutencao") {
@@ -231,13 +231,18 @@ export default function Perfil() {
       profissao = "Publicitário(a)"
     }
 
+    if (size.width > 1200) {
+      ala = size.width
+    }
+
     return (
       <div>
+        <h2>Tela: {ala} px</h2>
         {Database.filter((item) => {
           if (item.id === idperfil) return item;
         }).map(item =>
           <div>
-            <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">{size} Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}`}>{categoria}</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}/${profissaoCode}`}>{profissao}</a><h2 class="path"> &gt; </h2><h2 class="path-actual-name">{item.name}</h2>
+            <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}`}>{categoria}</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}/${profissaoCode}`}>{profissao}</a><h2 class="path"> &gt; </h2><h2 class="path-actual-name">{item.name}</h2>
             <div class="row row-information-center">
               <div class="column column-perfilimage">
                 <div class="row row-perfilimage">
@@ -257,7 +262,7 @@ export default function Perfil() {
                       <hr class="perfil-hr" />
                       <button type='button'
                         onClick={
-                          this.messageContrate.bind(this)
+                          messageContrate
                         } class="button-entraremcontato">
                         Entrar em contato
                         <IoLogoWhatsapp id="buttonimageperfil" width="90px" />
@@ -279,4 +284,5 @@ export default function Perfil() {
         )}
       </div>
     )
+    
 }
