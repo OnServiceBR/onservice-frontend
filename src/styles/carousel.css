@@ -57,12 +57,64 @@
     transition: 0.3s;
 }
 
-.left-arrow {
-    left: -60px;
+@media only screen and (min-width: 1200px){
+    .left-arrow {
+        left: -60px;
+    }
+    
+    .right-arrow {
+        right: -60px;
+    }
 }
 
-.right-arrow {
-    right: -60px;
+@media only screen and (max-width: 1200px) and (min-width: 992px){
+    .left-arrow {
+        left: -60px;
+    }
+    
+    .right-arrow {
+        right: -60px;
+    }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 768px){
+    .left-arrow {
+        left: -60px;
+    }
+    
+    .right-arrow {
+        right: -60px;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 576px){
+    .left-arrow {
+        left: -35px;
+    }
+    
+    .right-arrow {
+        right: -35px;
+    }
+}
+
+@media only screen and (max-width: 576px) and (min-width: 425px){
+    .left-arrow {
+        left: -5px;
+    }
+    
+    .right-arrow {
+        right: -5px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .left-arrow {
+        left: -25px;
+    }
+    
+    .right-arrow {
+        right: -25px;
+    }
 }
 
 .left-arrow:focus {

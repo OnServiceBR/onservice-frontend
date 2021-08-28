@@ -53,11 +53,9 @@
   }
 }
 
-/*.wave-container {
-  position: sticky; 
-  top: 68px; 
-  z-index: 100; 
-}*/
+.wave-container {
+  margin-top: -1px;
+}
 
 button {
   outline: none !important;

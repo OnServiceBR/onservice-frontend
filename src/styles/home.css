@@ -36,9 +36,6 @@
 	.total-counter{
 		margin-top: 60px;
 	}
-  /* .carrossel{
-		display: none;
-	} */
 }
 
 @media only screen and (max-width: 992px) and (min-width: 768px){
@@ -63,9 +60,6 @@
 	#mouse-pointer{
 		display:none;
 	}
-	/* .carrossel{
-		display: none;
-	} */
 	.total-counter{
 		margin-top: 10px;
 	}
@@ -92,9 +86,6 @@
 	#mouse-pointer{
 		display:none;
 	}
-	/* .carrossel{
-		display: none;
-	} */
 	.total-counter{
 		margin-top: 10px;
 	}
@@ -122,19 +113,10 @@
 	#mouse-pointer{
 		display:none;
 	}
-	/* .carrossel{
-		display: none;
-	} */
 	.total-counter{
 		margin-top: 10px;
 	}
 }
-
-/* @media only screen and (max-width: 1199px) and (min-width: 992px){
-  #button2-search-home{
-
-	}
-} */
 
 .claudia-flex{
 	display: flex;
