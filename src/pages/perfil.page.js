@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, Component } from "react";
+
 import ReactGA from 'react-ga';
 import "../styles/perfil.css";
 import swal from '@sweetalert/with-react';
@@ -7,6 +8,32 @@ import { IoLogoWhatsapp } from 'react-icons/io';
 import LogoOnservice from "../assets/LogoSimboloLaranja.png";
 
 import Database from "../components/Database.js";
+
+function useWindowSize() {
+  // Initialize state with undefined width/height so server and client renders match
+  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+  useEffect(() => {
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Empty array ensures that effect is only run on mount
+  return windowSize;
+}
 
 export default class Perfil extends Component {
 
@@ -63,6 +90,9 @@ export default class Perfil extends Component {
 
   sendErrorAlertPerfil = () => {
     var { profissao, idperfil, profissaoCode } = this.state;
+    const [nCards, setNCards] = useState(0)
+    const size = useWindowSize();
+    const [skip, setSkip] = useState(0)
 
     // Correção gramatical das profissões
     if (profissao === "animador(a)-de-festas") {
