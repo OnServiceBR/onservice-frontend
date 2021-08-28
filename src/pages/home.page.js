@@ -7,27 +7,59 @@ import Carousel from "../components/Carousel.js";
 import Card from '../components/Card.js';
 import Database from '../components/Database'
 
+function useWindowSize() {
+  // Initialize state with undefined width/height so server and client renders match
+  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+  useEffect(() => {
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Empty array ensures that effect is only run on mount
+  return windowSize;
+}
+
 export default function Home() {
-  const [NCards, setNCards] = useState(0)
-  var windowWidth = window.innerWidth
+  const [nCards, setNCards] = useState(0)
+  const size = useWindowSize();
+  const [skip, setSkip] = useState(0)
 
   useEffect(() => {
-    if (576 >= windowWidth) {
+    if (576 >= size.width) {
       setNCards(1)
+      setSkip(1)
     }
-    if ( 768 >= windowWidth > 576) {
+    else if ( 768 >= size.width && size.width > 576) {
       setNCards(2)
+      setSkip(1)
     }
-    if ( 992 >= windowWidth > 768) {
+    else if ( 992 >= size.width && size.width > 768) {
       setNCards(3)
+      setSkip(2)
     }
-    if ( 1200 >= windowWidth > 992) {
+    else if ( 1200 >= size.width && size.width > 992) {
       setNCards(4)
+      setSkip(2)
     }
-    if ( windowWidth > 1200) {
+    else if ( size.width > 1200) {
       setNCards(5)
+      setSkip(3)
     }
-  }, [])
+  }, [size.width])
 
   const cards = [
     { name: "José", job: "Pedreiro", picture: "../assets/Pessoa1.png", link: "/contrate/manutencao/pintor(a)/adilso-teixeira" },
@@ -51,10 +83,6 @@ export default function Home() {
   return (
     <div>
       <div class="homephrase">
-        <label class="h1-home">Tamanho de tela: {windowWidth}</label><br/>
-        <label class="h1-home">NCards: {NCards}</label><br/><br/>
-      </div>
-      <div class="homephrase">
         <label class="h1-home">Nunca foi tão fácil <span style={{ color: "rgb(237,125,49)" }}>contratar</span> alguém!</label>
       </div>
       <div class="homephrase">
@@ -77,8 +105,9 @@ export default function Home() {
       <div class="carrossel">
         <p class="carousel-title">DESTAQUES DO MÊS</p>
         <Carousel
-        show={NCards}
+        show={nCards}
         infiniteLoop={true}
+        skip={skip}
         >
         {Database.filter((item) => {
           if (item.emphasize === true) return item;

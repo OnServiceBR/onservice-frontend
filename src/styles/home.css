@@ -36,9 +36,9 @@
 	.total-counter{
 		margin-top: 60px;
 	}
-  .carrossel{
+  /* .carrossel{
 		display: none;
-	}
+	} */
 }
 
 @media only screen and (max-width: 992px) and (min-width: 768px){
@@ -63,9 +63,9 @@
 	#mouse-pointer{
 		display:none;
 	}
-	.carrossel{
+	/* .carrossel{
 		display: none;
-	}
+	} */
 	.total-counter{
 		margin-top: 10px;
 	}
@@ -92,9 +92,9 @@
 	#mouse-pointer{
 		display:none;
 	}
-	.carrossel{
+	/* .carrossel{
 		display: none;
-	}
+	} */
 	.total-counter{
 		margin-top: 10px;
 	}
@@ -122,9 +122,9 @@
 	#mouse-pointer{
 		display:none;
 	}
-	.carrossel{
+	/* .carrossel{
 		display: none;
-	}
+	} */
 	.total-counter{
 		margin-top: 10px;
 	}

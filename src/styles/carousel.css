@@ -83,11 +83,11 @@
     transition: 0.3s;
 }
 
-@media (hover: none) and (pointer: coarse) {
+/* @media (hover: none) and (pointer: coarse) {
     .left-arrow, .right-arrow {
         display: none;
     }
-}
+} */
 
 .carousel-content.show-1 > * {
     width: 100%;
