@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from "react";
+import React, { useState, useEffect } from "react";
 
 import ReactGA from 'react-ga';
 import "../styles/perfil.css";
@@ -10,32 +10,28 @@ import LogoOnservice from "../assets/LogoSimboloLaranja.png";
 import Database from "../components/Database.js";
 import useWindowSize from "../components/useWindowSize.js";
 
-export default class Perfil extends Component {
+export default function Perfil() {
+    const [tecnologia, setTecnologia] = useState([])
+    const [beleza, setBeleza] = useState([])
+    const [saude, setSaude] = useState([])
+    const [manutencao, setManutencao] = useState([])
+    const [ensino, setEnsino] = useState([])
+    const [eventos, setEventos] = useState([])
+    const [w2w, setW2W] = useState("")
+    const categoriaCode = this.props.match.params.job
+    var categoria = this.props.match.params.job
+    const profissaoCode = this.props.match.params.workers
+    var profissao = this.props.match.params.workers
+    const idperfil = this.props.match.params.idperfil
+    const size = useWindowSize()
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      tecnologia: [],
-      beleza: [],
-      saude: [],
-      manutencao: [],
-      ensino: [],
-      eventos: [],
-      w2w: "",
-      categoriaCode: this.props.match.params.job, // Não alterar, serve para o html
-      categoria: this.props.match.params.job,
-      profissaoCode: this.props.match.params.workers, // Não alterar, serve para o html
-      profissao: this.props.match.params.workers,
-      idperfil: this.props.match.params.idperfil,
-      size: useWindowSize(),
+    const DropdownOrder = [
+      /* W2W */
+      { name: 'Destaque', id: "destaque" },
+      { name: 'Avaliação', id: "avaliação" },
+    ]
 
-      DropdownOrder: [
-        /* W2W */
-        { name: 'Destaque', id: "destaque" },
-        { name: 'Avaliação', id: "avaliação" },
-      ],
-    };
-    this.style = {
+    const style = {
       chips: {
         background: "rgb(237, 125, 49)"
       },
@@ -62,115 +58,111 @@ export default class Perfil extends Component {
         color: "rgb(118,113,113)",
       },
     }
-  }
 
-  sendErrorAlertPerfil = () => {
-    var { profissao, idperfil, profissaoCode } = this.state;
+    const sendErrorAlertPerfil = () => {
 
-    // Correção gramatical das profissões
-    if (profissao === "animador(a)-de-festas") {
-      profissao = "Animador(a) de festas"
-    }
-    if (profissao === "artesa(o)") {
-      profissao = "Artesã(o)"
-    }
-    else if (profissao === "assistente-tecnico(a)") {
-      profissao = "Assistente Técnico(a)"
-    }
-    else if (profissao === "designer-grafico") {
-      profissao = "Designer Gráfico"
-    }
-    else if (profissao === "editor(a)-de-videos") {
-      profissao = "Editor(a) de Vídeos"
-    }
-    else if (profissao === "especialista-em-midias") {
-      profissao = "Especialista em Mídias"
-    }
-    else if (profissao === "fotografo(a)") {
-      profissao = "Fotógrafo(a)"
-    }
-    else if (profissao === "fretes-e-mudancas") {
-      profissao = "Fretes e Mudanças"
-    }
-    else if (profissao === "garcom(garconete)") {
-      profissao = "Garçom(Garçonete)"
-    }
-    else if (profissao === "manutencao-de-pabx") {
-      profissao = "Manutenção de PABX"
-    }
-    else if (profissao === "montador(a)-de-moveis") {
-      profissao = "Montador(a) de Móveis"
-    }
-    else if (profissao === "musico(a)") {
-      profissao = "Músico(a)"
-    }
-    else if (profissao === "passeador(a)-de-caes") {
-      profissao = "Passeador(a) de cães"
-    }
-    else if (profissao === "personal-trainer") {
-      profissao = "Personal Trainer"
-    }
-    else if (profissao === "professor(a)-de-educacao-fisica") {
-      profissao = "Professor(a) de Educação Física"
-    }
-    else if (profissao === "professor(a)-de-ingles") {
-      profissao = "Professor(a) de Inglês"
-    }
-    else if (profissao === "professor(a)-de-programacao") {
-      profissao = "Professor(a) de Programação"
-    }
-    else if (profissao === "psicologo(a)") {
-      profissao = "Psicólogo(a)"
-    }
-    else if (profissao === "publicitario(a)") {
-      profissao = "Publicitário(a)"
-    }
+      // Correção gramatical das profissões
+      if (profissao === "animador(a)-de-festas") {
+        profissao = "Animador(a) de festas"
+      }
+      if (profissao === "artesa(o)") {
+        profissao = "Artesã(o)"
+      }
+      else if (profissao === "assistente-tecnico(a)") {
+        profissao = "Assistente Técnico(a)"
+      }
+      else if (profissao === "designer-grafico") {
+        profissao = "Designer Gráfico"
+      }
+      else if (profissao === "editor(a)-de-videos") {
+        profissao = "Editor(a) de Vídeos"
+      }
+      else if (profissao === "especialista-em-midias") {
+        profissao = "Especialista em Mídias"
+      }
+      else if (profissao === "fotografo(a)") {
+        profissao = "Fotógrafo(a)"
+      }
+      else if (profissao === "fretes-e-mudancas") {
+        profissao = "Fretes e Mudanças"
+      }
+      else if (profissao === "garcom(garconete)") {
+        profissao = "Garçom(Garçonete)"
+      }
+      else if (profissao === "manutencao-de-pabx") {
+        profissao = "Manutenção de PABX"
+      }
+      else if (profissao === "montador(a)-de-moveis") {
+        profissao = "Montador(a) de Móveis"
+      }
+      else if (profissao === "musico(a)") {
+        profissao = "Músico(a)"
+      }
+      else if (profissao === "passeador(a)-de-caes") {
+        profissao = "Passeador(a) de cães"
+      }
+      else if (profissao === "personal-trainer") {
+        profissao = "Personal Trainer"
+      }
+      else if (profissao === "professor(a)-de-educacao-fisica") {
+        profissao = "Professor(a) de Educação Física"
+      }
+      else if (profissao === "professor(a)-de-ingles") {
+        profissao = "Professor(a) de Inglês"
+      }
+      else if (profissao === "professor(a)-de-programacao") {
+        profissao = "Professor(a) de Programação"
+      }
+      else if (profissao === "psicologo(a)") {
+        profissao = "Psicólogo(a)"
+      }
+      else if (profissao === "publicitario(a)") {
+        profissao = "Publicitário(a)"
+      }
 
-    <div>
-      {Database.filter((item) => {
-        if (item.id === idperfil) return item;
-      }).map(item =>
-        swal({
-          content: (
-            <div>
-              <img src={LogoOnservice} class="imagelogo" />
-              <p class="swal-title--perfil">Você está a um passo de contratar {item.name}! </p>
-              <p>
-                { }
-              </p>
-              <p class="swal-text--perfil">Ao clicar em <span style={{ fontWeight: "bold" }}>“Entrar em Contato”</span>, você está de acordo com nosso <a href="/termos-de-uso/">Termos de Uso</a> e <a href="/politica-de-privacidade/">Política de Privacidade</a>. Para fazer qualquer tipo de reclamação ou denúncia, envie-nos uma mensagem na aba <a href="/contato/" class="swal-text--newlink">CONTATO</a>!</p>
-            </div>
-          ),
-          button: {
-            className: "swal-button--perfil",
-            text: "Entrar em contato",
-            value: "whatsapp",
-          },
-        })
-          .then((value) => {
-            switch (value) {
-
-              case "whatsapp":
-                window.open(`https://api.whatsapp.com/send?phone=55${item.phone}&text=Ol%C3%A1%20${item.name}%2C%20encontrei%20seu%20perfil%20na%20OnService.%20Tenho%20interesse%20em%20seu%20servi%C3%A7o%20de%20${profissao}%2C%20voc%C3%AA%20poderia%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F`, `_blank`);
-                break;
-              default:
-                break;
-            }
+      <div>
+        {Database.filter((item) => {
+          if (item.id === idperfil) return item;
+        }).map(item =>
+          swal({
+            content: (
+              <div>
+                <img src={LogoOnservice} class="imagelogo" />
+                <p class="swal-title--perfil">Você está a um passo de contratar {item.name}! </p>
+                <p>
+                  { }
+                </p>
+                <p class="swal-text--perfil">Ao clicar em <span style={{ fontWeight: "bold" }}>“Entrar em Contato”</span>, você está de acordo com nosso <a href="/termos-de-uso/">Termos de Uso</a> e <a href="/politica-de-privacidade/">Política de Privacidade</a>. Para fazer qualquer tipo de reclamação ou denúncia, envie-nos uma mensagem na aba <a href="/contato/" class="swal-text--newlink">CONTATO</a>!</p>
+              </div>
+            ),
+            button: {
+              className: "swal-button--perfil",
+              text: "Entrar em contato",
+              value: "whatsapp",
+            },
           })
-      )}
-    </div>
-  }
+            .then((value) => {
+              switch (value) {
 
-  messageContrate = () => {
-    ReactGA.event({
-      category: 'Button',
-      action: 'Clicou no botão contrate'
-    })
-    this.sendErrorAlertPerfil()
-  }
+                case "whatsapp":
+                  window.open(`https://api.whatsapp.com/send?phone=55${item.phone}&text=Ol%C3%A1%20${item.name}%2C%20encontrei%20seu%20perfil%20na%20OnService.%20Tenho%20interesse%20em%20seu%20servi%C3%A7o%20de%20${profissao}%2C%20voc%C3%AA%20poderia%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F`, `_blank`);
+                  break;
+                default:
+                  break;
+              }
+            })
+        )}
+      </div>
+    }
 
-  render() {
-    var { idperfil, categoria, profissao, categoriaCode, profissaoCode, size } = this.state;
+    messageContrate = () => {
+      ReactGA.event({
+        category: 'Button',
+        action: 'Clicou no botão contrate'
+      })
+      sendErrorAlertPerfil()
+    }
+
 
     // Correção gramatical das categorias
     if (categoria === "manutencao") {
@@ -239,105 +231,52 @@ export default class Perfil extends Component {
       profissao = "Publicitário(a)"
     }
 
-    if (922 >= size.width) {
-      return (
-        <div>
-          {Database.filter((item) => {
-            if (item.id === idperfil) return item;
-          }).map(item =>
-            <div>
-              <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">{size} Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}`}>{categoria}</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}/${profissaoCode}`}>{profissao}</a><h2 class="path"> &gt; </h2><h2 class="path-actual-name">{item.name}</h2>
-              <div class="row row-information-center">
-                <div class="column column-perfilimage">
-                  <div class="row row-perfilimage">
-                    <img src={item.picture} width="100%" alt="Perfil" />
+    return (
+      <div>
+        {Database.filter((item) => {
+          if (item.id === idperfil) return item;
+        }).map(item =>
+          <div>
+            <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">{size} Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}`}>{categoria}</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}/${profissaoCode}`}>{profissao}</a><h2 class="path"> &gt; </h2><h2 class="path-actual-name">{item.name}</h2>
+            <div class="row row-information-center">
+              <div class="column column-perfilimage">
+                <div class="row row-perfilimage">
+                  <img src={item.picture} width="100%" alt="Perfil" />
+                </div>
+              </div>
+              <div class="column column-perfilinformation">
+                <div class="row row-main-information-perfil">
+                  {/* <div class="column column-perfilcircleimage"> */}
+                  {/* <div class="row row-perfilcircleimage"> */}
+                  {/*<img src={Prestadorimage} alt="Perfil" />*/}
+                  {/*</div>*/}
+                  {/*</div>*/}
+                  <div class="column column-perfilnameandbutton">
+                    <div class="row row-perfilnameandbutton">
+                      <a>{item.name}</a>
+                      <hr class="perfil-hr" />
+                      <button type='button'
+                        onClick={
+                          this.messageContrate.bind(this)
+                        } class="button-entraremcontato">
+                        Entrar em contato
+                        <IoLogoWhatsapp id="buttonimageperfil" width="90px" />
+                      </button>
+                    </div>
                   </div>
                 </div>
-                <div class="column column-perfilinformation">
-                  <div class="row row-main-information-perfil">
-                    {/* <div class="column column-perfilcircleimage"> */}
-                    {/* <div class="row row-perfilcircleimage"> */}
-                    {/*<img src={Prestadorimage} alt="Perfil" />*/}
-                    {/*</div>*/}
-                    {/*</div>*/}
-                    <div class="column column-perfilnameandbutton">
-                      <div class="row row-perfilnameandbutton">
-                        <a>{item.name}</a>
-                        <hr class="perfil-hr" />
-                        <button type='button'
-                          onClick={
-                            this.messageContrate.bind(this)
-                          } class="button-entraremcontato">
-                          Entrar em contato
-                          <IoLogoWhatsapp id="buttonimageperfil" width="90px" />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row row-professionperfil">
-                    {item.jobsRight.map(job =>
-                      <p>{job}<br /></p>
-                    )}
-                    <div class="perfil-description">
-                      <label class="perfil-description-text">{item.description}</label>
-                    </div>
+                <div class="row row-professionperfil">
+                  {item.jobsRight.map(job =>
+                    <p>{job}<br /></p>
+                  )}
+                  <div class="perfil-description">
+                    <label class="perfil-description-text">{item.description}</label>
                   </div>
                 </div>
               </div>
             </div>
-          )}
-        </div>
-      )
-    }
-    else if ( size.width > 922) {
-      return (
-        <div>
-          {Database.filter((item) => {
-            if (item.id === idperfil) return item;
-          }).map(item =>
-            <div>
-              <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}`}>{categoria}</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}/${profissaoCode}`}>{profissao}</a><h2 class="path"> &gt; </h2><h2 class="path-actual-name">{item.name}</h2>
-              <div class="row row-information-center">
-                <div class="column column-perfilimage">
-                  <div class="row row-perfilimage">
-                    <img src={item.picture} width="100%" alt="Perfil" />
-                  </div>
-                </div>
-                <div class="column column-perfilinformation">
-                  <div class="row row-main-information-perfil">
-                    {/* <div class="column column-perfilcircleimage"> */}
-                    {/* <div class="row row-perfilcircleimage"> */}
-                    {/*<img src={Prestadorimage} alt="Perfil" />*/}
-                    {/*</div>*/}
-                    {/*</div>*/}
-                    <div class="column column-perfilnameandbutton">
-                      <div class="row row-perfilnameandbutton">
-                        <a>{item.name}</a>
-                        <hr class="perfil-hr" />
-                        <button type='button'
-                          onClick={
-                            this.messageContrate.bind(this)
-                          } class="button-entraremcontato">
-                          Entrar em contato
-                          <IoLogoWhatsapp id="buttonimageperfil" width="90px" />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row row-professionperfil">
-                    {item.jobsRight.map(job =>
-                      <p>{job}<br /></p>
-                    )}
-                    <div class="perfil-description">
-                      <label class="perfil-description-text">{item.description}</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      )
-    }
-  }
+          </div>
+        )}
+      </div>
+    )
 }
