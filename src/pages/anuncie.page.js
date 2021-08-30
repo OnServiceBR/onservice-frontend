@@ -9,6 +9,7 @@ import LogoOnservice from "../assets/LogoSimboloLaranja.png";
 import { BiErrorCircle } from 'react-icons/bi';
 
 import "../styles/anuncie.css";
+import useWindowSize from "../components/useWindowSize.js";
 import { Multiselect } from 'multiselect-react-dropdown';
 
 import NumberFormat from 'react-number-format';
@@ -30,6 +31,7 @@ const Anuncie = () => {
   const [description, setDescription] = useState("")
   const [w2w, setW2W] = useState(false)
   const [terms, setTerms] = useState(false)
+  const size = useWindowSize()
 
   // Dados do banco
   const [citiesAvailable, setCitiesAvailable] = useState([])
@@ -199,40 +201,79 @@ const Anuncie = () => {
   }, [])
 
   const sendErrorAlert = (msg) => {
-    swal({
-      className: "swal-dimensions--register",
-      button: {
-        className: "button-alert",
-      },
-      content: (
-        <div>
-          <img src={LogoOnservice} width="90px" alt="SwalRegister" />
-          <BiErrorCircle id="erroriconregister" />
-          <h3 class="swal-title--register">Ops, algo deu errado...</h3>
-          <p class="swal-text--register">
-            {msg}
-          </p>
-        </div>
-      )
-    })
+    if (size.width > 500) {
+      swal({
+        className: "swal-dimensions--register",
+        button: {
+          className: "button-alert",
+        },
+        content: (
+          <div>
+            <img src={LogoOnservice} width="90px" alt="SwalRegister" />
+            <BiErrorCircle id="erroriconregister" />
+            <h3 class="swal-title--register">Ops, algo deu errado...</h3>
+            <p class="swal-text--register">
+              {msg}
+            </p>
+          </div>
+        )
+      })
+    }
+    if (size.width <= 500) {
+      swal({
+        className: "swal-dimensions--registersmall",
+        button: {
+          className: "button-alert",
+        },
+        content: (
+          <div>
+            <img src={LogoOnservice} width="90px" alt="SwalRegister" />
+            <BiErrorCircle id="erroriconregister" />
+            <h3 class="swal-title--register">Ops, algo deu errado...</h3>
+            <p class="swal-text--register">
+              {msg}
+            </p>
+          </div>
+        )
+      })
+    }
   }
 
   const sendSucessAlert = (msg) => {
-    swal({
-      className: "swal-dimensions--register",
-      button: {
-        className: "button-alert",
-      },
-      content: (
-        <div>
-          <img src={LogoOnservice} width="90px" alt="SwalRegister" />
-          <h3 class="swal-title--register">Concluído!</h3>
-          <p class="swal-text--register">
-            {msg}
-          </p>
-        </div>
-      )
-    })
+    if (size.width > 500) {
+      swal({
+        className: "swal-dimensions--register",
+        button: {
+          className: "button-alert",
+        },
+        content: (
+          <div>
+            <img src={LogoOnservice} width="90px" alt="SwalRegister" />
+            <h3 class="swal-title--register">Concluído!</h3>
+            <p class="swal-text--register">
+              {msg}
+            </p>
+          </div>
+        )
+      })
+    }
+    if (size.width <= 500) {
+      swal({
+        className: "swal-dimensions--registersmall",
+        button: {
+          className: "button-alert",
+        },
+        content: (
+          <div>
+            <img src={LogoOnservice} width="90px" alt="SwalRegister" />
+            <h3 class="swal-title--register">Concluído!</h3>
+            <p class="swal-text--register">
+              {msg}
+            </p>
+          </div>
+        )
+      })
+    }
   }
 
   const handleOnClick = e => {
@@ -334,37 +375,37 @@ const Anuncie = () => {
       })
     }).then(res => res.json()).then(res => {
 
-      if(res.success){
+      if (res.success) {
         ProfissionalDataService.uploadImage(email, file)
-        .then(uploadUrl => {
+          .then(uploadUrl => {
 
-          var data = {
-            name: name,
-            email: email,
-            birthday: birthday.formattedValue,
-            gender: gender,
-            phone: phone.value,
-            state: state,
-            city: city,
-            cidades: citiesOffer,
-            servicos: servicesOffer,
-            picture: uploadUrl,
-            description: description,
-            w2w: w2w,
-            terms: terms,
-            published: false
-          };
+            var data = {
+              name: name,
+              email: email,
+              birthday: birthday.formattedValue,
+              gender: gender,
+              phone: phone.value,
+              state: state,
+              city: city,
+              cidades: citiesOffer,
+              servicos: servicesOffer,
+              picture: uploadUrl,
+              description: description,
+              w2w: w2w,
+              terms: terms,
+              published: false
+            };
 
-          ProfissionalDataService.create(data)
-          .then(res => {
-            sendSucessAlert("Sua inscrição foi enviada, você deve ser aprovado em breve!");
-            newPrestador();
+            ProfissionalDataService.create(data)
+              .then(res => {
+                sendSucessAlert("Sua inscrição foi enviada, você deve ser aprovado em breve!");
+                newPrestador();
+              })
+              .catch(e => {
+                sendErrorAlert("Talvez nosso sistema esteja fora do ar, tente novamente mais tarde!");
+                console.log(e);
+              });
           })
-          .catch(e => {
-            sendErrorAlert("Talvez nosso sistema esteja fora do ar, tente novamente mais tarde!");
-            console.log(e);
-          });
-        })
       }
     })
 
@@ -431,7 +472,7 @@ const Anuncie = () => {
   return (
     <div class="anuncie-page">
       <div class="anuncie-image">
-        <img src={Anuncieimagem} class = "register-picture" alt="Imagem Página Anuncie" />
+        <img src={Anuncieimagem} class="register-picture" alt="Imagem Página Anuncie" />
       </div>
       <div class="register-right">
         <h2>ANUNCIE-SE AQUI</h2>
