@@ -9,7 +9,7 @@
   border-bottom-left-radius: 0.65cm;
   border-top-right-radius: 0.65cm;
   border-bottom-right-radius: 0.65cm;
-  width: 22.39cm;
+  width: 75%; 
 }
 
  /* Formatação footer no swal */
@@ -68,8 +68,8 @@
   text-align: center;
   color: rgb(255, 255, 255);
   font-family: GlacialIndifference;
-  height: 40px;
-  width:  200px;
+  height: 2.5rem;
+  width:  12.5rem;
   line-height: 0%;
   transition: 0.3s;
 }
@@ -77,8 +77,26 @@
 /*Configurações gerais do swal*/
 .swal-modal {
   height: 300px;
-  width:  700px;
-  border-radius: 20px
+  width: 680px;
+  border-radius: 1.25rem;
+}
+
+.swal-modal--small {
+  height: 25%;
+  width: 90%;
+  border-radius: 1.25rem;
+}
+
+.swal-modal--smallest {
+  height: 37%;
+  width: 80%;
+  border-radius: 1.25rem;
+}
+
+.swal-modal--smallester {
+  height: 32%;
+  width: 360px;
+  border-radius: 1.25rem;
 }
 
 /* Hover botao do swal */
@@ -98,6 +116,15 @@
   font: bold;
 }
 
+.imagelogo {
+  width: 13%;
+}
+
+.imagelogosmall {
+  width: 50px;
+}
+
+
 /* Coluna com imagem do prestador*/
 .column-perfilimage {
 	display: inline-block;
@@ -111,9 +138,32 @@
 /* Row com imagem do prestador*/
 .row-perfilimage {
   display: block;
-  margin-left: 3%;
+  position: relative;
   text-align: center;
   margin-top: 1%;
+}
+
+/* Row com imagem do prestador*/
+.row-perfilimage img{
+  margin: 0;
+  width: 90%;
+  margin-left: 2%;
+  text-align: center;
+}
+
+/* Row com imagem do prestador*/
+.row-perfilimagesmall {
+  display: block;
+  position: relative;
+  text-align: center;
+  margin-top: 1%;
+  text-align: center;
+}
+
+/* Row com imagem do prestador*/
+.row-perfilimagesmall img{
+  margin: 0;
+  width: 40%;
 }
 
 /* Coluna com informações e foto circular do prestador*/
@@ -121,6 +171,13 @@
 	display: inline-block;
 	width:63%;
 	margin-left: 4%;
+	margin-top: 2%;
+}
+
+/* Coluna com informações e foto circular do prestador*/
+.column-perfilinformationsmall {
+	display: inline-block;
+	margin-left: 2%;
 	margin-top: 2%;
 }
 
@@ -165,6 +222,12 @@
   margin-left: 5%;
 }
 
+.row-perfilnameandbuttonsmall {
+	display: block;
+  text-align: center;
+  margin-top: 2%;
+}
+
 /* Formatação texto a da coluna com com nome e botao*/
 .column-perfilnameandbutton a{
 	font-family: GlacialIndifference;
@@ -175,11 +238,31 @@
   margin-left: 2%;
 }
 
+/* Formatação texto a da coluna com com nome e botao*/
+.column-perfilnameandbuttonsmall a{
+	font-family: GlacialIndifference;
+  font-size: 16pt;
+  text-align: center !important;
+  margin-bottom: -3%;
+  color: rgb(64, 64, 64) !important;
+  margin-left: 2%;
+}
+
 /* Linha cinza*/
 .perfil-hr {
   margin-left: 0%;
   margin-right: 0%;
   width: 90%;
+  border-top-color: rgb(231,230,230);
+  margin-bottom: 3%;
+  margin-top: 1%;
+}
+
+.perfil-hrsmall {
+  margin-left: 9%;
+  margin-right: 0%;
+  width: 80%;
+  text-align: center;
   border-top-color: rgb(231,230,230);
   margin-bottom: 3%;
   margin-top: 1%;
@@ -228,8 +311,29 @@
   margin-left: 2%;
 }
 
+.row-professionperfilsmall {
+  display: block;
+  margin-top: 5%;
+  margin-left: 0px;
+  text-align: center;
+}
+
+.row-professionperfilsmall p {
+  font-family: GlacialIndifference;
+  font-size: 12pt;
+  text-align: center;
+  color: rgb(64, 64, 64) !important;
+  margin-bottom: 2%;
+  margin-left: -4%;
+}
+
 /* Deixa maiústula a primeira letra de cada palavra no caminho */
 .row-professionperfil p::first-letter {
+  text-transform: capitalize;
+}
+
+/* Deixa maiústula a primeira letra de cada palavra no caminho */
+.row-professionperfilsmall p::first-letter {
   text-transform: capitalize;
 }
 
@@ -237,10 +341,20 @@
 .perfil-description {
   border: solid 1px rgba(191, 191, 191);
   width: 90%;
-  height: 2.83cm;
+  height: 6.7rem;
   margin-bottom: 5%;
   margin-left: 2%;
   margin-top: 4%;
+}
+
+.perfil-descriptionsmall {
+  border: solid 1px rgba(191, 191, 191);
+  height: 6.7rem;
+  margin-bottom: 5%;
+  margin-top: 4%;
+  display: block;
+  width:90%;
+  margin-left: 2%;
 }
 
 /* Estilo da texto na caixa de descrição */

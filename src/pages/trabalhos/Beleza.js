@@ -9,10 +9,10 @@ function Beleza() {
   const jobs = [
     { job: "Barbeiro(a)", link: "/contrate/beleza/barbeiro(a)", count: "", iconC: "../../assets/icones/BarbeiroC.jpg", iconL: "../../assets/icones/BarbeiroL.jpg" },
     { job: "Cabeleireiro(a)", link: "/contrate/beleza/cabeleireiro(a)", count: "", iconC: "../../assets/icones/CabeleireiroC.jpg", iconL: "../../assets/icones/CabeleireiroL.jpg" },
-    //{ job: "Depilador(a)", link: "/contrate/beleza/depilador(a)", count: "", iconC: "../../assets/icones/DepiladorC.jpg", iconL: "../../assets/icones/DepiladorL.jpg" },
+    { job: "Depilador(a)", link: "/contrate/beleza/depilador(a)", count: "", iconC: "../../assets/icones/DepiladorC.jpg", iconL: "../../assets/icones/DepiladorL.jpg" },
     { job: "Esteticista", link: "/contrate/beleza/esteticista", count: "", iconC: "../../assets/icones/EsteticistaC.jpg", iconL: "../../assets/icones/EsteticistaL.jpg" },
-    //{ job: "Manicure", link: "/contrate/beleza/manicure", count: "", iconC: "../../assets/icones/ManicureC.jpg", iconL: "../../assets/icones/ManicureL.jpg" },
-    //{ job: "Maquiador(a)", link: "/contrate/beleza/maquiador(a)", count: "", iconC: "../../assets/icones/MaquiadorC.jpg", iconL: "../../assets/icones/MaquiadorL.jpg" },
+    { job: "Manicure", link: "/contrate/beleza/manicure", count: "", iconC: "../../assets/icones/ManicureC.jpg", iconL: "../../assets/icones/ManicureL.jpg" },
+    { job: "Maquiador(a)", link: "/contrate/beleza/maquiador(a)", count: "", iconC: "../../assets/icones/MaquiadorC.jpg", iconL: "../../assets/icones/MaquiadorL.jpg" },
     { job: "Micropigmentador(a)", link: "/contrate/beleza/micropigmentador(a)", count: "", iconC: "../../assets/icones/MicropigmentadorC.jpg", iconL: "../../assets/icones/MicropigmentadorL.jpg" },
   ]
 
