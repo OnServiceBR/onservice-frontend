@@ -9,7 +9,7 @@ const NavBar = () => {
       <div class="header-container">
         <nav class="navbar navbar-expand-lg bg-nav">
           <a class="brand-logo" href="/">
-            <img src={logo} width="150" alt="logo"/>
+            <img src={logo} alt="logo"/>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <AiOutlineMenu />

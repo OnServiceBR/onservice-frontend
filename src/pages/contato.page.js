@@ -7,6 +7,7 @@ import LogoOnservice from "../assets/LogoSimboloLaranja.png";
 import swal from '@sweetalert/with-react'
 import { Multiselect } from 'multiselect-react-dropdown';
 import { BiErrorCircle } from 'react-icons/bi';
+import useWindowSize from "../components/useWindowSize.js";
 
 const SITE_KEY = "6Ldo9loaAAAAADMRNqgi69nefNZrZfluNekE9YJQ";
 
@@ -16,6 +17,7 @@ function Contato() {
   const [message, setMessage] = useState("");
   const [subject, setSubject] = useState("");
   const [loading, setLoading] = useState(false);
+  const size = useWindowSize()
 
   const DropdownSubject = [
     { name: "Problemas com a conta" },
@@ -88,42 +90,85 @@ function Contato() {
   }
 
   const sendAlert = (header, msg) => {
-    swal({
-      className: "swal-dimensions--contact",
-      button: {
-        className: "button-alert",
-      },
-      content: (
-        <div>
-          <img src={LogoOnservice} width="90px" alt="SwalContact" />
-          <h3 class="swal-title--contact">{header}</h3>
-          <p class="swal-text--contact">
-            {msg}
-          </p>
-          <div class="swal-footer--contact"></div>
-        </div>
-      )
-    })
+    if (size.width > 500) {
+      swal({
+        className: "swal-dimensions--contact",
+        button: {
+          className: "button-alert",
+        },
+        content: (
+          <div>
+            <img src={LogoOnservice} width="90px" alt="SwalContact" />
+            <h3 class="swal-title--contact">{header}</h3>
+            <p class="swal-text--contact">
+              {msg}
+            </p>
+            <div class="swal-footer--contact"></div>
+          </div>
+        )
+      })
+    }
+
+    if (size.width <= 500) {
+      swal({
+        className: "swal-dimensions--contactsmall",
+        button: {
+          className: "button-alert",
+        },
+        content: (
+          <div>
+            <img src={LogoOnservice} width="90px" alt="SwalContact" />
+            <h3 class="swal-title--contact">{header}</h3>
+            <p class="swal-text--contact">
+              {msg}
+            </p>
+            <div class="swal-footer--contact"></div>
+          </div>
+        )
+      })
+    }
   }
 
   const sendAlertError = (header, msg) => {
-    swal({
-      className: "swal-dimensions--contact",
-      button: {
-        className: "button-alert",
-      },
-      content: (
-        <div>
-          <img src={LogoOnservice} width="90px" alt="SwalContact" />
-          <BiErrorCircle id="erroricon" />
-          <h3 class="swal-title--contact">{header}</h3>
-          <p class="swal-text--contact">
-            {msg}
-          </p>
-          <div class="swal-footer--contact"></div>
-        </div>
-      )
-    })
+    if (size.width > 500) {
+      swal({
+        className: "swal-dimensions--contact",
+        button: {
+          className: "button-alert",
+        },
+        content: (
+          <div>
+            <img src={LogoOnservice} width="90px" alt="SwalContact" />
+            <BiErrorCircle id="erroricon" />
+            <h3 class="swal-title--contact">{header}</h3>
+            <p class="swal-text--contact">
+              {msg}
+            </p>
+            <div class="swal-footer--contact"></div>
+          </div>
+        )
+      })
+    }
+
+    if (size.width <= 500) {
+      swal({
+        className: "swal-dimensions--contactsmall",
+        button: {
+          className: "button-alert",
+        },
+        content: (
+          <div>
+            <img src={LogoOnservice} width="90px" alt="SwalContact" />
+            <BiErrorCircle id="erroricon" />
+            <h3 class="swal-title--contact">{header}</h3>
+            <p class="swal-text--contact">
+              {msg}
+            </p>
+            <div class="swal-footer--contact"></div>
+          </div>
+        )
+      })
+    }
   }
 
   const submitData = token => {
@@ -194,7 +239,7 @@ function Contato() {
   return (
     <div class="anuncie-page">
       <div class="anuncie-image">
-        <img src={Contatoimagem} class = "register-picture" alt="Imagem página contato" />
+        <img src={Contatoimagem} class="register-picture" alt="Imagem página contato" />
       </div>
       <div class="col form-contact">
         <h3>FALE CONOSCO</h3>

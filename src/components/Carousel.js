@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import '../styles/carousel.css';
 
 const Carousel = (props) => {
-    const {children, show} = props
+    const {children, show, skip} = props
 
     const [currentIndex, setCurrentIndex] = useState(0)
     const [length, setLength] = useState(children.length)
@@ -14,13 +14,13 @@ const Carousel = (props) => {
 
     const next = () => {
         if (currentIndex < (length - show)) {
-            setCurrentIndex(prevState => prevState + 3)
+            setCurrentIndex(prevState => prevState + skip)
         }
     }
 
     const prev = () => {
         if (currentIndex > 0) {
-            setCurrentIndex(prevState => prevState - 3)
+            setCurrentIndex(prevState => prevState - skip)
         }
     }
 

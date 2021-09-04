@@ -177,6 +177,12 @@
   border-radius: 20px
 }
 
+.swal-dimensions--contactsmall {
+  height: 270px !important;
+  width:  290px !important;
+  border-radius: 20px
+}
+
  /* Formatação footer no swal */
  .swal-footer--footer {
   text-align: center;
