@@ -1,93 +1,68 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import "../styles/trabalhos.css";
 import "../styles/profissionais.css";
 import { Multiselect } from 'multiselect-react-dropdown';
 import Database from "../components/Database.js";
 import { FaSearch } from 'react-icons/fa';
 
-export default class Home extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      tecnologia: [],
-      beleza: [],
-      saude: [],
-      manutencao: [],
-      ensino: [],
-      eventos: [],
-      categoriaCode: this.props.match.params.job, // Não alterar, serve para o atalho "Serviços" e html
-      categoria: this.props.match.params.job,
-      profissaoCode: this.props.match.params.workers, // Não alterar, serve para o html
-      profissao: this.props.match.params.workers,
-      w2w: "",
-      profissionais: [],
-      tempProfissionais: [],
-      sortType: 'Destaque',
-      options: [],
+export default function Home(props) { 
+  const [tecnologia, setTecnologia] = useState([])
+  const [beleza, setBeleza] = useState([])
+  const [saude, setSaude] = useState([])
+  const [manutencao, setManutencao] = useState([])
+  const [ensino, setEnsino] = useState([])
+  const [eventos, setEventos] = useState([])
+  const [w2w, setW2W] = useState("")
+  const [sortType, setSortType] = useState("Destaque")
+  const [profissionais, setProfissionais] = useState([])
+  const [options, setOptions] = useState([])
+  const [tempProfissionais, setTempProfissionais] = useState([])
+  const categoriaCode = props.match.params.job // Não alterar, serve para o atalho "Serviços" e html
+  var categoria = props.match.params.job
+  const profissaoCode = props.match.params.workers // Não alterar, serve para o html
+  var profissao = props.match.params.workers
 
-      DropdownOrder: [
-        { name: 'Destaques', id: "destaque" },
-        { name: 'A-Z', id: "a-z" },
-      ],
-
-    };
-    this.style = {
-      chips: {
-        background: "rgb(237, 125, 49)",
-        color: "rgb(255,255,255)"
-      },
-      searchBox: {
-        "border": "0.5pt none rgb(118,113,113)",
-        "border-radius": "0.15cm",
-        padding: 0,
-      },
-      inputField: {
-        margin: 0,
-        "padding-left": "19px",
-        width: "100%",
-      },
-      multiselectContainer: {
-        color: "rgb(175,171,171)",
-        width: "95%",
-        "margin-right": "auto",
-        "margin-left": "auto"
-      },
-      groupHeading: {
-        color: "rgb(237, 125, 49)",
-      },
-      option: { // To change css for dropdown options
-        color: "rgb(118,113,113)",
-      },
-    };
-
-    this.onSelect = this.onSelect.bind(this);
+  const DropdownOrder = [
+    { name: 'Destaques', id: "destaque" },
+    { name: 'A-Z', id: "a-z" },
+  ]
+  
+  const style = {
+    chips: {
+      background: "rgb(237, 125, 49)",
+      color: "rgb(255,255,255)"
+    },
+    searchBox: {
+      "border": "0.5pt none rgb(118,113,113)",
+      "border-radius": "0.15cm",
+      padding: 0,
+    },
+    inputField: {
+      margin: 0,
+      "padding-left": "19px",
+      width: "100%",
+    },
+    multiselectContainer: {
+      color: "rgb(175,171,171)",
+      width: "95%",
+      "margin-right": "auto",
+      "margin-left": "auto"
+    },
+    groupHeading: {
+      color: "rgb(237, 125, 49)",
+    },
+    option: { // To change css for dropdown options
+      color: "rgb(118,113,113)",
+    },
   }
 
-  sortAZ() {
-    let mapped = Database.filter((item) => {
-      for (var i = 0; i < item.jobs.length; i++) {
-        if (item.jobs[i] === this.state.profissaoCode) {
-          if (!this.state.options)
-            return item
-          else if (this.state.options.include(item.gender))
-            return item
-        }
-      }
-    }).map((item) => {
-      return item
-    });
-    mapped.sort(function (a, b) {
-      return a.name.localeCompare(b.name);
-    })
-    this.setState({ profissionais: mapped })
-  }
-
-  sortDestaque() {
+  const sortDestaque = () => {
     // Busca destacados
-    let mapped = this.state.tempProfissionais.filter((item) => {
+    console.log(tempProfissionais)
+    let mapped = tempProfissionais.filter((item) => {
       if (item.emphasize == true) {
         for (var i = 0; i < item.jobs.length; i++) {
-          if (item.jobs[i] === this.state.profissaoCode)
+          if (item.jobs[i] === profissaoCode)
             return item;
         }
       }
@@ -95,62 +70,60 @@ export default class Home extends Component {
       return item
     });
 
-    this.setState({ profissionais: mapped }, () => {
+    setProfissionais(mapped)
 
-      // Coloca não destaques por último
-      let mapped2 = this.state.tempProfissionais.filter((item) => {
-        if (item.emphasize == false) {
-          for (var i = 0; i < item.jobs.length; i++) {
-            if (item.jobs[i] === this.state.profissaoCode)
-              return item;
-          }
+    // Coloca não destaques por último
+    let mapped2 = tempProfissionais.filter((item) => {
+      if (item.emphasize == false) {
+        for (var i = 0; i < item.jobs.length; i++) {
+          if (item.jobs[i] === profissaoCode)
+            return item;
         }
-      }).map((item) => {
-        return item
-      });
-      this.setState({ profissionais: [...this.state.profissionais, ...mapped2] })
-    })
+      }
+    }).map((item) => {
+      return item
+    });
+
+    setProfissionais([...profissionais, ...mapped2])
   }
 
-  onSelect(selectedList, selectedItem) {
+  const onSelect = (selectedList, selectedItem) => {
     if (selectedItem.id === "a-z") {
-      this.setState({ sortType: 'a-z' })
-      this.setState({ profissionais: this.state.tempProfissionais })
+      setSortType('a-z')
+      setProfissionais(tempProfissionais)
     }
     else if (selectedItem.id === "destaque") {
-      this.sortDestaque()
+      sortDestaque()
     }
   }
 
-  handleChange(event) {
+  const handleChange = (event) => {
     const field = event.target.id;
     if (field === "feminino") {
       if (event.target.checked) {
-        this.setState({ options: [...this.state.options, "feminino"] }, () => {
-          console.log(this.state.options)
+        setOptions([...options, "feminino"], () => {
         })
       } else {
-        let index = this.state.options.indexOf("feminino");
-        this.state.options.splice(index, 1)
-        this.setState({ options: [...this.state.options] })
+        let index = options.indexOf("feminino");
+        options.splice(index, 1)
+        setOptions([...options])
       }
     } else if (field === "masculino") {
       if (event.target.checked) {
-        this.setState({ options: [...this.state.options, "masculino"] }, () => {
-          console.log(this.state.options)
+        setOptions([...options, "masculino"], () => {
         })
       } else {
-        let index = this.state.options.indexOf("masculino");
-        this.state.options.splice(index, 1)
-        this.setState({ options: [...this.state.options] })
+        let index = options.indexOf("masculino");
+        options.splice(index, 1)
+        setOptions([...options])
       }
     }
   }
 
-  componentDidMount() {
+  useEffect(() => {
     let mapped = Database.filter((item) => {
       for (var i = 0; i < item.jobs.length; i++) {
-        if (item.jobs[i] === this.state.profissaoCode) {
+        if (item.jobs[i] === profissaoCode) {
           return item
         }
       }
@@ -160,196 +133,189 @@ export default class Home extends Component {
     mapped.sort(function (a, b) {
       return a.name.localeCompare(b.name);
     })
-    this.setState({ tempProfissionais: mapped }, () => {
-      this.sortDestaque()
-    })
+    setTempProfissionais(mapped)
+    console.log(tempProfissionais)
+    console.log(mapped)
+    sortDestaque()
+  }, []);
+
+  // Correção gramatical das categorias
+  if (categoria === "manutencao") {
+    categoria = "manutenção"
+  }
+  else if (categoria === "saude") {
+    categoria = "saúde"
   }
 
-  render() {
-    var { categoria, profissao, profissionais, categoriaCode, profissaoCode, options } = this.state;
+  // Correção gramatical das profissões
+  if (profissao === "animador(a)-de-festas") {
+    profissao = "Animador(a) de festas"
+  }
+  else if (profissao === "artesa(o)") {
+    profissao = "Artesã(o)"
+  }
+  else if (profissao === "assistente-tecnico(a)") {
+    profissao = "Assistente Técnico(a)"
+  }
+  else if (profissao === "designer-grafico") {
+    profissao = "Designer Gráfico"
+  }
+  else if (profissao === "editor(a)-de-videos") {
+    profissao = "Editor(a) de Vídeos"
+  }
+  else if (profissao === "especialista-em-midias") {
+    profissao = "Especialista em Mídias"
+  }
+  else if (profissao === "fotografo(a)") {
+    profissao = "Fotógrafo(a)"
+  }
+  else if (profissao === "fretes-e-mudancas") {
+    profissao = "Fretes e Mudanças"
+  }
+  else if (profissao === "garcom(garconete)") {
+    profissao = "Garçom(Garçonete)"
+  }
+  else if (profissao === "manutencao-de-pabx") {
+    profissao = "Manutenção de PABX"
+  }
+  else if (profissao === "montador(a)-de-moveis") {
+    profissao = "Montador(a) de Móveis"
+  }
+  else if (profissao === "musico(a)") {
+    profissao = "Músico(a)"
+  }
+  else if (profissao === "passeador(a)-de-caes") {
+    profissao = "Passeador(a) de cães"
+  }
+  else if (profissao === "personal-trainer") {
+    profissao = "Personal Trainer"
+  }
+  else if (profissao === "professor(a)-de-educacao-fisica") {
+    profissao = "Professor(a) de Educação Física"
+  }
+  else if (profissao === "professor(a)-de-ingles") {
+    profissao = "Professor(a) de Inglês"
+  }
+  else if (profissao === "professor(a)-de-programacao") {
+    profissao = "Professor(a) de Programação"
+  }
+  else if (profissao === "psicologo(a)") {
+    profissao = "Psicólogo(a)"
+  }
+  else if (profissao === "publicitario(a)") {
+    profissao = "Publicitário(a)"
+  }
 
-    // Correção gramatical das categorias
-    if (categoria === "manutencao") {
-      categoria = "manutenção"
-    }
-    else if (categoria === "saude") {
-      categoria = "saúde"
-    }
-
-    // Correção gramatical das profissões
-    if (profissao === "animador(a)-de-festas") {
-      profissao = "Animador(a) de festas"
-    }
-    if (profissao === "artesa(o)") {
-      profissao = "Artesã(o)"
-    }
-    else if (profissao === "assistente-tecnico(a)") {
-      profissao = "Assistente Técnico(a)"
-    }
-    else if (profissao === "designer-grafico") {
-      profissao = "Designer Gráfico"
-    }
-    else if (profissao === "editor(a)-de-videos") {
-      profissao = "Editor(a) de Vídeos"
-    }
-    else if (profissao === "especialista-em-midias") {
-      profissao = "Especialista em Mídias"
-    }
-    else if (profissao === "fotografo(a)") {
-      profissao = "Fotógrafo(a)"
-    }
-    else if (profissao === "fretes-e-mudancas") {
-      profissao = "Fretes e Mudanças"
-    }
-    else if (profissao === "garcom(garconete)") {
-      profissao = "Garçom(Garçonete)"
-    }
-    else if (profissao === "manutencao-de-pabx") {
-      profissao = "Manutenção de PABX"
-    }
-    else if (profissao === "montador(a)-de-moveis") {
-      profissao = "Montador(a) de Móveis"
-    }
-    else if (profissao === "musico(a)") {
-      profissao = "Músico(a)"
-    }
-    else if (profissao === "passeador(a)-de-caes") {
-      profissao = "Passeador(a) de cães"
-    }
-    else if (profissao === "personal-trainer") {
-      profissao = "Personal Trainer"
-    }
-    else if (profissao === "professor(a)-de-educacao-fisica") {
-      profissao = "Professor(a) de Educação Física"
-    }
-    else if (profissao === "professor(a)-de-ingles") {
-      profissao = "Professor(a) de Inglês"
-    }
-    else if (profissao === "professor(a)-de-programacao") {
-      profissao = "Professor(a) de Programação"
-    }
-    else if (profissao === "psicologo(a)") {
-      profissao = "Psicólogo(a)"
-    }
-    else if (profissao === "publicitario(a)") {
-      profissao = "Publicitário(a)"
-    }
-
-    return (
-      <div>
-        <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}`}>{categoria}</a><h2 class="path"> &gt; </h2><h2 class="path-actual">{profissao}</h2>
-        <div class="search-box">
-          {/* <form method="get" action="/contrate">
-            <div id="search-contrate">
-              <input id="search-input-contrate" placeholder="Buscar por um profissional" />
-              <FaSearch id="search-lupe" />
-            </div>
-            <button id="search-button-contrate" type="submit">
-              Buscar
-            </button>
-          </form> */}
-        </div>
-        <div class="search-tabs">
-          <a href="/contrate">
-            <label id="profissionais-category-label" class="link-bar-label">Categorias</label>
-          </a>
-          <a href={`/contrate/${categoriaCode}`}>
-            <label id="profissionais-service-label" class="link-bar-label">Serviços</label>
-          </a>
-          <label id="profissionais-job-label">Profissionais</label>
-        </div>
-        <br />
-        <div class="row workers-row-order">
-          <div class="column workers-column-order-title">
-            <div class="order-workers">
-              <label for="w2w">Ordenar por: </label>
-            </div>
+  return (
+    <div>
+      <a class="path" href="/">Home</a><h2 class="path"> &gt; </h2><a class="path" href="/contrate">Contrate um serviço</a><h2 class="path"> &gt; </h2><a class="path" href={`/contrate/${categoriaCode}`}>{categoria}</a><h2 class="path"> &gt; </h2><h2 class="path-actual">{profissao}</h2>
+      <div class="search-box">
+        {/* <form method="get" action="/contrate">
+          <div id="search-contrate">
+            <input id="search-input-contrate" placeholder="Buscar por um profissional" />
+            <FaSearch id="search-lupe" />
           </div>
-          <div class="column workers-column-order-dropdown">
-            <div class="order-workers-dropdown">
-              <Multiselect
-                options={this.state.DropdownOrder} // Options to display in the dropdown
-                selectedValues={this.state.selectedValue} // Preselected value to persist in dropdown
-                onSelect={this.onSelect} // Function will trigger on select event
-                onRemove={this.onRemove} // Function will trigger on remove event
-                displayValue="name" // Property name to display in the dropdown options
-                id="MultipleDropdownWorkers"
-                style={this.style}
-                singleSelect={true}
-                avoidHighlightFirstOption={true}
-                placeholder="Destaques"
-                hidePlaceholder={true}
-              />
-            </div>
+          <button id="search-button-contrate" type="submit">
+            Buscar
+          </button>
+        </form> */}
+      </div>
+      <div class="search-tabs">
+        <a href="/contrate">
+          <label id="profissionais-category-label" class="link-bar-label">Categorias</label>
+        </a>
+        <a href={`/contrate/${categoriaCode}`}>
+          <label id="profissionais-service-label" class="link-bar-label">Serviços</label>
+        </a>
+        <label id="profissionais-job-label">Profissionais</label>
+      </div>
+      <br />
+      <div class="row workers-row-order">
+        <div class="column workers-column-order-title">
+          <div class="order-workers">
+            <label for="w2w">Ordenar por: </label>
           </div>
         </div>
-        <div class="row workers-row-all">
-          <div class="column workers-column-settings">
-            <div class="workers-settings-title">
-              Cidade
-            </div>
-            <div class="workers-settings-text">
-              <label class="container">
-                <input type="checkbox" defaultChecked={true} disabled />
-                <span class="checkmark"></span>
-              </label>
-              <label for="checkbox" style={{ marginLeft: "14%", marginBottom: "0%" }}>
-                São Carlos
-              </label>
-            </div>
-            <div class="workers-settings-title">
-              Sexo
-            </div>
-            <div class="workers-settings-text">
-              <label class="container">
-                <input id="feminino" type="checkbox" onChange={this.handleChange.bind(this)} />
-                <span class="checkmark"></span>
-              </label>
-              <label for="checkbox" style={{ marginLeft: "14%", marginBottom: "0%" }}>
-                Feminino
-              </label>
-            </div>
-            <div class="workers-settings-text">
-              <label class="container">
-                <input id="masculino" type="checkbox" onChange={this.handleChange.bind(this)} />
-                <span class="checkmark"></span>
-              </label>
-              <label for="checkbox" style={{ marginLeft: "14%", marginBottom: "0%" }}>
-                Masculino
-              </label>
-            </div>
-          </div>
-          <div id="workers-change-color-on-hover" class="column workers-column-profile">
-            {profissionais.filter((item) => {
-              if (options.length == 0) {
-                console.log(item)
-                return item
-              }
-              else if (options.includes(item.gender)) {
-                console.log(item)
-                return item
-              }
-            }).map(item =>
-              <a href={`/contrate/${categoriaCode}/${profissaoCode}/${item.id}`} class="row workers-row-profile">
-                <div class="column workers-image">
-                  <img alt="" src={item.picture} class="workers-picture-profissões" />
-                </div>
-                <div class="column workers-profile">
-                  <div id="workers-name-change" class="workers-name">
-                    {item.name}
-                  </div>
-                  <div class="workers-description">
-                    <p>
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-                <hr class="workers-hr" />
-              </a>
-            )}
+        <div class="column workers-column-order-dropdown">
+          <div class="order-workers-dropdown">
+            <Multiselect
+              options={DropdownOrder} // Options to display in the dropdown
+              onSelect={onSelect} // Function will trigger on select event
+              displayValue="name" // Property name to display in the dropdown options
+              id="MultipleDropdownWorkers"
+              style={style}
+              singleSelect={true}
+              avoidHighlightFirstOption={true}
+              placeholder="Destaques"
+              hidePlaceholder={true}
+            />
           </div>
         </div>
       </div>
-    )
-  }
+      <div class="row workers-row-all">
+        <div class="column workers-column-settings">
+          <div class="workers-settings-title">
+            Cidade
+          </div>
+          <div class="workers-settings-text">
+            <label class="container">
+              <input type="checkbox" defaultChecked={true} disabled />
+              <span class="checkmark"></span>
+            </label>
+            <label for="checkbox" style={{ marginLeft: "14%", marginBottom: "0%" }}>
+              São Carlos
+            </label>
+          </div>
+          <div class="workers-settings-title">
+            Sexo
+          </div>
+          <div class="workers-settings-text">
+            <label class="container">
+              <input id="feminino" type="checkbox" onChange={handleChange} />
+              <span class="checkmark"></span>
+            </label>
+            <label for="checkbox" style={{ marginLeft: "14%", marginBottom: "0%" }}>
+              Feminino
+            </label>
+          </div>
+          <div class="workers-settings-text">
+            <label class="container">
+              <input id="masculino" type="checkbox" onChange={handleChange} />
+              <span class="checkmark"></span>
+            </label>
+            <label for="checkbox" style={{ marginLeft: "14%", marginBottom: "0%" }}>
+              Masculino
+            </label>
+          </div>
+        </div>
+        <div id="workers-change-color-on-hover" class="column workers-column-profile">
+          {profissionais.filter((item) => {
+            if (options.length == 0) {
+              return item
+            }
+            else if (options.includes(item.gender)) {
+              return item
+            }
+          }).map(item =>
+            <a href={`/contrate/${categoriaCode}/${profissaoCode}/${item.id}`} class="row workers-row-profile">
+              <div class="column workers-image">
+                <img alt="" src={item.picture} class="workers-picture-profissões" />
+              </div>
+              <div class="column workers-profile">
+                <div id="workers-name-change" class="workers-name">
+                  {item.name}
+                </div>
+                <div class="workers-description">
+                  <p>
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+              <hr class="workers-hr" />
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  )
 }
