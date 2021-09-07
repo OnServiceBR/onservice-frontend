@@ -1,3 +1,326 @@
+@media only screen and (min-width: 850px) {
+  /* Espaço para a imagem do profissional */
+  .workers-image{
+    width: 130px;
+    height: 130px;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
+  /* Espaço para o nome, nota e descrição do profissional */
+  .workers-profile{
+    width: 70%;
+    margin-left: 3%;
+    margin-bottom: 1%;
+  }
+
+  /* Nome de cada um dos profissionais */
+  .workers-name {
+    font-family: GlacialIndifference;
+    font-size: 14pt;
+    margin-bottom: 1%;
+    margin-top: 3%;
+  }
+
+  /* Espaço para as configações de filtro dos profissionais */
+  .workers-column-settings{
+    width: 20%;
+  }
+  
+  /* Espaço para os perfis dos profissionais */
+  .workers-column-profile{
+    width: 80%;
+  }
+
+  /* Descrição em texto de determinada configuração de filtro de profissionais */
+  .workers-settings-text {
+    font-family: GlacialIndifference;
+    font-size: 10pt;
+    color: rgb(118,113,113);
+    margin-bottom: none;
+  }
+
+  /* Espaço para as configações de filtro dos profissionais */
+  .workers-column-order-title{
+    width: 130px;
+    text-align: right;
+  }
+
+  /* Espaço para os perfis dos profissionais */
+  .workers-column-order-dropdown{
+    width: 120px;
+  }
+
+  .workers-description {
+    height: 100px !important;
+  }
+}
+
+@media only screen and (max-width: 850px) and (min-width: 768px) {
+  /* Espaço para a imagem do profissional */
+  .workers-image{
+    width: 130px;
+    height: 130px;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
+  /* Espaço para o nome, nota e descrição do profissional */
+  .workers-profile{
+    width: 70%;
+    margin-left: 3%;
+    margin-bottom: 1%;
+  }
+
+  /* Nome de cada um dos profissionais */
+  .workers-name {
+    font-family: GlacialIndifference;
+    font-size: 14pt;
+    margin-bottom: 1%;
+    margin-top: 3%;
+  }
+
+  /* Espaço para as configações de filtro dos profissionais */
+  .workers-column-settings{
+    width: 20%;
+  }
+  
+  /* Espaço para os perfis dos profissionais */
+  .workers-column-profile{
+    width: 80%;
+  }
+
+  /* Descrição em texto de determinada configuração de filtro de profissionais */
+  .workers-settings-text {
+    font-family: GlacialIndifference;
+    font-size: 10pt;
+    color: rgb(118,113,113);
+    margin-bottom: none;
+  }
+
+  /* Espaço para as configações de filtro dos profissionais */
+  .workers-column-order-title{
+    width: 130px;
+    text-align: right;
+  }
+
+  /* Espaço para os perfis dos profissionais */
+  .workers-column-order-dropdown{
+    width: 120px;
+  }
+
+  .workers-description {
+    height: 100px !important;
+  }
+}
+
+@media only screen and (max-width: 800px) and (min-width: 576px){
+  /* Espaço para a imagem do profissional */
+  .workers-image{
+    width: 130px;
+    height: 130px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
+  /* Espaço para o nome, nota e descrição do profissional */
+  .workers-profile{
+    width: 65%;
+    margin-left: 3%;
+    margin-bottom: 1%;
+  }
+
+  /* Nome de cada um dos profissionais */
+  .workers-name {
+    font-family: GlacialIndifference;
+    font-size: 14pt;
+    margin-bottom: 1%;
+    margin-top: 3%;
+    text-align: center;
+  }
+
+  /* Espaço para as configações de filtro dos profissionais */
+  .workers-column-settings{
+    width: 23%;
+
+  }
+  
+  /* Espaço para os perfis dos profissionais */
+  .workers-column-profile{
+    width: 77%;
+  }
+
+  /* Descrição em texto de determinada configuração de filtro de profissionais */
+  .workers-settings-text {
+    font-family: GlacialIndifference;
+    font-size: 10pt;
+    color: rgb(118,113,113);
+    margin-bottom: none;
+    margin-left: 5%;
+  }
+
+  /* Espaço para as configações de filtro dos profissionais */
+  .workers-column-order-title{
+    width: 100px;
+    text-align: right;
+  }
+
+  /* Espaço para os perfis dos profissionais */
+  .workers-column-order-dropdown{
+    width: 115px;
+  }
+}
+
+@media only screen and (max-width: 576px) and (min-width: 425px){
+  /* Espaço para a imagem do profissional */
+  .workers-image{
+    width: 130px;
+    height: 130px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
+  /* Espaço para o nome, nota e descrição do profissional */
+  .workers-profile{
+    width: 100%;
+    margin-left: 3%;
+    margin-bottom: 1%;
+  }
+
+  /* Nome de cada um dos profissionais */
+  .workers-name {
+    font-family: GlacialIndifference;
+    font-size: 14pt;
+    margin-bottom: 1%;
+    margin-top: 3%;
+    text-align: center;
+  }
+
+  /* Espaço para as configações de filtro dos profissionais */
+  .workers-column-settings{
+    width: 30%;
+
+  }
+  
+  /* Espaço para os perfis dos profissionais */
+  .workers-column-profile{
+    width: 70%;
+  }
+
+  /* Descrição em texto de determinada configuração de filtro de profissionais */
+  .workers-settings-text {
+    font-family: GlacialIndifference;
+    font-size: 10pt;
+    color: rgb(118,113,113);
+    margin-bottom: none;
+    margin-left: 5%;
+  }
+
+  /* Espaço para as configações de filtro dos profissionais */
+  .workers-column-order-title{
+    width: 100px;
+    text-align: right;
+  }
+
+  /* Espaço para os perfis dos profissionais */
+  .workers-column-order-dropdown{
+    width: 115px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  /* Espaço para a imagem do profissional */
+  .workers-image{
+    width: 130px;
+    height: 130px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
+  /* Espaço para o nome, nota e descrição do profissional */
+  .workers-profile{
+    width: 100%;
+    margin-left: 3%;
+    margin-bottom: 1%;
+  }
+
+  /* Nome de cada um dos profissionais */
+  .workers-name {
+    font-family: GlacialIndifference;
+    font-size: 14pt;
+    margin-bottom: 1%;
+    margin-top: 3%;
+    text-align: center;
+  }
+
+  /* Espaço para as configações de filtro dos profissionais */
+  .workers-column-settings{
+    width: 40%;
+  }
+  
+  /* Espaço para os perfis dos profissionais */
+  .workers-column-profile{
+    width: 60%;
+  }
+
+  /* Descrição em texto de determinada configuração de filtro de profissionais */
+  .workers-settings-text {
+    font-family: GlacialIndifference;
+    font-size: 10pt;
+    color: rgb(118,113,113);
+    margin-bottom: none;
+    margin-left: 5%;
+  }
+
+  /* Espaço para as configações de filtro dos profissionais */
+  .workers-column-order-title{
+    width: 100px;
+    text-align: right;
+  }
+
+  /* Espaço para os perfis dos profissionais */
+  .workers-column-order-dropdown{
+    width: 115px;
+  }
+}
+
+.checkbox-profissionais {
+  margin-left: 25px;
+  margin-bottom: 0%
+}
+
+/* Espaço com settings+workers */
+.workers-row-order {
+  width: 100%;
+  justify-content: flex-end;
+}
+
+/* Espaço com settings+workers */
+.workers-row-all {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Garante que o espaço do workers é 100% preenchido */
+.workers-row-profile {
+  width: 100%;
+  border: solid;
+  border-left-color: rgb(231,230,230);
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+  border-width: 1px;
+}
+
 /* Texto ao lado do dropdown de ordenar os profissionais */
 .order-workers {
   font-family: GlacialIndifference;
@@ -18,23 +341,6 @@
 
 #MultipleDropdownWorkers input:focus{
   border-color: rgb(237, 125, 49);
-}
-
-/* Espaço com settings+workers */
-.workers-row-order {
-  width: 20%;
-  margin-left: auto;
-  margin-right: 14%;
-}
-
-/* Espaço para as configações de filtro dos profissionais */
-.workers-column-order-title{
-  width: 40%;
-}
-
-/* Espaço para os perfis dos profissionais */
-.workers-column-order-dropdown{
-  width: 60%;
 }
 
 .path-actual {
@@ -90,58 +396,6 @@
   margin-left: 13%;
 }
 
-/* Espaço com settings+workers */
-.workers-row-all {
-  width: 89%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Espaço para as configações de filtro dos profissionais */
-.workers-column-settings{
-  width: 20%;
-}
-
-/* Espaço para os perfis dos profissionais */
-.workers-column-profile{
-  width: 80%;
-}
-
-/* Garante que o espaço do workers é 100% preenchido */
-.workers-row-profile {
-  width: 100%;
-  border: solid;
-  border-left-color: rgb(231,230,230);
-  border-top: none;
-  border-bottom: none;
-  border-right: none;
-  border-width: 1px;
-}
-
-/* Espaço para a imagem do profissional */
-.workers-image{
-  width: 130px;
-  height: 130px;
-  margin-left: 5%;
-  margin-top: 2%;
-  margin-bottom: 2%;
-}
-
-/* Espaço para o nome, nota e descrição do profissional */
-.workers-profile{
-  width: 70%;
-  margin-left: 3%;
-  margin-bottom: 1%;
-}
-
-/* Nome de cada um dos profissionais */
-.workers-name {
-  font-family: GlacialIndifference;
-  font-size: 14pt;
-  margin-bottom: 1%;
-  margin-top: 3%;
-}
-
 #workers-change-color-on-hover {
   text-decoration: none;
   color: rgb(64,64,64);
@@ -167,14 +421,18 @@
   color: rgb(175,171,171);
   border: solid;
   border-width: 1px;
-  height: 105px;
+  height: auto;
   width: 100%;
   padding-left: 1.5%;
   padding-top: 0.5%;
   padding-right: 1.5%;
-  padding-bottom: 0.5%;
+  padding-bottom: 0%;
   text-align: justify;
-  margin-bottom: 1%;
+  margin-bottom: 3%;
+}
+
+.workers-description p {
+  margin-bottom: 0px;
 }
 
 .workers-settings-title {
@@ -183,14 +441,6 @@
   margin-bottom: 6px;
   margin-top: 30px;
   color: rgb(64,64,64);
-}
-
-/* Descrição em texto de determinada configuração de filtro de profissionais */
-.workers-settings-text {
-  font-family: GlacialIndifference;
-  font-size: 10pt;
-  color: rgb(118,113,113);
-  margin-bottom: none;
 }
 
 .workers-picture-profissões {

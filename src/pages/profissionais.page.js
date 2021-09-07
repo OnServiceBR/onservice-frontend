@@ -4,6 +4,7 @@ import "../styles/profissionais.css";
 import { Multiselect } from 'multiselect-react-dropdown';
 import Database from "../components/Database.js";
 import { FaSearch } from 'react-icons/fa';
+import useWindowSize from "../components/useWindowSize.js";
 
 export default function Home(props) { 
   const [tecnologia, setTecnologia] = useState([])
@@ -21,6 +22,7 @@ export default function Home(props) {
   var categoria = props.match.params.job
   const profissaoCode = props.match.params.workers // Não alterar, serve para o html
   var profissao = props.match.params.workers
+  const size = useWindowSize()
 
   const DropdownOrder = [
     { name: 'Destaques', id: "destaque" },
@@ -39,7 +41,7 @@ export default function Home(props) {
     },
     inputField: {
       margin: 0,
-      "padding-left": "19px",
+      "padding-left": "10%",
       width: "100%",
     },
     multiselectContainer: {
@@ -258,7 +260,7 @@ export default function Home(props) {
               <input type="checkbox" defaultChecked={true} disabled />
               <span class="checkmark"></span>
             </label>
-            <label for="checkbox" style={{ marginLeft: "14%", marginBottom: "0%" }}>
+            <label for="checkbox" class="checkbox-profissionais">
               São Carlos
             </label>
           </div>
@@ -270,7 +272,7 @@ export default function Home(props) {
               <input id="feminino" type="checkbox" onChange={handleChange} />
               <span class="checkmark"></span>
             </label>
-            <label for="checkbox" style={{ marginLeft: "14%", marginBottom: "0%" }}>
+            <label for="checkbox" class="checkbox-profissionais">
               Feminino
             </label>
           </div>
@@ -279,7 +281,7 @@ export default function Home(props) {
               <input id="masculino" type="checkbox" onChange={handleChange} />
               <span class="checkmark"></span>
             </label>
-            <label for="checkbox" style={{ marginLeft: "14%", marginBottom: "0%" }}>
+            <label for="checkbox" class="checkbox-profissionais">
               Masculino
             </label>
           </div>
