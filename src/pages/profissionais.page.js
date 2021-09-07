@@ -56,10 +56,9 @@ export default function Home(props) {
     },
   }
 
-  const sortDestaque = () => {
+  const sortDestaque = (lista) => {
     // Busca destacados
-    console.log(tempProfissionais)
-    let mapped = tempProfissionais.filter((item) => {
+    let mapped = lista.filter((item) => {
       if (item.emphasize == true) {
         for (var i = 0; i < item.jobs.length; i++) {
           if (item.jobs[i] === profissaoCode)
@@ -69,22 +68,20 @@ export default function Home(props) {
     }).map((item) => {
       return item
     });
-
-    setProfissionais(mapped)
-
+    
     // Coloca não destaques por último
-    let mapped2 = tempProfissionais.filter((item) => {
+    let mapped2 = lista.filter((item) => {
       if (item.emphasize == false) {
         for (var i = 0; i < item.jobs.length; i++) {
           if (item.jobs[i] === profissaoCode)
-            return item;
+          return item;
         }
       }
     }).map((item) => {
       return item
     });
-
-    setProfissionais([...profissionais, ...mapped2])
+    
+    setProfissionais([...mapped, ...mapped2])
   }
 
   const onSelect = (selectedList, selectedItem) => {
@@ -93,7 +90,8 @@ export default function Home(props) {
       setProfissionais(tempProfissionais)
     }
     else if (selectedItem.id === "destaque") {
-      sortDestaque()
+      setSortType('destaque')
+      sortDestaque(tempProfissionais)
     }
   }
 
@@ -134,9 +132,7 @@ export default function Home(props) {
       return a.name.localeCompare(b.name);
     })
     setTempProfissionais(mapped)
-    console.log(tempProfissionais)
-    console.log(mapped)
-    sortDestaque()
+    sortDestaque(mapped)
   }, []);
 
   // Correção gramatical das categorias
