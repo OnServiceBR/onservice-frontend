@@ -82,22 +82,24 @@
 }
 
 .swal-modal--small {
-  height: 25%;
-  width: 90%;
-  border-radius: 1.25rem;
-}
-
-.swal-modal--smallest {
-  height: 37%;
-  width: 80%;
+  height: 260px;
+  width: 90% !important;
   border-radius: 1.25rem;
 }
 
 .swal-modal--smallester {
-  height: 32%;
+  height: 330px;
   width: 360px;
   border-radius: 1.25rem;
 }
+
+.swal-modal--smallest {
+  height: 360px;
+  width: 300px;
+  border-radius: 1.25rem;
+}
+
+
 
 /* Hover botao do swal */
 .swal-button--perfil:hover {

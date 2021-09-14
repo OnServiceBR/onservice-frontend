@@ -24,6 +24,7 @@ const Counter = [
     { jobCounted: "Fotógrafo(a)", counter: "1" },
     { jobCounted: "Fretes e Mudanças", counter: "1" },
     { jobCounted: "Garçom(Garçonete)", counter: "2" },
+    { jobCounted: "Hipnoterapeuta", counter: "1" },
     { jobCounted: "Jardineiro(a)", counter: "0" },
     { jobCounted: "Manicure", counter: "2" },
     { jobCounted: "Manutenção de PABX", counter: "1" },
