@@ -194,7 +194,7 @@ export default function Perfil(props) {
       </div>
     }
 
-    if (575 >= size.width && size.width >= 370) {
+    if (580 >= size.width && size.width >= 370) {
       <div>
         {Database.filter((item) => {
           if (item.id === idperfil) return item;
