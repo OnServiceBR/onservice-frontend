@@ -572,7 +572,7 @@ const Anuncie = () => {
           <div class="form-item">
             <label class="label"><span title="Campo obrigatório" style={{ color: "red" }}>*</span>Descrição do Serviço:</label>
             <div style={{ textAlign: "center" }}>
-              <textarea id="description" name="description" required class="textarea-contact" rows="6" placeholder="Escreva uma descrição dos seus serviços, com o máximo de detalhes possível, em até 420 caracteres" onChange={handleChange.bind(this)}></textarea>
+              <textarea id="description" name="description" required class="textarea-contact" rows="6" maxLength="420" placeholder="Escreva uma descrição dos seus serviços, com o máximo de detalhes possível, em até 420 caracteres" onChange={handleChange.bind(this)}></textarea>
             </div>
           </div>
           <div class="form-item">
