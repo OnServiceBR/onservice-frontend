@@ -31,6 +31,7 @@ import Saude from "./pages/trabalhos/Saude";
 import Tecnologia from "./pages/trabalhos/Tecnologia";
 import Seguranca from "./pages/seguranca.page";
 import Anunciantes from "./pages/anunciantes.page";
+import Trabalhos from "./pages/trabalhos.page";
 
 ReactGA.initialize('UA-204284257-1');
 const App = () => {
@@ -61,17 +62,18 @@ const App = () => {
           <Route exact path="/termos-de-uso/" component={Termos} />
           <Route exact path="/politica-de-privacidade/" component={Privacidade} />
           <Route exact path="/como-utilizar-o-site/" component={ComoUtilizaroSite} />
-          <Route exact path="/contrate/beleza" component={Beleza} />
+          {/* <Route exact path="/contrate/beleza" component={Beleza} />
           <Route exact path="/contrate/ensino" component={Ensino} />
           <Route exact path="/contrate/eventos" component={Eventos} />
           <Route exact path="/contrate/manutencao" component={Manutencao} />
           <Route exact path="/contrate/outros" component={Outros} />
           <Route exact path="/contrate/residencial" component={Residencial} />
           <Route exact path="/contrate/saude" component={Saude} />
-          <Route exact path="/contrate/tecnologia" component={Tecnologia} />
+          <Route exact path="/contrate/tecnologia" component={Tecnologia} /> */}
           <Route exact path="/sobre-nos/" component={Sobrenos} />
           <Route exact path="/seguranca" component={Seguranca} />
           <Route exact path="/anunciantes/" component={Anunciantes} />
+          <Route exact path="/contrate/:category" component={Trabalhos} />
         </Switch>
       </div>
       <Footer />
